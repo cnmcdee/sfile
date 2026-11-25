@@ -1070,6 +1070,14 @@ static const SField fmt_199_fields[] = {
     { "magic", 0, 4, FK_BYTES },
     { "version", 4, 4, FK_U32 },
 };
+static const SField fmt_200_fields[] = {
+    { "type_raw", 0, 4, FK_U32 },
+    { "payload_size", 4, 4, FK_U32 },
+    { "field_8", 8, 4, FK_U32 },
+    { "field_12", 12, 4, FK_U32 },
+    { "signature", 16, 4, FK_ASCII },
+    { "name", 20, 64, FK_ASCII },
+};
 static const SField fmt_207_fields[] = {
     { "box_size", 0, 4, FK_U32 },
     { "box_type", 4, 4, FK_ASCII },
@@ -4437,7 +4445,7 @@ static const SFormat sfile_formats[] = {
     { 2, ".3DSX", "Three DSX", "", 0, 0, fmt_2_fields, 18, FMT_BINARY, 0 },
     { 3, ".3G2", "3GPP2 video", "\x66\x74\x79\x70\x33\x67\x32", 7, 4, fmt_3_fields, 4, FMT_BINARY, 1 },
     { 4, ".3GP", "3GPP video", "\x66\x74\x79\x70\x33\x67\x70", 7, 4, fmt_4_fields, 4, FMT_BINARY, 1 },
-    { 5, ".3GX", "3GPP2 video (3GX)", "\x66\x74\x79\x70\x33\x67\x70", 7, 4, fmt_5_fields, 4, FMT_BINARY, 1 },
+    { 5, ".3GX", "3GPP2 video (3GX)", "\x66\x74\x79\x70\x33\x67\x32", 7, 4, fmt_5_fields, 4, FMT_BINARY, 1 },
     { 6, ".3mf", "Three MF", "\x50\x4b\x03\x04", 4, 0, NULL, 0, FMT_TEXT, 0 },
     { 7, ".4TH", "4TH file", "", 0, 0, NULL, 0, FMT_TEXT, 0 },
     { 8, ".7z", "Seven Zip", "\x37\x7a\xbc\xaf\x27\x1c", 6, 0, fmt_8_fields, 6, FMT_BINARY, 0 },
@@ -4629,7 +4637,7 @@ static const SFormat sfile_formats[] = {
     { 197, ".EXE", "Exe", "\x4d\x5a", 2, 0, fmt_197_fields, 7, FMT_BINARY, 0 },
     { 198, ".EXP", "EXP file", "", 0, 0, NULL, 0, FMT_UNKNOWN, 0 },
     { 199, ".EXR", "EXR", "\x76\x2f\x31\x01", 4, 0, fmt_199_fields, 2, FMT_BINARY, 0 },
-    { 200, ".EXS", "Exs File", "\x00\x01\x00\x00", 4, 0, NULL, 0, FMT_BINARY, 0 },
+    { 200, ".EXS", "Exs File", "\x00\x01\x00\x00", 4, 0, fmt_200_fields, 6, FMT_BINARY, 1 },
     { 201, ".F", "F file", "", 0, 0, NULL, 0, FMT_TEXT, 0 },
     { 203, ".F03", "F03", "", 0, 0, NULL, 0, FMT_UNKNOWN, 0 },
     { 205, ".F18", "F18 file", "", 0, 0, NULL, 0, FMT_UNKNOWN, 0 },

@@ -580,9 +580,48 @@
   "notes": "modern .ai files are PDF documents"
  },
  "200": {
+  "endian": "be",
+  "fields": [
+   {
+    "kind": "u32",
+    "name": "type_raw",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "payload_size",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "field_8",
+    "offset": 8,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "field_12",
+    "offset": 12,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "signature",
+    "offset": 16,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "name",
+    "offset": 20,
+    "size": 64
+   }
+  ],
   "magic": "00010000",
   "magic_off": 0,
-  "notes": "EXS sample starts 00 01 00 00; same 4-byte magic as PI2, extension disambiguates. No layout: reference block is a placeholder."
+  "notes": "EXS24 sampler instrument (Apple). Flat list of 84-byte-header objects; first object is the instrument header. SOBT magic = big-endian variant (TBOS = little-endian). Per pyexs24 (ported from renoise-exs24) and Multisample-format-docs exs.md. Header payload follows at offset 84; zones/groups/samples are later objects, so only the first header is decoded here."
  },
  "201": {
   "derivation": "text",
@@ -2445,9 +2484,10 @@
   "notes": "page and sample mimetype confirm .OTT (OpenDocument Text Template); .OTS spreadsheet template is task 497"
  },
  "5": {
-  "magic": "66747970336770",
+  "magic": "66747970336732",
   "magic_off": 4,
-  "name": "3GPP2 video (3GX)"
+  "name": "3GPP2 video (3GX)",
+  "notes": "3GPP2 ftyp major brand 3g2a/3g2b; the old magic ftyp3gp matched 3GPP files, not 3GPP2."
  },
  "502": {
   "derivation": "text",
