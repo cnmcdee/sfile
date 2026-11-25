@@ -34,17 +34,18 @@ SAMPLES = sys.argv[2] if len(sys.argv) > 2 else "samples"
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "results.json")
 
 def load_manifests():
+    """Merge sample records from disk + collector manifest shards.
+
+    Ground truth is the files on disk: a task with a sample file on
+    disk is never NO SAMPLE. Manifest shards (one per collector range)
+    are overlaid for provenance (source, source_url) — but a shard
+    must never hide a file that is on disk. The old code returned ONLY
+    the shards when any existed, so a single finished range (e.g.
+    manifest-431-645.json) made every other range's files invisible
+    and the counts collapsed (482 PASS -> 142, 296 NO SAMPLE -> 674).
+    """
     merged = {}
-    for fname in sorted(os.listdir(SAMPLES)):
-        if fname.startswith("manifest-") and fname.endswith(".json"):
-            d = json.load(open(os.path.join(SAMPLES, fname)))
-            # collectors may key by zero-padded or plain ints; normalize
-            for k, v in d.items():
-                merged[str(int(k))] = v
-    if merged:
-        return merged
-    # Fallback: no manifest shards yet — derive entries from task-NNN<ext>
-    # filenames on disk (used for interim runs while collectors are working).
+    # 1. Disk scan (always): every task-NNN<ext> file on disk.
     # Skip backup/partial files: *.tmp, *.distzip, and double-extension
     # *.gz / *.tar (the real sample is task-NNN.gz / task-NNN.tar).
     for fname in sorted(os.listdir(SAMPLES)):
@@ -58,6 +59,22 @@ def load_manifests():
         if m:
             merged[str(int(m.group(1)))] = {"ext": m.group(2), "source": "disk",
                                             "file": fname, "status": "ok"}
+    # 2. Overlay manifest shards (provenance). A shard's "ok" record is
+    # used only if the file it names is actually on disk; a shard's
+    # "not-found" never removes a disk file.
+    for fname in sorted(os.listdir(SAMPLES)):
+        if fname.startswith("manifest-") and fname.endswith(".json"):
+            d = json.load(open(os.path.join(SAMPLES, fname)))
+            # collectors may key by zero-padded or plain ints; normalize
+            for k, v in d.items():
+                key = str(int(k))
+                if not isinstance(v, dict):
+                    continue
+                if v.get("status") == "ok" and v.get("file"):
+                    if os.path.exists(os.path.join(SAMPLES, v["file"])):
+                        merged[key] = v
+                elif key not in merged:
+                    merged[key] = v
     return merged
 
 def junk_reason(path, ext):
