@@ -14,8 +14,17 @@
   "task": 1
  },
  "100": {
-  "note": "no sample file on disk",
-  "result": "no-sample",
+  "decoded": true,
+  "exit": 0,
+  "ext": ".col",
+  "how": "extension",
+  "identified": true,
+  "identified_task": 100,
+  "nfields": 3,
+  "result": "pass",
+  "sample": "task-100.col",
+  "source": "disk",
+  "status": "ok",
   "task": 100
  },
  "101": {
@@ -33,8 +42,18 @@
   "task": 101
  },
  "102": {
-  "note": "no sample file on disk",
-  "result": "no-sample",
+  "decoded": false,
+  "exit": 0,
+  "ext": ".compile",
+  "how": "magic",
+  "identified": false,
+  "identified_task": 103,
+  "nfields": 0,
+  "output_head": "File: samples/task-102.compile (239 bytes)\nFormat: Property (.CONFIG) \u2014 task 103\nIdentified by: magic\nMagic: 3c 3f 78 6d 6c at offset 0\nNote: 46 formats share this magic; extension disambiguated to .CONFIG.\nOther candidates: .CSPROJ (task 116) .DAE (task 124) .E2D (task 164) .EP (task 182) .FB2 (task 217) .FODG (task 235) .FODP (task 236) .FODS (task 237) .FODT (task 238) .GDT (task 254) .GPX (tas",
+  "result": "fail",
+  "sample": "task-102.compile",
+  "source": "disk",
+  "status": "ok",
   "task": 102
  },
  "103": {
@@ -203,8 +222,17 @@
   "task": 114
  },
  "115": {
-  "note": "no sample file on disk",
-  "result": "no-sample",
+  "decoded": true,
+  "exit": 0,
+  "ext": ".cso",
+  "how": "magic",
+  "identified": true,
+  "identified_task": 115,
+  "nfields": 2,
+  "result": "pass",
+  "sample": "task-115.cso",
+  "source": "disk",
+  "status": "ok",
   "task": 115
  },
  "116": {
@@ -692,8 +720,17 @@
   "task": 149
  },
  "15": {
-  "note": "no sample file on disk",
-  "result": "no-sample",
+  "decoded": false,
+  "exit": 0,
+  "ext": ".adx",
+  "how": "extension",
+  "identified": true,
+  "identified_task": 15,
+  "nfields": 0,
+  "result": "partial",
+  "sample": "task-015.adx",
+  "source": "disk",
+  "status": "ok",
   "task": 15
  },
  "150": {
@@ -917,8 +954,17 @@
   "task": 165
  },
  "166": {
-  "note": "no sample file on disk",
-  "result": "no-sample",
+  "decoded": true,
+  "exit": 0,
+  "ext": ".ebd",
+  "how": "extension",
+  "identified": true,
+  "identified_task": 166,
+  "nfields": 4,
+  "result": "pass",
+  "sample": "task-166.ebd",
+  "source": "disk",
+  "status": "ok",
   "task": 166
  },
  "167": {
@@ -1049,8 +1095,17 @@
   "task": 176
  },
  "177": {
-  "note": "no sample file on disk",
-  "result": "no-sample",
+  "decoded": false,
+  "exit": 0,
+  "ext": ".emaker",
+  "how": "extension",
+  "identified": true,
+  "identified_task": 177,
+  "nfields": 0,
+  "result": "partial",
+  "sample": "task-177.emaker",
+  "source": "disk",
+  "status": "ok",
   "task": 177
  },
  "178": {
@@ -6083,8 +6138,17 @@
   "task": 539
  },
  "54": {
-  "note": "no sample file on disk",
-  "result": "no-sample",
+  "decoded": false,
+  "exit": 0,
+  "ext": ".b64",
+  "how": "extension",
+  "identified": true,
+  "identified_task": 54,
+  "nfields": 0,
+  "result": "partial",
+  "sample": "task-054.b64",
+  "source": "disk",
+  "status": "ok",
   "task": 54
  },
  "540": {
@@ -7466,8 +7530,17 @@
   "task": 639
  },
  "64": {
-  "note": "no sample file on disk",
-  "result": "no-sample",
+  "decoded": false,
+  "exit": 0,
+  "ext": ".bm3",
+  "how": "magic",
+  "identified": true,
+  "identified_task": 64,
+  "nfields": 0,
+  "result": "partial",
+  "sample": "task-064.bm3",
+  "source": "disk",
+  "status": "ok",
   "task": 64
  },
  "640": {
@@ -8990,8 +9063,18 @@
   "task": 769
  },
  "77": {
-  "note": "no sample file on disk",
-  "result": "no-sample",
+  "decoded": true,
+  "exit": 0,
+  "ext": ".cbt",
+  "how": "magic",
+  "identified": false,
+  "identified_task": 718,
+  "nfields": 13,
+  "output_head": "File: samples/task-077.cbt (10240 bytes)\nFormat: tar archive (.TAR) \u2014 task 718\nIdentified by: magic\nMagic: 75 73 74 61 72 at offset 257\nHeader (little-endian):\n  offset   size   field                        value\n  0        100    name                         \"page1.png\"\n  100      8      mode                         \"0000644\"\n  108      8      uid                          \"0000000\"\n  116      8  ",
+  "result": "fail",
+  "sample": "task-077.cbt",
+  "source": "disk",
+  "status": "ok",
   "task": 77
  },
  "770": {
