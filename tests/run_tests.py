@@ -36,15 +36,66 @@ def load_manifests():
     for fname in sorted(os.listdir(SAMPLES)):
         if fname.startswith("manifest-") and fname.endswith(".json"):
             d = json.load(open(os.path.join(SAMPLES, fname)))
-            merged.update(d)
+            # collectors may key by zero-padded or plain ints; normalize
+            for k, v in d.items():
+                merged[str(int(k))] = v
+    if merged:
+        return merged
+    # Fallback: no manifest shards yet — derive entries from task-NNN<ext>
+    # filenames on disk (used for interim runs while collectors are working).
+    # Skip backup/partial files: *.tmp, *.distzip, and double-extension
+    # *.gz / *.tar (the real sample is task-NNN.gz / task-NNN.tar).
+    for fname in sorted(os.listdir(SAMPLES)):
+        if fname.endswith(".tmp") or fname.endswith(".distzip"):
+            continue
+        # backup files carry a second suffix after the real extension
+        # (task-123.foo.gz, task-123.foo.tar, task-123.foo.gz-truncated)
+        if re.match(r"task-\d+\.[^.]+\..+$", fname):
+            continue
+        m = re.match(r"task-(\d+)(\..+)$", fname)
+        if m:
+            merged[str(int(m.group(1)))] = {"ext": m.group(2), "source": "disk",
+                                            "file": fname, "status": "ok"}
     return merged
+
+def junk_reason(path, ext):
+    """Why a sample file is junk (a failed download, not a real sample).
+    Returns a string, or None if the file looks like a real sample."""
+    try:
+        sz = os.path.getsize(path)
+    except OSError:
+        return "missing from disk"
+    if sz == 0:
+        return "empty file"
+    with open(path, "rb") as fh:
+        head = fh.read(256)
+    if head.startswith(b"404:") or head.startswith(b"404 Not Found"):
+        return "404 error page, not a sample"
+    if head.startswith(b"<!DOCTYPE html") or head.startswith(b"<html"):
+        # An HTML error page saved as a binary sample (real HTML formats
+        # are exempt: their samples legitimately start with markup).
+        if ext.lower() not in (".html", ".htm", ".xhtml", ".shtml"):
+            return "HTML error page, not a sample"
+    return None
 
 def main():
     manifests = load_manifests()
+    # The full task list is the generated table (849 formats): a task with
+    # no sample file on disk is NO SAMPLE, not silently untested.
+    fmt_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                            "..", "src", "formats.json")
+    all_tasks = set(manifests)
+    if os.path.exists(fmt_path):
+        all_tasks |= set(json.load(open(fmt_path)))
     results = {}
     n_pass = n_partial = n_fail = n_missing = 0
-    for task in sorted(manifests, key=lambda x: int(x)):
-        m = manifests[task]
+    for task in sorted(all_tasks, key=lambda x: int(x)):
+        m = manifests.get(task)
+        if m is None:
+            results[task] = {"task": int(task), "result": "no-sample",
+                             "note": "no sample file on disk"}
+            n_missing += 1
+            continue
         rec = {"task": int(task), "ext": m.get("ext"), "source": m.get("source"),
                "sample": m.get("file"), "status": m.get("status")}
         if m.get("status") != "ok" or not m.get("file"):
@@ -59,7 +110,15 @@ def main():
             n_missing += 1
             results[task] = rec
             continue
-        r = subprocess.run([SFILE, path], capture_output=True, text=True, timeout=30)
+        junk = junk_reason(path, m.get("ext") or "")
+        if junk:
+            rec["result"] = "no-sample"
+            rec["note"] = "bad sample: " + junk
+            n_missing += 1
+            results[task] = rec
+            continue
+        r = subprocess.run([SFILE, path], capture_output=True, text=True,
+                           errors="replace", timeout=30)
         out = r.stdout
         rec["exit"] = r.returncode
         # identified task?

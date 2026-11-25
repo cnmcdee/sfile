@@ -476,8 +476,14 @@ MAGIC_BY_EXT = {
     ".GPX": "3c3f786d6c",
     ".PLIST": "3c3f786d6c",
     ".PBM": "5031", ".PGM": "5032", ".PPM": "5033", ".PNM": "5031",
-    ".TGA": None,
-    ".PCX": "0a",
+    ".TGA": "00000200", ".VDA": "00000200", ".WKS": "00000200",
+    ".PI2": "00010000",
+    ".LZ": "4c5a4950", ".GRB": "47524942", ".SFX": "4d5a",
+    ".G4": "49492a00",
+    ".PCX": "0a05",
+    ".EMZ": "1f8b", ".RDS": "1f8b", ".VBOXEXTPACK": "1f8b",
+    ".CRAI": "1f8b", ".PET": "1f8b", ".XP": "1f8b",
+    ".R01": "526172211a0700", ".ROO": "526172211a0700",
     ".DDS": "44445320",
     ".KTX": "ab4b5458203131",
     ".EXR": "762f3102",
@@ -550,7 +556,7 @@ MAGIC_BY_EXT = {
     # ZIP-based (PK\x03\x04): every OpenDocument / Office Open XML /
     # EPUB / APK / JAR-family format shares this magic.
     ".NUMBERS": "504b0304", ".ODB": "504b0304", ".ODF": "504b0304",
-    ".ODG": "504b0304", ".SEC": "504b0304", ".PAGES": "504b0304",
+    ".ODG": "504b0304", ".PAGES": "504b0304",
     ".KEY": "504b0304", ".KMZ": "504b0304", ".NUPKG": "504b0304",
     ".VSIX": "504b0304", ".WHL": "504b0304", ".CRX": "504b0304",
     ".XPI": "504b0304", ".OXT": "504b0304", ".OTP": "504b0304",
@@ -566,6 +572,32 @@ MAGIC_BY_EXT = {
     ".WAR": "504b0304", ".EAR": "504b0304", ".OXPS": "504b0304",
     ".OSK": "504b0304",
     ".XPI2": "504b0304",
+    # OLE compound document (d0cf11e0a1b11ae1) — more formats verified
+    # against real samples in the Nov 25 test loop:
+    ".DGN": "d0cf11e0a1b11ae1", ".IPT": "d0cf11e0a1b11ae1",
+    ".VDW": "d0cf11e0a1b11ae1",
+    # Ogg container
+    ".OGX": "4f676753",
+    # JPEG (same format as .JPG/.JPEG, different extension)
+    ".JPE": "ffd8ff",
+    # More ZIP-based formats, verified against real samples / the task
+    # pages in the Nov 25 test loop (each is a ZIP container):
+    ".3MF": "504b0304", ".AMLX": "504b0304", ".DN": "504b0304",
+    ".PMP": "504b0304", ".VPR": "504b0304", ".EU4": "504b0304",
+    ".FMU": "504b0304", ".GGB": "504b0304", ".MCADDON": "504b0304",
+    ".MCPACK": "504b0304", ".MCTEMPLATE": "504b0304",
+    ".MSCZ": "504b0304", ".OTS": "504b0304", ".PPSX": "504b0304", ".KRA": "504b0304", ".PK3": "504b0304",
+    # XML-based formats verified against real samples (all start <?xml);
+    # the engine disambiguates by extension.
+    ".GXL": "3c3f786d6c", ".JNLP": "3c3f786d6c", ".JVX": "3c3f786d6c",
+    ".LABEL": "3c3f786d6c", ".MODULES": "3c3f786d6c",
+    ".POM": "3c3f786d6c", ".PTF": "3c3f786d6c", ".SRX": "3c3f786d6c",
+    ".UXF": "3c3f786d6c", ".VBOX": "3c3f786d6c", ".VDX": "3c3f786d6c",
+    ".WLMP": "3c3f786d6c", ".WSC": "3c3f786d6c", ".X3D": "3c3f786d6c",
+    ".XRBL": "3c3f786d6c", ".XDM": "3c3f786d6c", ".XSPF": "3c3f786d6c",
+    ".GDT": "3c3f786d6c", ".VSQX": "3c3f786d6c",
+    ".DAE": "3c3f786d6c", ".E2D": "3c3f786d6c", ".EP": "3c3f786d6c",
+    ".OSM": "3c3f786d6c", ".OWL": "3c3f786d6c", ".GRAPHML": "3c3f786d6c",
     # OLE compound document (d0cf11e0a1b11ae1)
     ".MSO": "d0cf11e0a1b11ae1", ".VSD": "d0cf11e0a1b11ae1",
     ".VSS": "d0cf11e0a1b11ae1", ".VST": "d0cf11e0a1b11ae1",
@@ -685,6 +717,58 @@ CONTAINER_LAYOUTS = {
         {"name": "checksum", "offset": 22, "size": 4, "kind": "u32"},
         {"name": "page_segments", "offset": 26, "size": 1, "kind": "u8"},
     ],
+    ("1f8b", 0): [  # gzip header (RFC 1952)
+        {"name": "magic", "offset": 0, "size": 2, "kind": "bytes"},
+        {"name": "method", "offset": 2, "size": 1, "kind": "u8"},
+        {"name": "flags", "offset": 3, "size": 1, "kind": "u8"},
+        {"name": "mtime", "offset": 4, "size": 4, "kind": "u32"},
+        {"name": "extra_flags", "offset": 8, "size": 1, "kind": "u8"},
+        {"name": "os", "offset": 9, "size": 1, "kind": "u8"},
+    ],
+    ("526172211a0700", 0): [  # RAR 4.x main header
+        {"name": "signature", "offset": 0, "size": 7, "kind": "bytes"},
+        {"name": "header_crc", "offset": 7, "size": 2, "kind": "u16"},
+        {"name": "header_type", "offset": 9, "size": 1, "kind": "u8"},
+        {"name": "header_flags", "offset": 10, "size": 2, "kind": "u16"},
+        {"name": "header_size", "offset": 12, "size": 2, "kind": "u16"},
+    ],
+    ("25504446", 0): [  # PDF header (also covers AI)
+        {"name": "magic", "offset": 0, "size": 5, "kind": "ascii"},
+        {"name": "version", "offset": 5, "size": 3, "kind": "ascii"},
+    ],
+    ("49492a00", 0): [  # TIFF header, little-endian (II)
+        {"name": "byte_order", "offset": 0, "size": 2, "kind": "ascii"},
+        {"name": "magic", "offset": 2, "size": 2, "kind": "u16"},
+        {"name": "first_ifd_offset", "offset": 4, "size": 4, "kind": "u32"},
+    ],
+    ("4d4d002a", 0): [  # TIFF header, big-endian (MM)
+        {"name": "byte_order", "offset": 0, "size": 2, "kind": "ascii", "be": True},
+        {"name": "magic", "offset": 2, "size": 2, "kind": "u16"},
+        {"name": "first_ifd_offset", "offset": 4, "size": 4, "kind": "u32"},
+    ],
+    ("d0cf11e0a1b11ae1", 0): [  # OLE compound document (MS-CFB) header
+        {"name": "signature", "offset": 0, "size": 8, "kind": "bytes"},
+        {"name": "clsid", "offset": 8, "size": 16, "kind": "bytes"},
+        {"name": "minor_version", "offset": 24, "size": 2, "kind": "u16"},
+        {"name": "major_version", "offset": 26, "size": 2, "kind": "u16"},
+        {"name": "byte_order", "offset": 28, "size": 2, "kind": "u16"},
+        {"name": "sector_shift", "offset": 30, "size": 2, "kind": "u16"},
+        {"name": "mini_sector_shift", "offset": 32, "size": 2, "kind": "u16"},
+        {"name": "num_dir_sectors", "offset": 40, "size": 4, "kind": "u32"},
+        {"name": "num_fat_sectors", "offset": 44, "size": 4, "kind": "u32"},
+        {"name": "first_dir_sector", "offset": 48, "size": 4, "kind": "u32"},
+        {"name": "transaction_sig", "offset": 52, "size": 4, "kind": "u32"},
+        {"name": "mini_stream_cutoff", "offset": 56, "size": 4, "kind": "u32"},
+        {"name": "first_minifat_sector", "offset": 60, "size": 4, "kind": "u32"},
+        {"name": "num_minifat_sectors", "offset": 64, "size": 4, "kind": "u32"},
+        {"name": "first_difat_sector", "offset": 68, "size": 4, "kind": "u32"},
+        {"name": "num_difat_sectors", "offset": 72, "size": 4, "kind": "u32"},
+    ],
+    ("464f524d", 0): [  # IFF FORM header (same shape as RIFF)
+        {"name": "signature", "offset": 0, "size": 4, "kind": "ascii"},
+        {"name": "file_size", "offset": 4, "size": 4, "kind": "u32"},
+        {"name": "form_type", "offset": 8, "size": 4, "kind": "ascii"},
+    ],
 }
 
 def split_blocks(text):
@@ -771,9 +855,21 @@ def main():
             t = int(k)
             if t in formats:
                 formats[t].update(v)
-                formats[t]["derivation"] = "override"
+                # An override may set its own derivation (e.g. "text" for a
+                # text format that also needs a magic); only default to
+                # "override" when it does not.
+                if "derivation" not in v:
+                    formats[t]["derivation"] = "override"
             else:
-                formats[t] = v
+                # Override for a task with no code block (nocode): build a
+                # complete entry from defaults, then apply the override.
+                # Without this the entry lacks keys the later passes need.
+                formats[t] = {"task": t, "ext": v.get("ext", ".?"),
+                              "name": v.get("name", format_name("", v.get("ext", ".?"))),
+                              "magic": None, "magic_off": 0, "fields": [],
+                              "derivation": "override", "notes": "",
+                              "endian": "le"}
+                formats[t].update(v)
 
 
     # Tasks with a page but no C/C++ code block (18). They have no derived
@@ -783,6 +879,7 @@ def main():
         ".INI": ("text", None), ".M3U8": ("text", "234558544d3355"),  # #EXTM3U
         ".TWB": ("text", "3c3f786d6c"), ".VSQ": ("text", "3c3f786d6c"),
         ".DPFHTML": ("text", None),
+        ".PET": ("unknown", "1f8b"),  # Puppy Linux package: gzipped tar
     }
     url_manifest = os.path.join(SCRIPT_DIR, "sample_urls.json")
     if os.path.exists(url_manifest):

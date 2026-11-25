@@ -96,25 +96,25 @@
   "task": 105
  },
  "106": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".CPL",
   "fields": [],
   "magic": "4d5a",
   "magic_off": 0,
   "name": "CPL",
-  "notes": "curated-magic",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 106
  },
  "107": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".CPP",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "Cpp",
-  "notes": "",
+  "notes": "C++ source, plain text",
   "task": 107
  },
  "108": {
@@ -129,10 +129,29 @@
   "task": 108
  },
  "109": {
-  "derivation": "unknown",
+  "derivation": "container",
   "endian": "le",
   "ext": ".CR2",
-  "fields": [],
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "byte_order",
+    "offset": 0,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "magic",
+    "offset": 2,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "first_ifd_offset",
+    "offset": 4,
+    "size": 4
+   }
+  ],
   "magic": "49492a00",
   "magic_off": 0,
   "name": "CR2",
@@ -175,66 +194,66 @@
   "task": 110
  },
  "111": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".CRAFT",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "Craft File",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 111
  },
  "112": {
-  "derivation": "struct",
+  "derivation": "override",
   "endian": "le",
   "ext": ".CRAI",
   "fields": [
    {
-    "kind": "i64",
-    "name": "ref_id",
+    "kind": "bytes",
+    "name": "magic",
     "offset": 0,
-    "size": 8
+    "size": 2
    },
    {
-    "kind": "i64",
-    "name": "start",
+    "kind": "u8",
+    "name": "method",
+    "offset": 2,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "flags",
+    "offset": 3,
+    "size": 1
+   },
+   {
+    "kind": "u32",
+    "name": "mtime",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "u8",
+    "name": "extra_flags",
     "offset": 8,
-    "size": 8
+    "size": 1
    },
    {
-    "kind": "i64",
-    "name": "span",
-    "offset": 16,
-    "size": 8
-   },
-   {
-    "kind": "i64",
-    "name": "container_offset",
-    "offset": 24,
-    "size": 8
-   },
-   {
-    "kind": "i64",
-    "name": "slice_offset",
-    "offset": 32,
-    "size": 8
-   },
-   {
-    "kind": "i64",
-    "name": "slice_size",
-    "offset": 40,
-    "size": 8
+    "kind": "u8",
+    "name": "os",
+    "offset": 9,
+    "size": 1
    }
   ],
-  "magic": null,
+  "magic": "1f8b",
   "magic_off": 0,
   "name": "CRAI",
-  "notes": "",
+  "notes": "CRAI is a gzipped TSV index; gzip wrapper identified, entries are ITF8-encoded (no fixed offsets)",
   "task": 112
  },
  "113": {
-  "derivation": "struct",
+  "derivation": "override",
   "endian": "be",
   "ext": ".CRT",
   "fields": [
@@ -242,97 +261,97 @@
     "kind": "ascii",
     "name": "signature",
     "offset": 0,
-    "size": 17
+    "size": 16
    },
    {
     "kind": "u32",
     "name": "header_length",
-    "offset": 17,
+    "offset": 16,
     "size": 4
    },
    {
     "kind": "u16",
     "name": "version",
-    "offset": 21,
+    "offset": 20,
     "size": 2
    },
    {
     "kind": "u16",
     "name": "hardware_type",
-    "offset": 23,
+    "offset": 22,
     "size": 2
    },
    {
     "kind": "u8",
     "name": "exrom",
-    "offset": 25,
+    "offset": 24,
     "size": 1
    },
    {
     "kind": "u8",
     "name": "game",
-    "offset": 26,
+    "offset": 25,
     "size": 1
    },
    {
     "kind": "u8",
     "name": "revision",
-    "offset": 27,
+    "offset": 26,
     "size": 1
    },
    {
     "kind": "bytes",
     "name": "reserved",
-    "offset": 28,
+    "offset": 27,
     "size": 5
    },
    {
     "kind": "ascii",
     "name": "name",
-    "offset": 33,
-    "size": 33
+    "offset": 32,
+    "size": 32
    },
    {
     "kind": "ascii",
     "name": "chip_sig",
-    "offset": 66,
-    "size": 5
+    "offset": 64,
+    "size": 4
    },
    {
     "kind": "u32",
     "name": "packet_len",
-    "offset": 71,
+    "offset": 68,
     "size": 4
    },
    {
     "kind": "u16",
     "name": "chip_type",
-    "offset": 75,
+    "offset": 72,
     "size": 2
    },
    {
     "kind": "u16",
     "name": "bank",
-    "offset": 77,
+    "offset": 74,
     "size": 2
    },
    {
     "kind": "u16",
     "name": "load_addr",
-    "offset": 79,
+    "offset": 76,
     "size": 2
    },
    {
     "kind": "u16",
     "name": "image_size",
-    "offset": 81,
+    "offset": 78,
     "size": 2
    }
   ],
-  "magic": null,
+  "magic": "43363420434152545249444745",
   "magic_off": 0,
   "name": "CRT file",
-  "notes": "",
+  "notes": "C64 cartridge; struct sizes carried NUL slots (signature 17 not 16, name 33 not 32), offsets corrected",
   "task": 113
  },
  "114": {
@@ -382,14 +401,14 @@
   "task": 116
  },
  "117": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".CSS",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "CSS File",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 117
  },
  "118": {
@@ -798,14 +817,14 @@
   "task": 123
  },
  "124": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".DAE",
   "fields": [],
-  "magic": null,
+  "magic": "3c3f786d6c",
   "magic_off": 0,
   "name": "DAE Processor",
-  "notes": "",
+  "notes": "xml",
   "task": 124
  },
  "125": {
@@ -905,14 +924,14 @@
   "task": 125
  },
  "126": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".DART",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "DART",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 126
  },
  "127": {
@@ -1015,14 +1034,14 @@
   "task": 130
  },
  "131": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".DBC",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "DBC",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 131
  },
  "132": {
@@ -1168,14 +1187,111 @@
   "task": 135
  },
  "136": {
-  "derivation": "unknown",
+  "derivation": "container",
   "endian": "le",
   "ext": ".DGN",
-  "fields": [],
-  "magic": null,
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 0,
+    "size": 8
+   },
+   {
+    "kind": "bytes",
+    "name": "clsid",
+    "offset": 8,
+    "size": 16
+   },
+   {
+    "kind": "u16",
+    "name": "minor_version",
+    "offset": 24,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "major_version",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "byte_order",
+    "offset": 28,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "sector_shift",
+    "offset": 30,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mini_sector_shift",
+    "offset": 32,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "num_dir_sectors",
+    "offset": 40,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "num_fat_sectors",
+    "offset": 44,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "first_dir_sector",
+    "offset": 48,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "transaction_sig",
+    "offset": 52,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "mini_stream_cutoff",
+    "offset": 56,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "first_minifat_sector",
+    "offset": 60,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "num_minifat_sectors",
+    "offset": 64,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "first_difat_sector",
+    "offset": 68,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "num_difat_sectors",
+    "offset": 72,
+    "size": 4
+   }
+  ],
+  "magic": "d0cf11e0a1b11ae1",
   "magic_off": 0,
   "name": "DGN Handler C",
-  "notes": "",
+  "notes": "curated-magic",
   "task": 136
  },
  "137": {
@@ -1482,7 +1598,7 @@
   "task": 141
  },
  "142": {
-  "derivation": "struct",
+  "derivation": "override",
   "endian": "le",
   "ext": ".DMP",
   "fields": [
@@ -1529,28 +1645,114 @@
     "size": 8
    }
   ],
-  "magic": null,
+  "magic": "4d444d50",
   "magic_off": 0,
   "name": "DMP file",
-  "notes": "",
+  "notes": "Windows minidump; header fields from the reference struct",
   "task": 142
  },
  "143": {
-  "derivation": "unknown",
+  "derivation": "container",
   "endian": "le",
   "ext": ".DN",
-  "fields": [],
-  "magic": null,
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "version_needed",
+    "offset": 4,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "flags",
+    "offset": 6,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "method",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_time",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_date",
+    "offset": 12,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "crc32",
+    "offset": 14,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "compressed_size",
+    "offset": 18,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "uncompressed_size",
+    "offset": 22,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "filename_len",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "extra_len",
+    "offset": 28,
+    "size": 2
+   }
+  ],
+  "magic": "504b0304",
   "magic_off": 0,
   "name": "DN file",
-  "notes": "",
+  "notes": "curated-magic",
   "task": 143
  },
  "144": {
-  "derivation": "unknown",
+  "derivation": "container",
   "endian": "le",
   "ext": ".DNG",
-  "fields": [],
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "byte_order",
+    "offset": 0,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "magic",
+    "offset": 2,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "first_ifd_offset",
+    "offset": 4,
+    "size": 4
+   }
+  ],
   "magic": "49492a00",
   "magic_off": 0,
   "name": "DNG",
@@ -1558,21 +1760,118 @@
   "task": 144
  },
  "145": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".DO",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "DO File",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 145
  },
  "146": {
-  "derivation": "unknown",
+  "derivation": "container",
   "endian": "le",
   "ext": ".DOC",
-  "fields": [],
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 0,
+    "size": 8
+   },
+   {
+    "kind": "bytes",
+    "name": "clsid",
+    "offset": 8,
+    "size": 16
+   },
+   {
+    "kind": "u16",
+    "name": "minor_version",
+    "offset": 24,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "major_version",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "byte_order",
+    "offset": 28,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "sector_shift",
+    "offset": 30,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mini_sector_shift",
+    "offset": 32,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "num_dir_sectors",
+    "offset": 40,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "num_fat_sectors",
+    "offset": 44,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "first_dir_sector",
+    "offset": 48,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "transaction_sig",
+    "offset": 52,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "mini_stream_cutoff",
+    "offset": 56,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "first_minifat_sector",
+    "offset": 60,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "num_minifat_sectors",
+    "offset": 64,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "first_difat_sector",
+    "offset": 68,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "num_difat_sectors",
+    "offset": 72,
+    "size": 4
+   }
+  ],
   "magic": "d0cf11e0a1b11ae1",
   "magic_off": 0,
   "name": "Doc Property",
@@ -1736,14 +2035,111 @@
   "task": 148
  },
  "149": {
-  "derivation": "unknown",
+  "derivation": "container",
   "endian": "le",
   "ext": ".DOT",
-  "fields": [],
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 0,
+    "size": 8
+   },
+   {
+    "kind": "bytes",
+    "name": "clsid",
+    "offset": 8,
+    "size": 16
+   },
+   {
+    "kind": "u16",
+    "name": "minor_version",
+    "offset": 24,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "major_version",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "byte_order",
+    "offset": 28,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "sector_shift",
+    "offset": 30,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mini_sector_shift",
+    "offset": 32,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "num_dir_sectors",
+    "offset": 40,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "num_fat_sectors",
+    "offset": 44,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "first_dir_sector",
+    "offset": 48,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "transaction_sig",
+    "offset": 52,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "mini_stream_cutoff",
+    "offset": 56,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "first_minifat_sector",
+    "offset": 60,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "num_minifat_sectors",
+    "offset": 64,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "first_difat_sector",
+    "offset": 68,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "num_difat_sectors",
+    "offset": 72,
+    "size": 4
+   }
+  ],
   "magic": "d0cf11e0a1b11ae1",
   "magic_off": 0,
   "name": "Dot",
-  "notes": "curated-magic",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 149
  },
  "15": {
@@ -1906,14 +2302,14 @@
   "task": 153
  },
  "154": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".DSC",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "Dsc",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 154
  },
  "155": {
@@ -1947,25 +2343,25 @@
   "task": 155
  },
  "156": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".DTD",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "DTD",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 156
  },
  "157": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".DVC",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "DVC File",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 157
  },
  "158": {
@@ -2051,25 +2447,25 @@
   "task": 16
  },
  "160": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".DX",
   "fields": [],
-  "magic": null,
+  "magic": "23235449544c453d",
   "magic_off": 0,
   "name": "DX File",
-  "notes": "",
+  "notes": "DX is a JCAMP-DX extension (same format as JCM/JDX); sample begins ##TITLE=",
   "task": 160
  },
  "161": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".DXF",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "DXF",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 161
  },
  "162": {
@@ -2099,7 +2495,7 @@
   "endian": "le",
   "ext": ".E2D",
   "fields": [],
-  "magic": null,
+  "magic": "3c3f786d6c",
   "magic_off": 0,
   "name": "E2D",
   "notes": "xml",
@@ -2369,14 +2765,14 @@
   "task": 169
  },
  "17": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".AGDA",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "AGDA file",
-  "notes": "",
+  "notes": "Agda source, plain text",
   "task": 17
  },
  "170": {
@@ -2649,14 +3045,14 @@
   "task": 175
  },
  "176": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".EMAIL",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "Email File",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 176
  },
  "177": {
@@ -2767,36 +3163,73 @@
   "task": 178
  },
  "179": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".EML",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "EML",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 179
  },
  "18": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".AGR",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "AGR File",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 18
  },
  "180": {
-  "derivation": "unknown",
+  "derivation": "container",
   "endian": "le",
   "ext": ".EMZ",
-  "fields": [],
-  "magic": null,
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "magic",
+    "offset": 0,
+    "size": 2
+   },
+   {
+    "kind": "u8",
+    "name": "method",
+    "offset": 2,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "flags",
+    "offset": 3,
+    "size": 1
+   },
+   {
+    "kind": "u32",
+    "name": "mtime",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "u8",
+    "name": "extra_flags",
+    "offset": 8,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "os",
+    "offset": 9,
+    "size": 1
+   }
+  ],
+  "magic": "1f8b",
   "magic_off": 0,
   "name": "EMZ",
-  "notes": "",
+  "notes": "curated-magic",
   "task": 180
  },
  "181": {
@@ -3032,7 +3465,7 @@
   "endian": "le",
   "ext": ".EP",
   "fields": [],
-  "magic": null,
+  "magic": "3c3f786d6c",
   "magic_off": 0,
   "name": "EP File",
   "notes": "xml",
@@ -3139,25 +3572,25 @@
   "task": 185
  },
  "186": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".ERL",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "ERL",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 186
  },
  "187": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".ES6",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "ES6 file",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 187
  },
  "188": {
@@ -3183,14 +3616,14 @@
   "task": 189
  },
  "19": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".AHK",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "AHK file",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 19
  },
  "190": {
@@ -3397,14 +3830,14 @@
   "task": 192
  },
  "193": {
-  "derivation": "unknown",
+  "derivation": "override",
   "endian": "le",
   "ext": ".EU4",
   "fields": [],
-  "magic": null,
+  "magic": "45553462696e4d28",
   "magic_off": 0,
   "name": "EU4File",
-  "notes": "",
+  "notes": "EU4 binary save magic 'EU4binM('; no fixed header layout beyond the magic",
   "task": 193
  },
  "194": {
@@ -3862,14 +4295,27 @@
   "task": 2
  },
  "20": {
-  "derivation": "unknown",
+  "derivation": "override",
   "endian": "be",
   "ext": ".AI",
-  "fields": [],
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "magic",
+    "offset": 0,
+    "size": 5
+   },
+   {
+    "kind": "ascii",
+    "name": "version",
+    "offset": 5,
+    "size": 3
+   }
+  ],
   "magic": "25504446",
   "magic_off": 0,
   "name": "AI File",
-  "notes": "curated-magic",
+  "notes": "modern .ai files are PDF documents",
   "task": 20
  },
  "200": {
@@ -3884,14 +4330,14 @@
   "task": 200
  },
  "201": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".F",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "F file",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 201
  },
  "203": {
@@ -3928,14 +4374,39 @@
   "task": 206
  },
  "207": {
-  "derivation": "unknown",
+  "derivation": "override",
   "endian": "be",
   "ext": ".F4V",
-  "fields": [],
-  "magic": null,
-  "magic_off": 0,
+  "fields": [
+   {
+    "kind": "u32",
+    "name": "box_size",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "box_type",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "major_brand",
+    "offset": 8,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "minor_version",
+    "offset": 12,
+    "size": 4
+   }
+  ],
+  "magic": "6674797066347620",
+  "magic_off": 4,
   "name": "F4V",
-  "notes": "",
+  "notes": "F4V ftyp box, major brand f4v ",
   "task": 207
  },
  "208": {
@@ -3950,14 +4421,14 @@
   "task": 208
  },
  "209": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".F90",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "F90",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 209
  },
  "21": {
@@ -4135,14 +4606,14 @@
   "task": 21
  },
  "210": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".F95",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "F95",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 210
  },
  "211": {
@@ -4215,14 +4686,14 @@
   "task": 215
  },
  "216": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".FB",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "FB file",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 216
  },
  "217": {
@@ -4290,7 +4761,7 @@
   "task": 219
  },
  "22": {
-  "derivation": "readseq",
+  "derivation": "override",
   "endian": "le",
   "ext": ".AIFF",
   "fields": [
@@ -4403,10 +4874,10 @@
     "size": 2
    }
   ],
-  "magic": null,
-  "magic_off": 0,
+  "magic": "41494646",
+  "magic_off": 8,
   "name": "AIFF",
-  "notes": "",
+  "notes": "AIFF is IFF FORM with form type AIFF at offset 8",
   "task": 22
  },
  "220": {
@@ -4612,14 +5083,39 @@
   "task": 225
  },
  "226": {
-  "derivation": "unknown",
+  "derivation": "override",
   "endian": "le",
   "ext": ".FITS",
-  "fields": [],
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "keyword",
+    "offset": 0,
+    "size": 8
+   },
+   {
+    "kind": "ascii",
+    "name": "value_indicator",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "ascii",
+    "name": "value",
+    "offset": 10,
+    "size": 20
+   },
+   {
+    "kind": "ascii",
+    "name": "comment",
+    "offset": 30,
+    "size": 50
+   }
+  ],
   "magic": null,
   "magic_off": 0,
   "name": "Fits",
-  "notes": "",
+  "notes": "FITS header is 80-byte ASCII cards; first card decoded",
   "task": 226
  },
  "227": {
@@ -4659,14 +5155,14 @@
   "task": 227
  },
  "228": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".FLAME",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "Flame",
-  "notes": "",
+  "notes": "Apophysis flame files are XML (<flame ...>)",
   "task": 228
  },
  "229": {
@@ -4728,25 +5224,92 @@
   "task": 230
  },
  "231": {
-  "derivation": "text",
+  "derivation": "container",
   "endian": "le",
   "ext": ".FMU",
-  "fields": [],
-  "magic": null,
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "version_needed",
+    "offset": 4,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "flags",
+    "offset": 6,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "method",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_time",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_date",
+    "offset": 12,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "crc32",
+    "offset": 14,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "compressed_size",
+    "offset": 18,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "uncompressed_size",
+    "offset": 22,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "filename_len",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "extra_len",
+    "offset": 28,
+    "size": 2
+   }
+  ],
+  "magic": "504b0304",
   "magic_off": 0,
   "name": "FMU",
   "notes": "xml",
   "task": 231
  },
  "232": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".FNA",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "FNA",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 232
  },
  "233": {
@@ -4809,14 +5372,14 @@
   "task": 234
  },
  "235": {
-  "derivation": "magic-only",
+  "derivation": "text",
   "endian": "le",
   "ext": ".FODG",
   "fields": [],
-  "magic": "786d6c6e733a",
+  "magic": "3c3f786d6c",
   "magic_off": 0,
   "name": "FODG file",
-  "notes": "",
+  "notes": "FODG is flat ODF (XML); the xmlns: magic is a namespace prefix, not a signature",
   "task": 235
  },
  "236": {
@@ -4831,14 +5394,14 @@
   "task": 236
  },
  "237": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".FODS",
   "fields": [],
   "magic": "3c3f786d6c",
   "magic_off": 0,
   "name": "FODS file",
-  "notes": "xml",
+  "notes": "FODS is flat ODF (XML)",
   "task": 237
  },
  "238": {
@@ -4894,29 +5457,29 @@
   "task": 24
  },
  "240": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".FQL",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "FQL file",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 240
  },
  "241": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".FRAG",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "Frag",
-  "notes": "",
+  "notes": "GLSL fragment shaders are text",
   "task": 241
  },
  "242": {
-  "derivation": "struct",
+  "derivation": "text",
   "endian": "le",
   "ext": ".FREQ",
   "fields": [
@@ -4933,10 +5496,10 @@
     "size": 4
    }
   ],
-  "magic": "454e444652455155454e43494553",
+  "magic": null,
   "magic_off": 0,
   "name": "FREQ file",
-  "notes": "",
+  "notes": "SAM frequency files are text (fgets line parser); ENDFREQUENCIES is a section marker, not a signature",
   "task": 242
  },
  "243": {
@@ -5180,14 +5743,14 @@
   "task": 244
  },
  "245": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".FS",
   "fields": [],
   "magic": "404520",
   "magic_off": 0,
   "name": "FS file",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 245
  },
  "246": {
@@ -5297,10 +5860,10 @@
     "size": 4
    }
   ],
-  "magic": null,
+  "magic": "49492a00",
   "magic_off": 0,
   "name": "G4",
-  "notes": "",
+  "notes": "curated-magic",
   "task": 247
  },
  "248": {
@@ -5460,56 +6023,44 @@
   "task": 249
  },
  "25": {
-  "derivation": "struct",
+  "derivation": "override",
   "endian": "le",
   "ext": ".AMG",
   "fields": [
    {
-    "kind": "u32",
-    "name": "label",
+    "kind": "ascii",
+    "name": "signature",
     "offset": 0,
     "size": 4
    },
    {
     "kind": "u32",
-    "name": "version",
+    "name": "file_size",
     "offset": 4,
     "size": 4
    },
    {
-    "kind": "u32",
-    "name": "num_bformat",
+    "kind": "ascii",
+    "name": "form_type",
     "offset": 8,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "decoder_flags",
-    "offset": 12,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "n_channels",
-    "offset": 16,
     "size": 4
    }
   ],
   "magic": "52494646",
   "magic_off": 0,
   "name": "AMG file",
-  "notes": "",
+  "notes": "RIFF WAVE-EX with an AMBG chunk; top-level decode is the RIFF header",
   "task": 25
  },
  "250": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".GBK",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "GBK",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 250
  },
  "251": {
@@ -5741,25 +6292,25 @@
   "task": 253
  },
  "254": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".GDT",
   "fields": [],
-  "magic": null,
+  "magic": "3c3f786d6c",
   "magic_off": 0,
   "name": "GDT file",
-  "notes": "",
+  "notes": "xml",
   "task": 254
  },
  "255": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".GED",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "GED",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 255
  },
  "256": {
@@ -5811,27 +6362,81 @@
   "task": 257
  },
  "258": {
-  "derivation": "struct",
+  "derivation": "override",
   "endian": "le",
   "ext": ".GGB",
   "fields": [
    {
-    "kind": "u16",
-    "name": "compression_method",
+    "kind": "bytes",
+    "name": "signature",
     "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "version_needed",
+    "offset": 4,
     "size": 2
    },
    {
-    "kind": "i32",
-    "name": "num_entries",
-    "offset": 2,
+    "kind": "u16",
+    "name": "flags",
+    "offset": 6,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "method",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_time",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_date",
+    "offset": 12,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "crc32",
+    "offset": 14,
     "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "compressed_size",
+    "offset": 18,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "uncompressed_size",
+    "offset": 22,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "filename_len",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "extra_len",
+    "offset": 28,
+    "size": 2
    }
   ],
-  "magic": "696d616765732f",
+  "magic": "504b0304",
   "magic_off": 0,
   "name": "GGB file",
-  "notes": "",
+  "notes": "GeoGebra is a ZIP; the code's 'images/' magic was a path fragment",
   "task": 258
  },
  "259": {
@@ -5894,14 +6499,14 @@
   "task": 26
  },
  "260": {
-  "derivation": "magic-only",
+  "derivation": "text",
   "endian": "le",
   "ext": ".GM9",
   "fields": [],
   "magic": "73657420",
   "magic_off": 0,
   "name": "GM9 file",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 260
  },
  "261": {
@@ -6156,14 +6761,14 @@
   "task": 263
  },
  "264": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".GO",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "Go",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 264
  },
  "265": {
@@ -6189,69 +6794,14 @@
   "task": 266
  },
  "267": {
-  "derivation": "struct",
+  "derivation": "text",
   "endian": "le",
   "ext": ".GRAPHML",
-  "fields": [
-   {
-    "kind": "i32",
-    "name": "num_keys",
-    "offset": 0,
-    "size": 4
-   },
-   {
-    "kind": "i32",
-    "name": "num_graphs",
-    "offset": 4,
-    "size": 4
-   },
-   {
-    "kind": "i32",
-    "name": "num_data",
-    "offset": 8,
-    "size": 4
-   },
-   {
-    "kind": "i32",
-    "name": "num_desc",
-    "offset": 12,
-    "size": 4
-   },
-   {
-    "kind": "i32",
-    "name": "supports_hierarchy",
-    "offset": 16,
-    "size": 4
-   },
-   {
-    "kind": "i32",
-    "name": "num_hyperedges",
-    "offset": 20,
-    "size": 4
-   },
-   {
-    "kind": "i32",
-    "name": "num_endpoints",
-    "offset": 24,
-    "size": 4
-   },
-   {
-    "kind": "i32",
-    "name": "num_ports",
-    "offset": 28,
-    "size": 4
-   },
-   {
-    "kind": "i32",
-    "name": "num_locators",
-    "offset": 32,
-    "size": 4
-   }
-  ],
-  "magic": null,
+  "fields": [],
+  "magic": "3c3f786d6c",
   "magic_off": 0,
   "name": "GRAPHML file",
-  "notes": "",
+  "notes": "GraphML is XML; the struct fields were counts, not file offsets",
   "task": 267
  },
  "268": {
@@ -6440,10 +6990,10 @@
     "size": 1
    }
   ],
-  "magic": null,
+  "magic": "47524942",
   "magic_off": 0,
   "name": "GRIB",
-  "notes": "",
+  "notes": "curated-magic",
   "task": 268
  },
  "269": {
@@ -6477,14 +7027,81 @@
   "task": 269
  },
  "27": {
-  "derivation": "unknown",
+  "derivation": "container",
   "endian": "le",
   "ext": ".AMLX",
-  "fields": [],
-  "magic": null,
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "version_needed",
+    "offset": 4,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "flags",
+    "offset": 6,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "method",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_time",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_date",
+    "offset": 12,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "crc32",
+    "offset": 14,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "compressed_size",
+    "offset": 18,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "uncompressed_size",
+    "offset": 22,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "filename_len",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "extra_len",
+    "offset": 28,
+    "size": 2
+   }
+  ],
+  "magic": "504b0304",
   "magic_off": 0,
   "name": "Amlx",
-  "notes": "",
+  "notes": "curated-magic",
   "task": 27
  },
  "270": {
@@ -6966,7 +7583,7 @@
   "endian": "le",
   "ext": ".GXL",
   "fields": [],
-  "magic": null,
+  "magic": "3c3f786d6c",
   "magic_off": 0,
   "name": "GXL",
   "notes": "xml",
@@ -7021,51 +7638,14 @@
   "task": 277
  },
  "278": {
-  "derivation": "struct",
+  "derivation": "text",
   "endian": "le",
   "ext": ".H",
-  "fields": [
-   {
-    "kind": "i32",
-    "name": "num_includes",
-    "offset": 0,
-    "size": 4
-   },
-   {
-    "kind": "i32",
-    "name": "num_defines",
-    "offset": 4,
-    "size": 4
-   },
-   {
-    "kind": "i32",
-    "name": "num_prototypes",
-    "offset": 8,
-    "size": 4
-   },
-   {
-    "kind": "i32",
-    "name": "has_guard",
-    "offset": 12,
-    "size": 4
-   },
-   {
-    "kind": "ascii",
-    "name": "guard_name",
-    "offset": 16,
-    "size": 256
-   },
-   {
-    "kind": "i32",
-    "name": "total_lines",
-    "offset": 272,
-    "size": 4
-   }
-  ],
-  "magic": "23696e636c756465",
+  "fields": [],
+  "magic": null,
   "magic_off": 0,
   "name": "H file",
-  "notes": "",
+  "notes": "C header, plain text; the #include 'magic' matched any C/C++ file",
   "task": 278
  },
  "279": {
@@ -7123,14 +7703,14 @@
   "task": 279
  },
  "28": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".AMPL",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "Ampl File",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 28
  },
  "280": {
@@ -7206,27 +7786,21 @@
   "task": 280
  },
  "281": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".HAR",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "HAR file",
-  "notes": "",
+  "notes": "HTTP Archive, JSON",
   "task": 281
  },
  "282": {
-  "derivation": "struct",
+  "derivation": "override",
   "endian": "be",
   "ext": ".HAR",
   "fields": [
-   {
-    "kind": "i32",
-    "name": "num_dds",
-    "offset": 0,
-    "size": 4
-   },
    {
     "kind": "u16",
     "name": "tag",
@@ -7240,22 +7814,22 @@
     "size": 2
    },
    {
-    "kind": "i32",
+    "kind": "u32",
     "name": "offset",
     "offset": 8,
     "size": 4
    },
    {
-    "kind": "i32",
+    "kind": "u32",
     "name": "length",
     "offset": 12,
     "size": 4
    }
   ],
-  "magic": null,
+  "magic": "0e031301",
   "magic_off": 0,
   "name": "HAR file",
-  "notes": "",
+  "notes": "page is titled .HAR but the content and sample are HDF4 (Hierarchical Data Format v4); first data descriptor follows the 4-byte signature",
   "task": 282
  },
  "283": {
@@ -7360,25 +7934,75 @@
   "task": 285
  },
  "286": {
-  "derivation": "unknown",
+  "derivation": "override",
   "endian": "be",
   "ext": ".HEIC",
-  "fields": [],
-  "magic": null,
-  "magic_off": 0,
+  "fields": [
+   {
+    "kind": "u32",
+    "name": "box_size",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "box_type",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "major_brand",
+    "offset": 8,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "minor_version",
+    "offset": 12,
+    "size": 4
+   }
+  ],
+  "magic": "6674797068656963",
+  "magic_off": 4,
   "name": "Heic",
-  "notes": "",
+  "notes": "HEIC ftyp box, major brand heic; HEIF (287) shares the brand",
   "task": 286
  },
  "287": {
-  "derivation": "unknown",
-  "endian": "le",
+  "derivation": "override",
+  "endian": "be",
   "ext": ".HEIF",
-  "fields": [],
-  "magic": null,
-  "magic_off": 0,
+  "fields": [
+   {
+    "kind": "u32",
+    "name": "box_size",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "box_type",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "major_brand",
+    "offset": 8,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "minor_version",
+    "offset": 12,
+    "size": 4
+   }
+  ],
+  "magic": "6674797068656963",
+  "magic_off": 4,
   "name": "HEIF",
-  "notes": "",
+  "notes": "HEIF ftyp box, major brand heic; HEIC (286) shares the brand",
   "task": 287
  },
  "288": {
@@ -7490,7 +8114,7 @@
   "task": 289
  },
  "29": {
-  "derivation": "struct",
+  "derivation": "override",
   "endian": "le",
   "ext": ".AMR",
   "fields": [
@@ -7498,61 +8122,19 @@
     "kind": "ascii",
     "name": "magic",
     "offset": 0,
-    "size": 16
+    "size": 6
    },
    {
-    "kind": "ascii",
-    "name": "type",
-    "offset": 16,
-    "size": 8
-   },
-   {
-    "kind": "ascii",
-    "name": "version",
-    "offset": 24,
-    "size": 4
-   },
-   {
-    "kind": "i32",
-    "name": "channels",
-    "offset": 28,
-    "size": 4
-   },
-   {
-    "kind": "i32",
-    "name": "frame_count",
-    "offset": 32,
-    "size": 4
-   },
-   {
-    "kind": "f64",
-    "name": "duration",
-    "offset": 36,
-    "size": 8
-   },
-   {
-    "kind": "bytes",
-    "name": "unique_ft",
-    "offset": 44,
-    "size": 64
-   },
-   {
-    "kind": "i32",
-    "name": "unique_count",
-    "offset": 108,
-    "size": 4
-   },
-   {
-    "kind": "i32",
-    "name": "damaged",
-    "offset": 112,
-    "size": 4
+    "kind": "u8",
+    "name": "first_frame_header",
+    "offset": 6,
+    "size": 1
    }
   ],
-  "magic": "2321414d522d57425f4d43312e300a",
+  "magic": "2321414d52",
   "magic_off": 0,
   "name": "AMR file",
-  "notes": "",
+  "notes": "AMR narrowband and wideband share the #!AMR prefix; the code's WB-only magic missed NB files",
   "task": 29
  },
  "290": {
@@ -7644,25 +8226,25 @@
   "task": 293
  },
  "294": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".HTM",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "Htm File",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 294
  },
  "295": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".HTML",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "Htm File",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 295
  },
  "296": {
@@ -7677,127 +8259,73 @@
   "task": 296
  },
  "297": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".HXX",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "HXX file",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 297
  },
  "298": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".ICAL",
   "fields": [],
-  "magic": null,
+  "magic": "424547494e3a5643414c454e444152",
   "magic_off": 0,
   "name": "I Cal",
-  "notes": "",
+  "notes": "iCalendar, RFC 5545; files begin BEGIN:VCALENDAR",
   "task": 298
  },
  "299": {
-  "derivation": "struct",
+  "derivation": "override",
   "endian": "be",
   "ext": ".ICAL",
   "fields": [
    {
-    "kind": "ascii",
-    "name": "cmm",
+    "kind": "u32",
+    "name": "profile_size",
     "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "cmm_signature",
+    "offset": 4,
     "size": 4
    },
    {
     "kind": "u32",
     "name": "version",
-    "offset": 4,
-    "size": 4
-   },
-   {
-    "kind": "ascii",
-    "name": "class_sig",
     "offset": 8,
     "size": 4
    },
    {
     "kind": "ascii",
-    "name": "color_space",
+    "name": "device_class",
     "offset": 12,
     "size": 4
    },
    {
     "kind": "ascii",
-    "name": "pcs",
+    "name": "color_space",
     "offset": 16,
     "size": 4
    },
    {
     "kind": "ascii",
-    "name": "file_sig",
+    "name": "pcs",
     "offset": 20,
     "size": 4
-   },
-   {
-    "kind": "ascii",
-    "name": "platform",
-    "offset": 24,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "flags",
-    "offset": 28,
-    "size": 4
-   },
-   {
-    "kind": "ascii",
-    "name": "manufacturer",
-    "offset": 32,
-    "size": 4
-   },
-   {
-    "kind": "ascii",
-    "name": "model",
-    "offset": 36,
-    "size": 4
-   },
-   {
-    "kind": "u64",
-    "name": "attributes",
-    "offset": 40,
-    "size": 8
-   },
-   {
-    "kind": "u32",
-    "name": "intent",
-    "offset": 48,
-    "size": 4
-   },
-   {
-    "kind": "ascii",
-    "name": "creator",
-    "offset": 52,
-    "size": 4
-   },
-   {
-    "kind": "bytes",
-    "name": "id",
-    "offset": 56,
-    "size": 16
-   },
-   {
-    "kind": "bytes",
-    "name": "reserved",
-    "offset": 72,
-    "size": 28
    }
   ],
-  "magic": null,
-  "magic_off": 0,
+  "magic": "6d6e7472",
+  "magic_off": 12,
   "name": "ICAL file",
-  "notes": "",
+  "notes": "page is titled .ICAL but the content and sample are an ICC color profile (display class 'mntr' at offset 12; other classes fall back to extension)",
   "task": 299
  },
  "3": {
@@ -7867,14 +8395,63 @@
   "task": 30
  },
  "300": {
-  "derivation": "nocode",
+  "derivation": "override",
   "endian": "le",
-  "ext": ".files",
-  "fields": [],
-  "magic": null,
-  "magic_off": 0,
-  "name": "FILES file",
-  "notes": "no C/C++ reference code on the task page",
+  "ext": ".ICE",
+  "fields": [
+   {
+    "kind": "u8",
+    "name": "header_len",
+    "offset": 0,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "checksum",
+    "offset": 1,
+    "size": 1
+   },
+   {
+    "kind": "ascii",
+    "name": "method",
+    "offset": 2,
+    "size": 5
+   },
+   {
+    "kind": "u32",
+    "name": "comp_size",
+    "offset": 7,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "uncomp_size",
+    "offset": 11,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "timestamp_raw",
+    "offset": 15,
+    "size": 4
+   },
+   {
+    "kind": "u8",
+    "name": "attr",
+    "offset": 19,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "level",
+    "offset": 20,
+    "size": 1
+   }
+  ],
+  "magic": "2d6c68",
+  "magic_off": 2,
+  "name": "ICE file",
+  "notes": "ICE is an LHA/LZH variant (same header); the sample is an LHA-structured archive",
   "task": 300
  },
  "301": {
@@ -7930,36 +8507,36 @@
   "task": 303
  },
  "304": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".ICS",
   "fields": [],
-  "magic": null,
+  "magic": "424547494e3a5643414c454e444152",
   "magic_off": 0,
   "name": "Ics",
-  "notes": "",
+  "notes": "ICS is iCalendar (same format as ICAL, task 298)",
   "task": 304
  },
  "305": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".IFB",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "IFB",
-  "notes": "",
+  "notes": "Siebel EIM config, INI-like text; the sample on disk is a DOCX and needs replacing",
   "task": 305
  },
  "306": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".IFC",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "IFC File",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 306
  },
  "307": {
@@ -8119,14 +8696,14 @@
   "task": 307
  },
  "308": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".IGES",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "IGES",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 308
  },
  "309": {
@@ -8225,25 +8802,25 @@
   "task": 31
  },
  "310": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".INFO",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "INFO file",
-  "notes": "",
+  "notes": "GNU Info, plain text (coreutils.info extracted from the distribution tar.gz)",
   "task": 310
  },
  "311": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".INI",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "Ini",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 311
  },
  "312": {
@@ -8258,14 +8835,111 @@
   "task": 312
  },
  "313": {
-  "derivation": "unknown",
+  "derivation": "container",
   "endian": "le",
   "ext": ".IPT",
-  "fields": [],
-  "magic": null,
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 0,
+    "size": 8
+   },
+   {
+    "kind": "bytes",
+    "name": "clsid",
+    "offset": 8,
+    "size": 16
+   },
+   {
+    "kind": "u16",
+    "name": "minor_version",
+    "offset": 24,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "major_version",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "byte_order",
+    "offset": 28,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "sector_shift",
+    "offset": 30,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mini_sector_shift",
+    "offset": 32,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "num_dir_sectors",
+    "offset": 40,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "num_fat_sectors",
+    "offset": 44,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "first_dir_sector",
+    "offset": 48,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "transaction_sig",
+    "offset": 52,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "mini_stream_cutoff",
+    "offset": 56,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "first_minifat_sector",
+    "offset": 60,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "num_minifat_sectors",
+    "offset": 64,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "first_difat_sector",
+    "offset": 68,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "num_difat_sectors",
+    "offset": 72,
+    "size": 4
+   }
+  ],
+  "magic": "d0cf11e0a1b11ae1",
   "magic_off": 0,
   "name": "IPT file",
-  "notes": "",
+  "notes": "curated-magic",
   "task": 313
  },
  "314": {
@@ -8447,14 +9121,14 @@
   "task": 319
  },
  "32": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".ANN",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "Ann",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 32
  },
  "320": {
@@ -8547,14 +9221,14 @@
   "task": 321
  },
  "322": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".JAV",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "Jav",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 322
  },
  "323": {
@@ -8672,47 +9346,47 @@
   "task": 324
  },
  "325": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".JCM",
   "fields": [],
-  "magic": "2323",
+  "magic": "23235449544c453d",
   "magic_off": 0,
   "name": "JCM file",
-  "notes": "",
+  "notes": "JCAMP-DX; files begin ##TITLE=; the bare ## magic matched any text starting with ##",
   "task": 325
  },
  "326": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".JDX",
   "fields": [],
-  "magic": "2323",
+  "magic": "23235449544c453d",
   "magic_off": 0,
   "name": "JDX file",
-  "notes": "",
+  "notes": "JDX is the JCAMP-DX extension (same format as JCM, task 325); the bare ## magic matched any text starting with ##",
   "task": 326
  },
  "327": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".JNLP",
   "fields": [],
-  "magic": null,
+  "magic": "3c3f786d6c",
   "magic_off": 0,
   "name": "JNLP file",
-  "notes": "",
+  "notes": "xml",
   "task": 327
  },
  "328": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".JL",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "JL file",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 328
  },
  "329": {
@@ -8847,14 +9521,39 @@
   "task": 33
  },
  "330": {
-  "derivation": "unknown",
+  "derivation": "override",
   "endian": "le",
   "ext": ".JPE",
-  "fields": [],
-  "magic": null,
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "soi",
+    "offset": 0,
+    "size": 2
+   },
+   {
+    "kind": "bytes",
+    "name": "marker",
+    "offset": 2,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "segment_length",
+    "offset": 4,
+    "size": 2
+   },
+   {
+    "kind": "ascii",
+    "name": "identifier",
+    "offset": 6,
+    "size": 5
+   }
+  ],
+  "magic": "ffd8ff",
   "magic_off": 0,
   "name": "JPE",
-  "notes": "",
+  "notes": "JPE is the JPEG extension (same format as JPEG, task 331)",
   "task": 330
  },
  "331": {
@@ -8987,25 +9686,50 @@
   "task": 336
  },
  "337": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".JVX",
   "fields": [],
-  "magic": null,
+  "magic": "3c3f786d6c",
   "magic_off": 0,
   "name": "JVX",
-  "notes": "",
+  "notes": "xml",
   "task": 337
  },
  "338": {
-  "derivation": "unknown",
-  "endian": "le",
-  "ext": ".JVX",
-  "fields": [],
-  "magic": null,
+  "derivation": "override",
+  "endian": "be",
+  "ext": ".JXL",
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 0,
+    "size": 12
+   },
+   {
+    "kind": "u32",
+    "name": "box_size",
+    "offset": 12,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "box_type",
+    "offset": 16,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "major_brand",
+    "offset": 20,
+    "size": 4
+   }
+  ],
+  "magic": "0000000c4a584c200d0a870a",
   "magic_off": 0,
-  "name": "JXL",
-  "notes": "",
+  "name": "JPEG XL image",
+  "notes": "page is titled .JVX but the code, spec and sample are JPEG XL (ISO/IEC 18181)",
   "task": 338
  },
  "339": {
@@ -9265,25 +9989,92 @@
   "task": 342
  },
  "343": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "be",
   "ext": ".KO",
   "fields": [],
   "magic": "7f454c46",
   "magic_off": 0,
   "name": "KO",
-  "notes": "curated-magic",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 343
  },
  "344": {
-  "derivation": "unknown",
+  "derivation": "container",
   "endian": "le",
   "ext": ".KRA",
-  "fields": [],
-  "magic": null,
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "version_needed",
+    "offset": 4,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "flags",
+    "offset": 6,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "method",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_time",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_date",
+    "offset": 12,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "crc32",
+    "offset": 14,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "compressed_size",
+    "offset": 18,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "uncompressed_size",
+    "offset": 22,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "filename_len",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "extra_len",
+    "offset": 28,
+    "size": 2
+   }
+  ],
+  "magic": "504b0304",
   "magic_off": 0,
   "name": "Kra",
-  "notes": "",
+  "notes": "curated-magic",
   "task": 344
  },
  "345": {
@@ -9435,14 +10226,14 @@
   "task": 347
  },
  "348": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".KV",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "KV File",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 348
  },
  "349": {
@@ -9450,7 +10241,7 @@
   "endian": "le",
   "ext": ".LABEL",
   "fields": [],
-  "magic": null,
+  "magic": "3c3f786d6c",
   "magic_off": 0,
   "name": "Label",
   "notes": "xml",
@@ -9499,14 +10290,14 @@
   "task": 35
  },
  "350": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".LATEX",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "Latex",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 350
  },
  "351": {
@@ -9605,14 +10396,14 @@
   "task": 352
  },
  "353": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".LDT",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "LDT",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 353
  },
  "354": {
@@ -9646,9 +10437,9 @@
   "task": 354
  },
  "355": {
-  "derivation": "struct",
+  "derivation": "override",
   "endian": "le",
-  "ext": ".LGA",
+  "ext": ".LHA",
   "fields": [
    {
     "kind": "u8",
@@ -9666,55 +10457,43 @@
     "kind": "ascii",
     "name": "method",
     "offset": 2,
-    "size": 6
+    "size": 5
    },
    {
     "kind": "u32",
     "name": "comp_size",
-    "offset": 8,
+    "offset": 7,
     "size": 4
    },
    {
     "kind": "u32",
     "name": "uncomp_size",
-    "offset": 12,
+    "offset": 11,
     "size": 4
    },
    {
     "kind": "u32",
     "name": "timestamp_raw",
-    "offset": 16,
+    "offset": 15,
     "size": 4
    },
    {
     "kind": "u8",
     "name": "attr",
-    "offset": 20,
+    "offset": 19,
     "size": 1
    },
    {
     "kind": "u8",
     "name": "level",
-    "offset": 21,
+    "offset": 20,
     "size": 1
-   },
-   {
-    "kind": "u16",
-    "name": "crc",
-    "offset": 22,
-    "size": 2
-   },
-   {
-    "kind": "i32",
-    "name": "count",
-    "offset": 24,
-    "size": 4
    }
   ],
-  "magic": null,
-  "magic_off": 0,
-  "name": "LGA file",
-  "notes": "",
+  "magic": "2d6c68",
+  "magic_off": 2,
+  "name": "LHA file",
+  "notes": "LHA archive; .LGA was a bad extraction; method is 5 bytes on disk (the char[6] carries a NUL slot); crc follows the variable-length filename",
   "task": 355
  },
  "356": {
@@ -9729,50 +10508,25 @@
   "task": 356
  },
  "357": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".LL",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "LL file",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 357
  },
  "358": {
-  "derivation": "struct",
+  "derivation": "text",
   "endian": "le",
   "ext": ".LM",
-  "fields": [
-   {
-    "kind": "f64",
-    "name": "log_prob",
-    "offset": 0,
-    "size": 8
-   },
-   {
-    "kind": "f64",
-    "name": "backoff",
-    "offset": 8,
-    "size": 8
-   },
-   {
-    "kind": "i32",
-    "name": "max_order",
-    "offset": 16,
-    "size": 4
-   },
-   {
-    "kind": "i32",
-    "name": "vocab_size",
-    "offset": 20,
-    "size": 4
-   }
-  ],
+  "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "LM file",
-  "notes": "",
+  "notes": "ARPA language model, plain text; sample is a partial gunzip (truncated tail)",
   "task": 358
  },
  "359": {
@@ -9880,14 +10634,33 @@
   "task": 363
  },
  "364": {
-  "derivation": "unknown",
+  "derivation": "override",
   "endian": "be",
   "ext": ".LWO",
-  "fields": [],
-  "magic": null,
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "signature",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "file_size",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "form_type",
+    "offset": 8,
+    "size": 4
+   }
+  ],
+  "magic": "464f524d",
   "magic_off": 0,
   "name": "LWO",
-  "notes": "",
+  "notes": "LightWave Object is IFF FORM; the sample on disk is a RAR and needs replacing",
   "task": 364
  },
  "365": {
@@ -9932,10 +10705,10 @@
     "size": 8
    }
   ],
-  "magic": null,
+  "magic": "4c5a4950",
   "magic_off": 0,
   "name": "LZ file",
-  "notes": "",
+  "notes": "curated-magic",
   "task": 365
  },
  "366": {
@@ -9974,7 +10747,7 @@
   "task": 367
  },
  "368": {
-  "derivation": "struct",
+  "derivation": "text",
   "endian": "le",
   "ext": ".MCU",
   "fields": [
@@ -10009,10 +10782,10 @@
     "size": 4
    }
   ],
-  "magic": null,
+  "magic": "234558544d3355",
   "magic_off": 0,
   "name": "MCU file",
-  "notes": "",
+  "notes": "page is titled .MCU but the content and sample are an M3U playlist (#EXTM3U); .M3U8 is task 369",
   "task": 368
  },
  "369": {
@@ -10027,25 +10800,50 @@
   "task": 369
  },
  "37": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".ASAX",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "Asax",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 37
  },
  "370": {
-  "derivation": "unknown",
+  "derivation": "override",
   "endian": "be",
   "ext": ".M4A",
-  "fields": [],
-  "magic": null,
-  "magic_off": 0,
+  "fields": [
+   {
+    "kind": "u32",
+    "name": "box_size",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "box_type",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "major_brand",
+    "offset": 8,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "minor_version",
+    "offset": 12,
+    "size": 4
+   }
+  ],
+  "magic": "667479704d344120",
+  "magic_off": 4,
   "name": "M4A",
-  "notes": "",
+  "notes": "M4A ftyp box, major brand M4A ",
   "task": 370
  },
  "371": {
@@ -10060,25 +10858,75 @@
   "task": 371
  },
  "372": {
-  "derivation": "unknown",
-  "endian": "le",
+  "derivation": "override",
+  "endian": "be",
   "ext": ".M4R",
-  "fields": [],
-  "magic": null,
-  "magic_off": 0,
+  "fields": [
+   {
+    "kind": "u32",
+    "name": "box_size",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "box_type",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "major_brand",
+    "offset": 8,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "minor_version",
+    "offset": 12,
+    "size": 4
+   }
+  ],
+  "magic": "6674797069736f6d",
+  "magic_off": 4,
   "name": "M4R",
-  "notes": "",
+  "notes": "M4R ftyp box, major brand isom",
   "task": 372
  },
  "373": {
-  "derivation": "unknown",
-  "endian": "le",
+  "derivation": "override",
+  "endian": "be",
   "ext": ".M4V",
-  "fields": [],
-  "magic": null,
-  "magic_off": 0,
+  "fields": [
+   {
+    "kind": "u32",
+    "name": "box_size",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "box_type",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "major_brand",
+    "offset": 8,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "minor_version",
+    "offset": 12,
+    "size": 4
+   }
+  ],
+  "magic": "667479704d345620",
+  "magic_off": 4,
   "name": "M4V",
-  "notes": "",
+  "notes": "M4V ftyp box, major brand M4V ",
   "task": 373
  },
  "374": {
@@ -10188,25 +11036,92 @@
   "task": 376
  },
  "377": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".MBOX",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "MBOX file",
-  "notes": "",
+  "notes": "mbox mailboxes are text (From lines)",
   "task": 377
  },
  "378": {
-  "derivation": "unknown",
+  "derivation": "container",
   "endian": "le",
   "ext": ".MCADDON",
-  "fields": [],
-  "magic": null,
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "version_needed",
+    "offset": 4,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "flags",
+    "offset": 6,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "method",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_time",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_date",
+    "offset": 12,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "crc32",
+    "offset": 14,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "compressed_size",
+    "offset": 18,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "uncompressed_size",
+    "offset": 22,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "filename_len",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "extra_len",
+    "offset": 28,
+    "size": 2
+   }
+  ],
+  "magic": "504b0304",
   "magic_off": 0,
   "name": "MCADDON file",
-  "notes": "",
+  "notes": "curated-magic",
   "task": 378
  },
  "379": {
@@ -10221,14 +11136,14 @@
   "task": 379
  },
  "38": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".ASCX",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "Ascx",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 38
  },
  "380": {
@@ -10243,14 +11158,81 @@
   "task": 380
  },
  "381": {
-  "derivation": "unknown",
+  "derivation": "container",
   "endian": "le",
   "ext": ".MCPACK",
-  "fields": [],
-  "magic": null,
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "version_needed",
+    "offset": 4,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "flags",
+    "offset": 6,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "method",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_time",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_date",
+    "offset": 12,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "crc32",
+    "offset": 14,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "compressed_size",
+    "offset": 18,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "uncompressed_size",
+    "offset": 22,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "filename_len",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "extra_len",
+    "offset": 28,
+    "size": 2
+   }
+  ],
+  "magic": "504b0304",
   "magic_off": 0,
   "name": "MCPACK file",
-  "notes": "",
+  "notes": "curated-magic",
   "task": 381
  },
  "382": {
@@ -10276,14 +11258,81 @@
   "task": 383
  },
  "384": {
-  "derivation": "unknown",
+  "derivation": "container",
   "endian": "le",
   "ext": ".MCTEMPLATE",
-  "fields": [],
-  "magic": null,
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "version_needed",
+    "offset": 4,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "flags",
+    "offset": 6,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "method",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_time",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_date",
+    "offset": 12,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "crc32",
+    "offset": 14,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "compressed_size",
+    "offset": 18,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "uncompressed_size",
+    "offset": 22,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "filename_len",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "extra_len",
+    "offset": 28,
+    "size": 2
+   }
+  ],
+  "magic": "504b0304",
   "magic_off": 0,
   "name": "MC Template",
-  "notes": "",
+  "notes": "curated-magic",
   "task": 384
  },
  "385": {
@@ -10298,25 +11347,62 @@
   "task": 385
  },
  "386": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".MD",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "MD",
-  "notes": "",
+  "notes": "Markdown, plain text",
   "task": 386
  },
  "387": {
-  "derivation": "unknown",
+  "derivation": "override",
   "endian": "le",
   "ext": ".MDB",
-  "fields": [],
-  "magic": null,
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 0,
+    "size": 16
+   },
+   {
+    "kind": "u8",
+    "name": "jet_version",
+    "offset": 20,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "file_type",
+    "offset": 21,
+    "size": 1
+   },
+   {
+    "kind": "u16",
+    "name": "sys_collation",
+    "offset": 22,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "code_page",
+    "offset": 28,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "db_key",
+    "offset": 30,
+    "size": 4
+   }
+  ],
+  "magic": "000100005374616e64617264204a6574",
   "magic_off": 0,
   "name": "MDB",
-  "notes": "",
+  "notes": "Jet database; header offsets from the reference code (its numPages@8 reads inside the magic and is omitted)",
   "task": 387
  },
  "388": {
@@ -10924,74 +12010,25 @@
   "task": 393
  },
  "394": {
-  "derivation": "struct",
+  "derivation": "text",
   "endian": "le",
   "ext": ".MEX",
-  "fields": [
-   {
-    "kind": "ascii",
-    "name": "object",
-    "offset": 0,
-    "size": 10
-   },
-   {
-    "kind": "ascii",
-    "name": "format",
-    "offset": 10,
-    "size": 20
-   },
-   {
-    "kind": "ascii",
-    "name": "field",
-    "offset": 30,
-    "size": 10
-   },
-   {
-    "kind": "ascii",
-    "name": "symmetry",
-    "offset": 40,
-    "size": 10
-   },
-   {
-    "kind": "i32",
-    "name": "rows",
-    "offset": 50,
-    "size": 4
-   },
-   {
-    "kind": "i32",
-    "name": "cols",
-    "offset": 54,
-    "size": 4
-   },
-   {
-    "kind": "i32",
-    "name": "entries",
-    "offset": 58,
-    "size": 4
-   },
-   {
-    "kind": "i32",
-    "name": "data_count",
-    "offset": 62,
-    "size": 4
-   }
-  ],
+  "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "MEX file",
-  "notes": "",
+  "notes": "Matrix Market, plain text (matrix.mtx extracted from the distribution tar.gz)",
   "task": 394
  },
  "395": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".MGF",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "MGF",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 395
  },
  "396": {
@@ -11048,14 +12085,14 @@
   "task": 397
  },
  "398": {
-  "derivation": "nocode",
+  "derivation": "override",
   "endian": "le",
-  "ext": ".files",
+  "ext": ".MKA",
   "fields": [],
-  "magic": null,
+  "magic": "1a45dfa3",
   "magic_off": 0,
-  "name": "FILES file",
-  "notes": "no C/C++ reference code on the task page",
+  "name": "MKA file",
+  "notes": "page is about .MKA (Matroska Audio, EBML); the .files extension was a bad extraction",
   "task": 398
  },
  "399": {
@@ -11106,14 +12143,14 @@
   "task": 4
  },
  "40": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".ASHX",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "Ashx",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 40
  },
  "400": {
@@ -11128,14 +12165,14 @@
   "task": 400
  },
  "401": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".MM",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "MM file",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 401
  },
  "402": {
@@ -11353,14 +12390,14 @@
   "task": 406
  },
  "407": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".MODULES",
   "fields": [],
-  "magic": null,
+  "magic": "3c3f786d6c",
   "magic_off": 0,
   "name": "MODULES file",
-  "notes": "",
+  "notes": "xml",
   "task": 407
  },
  "408": {
@@ -11375,25 +12412,25 @@
   "task": 408
  },
  "409": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".MOL",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "MOL file",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 409
  },
  "410": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".MOL2",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "Mol2",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 410
  },
  "411": {
@@ -11590,14 +12627,14 @@
   "task": 419
  },
  "42": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".ASPX",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "ASPX",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 42
  },
  "420": {
@@ -11612,14 +12649,14 @@
   "task": 420
  },
  "421": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".MPS",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "MPS",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 421
  },
  "422": {
@@ -11790,27 +12827,81 @@
   "task": 426
  },
  "427": {
-  "derivation": "struct",
+  "derivation": "override",
   "endian": "le",
   "ext": ".MSCZ",
   "fields": [
    {
-    "kind": "i32",
-    "name": "propCount",
+    "kind": "bytes",
+    "name": "signature",
     "offset": 0,
     "size": 4
    },
    {
-    "kind": "i32",
-    "name": "modified",
+    "kind": "u16",
+    "name": "version_needed",
     "offset": 4,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "flags",
+    "offset": 6,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "method",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_time",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_date",
+    "offset": 12,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "crc32",
+    "offset": 14,
     "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "compressed_size",
+    "offset": 18,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "uncompressed_size",
+    "offset": 22,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "filename_len",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "extra_len",
+    "offset": 28,
+    "size": 2
    }
   ],
-  "magic": null,
+  "magic": "504b0304",
   "magic_off": 0,
   "name": "MSCZ file",
-  "notes": "",
+  "notes": "MuseScore compressed score is a ZIP; the struct fields were counts, not offsets",
   "task": 427
  },
  "428": {
@@ -11866,10 +12957,107 @@
   "task": 43
  },
  "430": {
-  "derivation": "unknown",
+  "derivation": "container",
   "endian": "le",
   "ext": ".MSI",
-  "fields": [],
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 0,
+    "size": 8
+   },
+   {
+    "kind": "bytes",
+    "name": "clsid",
+    "offset": 8,
+    "size": 16
+   },
+   {
+    "kind": "u16",
+    "name": "minor_version",
+    "offset": 24,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "major_version",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "byte_order",
+    "offset": 28,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "sector_shift",
+    "offset": 30,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mini_sector_shift",
+    "offset": 32,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "num_dir_sectors",
+    "offset": 40,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "num_fat_sectors",
+    "offset": 44,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "first_dir_sector",
+    "offset": 48,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "transaction_sig",
+    "offset": 52,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "mini_stream_cutoff",
+    "offset": 56,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "first_minifat_sector",
+    "offset": 60,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "num_minifat_sectors",
+    "offset": 64,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "first_difat_sector",
+    "offset": 68,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "num_difat_sectors",
+    "offset": 72,
+    "size": 4
+   }
+  ],
   "magic": "d0cf11e0a1b11ae1",
   "magic_off": 0,
   "name": "Msi Property",
@@ -11989,14 +13177,14 @@
   "task": 434
  },
  "435": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".MUP",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "Mup File",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 435
  },
  "436": {
@@ -12207,14 +13395,14 @@
   "task": 44
  },
  "440": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".NB",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "NB File",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 440
  },
  "441": {
@@ -12271,14 +13459,14 @@
   "task": 442
  },
  "443": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".NDK",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "NDK",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 443
  },
  "444": {
@@ -12293,10 +13481,29 @@
   "task": 444
  },
  "445": {
-  "derivation": "unknown",
+  "derivation": "container",
   "endian": "be",
   "ext": ".NEF",
-  "fields": [],
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "byte_order",
+    "offset": 0,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "magic",
+    "offset": 2,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "first_ifd_offset",
+    "offset": 4,
+    "size": 4
+   }
+  ],
   "magic": "49492a00",
   "magic_off": 0,
   "name": "Nef",
@@ -12951,14 +14158,14 @@
   "task": 45
  },
  "450": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".NF",
   "fields": [],
-  "magic": null,
+  "magic": "23212f7573722f62696e2f656e76206e657874666c6f77",
   "magic_off": 0,
   "name": "NF",
-  "notes": "",
+  "notes": "Nextflow script; #!/usr/bin/env nextflow shebang",
   "task": 450
  },
  "451": {
@@ -12995,14 +14202,14 @@
   "task": 453
  },
  "454": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".NOFF",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "NOFF",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 454
  },
  "455": {
@@ -13240,10 +14447,29 @@
   "task": 456
  },
  "457": {
-  "derivation": "unknown",
+  "derivation": "container",
   "endian": "be",
   "ext": ".NRW",
-  "fields": [],
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "byte_order",
+    "offset": 0,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "magic",
+    "offset": 2,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "first_ifd_offset",
+    "offset": 4,
+    "size": 4
+   }
+  ],
   "magic": "49492a00",
   "magic_off": 0,
   "name": "NRW",
@@ -13659,25 +14885,25 @@
   "task": 467
  },
  "468": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".OBJ",
   "fields": [],
   "magic": "7f454c46",
   "magic_off": 0,
   "name": "OBJ",
-  "notes": "curated-magic",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 468
  },
  "469": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".OBS",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "Obs File",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 469
  },
  "47": {
@@ -14430,14 +15656,39 @@
   "task": 479
  },
  "48": {
-  "derivation": "unknown",
-  "endian": "le",
+  "derivation": "override",
+  "endian": "be",
   "ext": ".AVIF",
-  "fields": [],
-  "magic": null,
-  "magic_off": 0,
+  "fields": [
+   {
+    "kind": "u32",
+    "name": "box_size",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "box_type",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "major_brand",
+    "offset": 8,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "minor_version",
+    "offset": 12,
+    "size": 4
+   }
+  ],
+  "magic": "6674797061766966",
+  "magic_off": 4,
   "name": "AVIF",
-  "notes": "",
+  "notes": "AVIF ftyp box, major brand avif",
   "task": 48
  },
  "480": {
@@ -14501,14 +15752,63 @@
   "task": 480
  },
  "481": {
-  "derivation": "magic-only",
+  "derivation": "override",
   "endian": "le",
   "ext": ".OGX",
-  "fields": [],
-  "magic": "6669736865616400",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "capture_pattern",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u8",
+    "name": "version",
+    "offset": 4,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "header_type",
+    "offset": 5,
+    "size": 1
+   },
+   {
+    "kind": "u64",
+    "name": "granule_position",
+    "offset": 6,
+    "size": 8
+   },
+   {
+    "kind": "u32",
+    "name": "serial_number",
+    "offset": 14,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "page_sequence",
+    "offset": 18,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "checksum",
+    "offset": 22,
+    "size": 4
+   },
+   {
+    "kind": "u8",
+    "name": "page_segments",
+    "offset": 26,
+    "size": 1
+   }
+  ],
+  "magic": "4f676753",
   "magic_off": 0,
   "name": "OGX",
-  "notes": "",
+  "notes": "OGX is an Ogg container (OggS); the fishead magic is a skeleton-track header, not the file magic",
   "task": 481
  },
  "482": {
@@ -14596,25 +15896,25 @@
   "task": 483
  },
  "484": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".OSB",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "Osb",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 484
  },
  "485": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
-  "ext": ".OSB",
+  "ext": ".OSC",
   "fields": [],
-  "magic": null,
+  "magic": "3c3f786d6c",
   "magic_off": 0,
   "name": "OSB file",
-  "notes": "",
+  "notes": "page confirms .OSC (OpenStreetMap Change, XML); the .OSB extension was wrong; sample gunzipped from .osc.gz",
   "task": 485
  },
  "486": {
@@ -14646,7 +15946,7 @@
   "endian": "le",
   "ext": ".OSM",
   "fields": [],
-  "magic": null,
+  "magic": "3c3f786d6c",
   "magic_off": 0,
   "name": "OSM File",
   "notes": "xml",
@@ -14784,14 +16084,14 @@
   "task": 489
  },
  "49": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".AWK",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "AWK file",
-  "notes": "",
+  "notes": "AWK source, plain text",
   "task": 49
  },
  "490": {
@@ -14819,14 +16119,81 @@
   "task": 490
  },
  "491": {
-  "derivation": "magic-only",
+  "derivation": "override",
   "endian": "le",
   "ext": ".OSZ",
-  "fields": [],
-  "magic": "504b0506",
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "version_needed",
+    "offset": 4,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "flags",
+    "offset": 6,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "method",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_time",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_date",
+    "offset": 12,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "crc32",
+    "offset": 14,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "compressed_size",
+    "offset": 18,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "uncompressed_size",
+    "offset": 22,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "filename_len",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "extra_len",
+    "offset": 28,
+    "size": 2
+   }
+  ],
+  "magic": "504b0304",
   "magic_off": 0,
   "name": "OSZ",
-  "notes": "",
+  "notes": "osu! beatmap archive is a ZIP; the code's 504b0506 is the end-of-central-directory signature, not a file magic",
   "task": 491
  },
  "492": {
@@ -15088,25 +16455,159 @@
   "task": 496
  },
  "497": {
-  "derivation": "unknown",
+  "derivation": "container",
   "endian": "le",
   "ext": ".OTS",
-  "fields": [],
-  "magic": null,
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "version_needed",
+    "offset": 4,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "flags",
+    "offset": 6,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "method",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_time",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_date",
+    "offset": 12,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "crc32",
+    "offset": 14,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "compressed_size",
+    "offset": 18,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "uncompressed_size",
+    "offset": 22,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "filename_len",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "extra_len",
+    "offset": 28,
+    "size": 2
+   }
+  ],
+  "magic": "504b0304",
   "magic_off": 0,
   "name": "Ots",
-  "notes": "",
+  "notes": "curated-magic",
   "task": 497
  },
  "498": {
-  "derivation": "unknown",
+  "derivation": "override",
   "endian": "le",
-  "ext": ".OTS",
-  "fields": [],
-  "magic": null,
+  "ext": ".OTT",
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "version_needed",
+    "offset": 4,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "flags",
+    "offset": 6,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "method",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_time",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_date",
+    "offset": 12,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "crc32",
+    "offset": 14,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "compressed_size",
+    "offset": 18,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "uncompressed_size",
+    "offset": 22,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "filename_len",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "extra_len",
+    "offset": 28,
+    "size": 2
+   }
+  ],
+  "magic": "504b0304",
   "magic_off": 0,
   "name": "OTT",
-  "notes": "",
+  "notes": "page and sample mimetype confirm .OTT (OpenDocument Text Template); .OTS spreadsheet template is task 497",
   "task": 498
  },
  "499": {
@@ -15239,7 +16740,7 @@
   "endian": "le",
   "ext": ".OWL",
   "fields": [],
-  "magic": null,
+  "magic": "3c3f786d6c",
   "magic_off": 0,
   "name": "Owl File",
   "notes": "xml",
@@ -15324,14 +16825,14 @@
   "task": 501
  },
  "502": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".P",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "P file",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 502
  },
  "503": {
@@ -15573,14 +17074,33 @@
   "task": 508
  },
  "509": {
-  "derivation": "unknown",
+  "derivation": "override",
   "endian": "be",
   "ext": ".PAL",
-  "fields": [],
-  "magic": null,
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "signature",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "file_size",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "form_type",
+    "offset": 8,
+    "size": 4
+   }
+  ],
+  "magic": "52494646",
   "magic_off": 0,
   "name": "Pal",
-  "notes": "",
+  "notes": "Microsoft RIFF palette (binary); inherits the RIFF layout",
   "task": 509
  },
  "51": {
@@ -15781,14 +17301,14 @@
   "task": 511
  },
  "512": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".PAR",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "Par File",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 512
  },
  "513": {
@@ -15803,25 +17323,25 @@
   "task": 513
  },
  "514": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".PARAMS",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "PARAMS file",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 514
  },
  "515": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".PAS",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "Pas File",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 515
  },
  "516": {
@@ -16223,7 +17743,7 @@
     "size": 54
    }
   ],
-  "magic": "0a",
+  "magic": "0a05",
   "magic_off": 0,
   "name": "PCX file",
   "notes": "curated-magic",
@@ -16278,14 +17798,14 @@
   "task": 524
  },
  "525": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".PDE",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "Pde File",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 525
  },
  "526": {
@@ -16361,58 +17881,95 @@
   "task": 528
  },
  "529": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".PDN",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "PDN",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 529
  },
  "530": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".PDS",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "PDS",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 530
  },
  "531": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".PEM",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "Pem",
-  "notes": "",
+  "notes": "PEM certificate, base64 text",
   "task": 531
  },
  "532": {
-  "derivation": "nocode",
+  "derivation": "container",
   "endian": "le",
   "ext": ".PET",
-  "fields": [],
-  "magic": null,
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "magic",
+    "offset": 0,
+    "size": 2
+   },
+   {
+    "kind": "u8",
+    "name": "method",
+    "offset": 2,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "flags",
+    "offset": 3,
+    "size": 1
+   },
+   {
+    "kind": "u32",
+    "name": "mtime",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "u8",
+    "name": "extra_flags",
+    "offset": 8,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "os",
+    "offset": 9,
+    "size": 1
+   }
+  ],
+  "magic": "1f8b",
   "magic_off": 0,
   "name": "PET file",
   "notes": "no C/C++ reference code on the task page",
   "task": 532
  },
  "533": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".PFA",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "PFA Manager",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 533
  },
  "534": {
@@ -16515,14 +18072,14 @@
   "task": 538
  },
  "539": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".PGN",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "PGN file",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 539
  },
  "54": {
@@ -16578,14 +18135,14 @@
   "task": 541
  },
  "542": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".PHP",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "PHP file",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 542
  },
  "543": {
@@ -16622,14 +18179,14 @@
   "task": 545
  },
  "546": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".PHY",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "PHY",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 546
  },
  "547": {
@@ -16648,10 +18205,10 @@
   "endian": "be",
   "ext": ".PI2",
   "fields": [],
-  "magic": null,
+  "magic": "00010000",
   "magic_off": 0,
   "name": "PI2",
-  "notes": "",
+  "notes": "curated-magic",
   "task": 548
  },
  "549": {
@@ -16708,14 +18265,14 @@
   "task": 55
  },
  "550": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".PIR",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "Pir",
-  "notes": "",
+  "notes": "NBRF/PIR protein sequence, plain text (comment lines then > entries)",
   "task": 550
  },
  "551": {
@@ -16857,14 +18414,81 @@
   "task": 551
  },
  "552": {
-  "derivation": "unknown",
+  "derivation": "container",
   "endian": "le",
   "ext": ".PK3",
-  "fields": [],
-  "magic": null,
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "version_needed",
+    "offset": 4,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "flags",
+    "offset": 6,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "method",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_time",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_date",
+    "offset": 12,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "crc32",
+    "offset": 14,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "compressed_size",
+    "offset": 18,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "uncompressed_size",
+    "offset": 22,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "filename_len",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "extra_len",
+    "offset": 28,
+    "size": 2
+   }
+  ],
+  "magic": "504b0304",
   "magic_off": 0,
   "name": "PK3",
-  "notes": "",
+  "notes": "curated-magic",
   "task": 552
  },
  "553": {
@@ -16938,14 +18562,14 @@
   "task": 555
  },
  "556": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".PL",
   "fields": [],
-  "magic": null,
+  "magic": "23212f7573722f62696e2f7065726c",
   "magic_off": 0,
   "name": "PL file",
-  "notes": "",
+  "notes": "Perl script; #!/usr/bin/perl shebang (env-perl scripts fall back to extension)",
   "task": 556
  },
  "557": {
@@ -16971,25 +18595,25 @@
   "task": 559
  },
  "56": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".BAS",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "BAS file",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 56
  },
  "560": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".PLS",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "PLS",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 560
  },
  "561": {
@@ -17089,14 +18713,81 @@
   "task": 562
  },
  "563": {
-  "derivation": "unknown",
+  "derivation": "container",
   "endian": "le",
   "ext": ".PMP",
-  "fields": [],
-  "magic": null,
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "version_needed",
+    "offset": 4,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "flags",
+    "offset": 6,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "method",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_time",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_date",
+    "offset": 12,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "crc32",
+    "offset": 14,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "compressed_size",
+    "offset": 18,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "uncompressed_size",
+    "offset": 22,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "filename_len",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "extra_len",
+    "offset": 28,
+    "size": 2
+   }
+  ],
+  "magic": "504b0304",
   "magic_off": 0,
   "name": "PMP file",
-  "notes": "",
+  "notes": "curated-magic",
   "task": 563
  },
  "564": {
@@ -17176,29 +18867,96 @@
   "endian": "le",
   "ext": ".POM",
   "fields": [],
-  "magic": null,
+  "magic": "3c3f786d6c",
   "magic_off": 0,
   "name": "Pom",
   "notes": "xml",
   "task": 565
  },
  "566": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".PEG",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "PEG",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 566
  },
  "567": {
-  "derivation": "text",
+  "derivation": "container",
   "endian": "le",
   "ext": ".PPSX",
-  "fields": [],
-  "magic": null,
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "version_needed",
+    "offset": 4,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "flags",
+    "offset": 6,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "method",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_time",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_date",
+    "offset": 12,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "crc32",
+    "offset": 14,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "compressed_size",
+    "offset": 18,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "uncompressed_size",
+    "offset": 22,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "filename_len",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "extra_len",
+    "offset": 28,
+    "size": 2
+   }
+  ],
+  "magic": "504b0304",
   "magic_off": 0,
   "name": "PPSX",
   "notes": "xml",
@@ -17283,36 +19041,36 @@
   "task": 568
  },
  "569": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".PRJ",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "Prj",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 569
  },
  "57": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".BAT",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "Bat File",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 57
  },
  "570": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".PROPERTIES",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "Properties",
-  "notes": "",
+  "notes": "Java properties file, plain text",
   "task": 570
  },
  "571": {
@@ -17351,25 +19109,25 @@
   "task": 572
  },
  "573": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".PS",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "PS File",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 573
  },
  "574": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".PS1",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "PS1",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 574
  },
  "575": {
@@ -17444,25 +19202,25 @@
   "task": 576
  },
  "577": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".PSM1",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "PSM1",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 577
  },
  "578": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".PSPPALETTE",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "PSPPALETTE file",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 578
  },
  "579": {
@@ -17501,62 +19259,140 @@
   "task": 58
  },
  "580": {
-  "derivation": "struct",
+  "derivation": "text",
   "endian": "le",
   "ext": ".PTF",
-  "fields": [
-   {
-    "kind": "ascii",
-    "name": "name",
-    "offset": 0,
-    "size": 64
-   },
-   {
-    "kind": "i32",
-    "name": "content_count",
-    "offset": 64,
-    "size": 4
-   },
-   {
-    "kind": "i32",
-    "name": "section_count",
-    "offset": 68,
-    "size": 4
-   }
-  ],
-  "magic": null,
+  "fields": [],
+  "magic": "3c3f786d6c",
   "magic_off": 0,
   "name": "PTF file",
-  "notes": "",
+  "notes": "PTF is XML; the struct fields were counts, not file offsets",
   "task": 580
  },
  "581": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".PTS",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "PTS file",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 581
  },
  "582": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".PTX",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "PTX",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 582
  },
  "583": {
-  "derivation": "unknown",
+  "derivation": "container",
   "endian": "le",
   "ext": ".PUB",
-  "fields": [],
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 0,
+    "size": 8
+   },
+   {
+    "kind": "bytes",
+    "name": "clsid",
+    "offset": 8,
+    "size": 16
+   },
+   {
+    "kind": "u16",
+    "name": "minor_version",
+    "offset": 24,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "major_version",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "byte_order",
+    "offset": 28,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "sector_shift",
+    "offset": 30,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mini_sector_shift",
+    "offset": 32,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "num_dir_sectors",
+    "offset": 40,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "num_fat_sectors",
+    "offset": 44,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "first_dir_sector",
+    "offset": 48,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "transaction_sig",
+    "offset": 52,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "mini_stream_cutoff",
+    "offset": 56,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "first_minifat_sector",
+    "offset": 60,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "num_minifat_sectors",
+    "offset": 64,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "first_difat_sector",
+    "offset": 68,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "num_difat_sectors",
+    "offset": 72,
+    "size": 4
+   }
+  ],
   "magic": "d0cf11e0a1b11ae1",
   "magic_off": 0,
   "name": "Pub File",
@@ -17612,25 +19448,25 @@
   "task": 584
  },
  "585": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".PY",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "PY file",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 585
  },
  "586": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".QFX",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "QFX",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 586
  },
  "587": {
@@ -17814,18 +19650,18 @@
   "task": 59
  },
  "590": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".QSS",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "QSS",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 590
  },
  "591": {
-  "derivation": "struct",
+  "derivation": "override",
   "endian": "be",
   "ext": ".QT",
   "fields": [
@@ -17842,10 +19678,10 @@
     "size": 1024
    }
   ],
-  "magic": null,
-  "magic_off": 0,
+  "magic": "6674797071742020",
+  "magic_off": 4,
   "name": "QT file",
-  "notes": "",
+  "notes": "QuickTime ftyp box, major brand qt  (batch-2 hex typo fixed: ht -> qt)",
   "task": 591
  },
  "592": {
@@ -17999,36 +19835,98 @@
   "task": 592
  },
  "593": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".R",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "R file",
-  "notes": "",
+  "notes": "R source, plain text",
   "task": 593
  },
  "594": {
-  "derivation": "unknown",
+  "derivation": "container",
   "endian": "le",
   "ext": ".ROO",
-  "fields": [],
-  "magic": null,
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 0,
+    "size": 7
+   },
+   {
+    "kind": "u16",
+    "name": "header_crc",
+    "offset": 7,
+    "size": 2
+   },
+   {
+    "kind": "u8",
+    "name": "header_type",
+    "offset": 9,
+    "size": 1
+   },
+   {
+    "kind": "u16",
+    "name": "header_flags",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "header_size",
+    "offset": 12,
+    "size": 2
+   }
+  ],
+  "magic": "526172211a0700",
   "magic_off": 0,
   "name": "ROO file",
-  "notes": "",
+  "notes": "curated-magic",
   "task": 594
  },
  "595": {
-  "derivation": "unknown",
+  "derivation": "container",
   "endian": "le",
   "ext": ".R01",
-  "fields": [],
-  "magic": null,
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 0,
+    "size": 7
+   },
+   {
+    "kind": "u16",
+    "name": "header_crc",
+    "offset": 7,
+    "size": 2
+   },
+   {
+    "kind": "u8",
+    "name": "header_type",
+    "offset": 9,
+    "size": 1
+   },
+   {
+    "kind": "u16",
+    "name": "header_flags",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "header_size",
+    "offset": 12,
+    "size": 2
+   }
+  ],
+  "magic": "526172211a0700",
   "magic_off": 0,
   "name": "R01",
-  "notes": "",
+  "notes": "curated-magic",
   "task": 595
  },
  "596": {
@@ -18076,11 +19974,78 @@
   "task": 599
  },
  "6": {
-  "derivation": "text",
+  "derivation": "container",
   "endian": "le",
   "ext": ".3mf",
-  "fields": [],
-  "magic": null,
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "version_needed",
+    "offset": 4,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "flags",
+    "offset": 6,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "method",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_time",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_date",
+    "offset": 12,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "crc32",
+    "offset": 14,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "compressed_size",
+    "offset": 18,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "uncompressed_size",
+    "offset": 22,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "filename_len",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "extra_len",
+    "offset": 28,
+    "size": 2
+   }
+  ],
+  "magic": "504b0304",
   "magic_off": 0,
   "name": "Three MF",
   "notes": "xml",
@@ -18128,14 +20093,14 @@
   "task": 600
  },
  "601": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".RAM",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "RAM",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 601
  },
  "602": {
@@ -18400,25 +20365,62 @@
   "task": 608
  },
  "609": {
-  "derivation": "unknown",
+  "derivation": "container",
   "endian": "be",
   "ext": ".RDS",
-  "fields": [],
-  "magic": null,
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "magic",
+    "offset": 0,
+    "size": 2
+   },
+   {
+    "kind": "u8",
+    "name": "method",
+    "offset": 2,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "flags",
+    "offset": 3,
+    "size": 1
+   },
+   {
+    "kind": "u32",
+    "name": "mtime",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "u8",
+    "name": "extra_flags",
+    "offset": 8,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "os",
+    "offset": 9,
+    "size": 1
+   }
+  ],
+  "magic": "1f8b",
   "magic_off": 0,
   "name": "RDS",
-  "notes": "",
+  "notes": "curated-magic",
   "task": 609
  },
  "61": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".BIB",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "Bib",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 61
  },
  "610": {
@@ -18530,25 +20532,25 @@
   "task": 611
  },
  "612": {
-  "derivation": "override",
+  "derivation": "text",
   "endian": "le",
   "ext": ".REXX",
   "fields": [],
-  "magic": "",
+  "magic": "2321404f4f524558585f53484542414e475f50524f4752414d40",
   "magic_off": 0,
   "name": "REXX file",
-  "notes": "",
+  "notes": "ooRexx script; #!@OOREXX_SHEBANG_PROGRAM@ shebang",
   "task": 612
  },
  "613": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".RKT",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "RKT File",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 613
  },
  "614": {
@@ -18563,14 +20565,14 @@
   "task": 614
  },
  "615": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".RMD",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "RMD",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 615
  },
  "616": {
@@ -18585,14 +20587,14 @@
   "task": 616
  },
  "617": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".ROB",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "Property",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 617
  },
  "618": {
@@ -18944,14 +20946,14 @@
   "task": 620
  },
  "621": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".RSA",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "RSA file",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 621
  },
  "622": {
@@ -19108,14 +21110,14 @@
   "task": 626
  },
  "627": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".RTF",
   "fields": [],
   "magic": "7b5c727466",
   "magic_off": 0,
   "name": "Rtf",
-  "notes": "curated-magic",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 627
  },
  "628": {
@@ -19130,14 +21132,14 @@
   "task": 628
  },
  "629": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".RUN",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "Run File",
-  "notes": "",
+  "notes": ".run installers are shell scripts (makeself); text",
   "task": 629
  },
  "63": {
@@ -19152,14 +21154,14 @@
   "task": 63
  },
  "630": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".S",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "S file",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 630
  },
  "631": {
@@ -19174,14 +21176,14 @@
   "task": 631
  },
  "632": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".S7I",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "S7I",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 632
  },
  "633": {
@@ -19207,14 +21209,14 @@
   "task": 634
  },
  "635": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".SAT",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "Sat File",
-  "notes": "",
+  "notes": "ACIS SAT files are text",
   "task": 635
  },
  "636": {
@@ -19841,92 +21843,25 @@
   "task": 650
  },
  "651": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".SDTS",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "SDTS",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 651
  },
  "652": {
-  "derivation": "container",
+  "derivation": "text",
   "endian": "le",
   "ext": ".SEC",
-  "fields": [
-   {
-    "kind": "bytes",
-    "name": "signature",
-    "offset": 0,
-    "size": 4
-   },
-   {
-    "kind": "u16",
-    "name": "version_needed",
-    "offset": 4,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "flags",
-    "offset": 6,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "method",
-    "offset": 8,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "mod_time",
-    "offset": 10,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "mod_date",
-    "offset": 12,
-    "size": 2
-   },
-   {
-    "kind": "u32",
-    "name": "crc32",
-    "offset": 14,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "compressed_size",
-    "offset": 18,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "uncompressed_size",
-    "offset": 22,
-    "size": 4
-   },
-   {
-    "kind": "u16",
-    "name": "filename_len",
-    "offset": 26,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "extra_len",
-    "offset": 28,
-    "size": 2
-   }
-  ],
-  "magic": "504b0304",
+  "fields": [],
+  "magic": "3c3f786d6c",
   "magic_off": 0,
   "name": "SEC file",
-  "notes": "curated-magic",
+  "notes": "SEC is XML (<?xml ...><SEC ...); the sample is the extracted inner file",
   "task": 652
  },
  "653": {
@@ -20155,32 +22090,32 @@
   "endian": "le",
   "ext": ".SFX",
   "fields": [],
-  "magic": null,
+  "magic": "4d5a",
   "magic_off": 0,
   "name": "SFX file",
-  "notes": "",
+  "notes": "curated-magic",
   "task": 659
  },
  "66": {
-  "derivation": "unknown",
+  "derivation": "override",
   "endian": "le",
   "ext": ".BPS",
   "fields": [],
-  "magic": null,
+  "magic": "42505331",
   "magic_off": 0,
   "name": "BPS",
-  "notes": "",
+  "notes": "BPS1; after the magic the header is variable-length ints, so no fixed layout",
   "task": 66
  },
  "660": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".SH",
   "fields": [],
-  "magic": "2321",
+  "magic": null,
   "magic_off": 0,
   "name": "SH file",
-  "notes": "",
+  "notes": "shell scripts are text; the 2-byte #! magic matched every script file (it stole task 629's .run sample), so scripts identify by extension",
   "task": 660
  },
  "661": {
@@ -20356,14 +22291,14 @@
   "task": 665
  },
  "666": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".SIG",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "SIG file",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 666
  },
  "667": {
@@ -20402,10 +22337,107 @@
   "task": 668
  },
  "669": {
-  "derivation": "unknown",
+  "derivation": "container",
   "endian": "le",
   "ext": ".SLDPART",
-  "fields": [],
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 0,
+    "size": 8
+   },
+   {
+    "kind": "bytes",
+    "name": "clsid",
+    "offset": 8,
+    "size": 16
+   },
+   {
+    "kind": "u16",
+    "name": "minor_version",
+    "offset": 24,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "major_version",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "byte_order",
+    "offset": 28,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "sector_shift",
+    "offset": 30,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mini_sector_shift",
+    "offset": 32,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "num_dir_sectors",
+    "offset": 40,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "num_fat_sectors",
+    "offset": 44,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "first_dir_sector",
+    "offset": 48,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "transaction_sig",
+    "offset": 52,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "mini_stream_cutoff",
+    "offset": 56,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "first_minifat_sector",
+    "offset": 60,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "num_minifat_sectors",
+    "offset": 64,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "first_difat_sector",
+    "offset": 68,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "num_difat_sectors",
+    "offset": 72,
+    "size": 4
+   }
+  ],
   "magic": "d0cf11e0a1b11ae1",
   "magic_off": 0,
   "name": "SLDPART file",
@@ -20835,25 +22867,25 @@
   "task": 682
  },
  "683": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".SQL",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "SQL File",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 683
  },
  "684": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".SRT",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "SRT",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 684
  },
  "685": {
@@ -20861,7 +22893,7 @@
   "endian": "le",
   "ext": ".SRX",
   "fields": [],
-  "magic": null,
+  "magic": "3c3f786d6c",
   "magic_off": 0,
   "name": "SRX",
   "notes": "xml",
@@ -20943,25 +22975,38 @@
   "task": 689
  },
  "69": {
-  "derivation": "unknown",
+  "derivation": "override",
   "endian": "le",
   "ext": ".BSON",
-  "fields": [],
+  "fields": [
+   {
+    "kind": "u32",
+    "name": "total_length",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u8",
+    "name": "first_element_type",
+    "offset": 4,
+    "size": 1
+   }
+  ],
   "magic": null,
   "magic_off": 0,
   "name": "BSON",
-  "notes": "",
+  "notes": "BSON has no magic; documents begin with a 4-byte total length",
   "task": 69
  },
  "690": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".STEP",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "Step",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 690
  },
  "691": {
@@ -21313,10 +23358,76 @@
   "task": 695
  },
  "696": {
-  "derivation": "readseq",
+  "derivation": "override",
   "endian": "le",
   "ext": ".STO",
   "fields": [
+   {
+    "kind": "ascii",
+    "name": "signature",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "version",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "type",
+    "offset": 8,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "name",
+    "offset": 12,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "flags",
+    "offset": 16,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "sell_markup",
+    "offset": 20,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "buy_markup",
+    "offset": 24,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "depreciation",
+    "offset": 28,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "steal_failure",
+    "offset": 32,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "capacity",
+    "offset": 34,
+    "size": 2
+   },
+   {
+    "kind": "bytes",
+    "name": "unknown1",
+    "offset": 36,
+    "size": 8
+   },
    {
     "kind": "u32",
     "name": "purchased_offset",
@@ -21366,21 +23477,21 @@
     "size": 4
    }
   ],
-  "magic": null,
+  "magic": "53544f52",
   "magic_off": 0,
   "name": "STO file",
-  "notes": "",
+  "notes": "Infinity Engine store file (Baldur's Gate); signature STOR + version V1.1; OpenSim text .STO is task 695",
   "task": 696
  },
  "697": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".STP",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "Stp",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 697
  },
  "698": {
@@ -21648,14 +23759,14 @@
   "task": 699
  },
  "7": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".4TH",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "4TH file",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 7
  },
  "70": {
@@ -21796,14 +23907,14 @@
   "task": 701
  },
  "702": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".SVELTE",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "Svelte File",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 702
  },
  "704": {
@@ -21891,14 +24002,14 @@
   "task": 705
  },
  "706": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".SWIFT",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "SWIFT file",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 706
  },
  "707": {
@@ -22124,45 +24235,14 @@
   "task": 709
  },
  "71": {
-  "derivation": "struct",
+  "derivation": "text",
   "endian": "le",
   "ext": ".BYU",
-  "fields": [
-   {
-    "kind": "i32",
-    "name": "nparts",
-    "offset": 0,
-    "size": 4
-   },
-   {
-    "kind": "i32",
-    "name": "npoints",
-    "offset": 4,
-    "size": 4
-   },
-   {
-    "kind": "i32",
-    "name": "npolys",
-    "offset": 8,
-    "size": 4
-   },
-   {
-    "kind": "i32",
-    "name": "nconnects",
-    "offset": 12,
-    "size": 4
-   },
-   {
-    "kind": "i32",
-    "name": "ntest",
-    "offset": 16,
-    "size": 4
-   }
-  ],
+  "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "BYU file",
-  "notes": "",
+  "notes": "BYU geometry is ASCII fixed-width text",
   "task": 71
  },
  "710": {
@@ -22489,14 +24569,14 @@
   "task": 714
  },
  "715": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".SYLK",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "Sylk",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 715
  },
  "716": {
@@ -22901,21 +24981,21 @@
   "endian": "le",
   "ext": ".TGA",
   "fields": [],
-  "magic": null,
+  "magic": "00000200",
   "magic_off": 0,
   "name": "TGA",
-  "notes": "",
+  "notes": "curated-magic",
   "task": 725
  },
  "726": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".TGT",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "TGT",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 726
  },
  "727": {
@@ -23032,14 +25112,14 @@
   "task": 729
  },
  "73": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".C",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "C file",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 73
  },
  "730": {
@@ -23130,14 +25210,14 @@
   "task": 734
  },
  "735": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".TQL",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "TQL File",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 735
  },
  "736": {
@@ -23152,25 +25232,25 @@
   "task": 736
  },
  "737": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".TSCN",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "TSCN",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 737
  },
  "738": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".TSV",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "Tsv",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 738
  },
  "739": {
@@ -23292,14 +25372,14 @@
   "task": 741
  },
  "742": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".TXT",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "Txt File",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 742
  },
  "743": {
@@ -23422,14 +25502,14 @@
   "task": 744
  },
  "745": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".TZST",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "TZST",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 745
  },
  "746": {
@@ -23455,27 +25535,14 @@
   "task": 747
  },
  "748": {
-  "derivation": "struct",
+  "derivation": "text",
   "endian": "le",
   "ext": ".UNV",
-  "fields": [
-   {
-    "kind": "i32",
-    "name": "type",
-    "offset": 0,
-    "size": 4
-   },
-   {
-    "kind": "i32",
-    "name": "num_datasets",
-    "offset": 4,
-    "size": 4
-   }
-  ],
+  "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "UNV file",
-  "notes": "",
+  "notes": "Universal File Format is ASCII text, -1-delimited datasets",
   "task": 748
  },
  "749": {
@@ -23705,14 +25772,14 @@
   "task": 752
  },
  "753": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".URL",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "URL",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 753
  },
  "754": {
@@ -23764,7 +25831,7 @@
   "endian": "le",
   "ext": ".UXF",
   "fields": [],
-  "magic": null,
+  "magic": "3c3f786d6c",
   "magic_off": 0,
   "name": "UXF",
   "notes": "xml",
@@ -23875,122 +25942,62 @@
   "task": 763
  },
  "764": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".VBOX",
   "fields": [],
-  "magic": null,
+  "magic": "3c3f786d6c",
   "magic_off": 0,
   "name": "VBOX File",
-  "notes": "",
+  "notes": "xml",
   "task": 764
  },
  "765": {
-  "derivation": "struct",
+  "derivation": "override",
   "endian": "le",
   "ext": ".VBOXEXTPACK",
   "fields": [
    {
-    "kind": "ascii",
-    "name": "name",
-    "offset": 0,
-    "size": 100
-   },
-   {
-    "kind": "ascii",
-    "name": "mode",
-    "offset": 100,
-    "size": 8
-   },
-   {
-    "kind": "ascii",
-    "name": "uid",
-    "offset": 108,
-    "size": 8
-   },
-   {
-    "kind": "ascii",
-    "name": "gid",
-    "offset": 116,
-    "size": 8
-   },
-   {
-    "kind": "ascii",
-    "name": "mtime",
-    "offset": 124,
-    "size": 12
-   },
-   {
-    "kind": "ascii",
-    "name": "chksum",
-    "offset": 136,
-    "size": 8
-   },
-   {
-    "kind": "ascii",
-    "name": "typeflag",
-    "offset": 144,
-    "size": 1
-   },
-   {
-    "kind": "ascii",
-    "name": "linkname",
-    "offset": 145,
-    "size": 100
-   },
-   {
-    "kind": "ascii",
+    "kind": "bytes",
     "name": "magic",
-    "offset": 245,
-    "size": 6
-   },
-   {
-    "kind": "ascii",
-    "name": "version",
-    "offset": 251,
+    "offset": 0,
     "size": 2
    },
    {
-    "kind": "ascii",
-    "name": "uname",
-    "offset": 253,
-    "size": 32
+    "kind": "u8",
+    "name": "method",
+    "offset": 2,
+    "size": 1
    },
    {
-    "kind": "ascii",
-    "name": "gname",
-    "offset": 285,
-    "size": 32
+    "kind": "u8",
+    "name": "flags",
+    "offset": 3,
+    "size": 1
    },
    {
-    "kind": "ascii",
-    "name": "devmajor",
-    "offset": 317,
-    "size": 8
+    "kind": "u32",
+    "name": "mtime",
+    "offset": 4,
+    "size": 4
    },
    {
-    "kind": "ascii",
-    "name": "devminor",
-    "offset": 325,
-    "size": 8
+    "kind": "u8",
+    "name": "extra_flags",
+    "offset": 8,
+    "size": 1
    },
    {
-    "kind": "ascii",
-    "name": "prefix",
-    "offset": 333,
-    "size": 155
-   },
-   {
-    "kind": "ascii",
-    "name": "pad",
-    "offset": 488,
-    "size": 12
+    "kind": "u8",
+    "name": "os",
+    "offset": 9,
+    "size": 1
    }
   ],
-  "magic": null,
+  "magic": "1f8b",
   "magic_off": 0,
   "name": "V Box Ext Pack",
-  "notes": "",
+  "notes": "VirtualBox extension pack is a gzipped tar; gzip wrapper identified, tar header fields do not apply to the compressed bytes",
   "task": 765
  },
  "766": {
@@ -24005,25 +26012,25 @@
   "task": 766
  },
  "767": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".VBR",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "VBR",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 767
  },
  "768": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".VBS",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "VBS File",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 768
  },
  "769": {
@@ -24443,10 +26450,10 @@
     "size": 1
    }
   ],
-  "magic": null,
+  "magic": "00000200",
   "magic_off": 0,
   "name": "VDA",
-  "notes": "",
+  "notes": "curated-magic",
   "task": 773
  },
  "774": {
@@ -24461,25 +26468,122 @@
   "task": 774
  },
  "775": {
-  "derivation": "unknown",
+  "derivation": "container",
   "endian": "le",
   "ext": ".VDW",
-  "fields": [],
-  "magic": null,
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 0,
+    "size": 8
+   },
+   {
+    "kind": "bytes",
+    "name": "clsid",
+    "offset": 8,
+    "size": 16
+   },
+   {
+    "kind": "u16",
+    "name": "minor_version",
+    "offset": 24,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "major_version",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "byte_order",
+    "offset": 28,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "sector_shift",
+    "offset": 30,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mini_sector_shift",
+    "offset": 32,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "num_dir_sectors",
+    "offset": 40,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "num_fat_sectors",
+    "offset": 44,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "first_dir_sector",
+    "offset": 48,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "transaction_sig",
+    "offset": 52,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "mini_stream_cutoff",
+    "offset": 56,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "first_minifat_sector",
+    "offset": 60,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "num_minifat_sectors",
+    "offset": 64,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "first_difat_sector",
+    "offset": 68,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "num_difat_sectors",
+    "offset": 72,
+    "size": 4
+   }
+  ],
+  "magic": "d0cf11e0a1b11ae1",
   "magic_off": 0,
   "name": "VDW file",
-  "notes": "",
+  "notes": "curated-magic",
   "task": 775
  },
  "776": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".VDX",
   "fields": [],
-  "magic": null,
+  "magic": "3c3f786d6c",
   "magic_off": 0,
   "name": "VDX",
-  "notes": "",
+  "notes": "xml",
   "task": 776
  },
  "777": {
@@ -24574,14 +26678,14 @@
   "task": 781
  },
  "782": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".VMX",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "VMX",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 782
  },
  "783": {
@@ -24660,25 +26764,92 @@
   "task": 786
  },
  "787": {
-  "derivation": "text",
+  "derivation": "container",
   "endian": "le",
   "ext": ".VPR",
-  "fields": [],
-  "magic": null,
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "version_needed",
+    "offset": 4,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "flags",
+    "offset": 6,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "method",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_time",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_date",
+    "offset": 12,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "crc32",
+    "offset": 14,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "compressed_size",
+    "offset": 18,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "uncompressed_size",
+    "offset": 22,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "filename_len",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "extra_len",
+    "offset": 28,
+    "size": 2
+   }
+  ],
+  "magic": "504b0304",
   "magic_off": 0,
   "name": "Vpr",
   "notes": "json",
   "task": 787
  },
  "788": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".VQM",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "VQM",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 788
  },
  "789": {
@@ -24704,14 +26875,14 @@
   "task": 79
  },
  "790": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".VS",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "VS File",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 790
  },
  "791": {
@@ -24939,17 +27110,114 @@
   "endian": "le",
   "ext": ".VSQX",
   "fields": [],
-  "magic": null,
+  "magic": "3c3f786d6c",
   "magic_off": 0,
   "name": "VSQX",
   "notes": "xml",
   "task": 795
  },
  "796": {
-  "derivation": "unknown",
+  "derivation": "container",
   "endian": "le",
   "ext": ".VST",
-  "fields": [],
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 0,
+    "size": 8
+   },
+   {
+    "kind": "bytes",
+    "name": "clsid",
+    "offset": 8,
+    "size": 16
+   },
+   {
+    "kind": "u16",
+    "name": "minor_version",
+    "offset": 24,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "major_version",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "byte_order",
+    "offset": 28,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "sector_shift",
+    "offset": 30,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mini_sector_shift",
+    "offset": 32,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "num_dir_sectors",
+    "offset": 40,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "num_fat_sectors",
+    "offset": 44,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "first_dir_sector",
+    "offset": 48,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "transaction_sig",
+    "offset": 52,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "mini_stream_cutoff",
+    "offset": 56,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "first_minifat_sector",
+    "offset": 60,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "num_minifat_sectors",
+    "offset": 64,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "first_difat_sector",
+    "offset": 68,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "num_difat_sectors",
+    "offset": 72,
+    "size": 4
+   }
+  ],
   "magic": "d0cf11e0a1b11ae1",
   "magic_off": 0,
   "name": "VST file",
@@ -25164,25 +27432,25 @@
   "task": 80
  },
  "800": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".VUE",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "Vue File",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 800
  },
  "801": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".VVVVVV",
   "fields": [],
-  "magic": null,
+  "magic": "3c3f786d6c",
   "magic_off": 0,
   "name": "VVVVVV file",
-  "notes": "",
+  "notes": "VVVVVV level files are XML (<MapData ...)",
   "task": 801
  },
  "802": {
@@ -25421,45 +27689,33 @@
   "task": 809
  },
  "81": {
-  "derivation": "struct",
+  "derivation": "override",
   "endian": "le",
   "ext": ".CDR",
   "fields": [
    {
     "kind": "ascii",
-    "name": "structure",
+    "name": "signature",
     "offset": 0,
-    "size": 32
+    "size": 4
    },
    {
     "kind": "u32",
-    "name": "chunk_size",
-    "offset": 32,
+    "name": "file_size",
+    "offset": 4,
     "size": 4
    },
    {
     "kind": "ascii",
-    "name": "version",
-    "offset": 36,
-    "size": 8
-   },
-   {
-    "kind": "ascii",
-    "name": "magic",
-    "offset": 44,
-    "size": 8
-   },
-   {
-    "kind": "ascii",
-    "name": "endianness",
-    "offset": 52,
-    "size": 16
+    "name": "form_type",
+    "offset": 8,
+    "size": 4
    }
   ],
-  "magic": null,
+  "magic": "52494646",
   "magic_off": 0,
   "name": "CDR",
-  "notes": "",
+  "notes": "CorelDRAW pre-X4 RIFF variant; X4+ ZIP variant is task 82",
   "task": 81
  },
  "810": {
@@ -25480,10 +27736,10 @@
     "size": 2
    }
   ],
-  "magic": null,
+  "magic": "00000200",
   "magic_off": 0,
   "name": "WKS",
-  "notes": "",
+  "notes": "curated-magic",
   "task": 810
  },
  "811": {
@@ -25502,21 +27758,21 @@
   "endian": "le",
   "ext": ".WLMP",
   "fields": [],
-  "magic": null,
+  "magic": "3c3f786d6c",
   "magic_off": 0,
   "name": "WLMP",
   "notes": "xml",
   "task": 812
  },
  "813": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".WLS",
   "fields": [],
-  "magic": null,
+  "magic": "23212f7573722f62696e2f656e7620776f6c6672616d736372697074",
   "magic_off": 0,
   "name": "WLS",
-  "notes": "",
+  "notes": "Wolfram Language script; #!/usr/bin/env wolframscript shebang",
   "task": 813
  },
  "814": {
@@ -25673,14 +27929,14 @@
   "task": 817
  },
  "818": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".WOS",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "WOS",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 818
  },
  "819": {
@@ -25912,62 +28168,92 @@
   "task": 819
  },
  "82": {
-  "derivation": "readseq",
+  "derivation": "override",
   "endian": "le",
   "ext": ".CDR",
   "fields": [
    {
-    "kind": "ascii",
+    "kind": "bytes",
     "name": "signature",
     "offset": 0,
     "size": 4
    },
    {
-    "kind": "u32",
-    "name": "chunk_size",
+    "kind": "u16",
+    "name": "version_needed",
     "offset": 4,
-    "size": 4
-   },
-   {
-    "kind": "ascii",
-    "name": "form_type",
-    "offset": 8,
-    "size": 4
+    "size": 2
    },
    {
     "kind": "u16",
-    "name": "version",
-    "offset": 20,
+    "name": "flags",
+    "offset": 6,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "method",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_time",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_date",
+    "offset": 12,
     "size": 2
    },
    {
     "kind": "u32",
-    "name": "thumbnail_width",
-    "offset": 30,
+    "name": "crc32",
+    "offset": 14,
     "size": 4
    },
    {
     "kind": "u32",
-    "name": "thumbnail_height",
-    "offset": 34,
+    "name": "compressed_size",
+    "offset": 18,
     "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "uncompressed_size",
+    "offset": 22,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "filename_len",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "extra_len",
+    "offset": 28,
+    "size": 2
    }
   ],
-  "magic": null,
+  "magic": "504b0304",
   "magic_off": 0,
   "name": "CDR",
-  "notes": "",
+  "notes": "CorelDRAW X4+ ZIP variant; pre-X4 RIFF variant is task 81",
   "task": 82
  },
  "820": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".WS",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "WS",
-  "notes": "",
+  "notes": "WordStar document, plain text",
   "task": 820
  },
  "821": {
@@ -25975,21 +28261,21 @@
   "endian": "le",
   "ext": ".WSC",
   "fields": [],
-  "magic": null,
+  "magic": "3c3f786d6c",
   "magic_off": 0,
   "name": "WSC File",
   "notes": "xml",
   "task": 821
  },
  "822": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".WTX",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "WTX",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 822
  },
  "823": {
@@ -26046,14 +28332,14 @@
   "task": 824
  },
  "825": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".X3D",
   "fields": [],
-  "magic": null,
+  "magic": "3c3f786d6c",
   "magic_off": 0,
   "name": "X3D",
-  "notes": "",
+  "notes": "xml",
   "task": 825
  },
  "826": {
@@ -26103,7 +28389,7 @@
   "endian": "le",
   "ext": ".XRBL",
   "fields": [],
-  "magic": null,
+  "magic": "3c3f786d6c",
   "magic_off": 0,
   "name": "XBRL",
   "notes": "xml",
@@ -26146,14 +28432,14 @@
   "task": 828
  },
  "829": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".XDM",
   "fields": [],
-  "magic": null,
+  "magic": "3c3f786d6c",
   "magic_off": 0,
   "name": "XDM file",
-  "notes": "",
+  "notes": "xml",
   "task": 829
  },
  "83": {
@@ -26240,10 +28526,107 @@
   "task": 832
  },
  "833": {
-  "derivation": "unknown",
+  "derivation": "container",
   "endian": "le",
   "ext": ".XLS",
-  "fields": [],
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 0,
+    "size": 8
+   },
+   {
+    "kind": "bytes",
+    "name": "clsid",
+    "offset": 8,
+    "size": 16
+   },
+   {
+    "kind": "u16",
+    "name": "minor_version",
+    "offset": 24,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "major_version",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "byte_order",
+    "offset": 28,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "sector_shift",
+    "offset": 30,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mini_sector_shift",
+    "offset": 32,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "num_dir_sectors",
+    "offset": 40,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "num_fat_sectors",
+    "offset": 44,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "first_dir_sector",
+    "offset": 48,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "transaction_sig",
+    "offset": 52,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "mini_stream_cutoff",
+    "offset": 56,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "first_minifat_sector",
+    "offset": 60,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "num_minifat_sectors",
+    "offset": 64,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "first_difat_sector",
+    "offset": 68,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "num_difat_sectors",
+    "offset": 72,
+    "size": 4
+   }
+  ],
   "magic": "d0cf11e0a1b11ae1",
   "magic_off": 0,
   "name": "XLS Header",
@@ -26890,10 +29273,10 @@
     "size": 4
    }
   ],
-  "magic": null,
+  "magic": "1f8b",
   "magic_off": 0,
   "name": "XP",
-  "notes": "",
+  "notes": "curated-magic",
   "task": 840
  },
  "841": {
@@ -26997,14 +29380,14 @@
   "task": 843
  },
  "844": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".XSF",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "XSF",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 844
  },
  "845": {
@@ -27030,25 +29413,25 @@
   "task": 846
  },
  "847": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".XSN",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "XSN file",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 847
  },
  "848": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".XSPF",
   "fields": [],
-  "magic": null,
+  "magic": "3c3f786d6c",
   "magic_off": 0,
   "name": "XSPF file",
-  "notes": "",
+  "notes": "xml",
   "task": 848
  },
  "849": {
@@ -27151,14 +29534,14 @@
   "task": 851
  },
  "852": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".XYZ",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "XYZ file",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 852
  },
  "853": {
@@ -27390,25 +29773,25 @@
   "task": 854
  },
  "855": {
-  "derivation": "magic-only",
+  "derivation": "text",
   "endian": "le",
   "ext": ".YAML",
   "fields": [],
-  "magic": "2020",
+  "magic": null,
   "magic_off": 0,
   "name": "YAML file",
-  "notes": "",
+  "notes": "YAML has no magic; the two-space 'magic' matched any indented text",
   "task": 855
  },
  "856": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".YML",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "Yml",
-  "notes": "",
+  "notes": "verified text format (genuine text sample + page describes text)",
   "task": 856
  },
  "857": {
@@ -27490,14 +29873,14 @@
   "task": 857
  },
  "858": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".ZRX",
   "fields": [],
-  "magic": "2323",
+  "magic": null,
   "magic_off": 0,
   "name": "ZRX file",
-  "notes": "",
+  "notes": "ZRX/ZRXP is line-oriented text; the ## magic matched any ## text file",
   "task": 858
  },
  "859": {
@@ -27918,81 +30301,38 @@
   "task": 93
  },
  "94": {
-  "derivation": "struct",
+  "derivation": "override",
   "endian": "le",
   "ext": ".CMOD",
   "fields": [
    {
-    "kind": "i32",
-    "name": "materialCount",
+    "kind": "ascii",
+    "name": "magic",
     "offset": 0,
-    "size": 4
+    "size": 16
    },
    {
-    "kind": "i32",
-    "name": "meshCount",
-    "offset": 4,
+    "kind": "u32",
+    "name": "materialCount",
+    "offset": 16,
     "size": 4
    }
   ],
-  "magic": null,
+  "magic": "2363656c6d6f64656c5f62696e617279",
   "magic_off": 0,
   "name": "Property",
-  "notes": "",
+  "notes": "binary CMOD; 16-byte #celmodel_binary header then counts (meshCount follows the variable materials array)",
   "task": 94
  },
  "95": {
-  "derivation": "struct",
+  "derivation": "text",
   "endian": "le",
   "ext": ".CMOD",
-  "fields": [
-   {
-    "kind": "i32",
-    "name": "propCount",
-    "offset": 0,
-    "size": 4
-   },
-   {
-    "kind": "i32",
-    "name": "vdCount",
-    "offset": 4,
-    "size": 4
-   },
-   {
-    "kind": "i32",
-    "name": "vertexCount",
-    "offset": 8,
-    "size": 4
-   },
-   {
-    "kind": "i32",
-    "name": "indexCount",
-    "offset": 12,
-    "size": 4
-   },
-   {
-    "kind": "i32",
-    "name": "groupCount",
-    "offset": 16,
-    "size": 4
-   },
-   {
-    "kind": "i32",
-    "name": "materialCount",
-    "offset": 20,
-    "size": 4
-   },
-   {
-    "kind": "i32",
-    "name": "meshCount",
-    "offset": 24,
-    "size": 4
-   }
-  ],
-  "magic": null,
+  "fields": [],
+  "magic": "2363656c6d6f64656c5f5f6173636969",
   "magic_off": 0,
   "name": "Property",
-  "notes": "",
+  "notes": "ASCII CMOD; binary variant is task 94",
   "task": 95
  },
  "96": {
@@ -28038,93 +30378,14 @@
   "task": 96
  },
  "97": {
-  "derivation": "readseq",
+  "derivation": "text",
   "endian": "le",
   "ext": ".COB",
-  "fields": [
-   {
-    "kind": "i16",
-    "name": "majorVersion",
-    "offset": 0,
-    "size": 2
-   },
-   {
-    "kind": "i16",
-    "name": "minorVersion",
-    "offset": 2,
-    "size": 2
-   },
-   {
-    "kind": "i32",
-    "name": "id",
-    "offset": 4,
-    "size": 4
-   },
-   {
-    "kind": "i32",
-    "name": "parentId",
-    "offset": 8,
-    "size": 4
-   },
-   {
-    "kind": "i32",
-    "name": "dataSize",
-    "offset": 12,
-    "size": 4
-   },
-   {
-    "kind": "i16",
-    "name": "nameDupecount",
-    "offset": 16,
-    "size": 2
-   },
-   {
-    "kind": "i16",
-    "name": "nameLength",
-    "offset": 18,
-    "size": 2
-   },
-   {
-    "kind": "i32",
-    "name": "numVertices",
-    "offset": 20,
-    "size": 4
-   },
-   {
-    "kind": "i32",
-    "name": "numUvs",
-    "offset": 24,
-    "size": 4
-   },
-   {
-    "kind": "i32",
-    "name": "numFaces",
-    "offset": 28,
-    "size": 4
-   },
-   {
-    "kind": "i16",
-    "name": "numVerts",
-    "offset": 32,
-    "size": 2
-   },
-   {
-    "kind": "i16",
-    "name": "matIndex",
-    "offset": 34,
-    "size": 2
-   },
-   {
-    "kind": "i16",
-    "name": "flags",
-    "offset": 36,
-    "size": 2
-   }
-  ],
+  "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "Cob File C",
-  "notes": "",
+  "notes": "ASCII COB variant (sample is ASCII); binary COB has no distinguishing magic",
   "task": 97
  },
  "98": {

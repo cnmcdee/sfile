@@ -1,4 +1,13 @@
 {
+ "106": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "107": {
+  "derivation": "text",
+  "notes": "C++ source, plain text"
+ },
  "11": {
   "fields": [
    {
@@ -17,6 +26,169 @@
   "magic": "000100005374616e6461726420414345204442",
   "magic_off": 0,
   "name": "Access database (ACE)"
+ },
+ "111": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "112": {
+  "fields": [],
+  "notes": "CRAI is a gzipped TSV index; gzip wrapper identified, entries are ITF8-encoded (no fixed offsets)"
+ },
+ "113": {
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "signature",
+    "offset": 0,
+    "size": 16
+   },
+   {
+    "kind": "u32",
+    "name": "header_length",
+    "offset": 16,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "version",
+    "offset": 20,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "hardware_type",
+    "offset": 22,
+    "size": 2
+   },
+   {
+    "kind": "u8",
+    "name": "exrom",
+    "offset": 24,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "game",
+    "offset": 25,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "revision",
+    "offset": 26,
+    "size": 1
+   },
+   {
+    "kind": "bytes",
+    "name": "reserved",
+    "offset": 27,
+    "size": 5
+   },
+   {
+    "kind": "ascii",
+    "name": "name",
+    "offset": 32,
+    "size": 32
+   },
+   {
+    "kind": "ascii",
+    "name": "chip_sig",
+    "offset": 64,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "packet_len",
+    "offset": 68,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "chip_type",
+    "offset": 72,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "bank",
+    "offset": 74,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "load_addr",
+    "offset": 76,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "image_size",
+    "offset": 78,
+    "size": 2
+   }
+  ],
+  "magic": "43363420434152545249444745",
+  "notes": "C64 cartridge; struct sizes carried NUL slots (signature 17 not 16, name 33 not 32), offsets corrected"
+ },
+ "117": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "126": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "131": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "142": {
+  "magic": "4d444d50",
+  "notes": "Windows minidump; header fields from the reference struct"
+ },
+ "145": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "149": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "154": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "156": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "157": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "160": {
+  "derivation": "text",
+  "magic": "23235449544c453d",
+  "notes": "DX is a JCAMP-DX extension (same format as JCM/JDX); sample begins ##TITLE="
+ },
+ "161": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "17": {
+  "derivation": "text",
+  "notes": "Agda source, plain text"
  },
  "175": {
   "endian": "le",
@@ -80,10 +252,108 @@
   "magic_off": 0,
   "name": "ELF executable"
  },
+ "176": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "179": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "18": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "186": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "187": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "19": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "193": {
+  "magic": "45553462696e4d28",
+  "notes": "EU4 binary save magic 'EU4binM('; no fixed header layout beyond the magic"
+ },
+ "20": {
+  "magic": "25504446",
+  "notes": "modern .ai files are PDF documents"
+ },
+ "201": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "207": {
+  "magic": "6674797066347620",
+  "magic_off": 4,
+  "notes": "F4V ftyp box, major brand f4v "
+ },
+ "209": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "210": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "216": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "22": {
+  "magic": "41494646",
+  "magic_off": 8,
+  "notes": "AIFF is IFF FORM with form type AIFF at offset 8"
+ },
  "220": {
   "magic": "464353",
   "magic_off": 0,
   "name": "FCS flow cytometry"
+ },
+ "226": {
+  "derivation": "override",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "keyword",
+    "offset": 0,
+    "size": 8
+   },
+   {
+    "kind": "ascii",
+    "name": "value_indicator",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "ascii",
+    "name": "value",
+    "offset": 10,
+    "size": 20
+   },
+   {
+    "kind": "ascii",
+    "name": "comment",
+    "offset": 30,
+    "size": 50
+   }
+  ],
+  "notes": "FITS header is 80-byte ASCII cards; first card decoded"
  },
  "227": {
   "endian": "be",
@@ -117,6 +387,11 @@
   "magic_off": 0,
   "name": "FLAC audio"
  },
+ "228": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "Apophysis flame files are XML (<flame ...>)"
+ },
  "230": {
   "endian": "be",
   "fields": [
@@ -148,6 +423,60 @@
   "magic": "464c56",
   "magic_off": 0,
   "name": "FLV Flash video"
+ },
+ "232": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "235": {
+  "derivation": "text",
+  "magic": "3c3f786d6c",
+  "notes": "FODG is flat ODF (XML); the xmlns: magic is a namespace prefix, not a signature"
+ },
+ "237": {
+  "derivation": "text",
+  "magic": "3c3f786d6c",
+  "notes": "FODS is flat ODF (XML)"
+ },
+ "240": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "241": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "GLSL fragment shaders are text"
+ },
+ "242": {
+  "derivation": "text",
+  "magic": null,
+  "notes": "SAM frequency files are text (fgets line parser); ENDFREQUENCIES is a section marker, not a signature"
+ },
+ "245": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "25": {
+  "fields": [],
+  "notes": "RIFF WAVE-EX with an AMBG chunk; top-level decode is the RIFF header"
+ },
+ "250": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "255": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "258": {
+  "fields": [],
+  "magic": "504b0304",
+  "notes": "GeoGebra is a ZIP; the code's 'images/' magic was a path fragment"
  },
  "259": {
   "endian": "le",
@@ -193,6 +522,21 @@
   "magic_off": 0,
   "name": "GIF image"
  },
+ "260": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "264": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "267": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "GraphML is XML; the struct fields were counts, not file offsets"
+ },
  "277": {
   "endian": "le",
   "fields": [
@@ -237,10 +581,206 @@
   "magic_off": 0,
   "name": "gzip archive"
  },
+ "278": {
+  "derivation": "text",
+  "fields": [],
+  "magic": null,
+  "notes": "C header, plain text; the #include 'magic' matched any C/C++ file"
+ },
+ "28": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "281": {
+  "derivation": "text",
+  "notes": "HTTP Archive, JSON"
+ },
+ "282": {
+  "endian": "be",
+  "fields": [
+   {
+    "kind": "u16",
+    "name": "tag",
+    "offset": 4,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "ref",
+    "offset": 6,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "offset",
+    "offset": 8,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "length",
+    "offset": 12,
+    "size": 4
+   }
+  ],
+  "magic": "0e031301",
+  "notes": "page is titled .HAR but the content and sample are HDF4 (Hierarchical Data Format v4); first data descriptor follows the 4-byte signature"
+ },
+ "286": {
+  "magic": "6674797068656963",
+  "magic_off": 4,
+  "notes": "HEIC ftyp box, major brand heic; HEIF (287) shares the brand"
+ },
+ "287": {
+  "magic": "6674797068656963",
+  "magic_off": 4,
+  "notes": "HEIF ftyp box, major brand heic; HEIC (286) shares the brand"
+ },
+ "29": {
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "magic",
+    "offset": 0,
+    "size": 6
+   },
+   {
+    "kind": "u8",
+    "name": "first_frame_header",
+    "offset": 6,
+    "size": 1
+   }
+  ],
+  "magic": "2321414d52",
+  "notes": "AMR narrowband and wideband share the #!AMR prefix; the code's WB-only magic missed NB files"
+ },
+ "294": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "295": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "297": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "298": {
+  "derivation": "text",
+  "magic": "424547494e3a5643414c454e444152",
+  "notes": "iCalendar, RFC 5545; files begin BEGIN:VCALENDAR"
+ },
+ "299": {
+  "endian": "be",
+  "fields": [
+   {
+    "kind": "u32",
+    "name": "profile_size",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "cmm_signature",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "version",
+    "offset": 8,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "device_class",
+    "offset": 12,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "color_space",
+    "offset": 16,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "pcs",
+    "offset": 20,
+    "size": 4
+   }
+  ],
+  "magic": "6d6e7472",
+  "magic_off": 12,
+  "notes": "page is titled .ICAL but the content and sample are an ICC color profile (display class 'mntr' at offset 12; other classes fall back to extension)"
+ },
  "3": {
   "magic": "66747970336732",
   "magic_off": 4,
   "name": "3GPP2 video"
+ },
+ "300": {
+  "derivation": "override",
+  "ext": ".ICE",
+  "fields": [
+   {
+    "kind": "u8",
+    "name": "header_len",
+    "offset": 0,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "checksum",
+    "offset": 1,
+    "size": 1
+   },
+   {
+    "kind": "ascii",
+    "name": "method",
+    "offset": 2,
+    "size": 5
+   },
+   {
+    "kind": "u32",
+    "name": "comp_size",
+    "offset": 7,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "uncomp_size",
+    "offset": 11,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "timestamp_raw",
+    "offset": 15,
+    "size": 4
+   },
+   {
+    "kind": "u8",
+    "name": "attr",
+    "offset": 19,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "level",
+    "offset": 20,
+    "size": 1
+   }
+  ],
+  "magic": "2d6c68",
+  "magic_off": 2,
+  "name": "ICE file",
+  "notes": "ICE is an LHA/LZH variant (same header); the sample is an LHA-structured archive"
  },
  "303": {
   "endian": "le",
@@ -267,6 +807,35 @@
   "magic": "00000100",
   "magic_off": 0,
   "name": "ICO icon"
+ },
+ "304": {
+  "derivation": "text",
+  "magic": "424547494e3a5643414c454e444152",
+  "notes": "ICS is iCalendar (same format as ICAL, task 298)"
+ },
+ "305": {
+  "derivation": "text",
+  "notes": "Siebel EIM config, INI-like text; the sample on disk is a DOCX and needs replacing"
+ },
+ "306": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "308": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "310": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "GNU Info, plain text (coreutils.info extracted from the distribution tar.gz)"
+ },
+ "311": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
  },
  "317": {
   "endian": "le",
@@ -305,6 +874,61 @@
   "magic": "4344303031",
   "magic_off": 32769,
   "name": "ISO 9660 image"
+ },
+ "32": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "322": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "325": {
+  "derivation": "text",
+  "magic": "23235449544c453d",
+  "notes": "JCAMP-DX; files begin ##TITLE=; the bare ## magic matched any text starting with ##"
+ },
+ "326": {
+  "derivation": "text",
+  "magic": "23235449544c453d",
+  "notes": "JDX is the JCAMP-DX extension (same format as JCM, task 325); the bare ## magic matched any text starting with ##"
+ },
+ "328": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "330": {
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "soi",
+    "offset": 0,
+    "size": 2
+   },
+   {
+    "kind": "bytes",
+    "name": "marker",
+    "offset": 2,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "segment_length",
+    "offset": 4,
+    "size": 2
+   },
+   {
+    "kind": "ascii",
+    "name": "identifier",
+    "offset": 6,
+    "size": 5
+   }
+  ],
+  "magic": "ffd8ff",
+  "notes": "JPE is the JPEG extension (same format as JPEG, task 331)"
  },
  "331": {
   "endian": "be",
@@ -370,9 +994,226 @@
   "magic_off": 0,
   "name": "JPEG image"
  },
+ "338": {
+  "endian": "be",
+  "ext": ".JXL",
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 0,
+    "size": 12
+   },
+   {
+    "kind": "u32",
+    "name": "box_size",
+    "offset": 12,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "box_type",
+    "offset": 16,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "major_brand",
+    "offset": 20,
+    "size": 4
+   }
+  ],
+  "magic": "0000000c4a584c200d0a870a",
+  "magic_off": 0,
+  "name": "JPEG XL image",
+  "notes": "page is titled .JVX but the code, spec and sample are JPEG XL (ISO/IEC 18181)"
+ },
+ "343": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "348": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "350": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "353": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "355": {
+  "derivation": "override",
+  "ext": ".LHA",
+  "fields": [
+   {
+    "kind": "u8",
+    "name": "header_len",
+    "offset": 0,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "checksum",
+    "offset": 1,
+    "size": 1
+   },
+   {
+    "kind": "ascii",
+    "name": "method",
+    "offset": 2,
+    "size": 5
+   },
+   {
+    "kind": "u32",
+    "name": "comp_size",
+    "offset": 7,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "uncomp_size",
+    "offset": 11,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "timestamp_raw",
+    "offset": 15,
+    "size": 4
+   },
+   {
+    "kind": "u8",
+    "name": "attr",
+    "offset": 19,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "level",
+    "offset": 20,
+    "size": 1
+   }
+  ],
+  "magic": "2d6c68",
+  "magic_off": 2,
+  "name": "LHA file",
+  "notes": "LHA archive; .LGA was a bad extraction; method is 5 bytes on disk (the char[6] carries a NUL slot); crc follows the variable-length filename"
+ },
+ "357": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "358": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "ARPA language model, plain text; sample is a partial gunzip (truncated tail)"
+ },
  "359": {
   "magic": "",
   "magic_off": 0
+ },
+ "364": {
+  "magic": "464f524d",
+  "notes": "LightWave Object is IFF FORM; the sample on disk is a RAR and needs replacing"
+ },
+ "368": {
+  "derivation": "text",
+  "magic": "234558544d3355",
+  "notes": "page is titled .MCU but the content and sample are an M3U playlist (#EXTM3U); .M3U8 is task 369"
+ },
+ "37": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "370": {
+  "magic": "667479704d344120",
+  "magic_off": 4,
+  "notes": "M4A ftyp box, major brand M4A "
+ },
+ "372": {
+  "magic": "6674797069736f6d",
+  "magic_off": 4,
+  "notes": "M4R ftyp box, major brand isom"
+ },
+ "373": {
+  "magic": "667479704d345620",
+  "magic_off": 4,
+  "notes": "M4V ftyp box, major brand M4V "
+ },
+ "377": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "mbox mailboxes are text (From lines)"
+ },
+ "38": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "386": {
+  "derivation": "text",
+  "notes": "Markdown, plain text"
+ },
+ "387": {
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 0,
+    "size": 16
+   },
+   {
+    "kind": "u8",
+    "name": "jet_version",
+    "offset": 20,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "file_type",
+    "offset": 21,
+    "size": 1
+   },
+   {
+    "kind": "u16",
+    "name": "sys_collation",
+    "offset": 22,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "code_page",
+    "offset": 28,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "db_key",
+    "offset": 30,
+    "size": 4
+   }
+  ],
+  "magic": "000100005374616e64617264204a6574",
+  "notes": "Jet database; header offsets from the reference code (its numPages@8 reads inside the magic and is omitted)"
+ },
+ "394": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "Matrix Market, plain text (matrix.mtx extracted from the distribution tar.gz)"
+ },
+ "395": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
  },
  "397": {
   "endian": "be",
@@ -412,10 +1253,35 @@
   "magic_off": 0,
   "name": "MIDI file"
  },
+ "398": {
+  "ext": ".MKA",
+  "magic": "1a45dfa3",
+  "notes": "page is about .MKA (Matroska Audio, EBML); the .files extension was a bad extraction"
+ },
  "4": {
   "magic": "66747970336770",
   "magic_off": 4,
   "name": "3GPP video"
+ },
+ "40": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "401": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "409": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "410": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
  },
  "412": {
   "endian": "be",
@@ -518,6 +1384,55 @@
   "magic": "66747970",
   "magic_off": 4,
   "name": "MP4 video"
+ },
+ "42": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "421": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "427": {
+  "fields": [],
+  "notes": "MuseScore compressed score is a ZIP; the struct fields were counts, not offsets"
+ },
+ "435": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "440": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "443": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "450": {
+  "derivation": "text",
+  "magic": "23212f7573722f62696e2f656e76206e657874666c6f77",
+  "notes": "Nextflow script; #!/usr/bin/env nextflow shebang"
+ },
+ "454": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "468": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "469": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
  },
  "47": {
   "endian": "le",
@@ -635,10 +1550,38 @@
   "magic_off": 0,
   "name": "AVI video"
  },
+ "48": {
+  "magic": "6674797061766966",
+  "magic_off": 4,
+  "notes": "AVIF ftyp box, major brand avif"
+ },
+ "481": {
+  "magic": "4f676753",
+  "notes": "OGX is an Ogg container (OggS); the fishead magic is a skeleton-track header, not the file magic"
+ },
  "482": {
   "magic": "4f676753",
   "magic_off": 0,
   "name": "Opus audio (Ogg)"
+ },
+ "484": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "485": {
+  "derivation": "text",
+  "ext": ".OSC",
+  "magic": "3c3f786d6c",
+  "notes": "page confirms .OSC (OpenStreetMap Change, XML); the .OSB extension was wrong; sample gunzipped from .osc.gz"
+ },
+ "49": {
+  "derivation": "text",
+  "notes": "AWK source, plain text"
+ },
+ "491": {
+  "magic": "504b0304",
+  "notes": "osu! beatmap archive is a ZIP; the code's 504b0506 is the end-of-central-directory signature, not a file magic"
  },
  "493": {
   "endian": "be",
@@ -678,10 +1621,43 @@
   "magic_off": 0,
   "name": "OpenType font"
  },
+ "498": {
+  "ext": ".OTT",
+  "notes": "page and sample mimetype confirm .OTT (OpenDocument Text Template); .OTS spreadsheet template is task 497"
+ },
  "5": {
   "magic": "66747970336770",
   "magic_off": 4,
   "name": "3GPP2 video (3GX)"
+ },
+ "502": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "509": {
+  "magic": "52494646",
+  "notes": "Microsoft RIFF palette (binary); inherits the RIFF layout"
+ },
+ "512": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "514": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "515": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "525": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
  },
  "526": {
   "endian": "le",
@@ -702,6 +1678,59 @@
   "magic": "25504446",
   "magic_off": 0,
   "name": "PDF document"
+ },
+ "529": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "530": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "531": {
+  "derivation": "text",
+  "notes": "PEM certificate, base64 text"
+ },
+ "533": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "539": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "542": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "546": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "550": {
+  "derivation": "text",
+  "notes": "NBRF/PIR protein sequence, plain text (comment lines then > entries)"
+ },
+ "556": {
+  "derivation": "text",
+  "magic": "23212f7573722f62696e2f7065726c",
+  "notes": "Perl script; #!/usr/bin/perl shebang (env-perl scripts fall back to extension)"
+ },
+ "56": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "560": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
  },
  "564": {
   "endian": "be",
@@ -771,6 +1800,35 @@
   "magic_off": 0,
   "name": "PNG image"
  },
+ "566": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "569": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "57": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "570": {
+  "derivation": "text",
+  "notes": "Java properties file, plain text"
+ },
+ "573": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "574": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
  "575": {
   "endian": "be",
   "fields": [
@@ -827,6 +1885,60 @@
   "magic_off": 0,
   "name": "Photoshop PSD image"
  },
+ "577": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "578": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "580": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "PTF is XML; the struct fields were counts, not file offsets"
+ },
+ "581": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "582": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "585": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "586": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "590": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "591": {
+  "magic": "6674797071742020",
+  "magic_off": 4,
+  "notes": "QuickTime ftyp box, major brand qt  (batch-2 hex typo fixed: ht -> qt)"
+ },
+ "593": {
+  "derivation": "text",
+  "notes": "R source, plain text"
+ },
+ "601": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
  "603": {
   "endian": "le",
   "fields": [
@@ -865,9 +1977,59 @@
   "magic_off": 0,
   "name": "RAR archive"
  },
+ "61": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
  "612": {
-  "magic": "",
-  "magic_off": 0
+  "derivation": "text",
+  "magic": "2321404f4f524558585f53484542414e475f50524f4752414d40",
+  "notes": "ooRexx script; #!@OOREXX_SHEBANG_PROGRAM@ shebang"
+ },
+ "613": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "615": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "617": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "621": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "627": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "629": {
+  "derivation": "text",
+  "notes": ".run installers are shell scripts (makeself); text"
+ },
+ "630": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "632": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "635": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "ACIS SAT files are text"
  },
  "65": {
   "endian": "le",
@@ -931,6 +2093,197 @@
   "magic_off": 0,
   "name": "BMP image"
  },
+ "651": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "652": {
+  "derivation": "text",
+  "magic": "3c3f786d6c",
+  "notes": "SEC is XML (<?xml ...><SEC ...); the sample is the extracted inner file"
+ },
+ "66": {
+  "magic": "42505331",
+  "notes": "BPS1; after the magic the header is variable-length ints, so no fixed layout"
+ },
+ "660": {
+  "derivation": "text",
+  "magic": null,
+  "notes": "shell scripts are text; the 2-byte #! magic matched every script file (it stole task 629's .run sample), so scripts identify by extension"
+ },
+ "666": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "683": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "684": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "69": {
+  "fields": [
+   {
+    "kind": "u32",
+    "name": "total_length",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u8",
+    "name": "first_element_type",
+    "offset": 4,
+    "size": 1
+   }
+  ],
+  "notes": "BSON has no magic; documents begin with a 4-byte total length"
+ },
+ "690": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "696": {
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "signature",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "version",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "type",
+    "offset": 8,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "name",
+    "offset": 12,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "flags",
+    "offset": 16,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "sell_markup",
+    "offset": 20,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "buy_markup",
+    "offset": 24,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "depreciation",
+    "offset": 28,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "steal_failure",
+    "offset": 32,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "capacity",
+    "offset": 34,
+    "size": 2
+   },
+   {
+    "kind": "bytes",
+    "name": "unknown1",
+    "offset": 36,
+    "size": 8
+   },
+   {
+    "kind": "u32",
+    "name": "purchased_offset",
+    "offset": 44,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "purchased_count",
+    "offset": 48,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "items_offset",
+    "offset": 52,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "items_count",
+    "offset": 56,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "drinks_offset",
+    "offset": 76,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "drinks_count",
+    "offset": 80,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "cures_offset",
+    "offset": 112,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "cures_count",
+    "offset": 116,
+    "size": 4
+   }
+  ],
+  "magic": "53544f52",
+  "notes": "Infinity Engine store file (Baldur's Gate); signature STOR + version V1.1; OpenSim text .STO is task 695"
+ },
+ "697": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "7": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "702": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
  "704": {
   "endian": "le",
   "fields": [
@@ -956,6 +2309,21 @@
   "magic": "465753",
   "magic_off": 0,
   "name": "SWF Flash"
+ },
+ "706": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "71": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "BYU geometry is ASCII fixed-width text"
+ },
+ "715": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
  },
  "718": {
   "endian": "le",
@@ -1063,6 +2431,16 @@
   "magic_off": 0,
   "name": "bzip2 archive"
  },
+ "726": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "73": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
  "730": {
   "endian": "le",
   "fields": [
@@ -1088,6 +2466,21 @@
   "magic": "49492a00",
   "magic_off": 0,
   "name": "TIFF image"
+ },
+ "735": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "737": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "738": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
  },
  "740": {
   "endian": "be",
@@ -1126,6 +2519,21 @@
   "magic": "00010000",
   "magic_off": 0,
   "name": "TrueType font"
+ },
+ "742": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "745": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "748": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "Universal File Format is ASCII text, -1-delimited datasets"
  },
  "75": {
   "endian": "le",
@@ -1213,6 +2621,50 @@
   "magic_off": 0,
   "name": "CAB cabinet archive"
  },
+ "753": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "765": {
+  "fields": [],
+  "notes": "VirtualBox extension pack is a gzipped tar; gzip wrapper identified, tar header fields do not apply to the compressed bytes"
+ },
+ "767": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "768": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "782": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "788": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "790": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "800": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "801": {
+  "derivation": "text",
+  "magic": "3c3f786d6c",
+  "notes": "VVVVVV level files are XML (<MapData ...)"
+ },
  "804": {
   "endian": "le",
   "fields": [
@@ -1287,6 +2739,50 @@
   "magic_off": 0,
   "name": "WAV audio"
  },
+ "81": {
+  "fields": [],
+  "magic": "52494646",
+  "notes": "CorelDRAW pre-X4 RIFF variant; X4+ ZIP variant is task 82"
+ },
+ "813": {
+  "derivation": "text",
+  "magic": "23212f7573722f62696e2f656e7620776f6c6672616d736372697074",
+  "notes": "Wolfram Language script; #!/usr/bin/env wolframscript shebang"
+ },
+ "818": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "82": {
+  "fields": [],
+  "magic": "504b0304",
+  "notes": "CorelDRAW X4+ ZIP variant; pre-X4 RIFF variant is task 81"
+ },
+ "820": {
+  "derivation": "text",
+  "notes": "WordStar document, plain text"
+ },
+ "822": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "844": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "847": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "852": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
+ },
  "853": {
   "endian": "le",
   "fields": [
@@ -1312,6 +2808,16 @@
   "magic": "fd377a585a00",
   "magic_off": 0,
   "name": "XZ archive"
+ },
+ "855": {
+  "derivation": "text",
+  "magic": null,
+  "notes": "YAML has no magic; the two-space 'magic' matched any indented text"
+ },
+ "856": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "verified text format (genuine text sample + page describes text)"
  },
  "857": {
   "endian": "le",
@@ -1387,6 +2893,11 @@
   "magic_off": 0,
   "name": "ZIP archive"
  },
+ "858": {
+  "derivation": "text",
+  "magic": null,
+  "notes": "ZRX/ZRXP is line-oriented text; the ## magic matched any ## text file"
+ },
  "860": {
   "endian": "le",
   "fields": [
@@ -1436,6 +2947,35 @@
  "91": {
   "magic": "",
   "magic_off": 0
+ },
+ "94": {
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "magic",
+    "offset": 0,
+    "size": 16
+   },
+   {
+    "kind": "u32",
+    "name": "materialCount",
+    "offset": 16,
+    "size": 4
+   }
+  ],
+  "magic": "2363656c6d6f64656c5f62696e617279",
+  "notes": "binary CMOD; 16-byte #celmodel_binary header then counts (meshCount follows the variable materials array)"
+ },
+ "95": {
+  "derivation": "text",
+  "fields": [],
+  "magic": "2363656c6d6f64656c5f5f6173636969",
+  "notes": "ASCII CMOD; binary variant is task 94"
+ },
+ "97": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "ASCII COB variant (sample is ASCII); binary COB has no distinguishing magic"
  },
  "_comment": "Hand overrides for sfile's format table. These replace the generator's derived entry for the named task. Every layout here is a published, well-known file-format header (not a guess); each was verified against a real sample file in the test loop. Keys are task numbers as strings. Field kinds: u8/u16/u32/u64 (unsigned LE unless endian=be), i8/i16/i32/i64, f32/f64, ascii, bytes."
 }

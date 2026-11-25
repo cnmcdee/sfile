@@ -119,16 +119,24 @@ static void decode_text(const uint8_t *buf, size_t n) {
         }
         return;
     }
-    if (n >= 1 && (buf[0] == '{' || buf[0] == '[')) {
+    if (n >= 1 && buf[0] == '{') {
         printf("Document type: JSON\n");
         /* first key, if an object */
-        if (buf[0] == '{') {
-            const uint8_t *q1 = memchr(buf + 1, '"', n - 1);
-            const uint8_t *q2 = q1 ? memchr(q1 + 1, '"', n - (size_t)(q1 - buf) - 1) : NULL;
-            if (q1 && q2 && (size_t)(q2 - q1) < 80)
-                printf("First key: %.*s\n", (int)(q2 - q1 - 1), q1 + 1);
-        }
+        const uint8_t *q1 = memchr(buf + 1, '"', n - 1);
+        const uint8_t *q2 = q1 ? memchr(q1 + 1, '"', n - (size_t)(q1 - buf) - 1) : NULL;
+        if (q1 && q2 && (size_t)(q2 - q1) < 80)
+            printf("First key: %.*s\n", (int)(q2 - q1 - 1), q1 + 1);
         return;
+    }
+    if (n >= 2 && buf[0] == '[') {
+        /* a JSON array must start with a value; an INI section header
+           like [PHP] starts with a bare word and must not match */
+        char c = (char)buf[1];
+        if (c == '"' || c == '{' || c == '[' || (c >= '0' && c <= '9') ||
+            c == '-' || c == 't' || c == 'f' || c == 'n') {
+            printf("Document type: JSON\n");
+            return;
+        }
     }
     /* plain text: first line */
     printf("Document type: text\n");

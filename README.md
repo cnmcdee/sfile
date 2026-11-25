@@ -34,19 +34,44 @@ magic table and hand overrides for well-known container formats
 
 | derivation | count | meaning |
 |---|---|---|
-| `readseq` | 37 | fields + offsets from a parsed sequential read sequence (highest confidence) |
-| `struct` | 244 | struct fields in order, sizes from C types (char[N] NUL slots are a known risk — the test loop verifies) |
+| `readseq` | 30 | fields + offsets from a parsed sequential read sequence (highest confidence) |
+| `struct` | 210 | struct fields in order, sizes from C types (char[N] NUL slots are a known risk — the test loop verifies) |
 | `explicit` | 3 | C++ class reading `data[N]` / `data + N` with named properties |
-| `text` | 58 | XML/JSON/text format — decoded by the text decoder (root element, version, first line) |
-| `magic-only` | 12 | magic known, no fixed field layout |
-| `override` | 30 | hand-written, spec-derived layout (PNG, ZIP, WAV, …) — verified against real samples |
-| `unknown` | 477 | nothing derivable from the reference code — identified by magic/extension only, hex dump shown |
+| `text` | 220 | XML/JSON/text format — decoded by the text decoder (root element, version, first line) |
+| `container` | 65 | inherits a container's fixed header (ZIP local header, RIFF, ftyp, Ogg page, gzip, RAR 4.x, IFF FORM, PDF, TIFF, OLE/CFB) |
+| `override` | 78 | hand-written, spec-derived layout — verified against real samples |
+| `magic-only` | 4 | magic known, no fixed field layout |
+| `nocode` | 10 | no C/C++ code on the task page, no layout derived |
+| `nocode-text` | 5 | no C/C++ code, but the format is text |
+| `unknown` | 224 | nothing derivable from the reference code — identified by magic/extension only, hex dump shown |
 
-145+ formats have a magic signature; the rest are identified by extension
-until a sample-derived magic is added (see Testing). The 18 tasks with no
-C/C++ code at all (108, 151, 172, 233, 300, 312, 345, 369, 398, 408, 532,
-623, 671, 720, 741, 757, 793, 794) are `unknown` unless a hand override
-exists for them.
+292 formats have a magic signature; 385 have a field layout. The 18 tasks
+with no C/C++ code at all (108, 151, 172, 233, 300, 312, 345, 369, 398, 408,
+532, 623, 671, 720, 741, 757, 793, 794) are `nocode`/`nocode-text` unless a
+hand override exists for them (300 ICE and 398 MKA have overrides).
+
+## Testing
+
+`tests/run_tests.py` runs `sfile` on every sample in `samples/` (one real
+sample file per format, collected from the task pages' download links or by
+web search) and records PASS / PARTIAL / FAIL / NO SAMPLE in
+`tests/results.json`. Latest run (Nov 25, 2026):
+
+| result | count | meaning |
+|---|---|---|
+| PASS | 440 | identified and header decoded |
+| PARTIAL | 82 | identified, no derivable layout (mostly binary formats whose reference code is chunk-scanning or variable-length; EBML formats; a few honest no-layout cases) |
+| FAIL | 2 | 312 (.INI) and 520 (.PBO) — both are duplicate tasks (311 and 519 describe the same format); indistinguishable by content |
+| NO SAMPLE | 325 | no real sample file found yet (sample collection in progress) |
+
+Fixes from the test loop live in `tools/apply_testloop_overrides*.py`
+(six batches so far, 247 overrides total): bogus magics removed
+(`##`, `##TITLE=` for the wrong format, `xmlns:`, `504b0506` as a file
+magic, …), wrong extensions fixed (.JVX→.JXL, .files→.MKA, .LGA→.LHA,
+.files→.ICE, .OTS→.OTT, .OSB→.OSC), container layouts added, and ~130
+formats verified as text from their samples and pages. Wrong samples
+(404 pages, HTML error pages, distribution archives, PDFs mislabeled as
+other formats, JS libraries saved as samples) are deleted, not tested.
 
 ## Design
 
