@@ -5,3 +5,8 @@ samples/*
 testwork*/
 __pycache__/
 *.pyc
+# Autonomous loop driver bookkeeping (not source; the main agent reads
+# LOOP_STATUS directly from the filesystem).
+LOOP_STATUS
+loop.log
+driver.pid
