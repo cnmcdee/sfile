@@ -59,19 +59,23 @@ web search) and records PASS / PARTIAL / FAIL / NO SAMPLE in
 
 | result | count | meaning |
 |---|---|---|
-| PASS | 440 | identified and header decoded |
-| PARTIAL | 82 | identified, no derivable layout (mostly binary formats whose reference code is chunk-scanning or variable-length; EBML formats; a few honest no-layout cases) |
+| PASS | 482 | identified and header decoded |
+| PARTIAL | 69 | identified, no derivable layout (mostly binary formats whose reference code is chunk-scanning or variable-length; EBML formats; a few honest no-layout cases) |
 | FAIL | 2 | 312 (.INI) and 520 (.PBO) — both are duplicate tasks (311 and 519 describe the same format); indistinguishable by content |
-| NO SAMPLE | 325 | no real sample file found yet (sample collection in progress) |
+| NO SAMPLE | 296 | no real sample file found yet (sample collection in progress — 4 collectors covering 1–215, 216–430, 431–645, 646–860) |
 
 Fixes from the test loop live in `tools/apply_testloop_overrides*.py`
-(six batches so far, 247 overrides total): bogus magics removed
+(ten batches so far, ~270 overrides total): bogus magics removed
 (`##`, `##TITLE=` for the wrong format, `xmlns:`, `504b0506` as a file
-magic, …), wrong extensions fixed (.JVX→.JXL, .files→.MKA, .LGA→.LHA,
-.files→.ICE, .OTS→.OTT, .OSB→.OSC), container layouts added, and ~130
-formats verified as text from their samples and pages. Wrong samples
-(404 pages, HTML error pages, distribution archives, PDFs mislabeled as
-other formats, JS libraries saved as samples) are deleted, not tested.
+magic, `fishead`, `ENDFREQUENCIES`, …), wrong extensions fixed (.JVX→.JXL,
+.files→.MKA/.ICE, .LGA→.LHA, .SC7→.SD7, .OTS→.OTT, .OSB→.OSC), container
+layouts added (ar, MZ/DOS, PDF, TIFF LE/BE, OLE/CFB), hand layouts for
+~20 prominent formats (DEB, DICOM, EPS, EXR, HDF5, ELF64, TGA, S3M, IT,
+3DS, FBX, MOBI, NetCDF, AU, DPX, CHM, RealMedia, DWF), and ~130 formats
+verified as text from their samples and pages. Wrong samples
+(404 pages, HTML error pages, S3 AccessDenied pages, distribution
+archives, PDFs mislabeled as other formats, JS libraries saved as
+samples, gzip files saved as .bson) are deleted, not tested.
 
 ## Design
 
