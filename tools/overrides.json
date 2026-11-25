@@ -28,6 +28,92 @@
   "magic_off": 0,
   "notes": "COMPILE file is XML; <?xml magic, extension disambiguates; text decode"
  },
+ "105": {
+  "derivation": "override",
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "u16",
+    "name": "magic",
+    "offset": 0,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "device",
+    "offset": 2,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "inode",
+    "offset": 4,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mode",
+    "offset": 6,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "uid",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "gid",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "nlink",
+    "offset": 12,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "rdev",
+    "offset": 14,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mtime_hi",
+    "offset": 16,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mtime_lo",
+    "offset": 18,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "namesize",
+    "offset": 20,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "filesize_hi",
+    "offset": 22,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "filesize_lo",
+    "offset": 24,
+    "size": 2
+   }
+  ],
+  "magic": "c771",
+  "notes": "Old binary cpio, NOT the newc '070701' layout in the reference block (sample is binary cpio); 9-entry chain through TRAILER!!! verified, modes 0100644, mtime 2007-10-01; mtime/filesize stored high word first"
+ },
  "106": {
   "derivation": "text",
   "fields": [],
@@ -183,6 +269,86 @@
   "fields": [],
   "notes": "verified text format (genuine text sample + page describes text)"
  },
+ "127": {
+  "derivation": "override",
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "signature",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "primary_sequence",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "secondary_sequence",
+    "offset": 8,
+    "size": 4
+   },
+   {
+    "kind": "u64",
+    "name": "last_written",
+    "offset": 12,
+    "size": 8
+   },
+   {
+    "kind": "u32",
+    "name": "major_version",
+    "offset": 20,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "minor_version",
+    "offset": 24,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "file_type",
+    "offset": 28,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "file_format",
+    "offset": 32,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "root_cell_offset",
+    "offset": 36,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "hive_bins_size",
+    "offset": 40,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "clustering",
+    "offset": 44,
+    "size": 4
+   },
+   {
+    "kind": "bytes",
+    "name": "file_name",
+    "offset": 48,
+    "size": 64
+   }
+  ],
+  "magic": "72656766",
+  "notes": "Windows registry hive (regf) base block, NOT the %-header text .dat in the reference block; offsets confirmed against the libregf spec; seq numbers equal (75), root cell 0x20, first hbin at 4096; file_name is UTF-16LE"
+ },
  "131": {
   "derivation": "text",
   "fields": [],
@@ -282,6 +448,80 @@
   "derivation": "text",
   "fields": [],
   "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "15": {
+  "derivation": "override",
+  "endian": "be",
+  "fields": [
+   {
+    "kind": "u16",
+    "name": "magic",
+    "offset": 0,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "data_offset",
+    "offset": 2,
+    "size": 2
+   },
+   {
+    "kind": "u8",
+    "name": "encoding_type",
+    "offset": 4,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "block_size",
+    "offset": 5,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "sample_bitdepth",
+    "offset": 6,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "channel_count",
+    "offset": 7,
+    "size": 1
+   },
+   {
+    "kind": "u32",
+    "name": "sample_rate",
+    "offset": 8,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "total_samples",
+    "offset": 12,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "highpass_freq",
+    "offset": 16,
+    "size": 2
+   },
+   {
+    "kind": "u8",
+    "name": "version",
+    "offset": 18,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "flags",
+    "offset": 19,
+    "size": 1
+   }
+  ],
+  "magic": "8000",
+  "notes": "ADX (CRI ADX) header, big-endian (block used native-endian reads; sample proves BE: rate 44100, data offset 36); version 3 so no loop fields; copyright area at 32 is zero-filled in sample"
  },
  "152": {
   "derivation": "override",
@@ -556,6 +796,55 @@
   "magic": "45553462696e4d28",
   "notes": "EU4 binary save magic 'EU4binM('; no fixed header layout beyond the magic"
  },
+ "198": {
+  "derivation": "override",
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "u16",
+    "name": "machine",
+    "offset": 0,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "num_sections",
+    "offset": 2,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "timestamp",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "symbol_table_ptr",
+    "offset": 8,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "num_symbols",
+    "offset": 12,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "opt_header_size",
+    "offset": 16,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "characteristics",
+    "offset": 18,
+    "size": 2
+   }
+  ],
+  "notes": "Sample is a COFF object (machine 0x14c, 3 sections .edata/.debug$S/.drectve, symtab ptr 3606, 126 symbols); the block's ar-archive (!<arch>) layout is wrong for this sample and was not used. Standard 20-byte COFF file header."
+ },
  "199": {
   "derivation": "override",
   "fields": [
@@ -687,6 +976,20 @@
   "magic_off": 0,
   "name": "FCS flow cytometry"
  },
+ "222": {
+  "derivation": "override",
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "u32",
+    "name": "version",
+    "offset": 8,
+    "size": 4
+   }
+  ],
+  "magic": "4957666675313030",
+  "notes": "Only 1 fixed field beyond the magic: version 0x114 (276) = MW2 PC per published FastFile docs; magic IWffu100 (8 bytes) + LE version verified. Bytes 12-20 have no verifiable field assignment (zlib zone data starts at offset 21 in this sample) and the block's 44-byte header layout does not match this sample, so nothing further is claimed."
+ },
  "226": {
   "derivation": "override",
   "fields": [
@@ -753,6 +1056,56 @@
   "derivation": "text",
   "fields": [],
   "notes": "Apophysis flame files are XML (<flame ...>)"
+ },
+ "229": {
+  "derivation": "override",
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "magic",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "header_size",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "i16",
+    "name": "format",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "num_channels",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "ppq",
+    "offset": 12,
+    "size": 2
+   },
+   {
+    "kind": "ascii",
+    "name": "data_magic",
+    "offset": 14,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "data_size",
+    "offset": 18,
+    "size": 4
+   }
+  ],
+  "magic": "464c6864",
+  "notes": "FL Studio project: FLhd size 6, format 0, 19 channels, ppq 96; FLdt size 190106 with 22+size == file size exactly."
  },
  "230": {
   "endian": "be",
@@ -888,6 +1241,67 @@
   "magic": "47494638",
   "magic_off": 0,
   "name": "GIF image"
+ },
+ "26": {
+  "derivation": "override",
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "signature",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "length",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "u8",
+    "name": "revision",
+    "offset": 8,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "checksum",
+    "offset": 9,
+    "size": 1
+   },
+   {
+    "kind": "ascii",
+    "name": "oem_id",
+    "offset": 10,
+    "size": 6
+   },
+   {
+    "kind": "bytes",
+    "name": "oem_table_id",
+    "offset": 16,
+    "size": 8
+   },
+   {
+    "kind": "u32",
+    "name": "oem_revision",
+    "offset": 24,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "creator_id",
+    "offset": 28,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "creator_revision",
+    "offset": 32,
+    "size": 4
+   }
+  ],
+  "notes": "ACPI table header (SSDT sample); length 1952 equals file size and header checksum sums to 0; signature varies (SSDT/DSDT/...) so no magic set; oem_table_id is NUL-padded in sample"
  },
  "260": {
   "derivation": "text",
@@ -1097,6 +1511,61 @@
   "magic": "894844460d0a1a0a",
   "notes": "HDF5 superblock v0 (address fields assume size_of_offsets=8, as in this sample); v2/v3 superblocks differ"
  },
+ "284": {
+  "derivation": "override",
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "u32",
+    "name": "reserved",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "fdd_type",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "header_size",
+    "offset": 8,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "data_size",
+    "offset": 12,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "bytes_per_sector",
+    "offset": 16,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "sectors",
+    "offset": 20,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "heads",
+    "offset": 24,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "cylinders",
+    "offset": 28,
+    "size": 4
+   }
+  ],
+  "notes": "HDI disk image: header_size 4096 + data_size 42823680 == file size; geometry checks out exactly (512*17*8*615 == data_size). Variable-length comment area (header_size-32) not included."
+ },
  "286": {
   "magic": "6674797068656963",
   "magic_off": 4,
@@ -1252,6 +1721,38 @@
   "name": "ICE file",
   "notes": "ICE is an LHA/LZH variant (same header); the sample is an LHA-structured archive"
  },
+ "302": {
+  "derivation": "override",
+  "endian": "be",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "magic",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "file_length",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "first_entry_type",
+    "offset": 8,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "first_entry_length",
+    "offset": 12,
+    "size": 4
+   }
+  ],
+  "magic": "69636e73",
+  "notes": "Apple icns: file_length 88653 == file size; first entry type h8mk, length 2312. Further entries are length-prefixed and variable in count, so only the first entry is decoded."
+ },
  "303": {
   "endian": "le",
   "fields": [
@@ -1296,6 +1797,139 @@
   "derivation": "text",
   "fields": [],
   "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "309": {
+  "derivation": "override",
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "jump_instruction",
+    "offset": 0,
+    "size": 3
+   },
+   {
+    "kind": "ascii",
+    "name": "oem_name",
+    "offset": 3,
+    "size": 8
+   },
+   {
+    "kind": "u16",
+    "name": "bytes_per_sector",
+    "offset": 11,
+    "size": 2
+   },
+   {
+    "kind": "u8",
+    "name": "sectors_per_cluster",
+    "offset": 13,
+    "size": 1
+   },
+   {
+    "kind": "u16",
+    "name": "reserved_sectors",
+    "offset": 14,
+    "size": 2
+   },
+   {
+    "kind": "u8",
+    "name": "num_fats",
+    "offset": 16,
+    "size": 1
+   },
+   {
+    "kind": "u16",
+    "name": "root_dir_entries",
+    "offset": 17,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "total_sectors",
+    "offset": 19,
+    "size": 2
+   },
+   {
+    "kind": "u8",
+    "name": "media_descriptor",
+    "offset": 21,
+    "size": 1
+   },
+   {
+    "kind": "u16",
+    "name": "sectors_per_fat",
+    "offset": 22,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "sectors_per_track",
+    "offset": 24,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "num_heads",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "hidden_sectors",
+    "offset": 28,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "large_total_sectors",
+    "offset": 32,
+    "size": 4
+   },
+   {
+    "kind": "u8",
+    "name": "physical_drive_number",
+    "offset": 36,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "reserved",
+    "offset": 37,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "ext_boot_signature",
+    "offset": 38,
+    "size": 1
+   },
+   {
+    "kind": "u32",
+    "name": "volume_id",
+    "offset": 39,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "volume_label",
+    "offset": 43,
+    "size": 11
+   },
+   {
+    "kind": "ascii",
+    "name": "fs_type",
+    "offset": 54,
+    "size": 8
+   },
+   {
+    "kind": "u16",
+    "name": "boot_sector_signature",
+    "offset": 510,
+    "size": 2
+   }
+  ],
+  "notes": "FAT12 boot sector / BIOS parameter block (sample is a 1.44 MB floppy image): 512 bytes/sector, 2880 total sectors x512 == file size, FAT12 type string, boot signature 0x55AA."
  },
  "310": {
   "derivation": "text",
@@ -1433,6 +2067,109 @@
   "fields": [],
   "notes": "verified text format (genuine text sample + page describes text)"
  },
+ "320": {
+  "derivation": "override",
+  "endian": "be",
+  "fields": [
+   {
+    "kind": "u16",
+    "name": "soc_marker",
+    "offset": 0,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "siz_marker",
+    "offset": 2,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "siz_length",
+    "offset": 4,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "rsiz",
+    "offset": 6,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "xsiz",
+    "offset": 8,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "ysiz",
+    "offset": 12,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "xosiz",
+    "offset": 16,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "yosiz",
+    "offset": 20,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "xtsiz",
+    "offset": 24,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "ytsiz",
+    "offset": 28,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "xtosiz",
+    "offset": 32,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "ytosiz",
+    "offset": 36,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "csiz",
+    "offset": 40,
+    "size": 2
+   },
+   {
+    "kind": "u8",
+    "name": "comp0_ssiz",
+    "offset": 42,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "comp0_xrsiz",
+    "offset": 43,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "comp0_yrsiz",
+    "offset": 44,
+    "size": 1
+   }
+  ],
+  "notes": "JPEG 2000 codestream: SOC (FF4F) then SIZ (FF51, length 41); 128x128 image, 1 component (Ssiz 7, XRsiz/YRsiz 1), COD marker FF5C follows at offset 45. Per-component fields beyond component 0 are count-dependent and not included."
+ },
  "322": {
   "derivation": "text",
   "fields": [],
@@ -1452,6 +2189,55 @@
   "derivation": "text",
   "fields": [],
   "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "329": {
+  "derivation": "override",
+  "endian": "be",
+  "fields": [
+   {
+    "kind": "u32",
+    "name": "sig_box_size",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "sig_box_type",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "ftyp_box_size",
+    "offset": 12,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "ftyp_box_type",
+    "offset": 16,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "brand",
+    "offset": 20,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "minor_version",
+    "offset": 24,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "compat_brand",
+    "offset": 28,
+    "size": 4
+   }
+  ],
+  "notes": "JP2 fixed prefix only: signature box (size 12, type 'jP  ') + ftyp box (size 20, brand 'jp2 ', minor 0). The jp2h/ihdr fields are at a variable offset (box-dependent) and are not included."
  },
  "330": {
   "fields": [
@@ -1674,6 +2460,130 @@
   "magic_off": 0,
   "notes": "LMD is FCS (Flow Cytometry Standard); FCS magic, extension disambiguates from FCS"
  },
+ "36": {
+  "derivation": "override",
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "signature",
+    "offset": 0,
+    "size": 2
+   },
+   {
+    "kind": "u8",
+    "name": "version",
+    "offset": 2,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "unknown1",
+    "offset": 3,
+    "size": 1
+   },
+   {
+    "kind": "bytes",
+    "name": "padding",
+    "offset": 4,
+    "size": 9
+   },
+   {
+    "kind": "u16",
+    "name": "width",
+    "offset": 13,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "height",
+    "offset": 15,
+    "size": 2
+   }
+  ],
+  "magic": "4a47",
+  "notes": "AOL ART; width=height=210 in sample; bytes 4-12 are undocumented in the reference block (nonzero in sample) and kept as opaque padding"
+ },
+ "360": {
+  "derivation": "override",
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "u32",
+    "name": "header_size",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "bytes",
+    "name": "link_guid",
+    "offset": 4,
+    "size": 16
+   },
+   {
+    "kind": "u32",
+    "name": "link_flags",
+    "offset": 20,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "file_attributes",
+    "offset": 24,
+    "size": 4
+   },
+   {
+    "kind": "u64",
+    "name": "creation_time",
+    "offset": 28,
+    "size": 8
+   },
+   {
+    "kind": "u64",
+    "name": "access_time",
+    "offset": 36,
+    "size": 8
+   },
+   {
+    "kind": "u64",
+    "name": "modification_time",
+    "offset": 44,
+    "size": 8
+   },
+   {
+    "kind": "u32",
+    "name": "file_size",
+    "offset": 52,
+    "size": 4
+   },
+   {
+    "kind": "i32",
+    "name": "icon_index",
+    "offset": 56,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "show_command",
+    "offset": 60,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "hotkey",
+    "offset": 64,
+    "size": 2
+   },
+   {
+    "kind": "bytes",
+    "name": "reserved",
+    "offset": 66,
+    "size": 10
+   }
+  ],
+  "magic": "4c0000000114020000000000c000000000000046",
+  "notes": "MS Shell Link 76-byte header (MS-SHLLINK), LE; header_size 76, GUID 00021401-0000-0000-C000-000000000046, FILETIME u64s; file_size 4 and attributes 0x20 match the sample"
+ },
  "361": {
   "magic": "504b0304",
   "magic_off": 0,
@@ -1707,6 +2617,165 @@
   "magic": "667479704d345620",
   "magic_off": 4,
   "notes": "M4V ftyp box, major brand M4V "
+ },
+ "374": {
+  "derivation": "override",
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "version",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "movie_uid",
+    "offset": 8,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "vi_count",
+    "offset": 12,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "rerecord_count",
+    "offset": 16,
+    "size": 4
+   },
+   {
+    "kind": "u8",
+    "name": "fps",
+    "offset": 20,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "controller_count",
+    "offset": 21,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "extended_version",
+    "offset": 22,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "extended_flags",
+    "offset": 23,
+    "size": 1
+   },
+   {
+    "kind": "u32",
+    "name": "input_samples",
+    "offset": 24,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "start_type",
+    "offset": 28,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "reserved",
+    "offset": 30,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "controller_flags",
+    "offset": 32,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "extended_auth",
+    "offset": 36,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "extended_bruteforce",
+    "offset": 40,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "extended_high_rerecord",
+    "offset": 44,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "rom_name",
+    "offset": 196,
+    "size": 32
+   },
+   {
+    "kind": "u32",
+    "name": "rom_crc32",
+    "offset": 228,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "rom_country",
+    "offset": 232,
+    "size": 2
+   },
+   {
+    "kind": "ascii",
+    "name": "author",
+    "offset": 546,
+    "size": 222
+   },
+   {
+    "kind": "ascii",
+    "name": "description",
+    "offset": 768,
+    "size": 256
+   }
+  ],
+  "magic": "4d36341a",
+  "notes": "Mupen64 .M64 movie header (1024 bytes), LE; version 3, 60 fps, VI count 3600; plugin-name fields at 290/354/418/482 are all zero in this synthetic sample so omitted; ROM CRC/country are 0 in this fixture"
+ },
+ "376": {
+  "derivation": "override",
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "descriptive_text",
+    "offset": 0,
+    "size": 116
+   },
+   {
+    "kind": "u16",
+    "name": "version",
+    "offset": 124,
+    "size": 2
+   },
+   {
+    "kind": "ascii",
+    "name": "endian_indicator",
+    "offset": 126,
+    "size": 2
+   }
+  ],
+  "notes": "MATLAB v5 MAT-file 128-byte header, LE; descriptive text + version 0x0100 + endian indicator IM (little-endian); subsystem-offset bytes 116-123 hold spaces in this old file, not a zero offset, so omitted; data elements after 128 are variable tags"
  },
  "377": {
   "derivation": "text",
@@ -1773,6 +2842,44 @@
   ],
   "magic": "000100005374616e64617264204a6574",
   "notes": "Jet database; header offsets from the reference code (its numPages@8 reads inside the magic and is omitted)"
+ },
+ "39": {
+  "derivation": "override",
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "header_guid",
+    "offset": 0,
+    "size": 16
+   },
+   {
+    "kind": "u64",
+    "name": "header_size",
+    "offset": 16,
+    "size": 8
+   },
+   {
+    "kind": "u32",
+    "name": "num_header_objects",
+    "offset": 24,
+    "size": 4
+   },
+   {
+    "kind": "u8",
+    "name": "reserved1",
+    "offset": 28,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "reserved2",
+    "offset": 29,
+    "size": 1
+   }
+  ],
+  "magic": "3026b2758e66cf11a6d900aa0062ce6c",
+  "notes": "ASF header object; GUID, header size 1132, 6 header objects, reserved bytes 1/2 verified; first sub-object is File Properties (size 104)"
  },
  "392": {
   "magic": "4d444d50",
@@ -2076,6 +3183,214 @@
   "fields": [],
   "notes": "verified text format (genuine text sample + page describes text)"
  },
+ "436": {
+  "derivation": "override",
+  "endian": "be",
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "partition_key",
+    "offset": 0,
+    "size": 16
+   },
+   {
+    "kind": "bytes",
+    "name": "ber_length",
+    "offset": 16,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "major_version",
+    "offset": 20,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "minor_version",
+    "offset": 22,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "kag_size",
+    "offset": 24,
+    "size": 4
+   },
+   {
+    "kind": "u64",
+    "name": "this_partition",
+    "offset": 28,
+    "size": 8
+   },
+   {
+    "kind": "u64",
+    "name": "prev_partition",
+    "offset": 36,
+    "size": 8
+   },
+   {
+    "kind": "u64",
+    "name": "footer_partition",
+    "offset": 44,
+    "size": 8
+   },
+   {
+    "kind": "u64",
+    "name": "header_byte_count",
+    "offset": 52,
+    "size": 8
+   },
+   {
+    "kind": "u64",
+    "name": "index_byte_count",
+    "offset": 60,
+    "size": 8
+   },
+   {
+    "kind": "u32",
+    "name": "index_sid",
+    "offset": 68,
+    "size": 4
+   },
+   {
+    "kind": "u64",
+    "name": "body_offset",
+    "offset": 72,
+    "size": 8
+   },
+   {
+    "kind": "u32",
+    "name": "body_sid",
+    "offset": 80,
+    "size": 4
+   },
+   {
+    "kind": "bytes",
+    "name": "operational_pattern",
+    "offset": 84,
+    "size": 16
+   },
+   {
+    "kind": "u32",
+    "name": "essence_count",
+    "offset": 100,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "essence_length",
+    "offset": 104,
+    "size": 4
+   }
+  ],
+  "magic": "060e2b34020501010d01020101020400",
+  "notes": "MXF header partition pack (SMPTE 377M), BE; offsets assume the 4-byte BER long-form length (0x83 + 3 bytes) present in the sample; 20+BER length == 100+8+16*essence_count verified (152/4 ULs)"
+ },
+ "437": {
+  "derivation": "override",
+  "endian": "be",
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "partition_key",
+    "offset": 0,
+    "size": 16
+   },
+   {
+    "kind": "bytes",
+    "name": "ber_length",
+    "offset": 16,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "major_version",
+    "offset": 20,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "minor_version",
+    "offset": 22,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "kag_size",
+    "offset": 24,
+    "size": 4
+   },
+   {
+    "kind": "u64",
+    "name": "this_partition",
+    "offset": 28,
+    "size": 8
+   },
+   {
+    "kind": "u64",
+    "name": "prev_partition",
+    "offset": 36,
+    "size": 8
+   },
+   {
+    "kind": "u64",
+    "name": "footer_partition",
+    "offset": 44,
+    "size": 8
+   },
+   {
+    "kind": "u64",
+    "name": "header_byte_count",
+    "offset": 52,
+    "size": 8
+   },
+   {
+    "kind": "u64",
+    "name": "index_byte_count",
+    "offset": 60,
+    "size": 8
+   },
+   {
+    "kind": "u32",
+    "name": "index_sid",
+    "offset": 68,
+    "size": 4
+   },
+   {
+    "kind": "u64",
+    "name": "body_offset",
+    "offset": 72,
+    "size": 8
+   },
+   {
+    "kind": "u32",
+    "name": "body_sid",
+    "offset": 80,
+    "size": 4
+   },
+   {
+    "kind": "bytes",
+    "name": "operational_pattern",
+    "offset": 84,
+    "size": 16
+   },
+   {
+    "kind": "u32",
+    "name": "essence_count",
+    "offset": 100,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "essence_length",
+    "offset": 104,
+    "size": 4
+   }
+  ],
+  "magic": "060e2b34020501010d01020101020400",
+  "notes": "MXF header partition pack (SMPTE 377M), BE; offsets assume the 4-byte BER long-form length (0x83 + 3 bytes) present in the sample; 20+BER length == 100+8+16*essence_count verified (136/3 ULs)"
+ },
  "440": {
   "derivation": "text",
   "fields": [],
@@ -2138,6 +3453,259 @@
   "fields": [],
   "notes": "verified text format (genuine text sample + page describes text)"
  },
+ "444": {
+  "derivation": "override",
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "game_title",
+    "offset": 0,
+    "size": 12
+   },
+   {
+    "kind": "ascii",
+    "name": "game_code",
+    "offset": 12,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "maker_code",
+    "offset": 16,
+    "size": 2
+   },
+   {
+    "kind": "u8",
+    "name": "unit_code",
+    "offset": 18,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "encryption_seed",
+    "offset": 19,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "device_capacity",
+    "offset": 20,
+    "size": 1
+   },
+   {
+    "kind": "bytes",
+    "name": "reserved",
+    "offset": 21,
+    "size": 9
+   },
+   {
+    "kind": "u8",
+    "name": "rom_version",
+    "offset": 30,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "autostart",
+    "offset": 31,
+    "size": 1
+   },
+   {
+    "kind": "u32",
+    "name": "arm9_rom_offset",
+    "offset": 32,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "arm9_entry_address",
+    "offset": 36,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "arm9_ram_address",
+    "offset": 40,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "arm9_size",
+    "offset": 44,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "arm7_rom_offset",
+    "offset": 48,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "arm7_entry_address",
+    "offset": 52,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "arm7_ram_address",
+    "offset": 56,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "arm7_size",
+    "offset": 60,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "fnt_offset",
+    "offset": 64,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "fnt_size",
+    "offset": 68,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "fat_offset",
+    "offset": 72,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "fat_size",
+    "offset": 76,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "arm9_overlay_offset",
+    "offset": 80,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "arm9_overlay_size",
+    "offset": 84,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "arm7_overlay_offset",
+    "offset": 88,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "arm7_overlay_size",
+    "offset": 92,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "normal_command_settings",
+    "offset": 96,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "key1_command_settings",
+    "offset": 100,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "icon_title_offset",
+    "offset": 104,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "secure_area_checksum",
+    "offset": 108,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "secure_area_delay",
+    "offset": 110,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "arm9_autoload",
+    "offset": 112,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "arm7_autoload",
+    "offset": 116,
+    "size": 4
+   },
+   {
+    "kind": "u64",
+    "name": "secure_area_disable",
+    "offset": 120,
+    "size": 8
+   },
+   {
+    "kind": "u32",
+    "name": "rom_size",
+    "offset": 128,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "header_size",
+    "offset": 132,
+    "size": 4
+   },
+   {
+    "kind": "bytes",
+    "name": "nintendo_logo",
+    "offset": 192,
+    "size": 156
+   },
+   {
+    "kind": "u16",
+    "name": "logo_checksum",
+    "offset": 348,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "header_checksum",
+    "offset": 350,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "debug_rom_offset",
+    "offset": 352,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "debug_size",
+    "offset": 356,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "debug_ram_address",
+    "offset": 360,
+    "size": 4
+   }
+  ],
+  "notes": "Nintendo DS ROM header, LE; header CRC-16 (MODBUS poly, over 0x00-0x15D) recomputed equals stored header_checksum 0x8b13; rom_size equals file size; 0x88-0xBF reserved region not included (nonzero DSi-era bytes in this sample)"
+ },
  "450": {
   "derivation": "text",
   "magic": "23212f7573722f62696e2f656e76206e657874666c6f77",
@@ -2147,6 +3715,32 @@
   "derivation": "text",
   "fields": [],
   "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "458": {
+  "derivation": "override",
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "u8",
+    "name": "header_marker",
+    "offset": 0,
+    "size": 1
+   },
+   {
+    "kind": "ascii",
+    "name": "signature",
+    "offset": 1,
+    "size": 11
+   },
+   {
+    "kind": "u16",
+    "name": "marker",
+    "offset": 68,
+    "size": 2
+   }
+  ],
+  "magic": "045633204441542066696c65",
+  "notes": "Neurolucida V3 DAT header; marker byte 0x04 + \"V3 DAT file\" at 1, 0x2BAD marker at 68, footer 0xAABBCCDD at EOF (variable offset, not included); rest of file is variable blocks. Magic corrected: stored magic was the signature at offset 0, but it sits at offset 1 behind the 0x04 marker"
  },
  "46": {
   "derivation": "override",
@@ -2191,6 +3785,110 @@
   ],
   "magic": "2e736e64",
   "notes": "Sun Audio header; sample: 44100 Hz, 2 channels, encoding 3 (16-bit linear PCM)"
+ },
+ "461": {
+  "derivation": "override",
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 0,
+    "size": 5
+   },
+   {
+    "kind": "u8",
+    "name": "version",
+    "offset": 5,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "total_songs",
+    "offset": 6,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "starting_song",
+    "offset": 7,
+    "size": 1
+   },
+   {
+    "kind": "u16",
+    "name": "load_address",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "init_address",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "play_address",
+    "offset": 12,
+    "size": 2
+   },
+   {
+    "kind": "ascii",
+    "name": "song_name",
+    "offset": 14,
+    "size": 32
+   },
+   {
+    "kind": "ascii",
+    "name": "artist",
+    "offset": 46,
+    "size": 32
+   },
+   {
+    "kind": "ascii",
+    "name": "copyright",
+    "offset": 78,
+    "size": 32
+   },
+   {
+    "kind": "u16",
+    "name": "ntsc_speed",
+    "offset": 110,
+    "size": 2
+   },
+   {
+    "kind": "bytes",
+    "name": "bankswitch",
+    "offset": 112,
+    "size": 8
+   },
+   {
+    "kind": "u16",
+    "name": "pal_speed",
+    "offset": 120,
+    "size": 2
+   },
+   {
+    "kind": "u8",
+    "name": "video_system",
+    "offset": 122,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "sound_chip",
+    "offset": 123,
+    "size": 1
+   },
+   {
+    "kind": "bytes",
+    "name": "reserved",
+    "offset": 124,
+    "size": 4
+   }
+  ],
+  "magic": "4e45534d1a",
+  "notes": "NES Sound Format 128-byte header, LE; NESM 0x1A signature, 18 songs, NTSC speed 16666"
  },
  "467": {
   "derivation": "override",
@@ -2433,6 +4131,115 @@
   "magic": "3c3f786d6c",
   "notes": "page confirms .OSC (OpenStreetMap Change, XML); the .OSB extension was wrong; sample gunzipped from .osc.gz"
  },
+ "489": {
+  "derivation": "override",
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "u32",
+    "name": "crc_partial",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "magic_client",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "version",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "client_version",
+    "offset": 12,
+    "size": 2
+   },
+   {
+    "kind": "u8",
+    "name": "platform_create",
+    "offset": 14,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "platform_access",
+    "offset": 15,
+    "size": 1
+   },
+   {
+    "kind": "u32",
+    "name": "reserved1",
+    "offset": 16,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "reserved2",
+    "offset": 20,
+    "size": 4
+   },
+   {
+    "kind": "u64",
+    "name": "bid_unused",
+    "offset": 24,
+    "size": 8
+   },
+   {
+    "kind": "u64",
+    "name": "bid_next_page",
+    "offset": 32,
+    "size": 8
+   },
+   {
+    "kind": "u32",
+    "name": "unique",
+    "offset": 40,
+    "size": 4
+   },
+   {
+    "kind": "bytes",
+    "name": "rgnid",
+    "offset": 44,
+    "size": 128
+   },
+   {
+    "kind": "u32",
+    "name": "root_reserved",
+    "offset": 180,
+    "size": 4
+   },
+   {
+    "kind": "u64",
+    "name": "root_file_eof",
+    "offset": 184,
+    "size": 8
+   },
+   {
+    "kind": "u64",
+    "name": "root_amap_last",
+    "offset": 192,
+    "size": 8
+   },
+   {
+    "kind": "u32",
+    "name": "root_amap_free",
+    "offset": 200,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "root_pmap_free",
+    "offset": 204,
+    "size": 4
+   }
+  ],
+  "notes": "MS-PST Unicode HEADER (MS-PST 2.2.2.6), LE; root_file_eof equals file size; this OST sample shows wMagicClient \"SO\" and wVer 36 (newer Outlook) vs \"SM\"/23 in the spec sample; qwUnused at 172 is nonzero (0xA00000000) in this sample so omitted"
+ },
  "49": {
   "derivation": "text",
   "notes": "AWK source, plain text"
@@ -2502,6 +4309,44 @@
   "derivation": "text",
   "fields": [],
   "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "513": {
+  "derivation": "override",
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "magic",
+    "offset": 0,
+    "size": 8
+   },
+   {
+    "kind": "u64",
+    "name": "packet_length",
+    "offset": 8,
+    "size": 8
+   },
+   {
+    "kind": "bytes",
+    "name": "packet_hash",
+    "offset": 16,
+    "size": 16
+   },
+   {
+    "kind": "bytes",
+    "name": "recovery_set_id",
+    "offset": 32,
+    "size": 16
+   },
+   {
+    "kind": "ascii",
+    "name": "packet_type",
+    "offset": 48,
+    "size": 16
+   }
+  ],
+  "magic": "5041523200504b54",
+  "notes": "PAR2 packet header (64 bytes, LE); packets repeat, body follows header. Sample: first packet FileDesc, length 140; packets chain 140/100/168 to exactly 408 bytes"
  },
  "514": {
   "derivation": "text",
@@ -2575,6 +4420,217 @@
   "derivation": "text",
   "fields": [],
   "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "548": {
+  "derivation": "override",
+  "endian": "be",
+  "fields": [
+   {
+    "kind": "u16",
+    "name": "resolution",
+    "offset": 0,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "palette_0",
+    "offset": 2,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "palette_1",
+    "offset": 4,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "palette_2",
+    "offset": 6,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "palette_3",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "palette_4",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "palette_5",
+    "offset": 12,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "palette_6",
+    "offset": 14,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "palette_7",
+    "offset": 16,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "palette_8",
+    "offset": 18,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "palette_9",
+    "offset": 20,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "palette_10",
+    "offset": 22,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "palette_11",
+    "offset": 24,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "palette_12",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "palette_13",
+    "offset": 28,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "palette_14",
+    "offset": 30,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "palette_15",
+    "offset": 32,
+    "size": 2
+   },
+   {
+    "kind": "bytes",
+    "name": "bitmap_data",
+    "offset": 34,
+    "size": 32000
+   },
+   {
+    "kind": "u16",
+    "name": "left_limit_0",
+    "offset": 32034,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "left_limit_1",
+    "offset": 32036,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "left_limit_2",
+    "offset": 32038,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "left_limit_3",
+    "offset": 32040,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "right_limit_0",
+    "offset": 32042,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "right_limit_1",
+    "offset": 32044,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "right_limit_2",
+    "offset": 32046,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "right_limit_3",
+    "offset": 32048,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "direction_0",
+    "offset": 32050,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "direction_1",
+    "offset": 32052,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "direction_2",
+    "offset": 32054,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "direction_3",
+    "offset": 32056,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "delay_0",
+    "offset": 32058,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "delay_1",
+    "offset": 32060,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "delay_2",
+    "offset": 32062,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "delay_3",
+    "offset": 32064,
+    "size": 2
+   }
+  ],
+  "notes": "DEGAS PI2: BE; resolution 1 (medium 640x200, 4 colours) in sample, 16-entry palette, 32000-byte bitmap, 4 animation channels; file is exactly 32066 bytes"
  },
  "550": {
   "derivation": "text",
@@ -2758,6 +4814,115 @@
   "fields": [],
   "notes": "verified text format (genuine text sample + page describes text)"
  },
+ "579": {
+  "derivation": "override",
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "crc_partial",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "magic_client",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "version",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "version_client",
+    "offset": 12,
+    "size": 2
+   },
+   {
+    "kind": "u8",
+    "name": "platform_create",
+    "offset": 14,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "platform_access",
+    "offset": 15,
+    "size": 1
+   },
+   {
+    "kind": "u32",
+    "name": "reserved1",
+    "offset": 16,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "reserved2",
+    "offset": 20,
+    "size": 4
+   },
+   {
+    "kind": "u64",
+    "name": "bid_unused",
+    "offset": 24,
+    "size": 8
+   },
+   {
+    "kind": "u64",
+    "name": "bid_next_p",
+    "offset": 32,
+    "size": 8
+   },
+   {
+    "kind": "u32",
+    "name": "unique_id",
+    "offset": 40,
+    "size": 4
+   },
+   {
+    "kind": "u64",
+    "name": "unused",
+    "offset": 172,
+    "size": 8
+   },
+   {
+    "kind": "u8",
+    "name": "sentinel",
+    "offset": 496,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "crypt_method",
+    "offset": 497,
+    "size": 1
+   },
+   {
+    "kind": "u64",
+    "name": "bid_next_b",
+    "offset": 500,
+    "size": 8
+   },
+   {
+    "kind": "u32",
+    "name": "crc_full",
+    "offset": 508,
+    "size": 4
+   }
+  ],
+  "notes": "MS-PST header, Unicode branch (wVer 23 in sample: bid_next_p 3083, unique_id 365; tail fields are 0xFF filler in this fresh file). ANSI files use 32-bit bids at 24/28/32 and sentinel/crypt at 460/461 instead"
+ },
  "580": {
   "derivation": "text",
   "fields": [],
@@ -2839,6 +5004,50 @@
   "magic": "526172211a0700",
   "magic_off": 0,
   "name": "RAR archive"
+ },
+ "606": {
+  "derivation": "override",
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "magic",
+    "offset": 0,
+    "size": 8
+   },
+   {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 8,
+    "size": 6
+   },
+   {
+    "kind": "u16",
+    "name": "version",
+    "offset": 14,
+    "size": 2
+   },
+   {
+    "kind": "i32",
+    "name": "class_count",
+    "offset": 16,
+    "size": 4
+   },
+   {
+    "kind": "i32",
+    "name": "instance_count",
+    "offset": 20,
+    "size": 4
+   },
+   {
+    "kind": "bytes",
+    "name": "reserved",
+    "offset": 24,
+    "size": 8
+   }
+  ],
+  "magic": "3c726f626c6f7821",
+  "notes": "Roblox binary place header (32 bytes); chunks follow (4-byte name + comp/uncomp lengths). Sample: version 0, 91 classes, 9054 instances, first chunk SSTR"
  },
  "61": {
   "derivation": "text",
@@ -2960,6 +5169,38 @@
  "629": {
   "derivation": "text",
   "notes": ".run installers are shell scripts (makeself); text"
+ },
+ "63": {
+  "derivation": "override",
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "magic",
+    "offset": 0,
+    "size": 7
+   },
+   {
+    "kind": "ascii",
+    "name": "pointer_size",
+    "offset": 7,
+    "size": 1
+   },
+   {
+    "kind": "ascii",
+    "name": "endianness",
+    "offset": 8,
+    "size": 1
+   },
+   {
+    "kind": "ascii",
+    "name": "version",
+    "offset": 9,
+    "size": 3
+   }
+  ],
+  "magic": "424c454e444552",
+  "notes": "Blender .blend header, uncompressed form (gzip-compressed blends start with gzip magic instead); sample: '-'=64-bit pointers, 'v'=little-endian, version 292"
  },
  "630": {
   "derivation": "text",
@@ -3083,6 +5324,68 @@
   "magic_off": 0,
   "notes": "Scratch 3 project (.sb3) is a ZIP archive"
  },
+ "644": {
+  "derivation": "override",
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "magic",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "header_size",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "archive_size",
+    "offset": 8,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "format_version",
+    "offset": 12,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "block_size",
+    "offset": 14,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "hash_table_pos",
+    "offset": 16,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "block_table_pos",
+    "offset": 20,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "hash_table_size",
+    "offset": 24,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "block_table_size",
+    "offset": 28,
+    "size": 4
+   }
+  ],
+  "magic": "4d50511a",
+  "notes": "SCM is a Blizzard MPQ archive header (32 bytes, LE). Sample: header_size 32, archive_size 45831, hash table 1024 entries at 29383, block table 4 entries at 45767 (29383+1024*16=45767, +64=45831); tables are encrypted, header only. Note: the reference block's magic constant 0x1A1A514D is wrong; sample bytes are MPQ 0x1a (LE u32 0x1a51504d)"
+ },
  "645": {
   "magic": null,
   "notes": "the .scr sample starts with zeros, not MZ; the code-derived MZ magic was wrong"
@@ -3194,6 +5497,139 @@
   "magic_off": 0,
   "name": "BMP image"
  },
+ "650": {
+  "derivation": "override",
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "u8",
+    "name": "sysex_start",
+    "offset": 0,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "manufacturer_id",
+    "offset": 1,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "device_id",
+    "offset": 2,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "sub_id",
+    "offset": 3,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "sample_number_lo",
+    "offset": 4,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "sample_number_hi",
+    "offset": 5,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "significant_bits",
+    "offset": 6,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "sample_period_b0",
+    "offset": 7,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "sample_period_b1",
+    "offset": 8,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "sample_period_b2",
+    "offset": 9,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "sample_length_b0",
+    "offset": 10,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "sample_length_b1",
+    "offset": 11,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "sample_length_b2",
+    "offset": 12,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "loop_start_b0",
+    "offset": 13,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "loop_start_b1",
+    "offset": 14,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "loop_start_b2",
+    "offset": 15,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "loop_end_b0",
+    "offset": 16,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "loop_end_b1",
+    "offset": 17,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "loop_end_b2",
+    "offset": 18,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "loop_type",
+    "offset": 19,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "sysex_end",
+    "offset": 20,
+    "size": 1
+   }
+  ],
+  "notes": "MIDI Sample Dump Standard header SysEx packet (21 bytes, F0 7E .. F7); values are 7-bit packed (value = b0+(b1<<7)+(b2<<14)), so raw bytes are shown: sample period 22675 ns (~44.1 kHz), sample length 53248 words, 16 significant bits. File size 169185 = 21 + 1332 data packets x 127 exactly"
+ },
  "651": {
   "derivation": "text",
   "fields": [],
@@ -3248,6 +5684,116 @@
   "derivation": "text",
   "fields": [],
   "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "687": {
+  "derivation": "override",
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "u16",
+    "name": "bytes_per_sector",
+    "offset": 11,
+    "size": 2
+   },
+   {
+    "kind": "u8",
+    "name": "sectors_per_cluster",
+    "offset": 13,
+    "size": 1
+   },
+   {
+    "kind": "u16",
+    "name": "reserved_sectors",
+    "offset": 14,
+    "size": 2
+   },
+   {
+    "kind": "u8",
+    "name": "num_fats",
+    "offset": 16,
+    "size": 1
+   },
+   {
+    "kind": "u16",
+    "name": "root_dir_entries",
+    "offset": 17,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "total_sectors",
+    "offset": 19,
+    "size": 2
+   },
+   {
+    "kind": "u8",
+    "name": "media_descriptor",
+    "offset": 21,
+    "size": 1
+   },
+   {
+    "kind": "u16",
+    "name": "sectors_per_fat",
+    "offset": 22,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "sectors_per_track",
+    "offset": 24,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "num_heads",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "hidden_sectors",
+    "offset": 28,
+    "size": 2
+   }
+  ],
+  "notes": "Atari ST floppy image, FAT12 boot sector (BPB) per reference block; verified: 512/2/1/2/112/1600/0xF9/5/10/2/0 and total_sectors*512 == file size 819200."
+ },
+ "689": {
+  "derivation": "override",
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "u16",
+    "name": "rec_len",
+    "offset": 0,
+    "size": 2
+   },
+   {
+    "kind": "u8",
+    "name": "rec_type",
+    "offset": 2,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "rec_sub",
+    "offset": 3,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "cpu_type",
+    "offset": 4,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "stdf_ver",
+    "offset": 5,
+    "size": 1
+   }
+  ],
+  "notes": "STDF V4 File Attributes Record (FAR), mandatory first record: REC_LEN U2, REC_TYP U1=0, REC_SUB U1=10, CPU_TYPE U1=2 (Intel x86, little-endian), STDF_VER U1=4. Verified against sample (02 00 00 0a 02 04) and the next record parses as MIR (len 140, type 1, sub 10); STDF spec confirms FAR field order. Only the first record is fixed; later records are variable-length."
  },
  "69": {
   "fields": [
@@ -4020,10 +6566,303 @@
   "magic_off": 257,
   "notes": "CBT is a TAR archive; ustar magic at 257, extension disambiguates from TAR"
  },
+ "777": {
+  "derivation": "override",
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "boot_jump",
+    "offset": 0,
+    "size": 3
+   },
+   {
+    "kind": "ascii",
+    "name": "oem_id",
+    "offset": 3,
+    "size": 8
+   },
+   {
+    "kind": "u16",
+    "name": "bytes_per_sector",
+    "offset": 11,
+    "size": 2
+   },
+   {
+    "kind": "u8",
+    "name": "sectors_per_cluster",
+    "offset": 13,
+    "size": 1
+   },
+   {
+    "kind": "u16",
+    "name": "reserved_sectors",
+    "offset": 14,
+    "size": 2
+   },
+   {
+    "kind": "u8",
+    "name": "num_fats",
+    "offset": 16,
+    "size": 1
+   },
+   {
+    "kind": "u16",
+    "name": "root_dir_entries",
+    "offset": 17,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "total_sectors_16",
+    "offset": 19,
+    "size": 2
+   },
+   {
+    "kind": "u8",
+    "name": "media_descriptor",
+    "offset": 21,
+    "size": 1
+   },
+   {
+    "kind": "u16",
+    "name": "sectors_per_fat",
+    "offset": 22,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "sectors_per_track",
+    "offset": 24,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "num_heads",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "hidden_sectors",
+    "offset": 28,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "total_sectors_32",
+    "offset": 32,
+    "size": 4
+   },
+   {
+    "kind": "u8",
+    "name": "drive_number",
+    "offset": 36,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "reserved",
+    "offset": 37,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "boot_signature",
+    "offset": 38,
+    "size": 1
+   },
+   {
+    "kind": "u32",
+    "name": "volume_id",
+    "offset": 39,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "volume_label",
+    "offset": 43,
+    "size": 11
+   },
+   {
+    "kind": "ascii",
+    "name": "filesystem_type",
+    "offset": 54,
+    "size": 8
+   },
+   {
+    "kind": "u16",
+    "name": "boot_sector_signature",
+    "offset": 510,
+    "size": 2
+   }
+  ],
+  "notes": "Virtual floppy disk image, FAT12 boot sector (BPB + extended BPB) per reference block; verified: jump EB3C90, OEM 'DOSVMADD', 512/1/1/2/224/2880/0xF0/9/18/2, label 'NO NAME    ', type 'FAT12   ', boot signature 0xAA55, and total_sectors_16*512 == file size 1474560."
+ },
+ "780": {
+  "derivation": "override",
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "u32",
+    "name": "magic",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "version",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "flags",
+    "offset": 8,
+    "size": 4
+   },
+   {
+    "kind": "u64",
+    "name": "capacity",
+    "offset": 12,
+    "size": 8
+   },
+   {
+    "kind": "u64",
+    "name": "grain_size",
+    "offset": 20,
+    "size": 8
+   },
+   {
+    "kind": "u64",
+    "name": "descriptor_offset",
+    "offset": 28,
+    "size": 8
+   },
+   {
+    "kind": "u64",
+    "name": "descriptor_size",
+    "offset": 36,
+    "size": 8
+   },
+   {
+    "kind": "u32",
+    "name": "num_gtes_per_gt",
+    "offset": 44,
+    "size": 4
+   },
+   {
+    "kind": "u64",
+    "name": "rgd_offset",
+    "offset": 48,
+    "size": 8
+   },
+   {
+    "kind": "u64",
+    "name": "gd_offset",
+    "offset": 56,
+    "size": 8
+   },
+   {
+    "kind": "u64",
+    "name": "overhead",
+    "offset": 64,
+    "size": 8
+   },
+   {
+    "kind": "u8",
+    "name": "unclean_shutdown",
+    "offset": 72,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "single_end_line_char",
+    "offset": 73,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "non_end_line_char",
+    "offset": 74,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "double_end_line_char1",
+    "offset": 75,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "double_end_line_char2",
+    "offset": 76,
+    "size": 1
+   },
+   {
+    "kind": "u16",
+    "name": "compress_algorithm",
+    "offset": 77,
+    "size": 2
+   }
+  ],
+  "magic": "4b444d56",
+  "notes": "Sparse VMDK header per reference block; verified: magic 0x564D444B, version 1, flags 3, capacity 2097152 sectors, grain 128, descriptor at sector 1 (text there reads '# Disk DescriptorFile'), numGTEsPerGT 512, end-line chars 0A/20/0D/0A, compress 0. Applies to sparse (binary) VMDKs only; text-descriptor VMDKs have no such header."
+ },
  "782": {
   "derivation": "text",
   "fields": [],
   "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "784": {
+  "derivation": "override",
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "u32",
+    "name": "signature",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "version",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "tree_size",
+    "offset": 8,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "file_data_section_size",
+    "offset": 12,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "archive_md5_section_size",
+    "offset": 16,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "other_md5_section_size",
+    "offset": 20,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "signature_section_size",
+    "offset": 24,
+    "size": 4
+   }
+  ],
+  "magic": "3412aa55",
+  "notes": "Valve Pak (VPK) v2 header per reference block; verified: signature 0x55AA1234, version 2, tree_size 241, sections sum exactly to file size (28+241+66166+0+48+0=66483), tree starts with 'wav'. The four extra size fields exist only for version 2; a v1 file would have only the first three fields."
  },
  "788": {
   "derivation": "text",
@@ -4073,6 +6912,86 @@
   "magic": "4d546864",
   "magic_off": 0,
   "notes": "VSQ is a MIDI file (MThd), not XML; was <?xml. Real extension is .VSQ (table had '.?'); MThd magic, extension disambiguates from MIDI; MIDI header layout (as task 397)"
+ },
+ "80": {
+  "derivation": "override",
+  "endian": "be",
+  "fields": [
+   {
+    "kind": "u32",
+    "name": "magic1",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "magic2",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "u64",
+    "name": "record_size",
+    "offset": 8,
+    "size": 8
+   },
+   {
+    "kind": "i32",
+    "name": "record_type",
+    "offset": 16,
+    "size": 4
+   },
+   {
+    "kind": "u64",
+    "name": "gdr_offset",
+    "offset": 20,
+    "size": 8
+   },
+   {
+    "kind": "i32",
+    "name": "version",
+    "offset": 28,
+    "size": 4
+   },
+   {
+    "kind": "i32",
+    "name": "release",
+    "offset": 32,
+    "size": 4
+   },
+   {
+    "kind": "i32",
+    "name": "encoding",
+    "offset": 36,
+    "size": 4
+   },
+   {
+    "kind": "i32",
+    "name": "flags",
+    "offset": 40,
+    "size": 4
+   },
+   {
+    "kind": "i32",
+    "name": "increment",
+    "offset": 52,
+    "size": 4
+   },
+   {
+    "kind": "i32",
+    "name": "identifier",
+    "offset": 56,
+    "size": 4
+   },
+   {
+    "kind": "bytes",
+    "name": "copyright",
+    "offset": 64,
+    "size": 256
+   }
+  ],
+  "magic": "cdf300010000ffff",
+  "notes": "NASA CDF v3 descriptor record; record_size 312 excludes its own 8 bytes, gdr_offset 320 follows the CDR; copyright text verified at offset 64"
  },
  "800": {
   "derivation": "text",
@@ -4189,6 +7108,151 @@
   "magic": "23212f7573722f62696e2f656e7620776f6c6672616d736372697074",
   "notes": "Wolfram Language script; #!/usr/bin/env wolframscript shebang"
  },
+ "814": {
+  "magic": "3026b2758e66cf11a6d900aa0062ce6c",
+  "notes": "WMA is ASF-family: sample starts with the ASF header GUID. Added so the GUID magic (shared by .ASF 39 and .WMV 817) disambiguates by extension to .WMA; without it the magic match stole this file to .ASF. Fields stay as derived (readseq)."
+ },
+ "816": {
+  "derivation": "override",
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "u32",
+    "name": "key",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "handle",
+    "offset": 4,
+    "size": 2
+   },
+   {
+    "kind": "i16",
+    "name": "left",
+    "offset": 6,
+    "size": 2
+   },
+   {
+    "kind": "i16",
+    "name": "top",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "i16",
+    "name": "right",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "i16",
+    "name": "bottom",
+    "offset": 12,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "inch",
+    "offset": 14,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "reserved",
+    "offset": 16,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "checksum",
+    "offset": 20,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "file_type",
+    "offset": 22,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "header_size",
+    "offset": 24,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "version",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "file_size",
+    "offset": 28,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "num_objects",
+    "offset": 32,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "max_record",
+    "offset": 34,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "num_params",
+    "offset": 38,
+    "size": 2
+   }
+  ],
+  "notes": "Windows Metafile with placeable header (key 0x9AC6CDD7) + standard 18-byte header per reference block; verified: bbox -1134/-1213/634/744, inch 1000, placeable checksum 0x54BA equals XOR of first 10 words, file_type 1, header_size 9, version 0x0300, file_size 19711 words with file_size*2+22 == file size 39444, num_objects 6, max_record 434. A WMF without the placeable header would start at the standard header instead."
+ },
+ "817": {
+  "derivation": "override",
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "header_guid",
+    "offset": 0,
+    "size": 16
+   },
+   {
+    "kind": "u64",
+    "name": "object_size",
+    "offset": 16,
+    "size": 8
+   },
+   {
+    "kind": "u32",
+    "name": "num_header_objects",
+    "offset": 24,
+    "size": 4
+   },
+   {
+    "kind": "u8",
+    "name": "reserved1",
+    "offset": 28,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "reserved2",
+    "offset": 29,
+    "size": 1
+   }
+  ],
+  "magic": "3026b2758e66cf11a6d900aa0062ce6c",
+  "notes": "ASF Header Object (WMV) per reference block; verified: GUID 75B22630-668E-11CF-A6D9-00AA0062CE6C, object_size 913 (< file size), num_header_objects 6, reserved bytes 0x01/0x02 per ASF spec. Only the top-level Header Object is fixed; its sub-objects are variable."
+ },
  "818": {
   "derivation": "text",
   "fields": [],
@@ -4208,6 +7272,80 @@
   "derivation": "text",
   "fields": [],
   "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "823": {
+  "derivation": "override",
+  "endian": "be",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "magic",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "header_size",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "u64",
+    "name": "section1_offset",
+    "offset": 8,
+    "size": 8
+   },
+   {
+    "kind": "u64",
+    "name": "section1_size",
+    "offset": 16,
+    "size": 8
+   },
+   {
+    "kind": "u64",
+    "name": "section2_offset",
+    "offset": 24,
+    "size": 8
+   },
+   {
+    "kind": "u64",
+    "name": "section2_size",
+    "offset": 32,
+    "size": 8
+   },
+   {
+    "kind": "u64",
+    "name": "section3_offset",
+    "offset": 40,
+    "size": 8
+   },
+   {
+    "kind": "u64",
+    "name": "section3_size",
+    "offset": 48,
+    "size": 8
+   },
+   {
+    "kind": "u64",
+    "name": "section4_offset",
+    "offset": 56,
+    "size": 8
+   },
+   {
+    "kind": "u64",
+    "name": "section4_size",
+    "offset": 64,
+    "size": 8
+   },
+   {
+    "kind": "u64",
+    "name": "rpx_offset",
+    "offset": 72,
+    "size": 8
+   }
+  ],
+  "magic": "57554842",
+  "notes": "Wii U homebrew bundle; the reference block's IVFC parse is wrong (sample starts 'WUHB', not 'IVFC'). Real header derived from and verified against the sample, all big-endian: magic 'WUHB', header_size 80 (= 4+4+9*8, the header byte length), four (offset,size) u64 pairs that tile the trailing table region exactly to EOF (795528+20=795548, +104=795652, +12=795664, +128=795792), and rpx_offset 512 pointing at the ELF magic of root.rpx. Section identities are not labelled (offsets/sizes only); no published WUHB header spec was found in 2 web searches."
  },
  "83": {
   "magic": "3c3f786d6c",

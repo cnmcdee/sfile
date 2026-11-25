@@ -1,0 +1,497 @@
+{
+ "15": {
+  "derivation": "override",
+  "endian": "be",
+  "magic": "8000",
+  "fields": [
+   {
+    "kind": "u16",
+    "name": "magic",
+    "offset": 0,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "data_offset",
+    "offset": 2,
+    "size": 2
+   },
+   {
+    "kind": "u8",
+    "name": "encoding_type",
+    "offset": 4,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "block_size",
+    "offset": 5,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "sample_bitdepth",
+    "offset": 6,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "channel_count",
+    "offset": 7,
+    "size": 1
+   },
+   {
+    "kind": "u32",
+    "name": "sample_rate",
+    "offset": 8,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "total_samples",
+    "offset": 12,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "highpass_freq",
+    "offset": 16,
+    "size": 2
+   },
+   {
+    "kind": "u8",
+    "name": "version",
+    "offset": 18,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "flags",
+    "offset": 19,
+    "size": 1
+   }
+  ],
+  "notes": "ADX (CRI ADX) header, big-endian (block used native-endian reads; sample proves BE: rate 44100, data offset 36); version 3 so no loop fields; copyright area at 32 is zero-filled in sample"
+ },
+ "26": {
+  "derivation": "override",
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "signature",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "length",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "u8",
+    "name": "revision",
+    "offset": 8,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "checksum",
+    "offset": 9,
+    "size": 1
+   },
+   {
+    "kind": "ascii",
+    "name": "oem_id",
+    "offset": 10,
+    "size": 6
+   },
+   {
+    "kind": "bytes",
+    "name": "oem_table_id",
+    "offset": 16,
+    "size": 8
+   },
+   {
+    "kind": "u32",
+    "name": "oem_revision",
+    "offset": 24,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "creator_id",
+    "offset": 28,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "creator_revision",
+    "offset": 32,
+    "size": 4
+   }
+  ],
+  "notes": "ACPI table header (SSDT sample); length 1952 equals file size and header checksum sums to 0; signature varies (SSDT/DSDT/...) so no magic set; oem_table_id is NUL-padded in sample"
+ },
+ "36": {
+  "derivation": "override",
+  "endian": "le",
+  "magic": "4a47",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "signature",
+    "offset": 0,
+    "size": 2
+   },
+   {
+    "kind": "u8",
+    "name": "version",
+    "offset": 2,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "unknown1",
+    "offset": 3,
+    "size": 1
+   },
+   {
+    "kind": "bytes",
+    "name": "padding",
+    "offset": 4,
+    "size": 9
+   },
+   {
+    "kind": "u16",
+    "name": "width",
+    "offset": 13,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "height",
+    "offset": 15,
+    "size": 2
+   }
+  ],
+  "notes": "AOL ART; width=height=210 in sample; bytes 4-12 are undocumented in the reference block (nonzero in sample) and kept as opaque padding"
+ },
+ "39": {
+  "derivation": "override",
+  "endian": "le",
+  "magic": "3026b2758e66cf11a6d900aa0062ce6c",
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "header_guid",
+    "offset": 0,
+    "size": 16
+   },
+   {
+    "kind": "u64",
+    "name": "header_size",
+    "offset": 16,
+    "size": 8
+   },
+   {
+    "kind": "u32",
+    "name": "num_header_objects",
+    "offset": 24,
+    "size": 4
+   },
+   {
+    "kind": "u8",
+    "name": "reserved1",
+    "offset": 28,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "reserved2",
+    "offset": 29,
+    "size": 1
+   }
+  ],
+  "notes": "ASF header object; GUID, header size 1132, 6 header objects, reserved bytes 1/2 verified; first sub-object is File Properties (size 104)"
+ },
+ "63": {
+  "derivation": "override",
+  "endian": "le",
+  "magic": "424c454e444552",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "magic",
+    "offset": 0,
+    "size": 7
+   },
+   {
+    "kind": "ascii",
+    "name": "pointer_size",
+    "offset": 7,
+    "size": 1
+   },
+   {
+    "kind": "ascii",
+    "name": "endianness",
+    "offset": 8,
+    "size": 1
+   },
+   {
+    "kind": "ascii",
+    "name": "version",
+    "offset": 9,
+    "size": 3
+   }
+  ],
+  "notes": "Blender .blend header, uncompressed form (gzip-compressed blends start with gzip magic instead); sample: '-'=64-bit pointers, 'v'=little-endian, version 292"
+ },
+ "80": {
+  "derivation": "override",
+  "endian": "be",
+  "magic": "cdf300010000ffff",
+  "fields": [
+   {
+    "kind": "u32",
+    "name": "magic1",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "magic2",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "u64",
+    "name": "record_size",
+    "offset": 8,
+    "size": 8
+   },
+   {
+    "kind": "i32",
+    "name": "record_type",
+    "offset": 16,
+    "size": 4
+   },
+   {
+    "kind": "u64",
+    "name": "gdr_offset",
+    "offset": 20,
+    "size": 8
+   },
+   {
+    "kind": "i32",
+    "name": "version",
+    "offset": 28,
+    "size": 4
+   },
+   {
+    "kind": "i32",
+    "name": "release",
+    "offset": 32,
+    "size": 4
+   },
+   {
+    "kind": "i32",
+    "name": "encoding",
+    "offset": 36,
+    "size": 4
+   },
+   {
+    "kind": "i32",
+    "name": "flags",
+    "offset": 40,
+    "size": 4
+   },
+   {
+    "kind": "i32",
+    "name": "increment",
+    "offset": 52,
+    "size": 4
+   },
+   {
+    "kind": "i32",
+    "name": "identifier",
+    "offset": 56,
+    "size": 4
+   },
+   {
+    "kind": "bytes",
+    "name": "copyright",
+    "offset": 64,
+    "size": 256
+   }
+  ],
+  "notes": "NASA CDF v3 descriptor record; record_size 312 excludes its own 8 bytes, gdr_offset 320 follows the CDR; copyright text verified at offset 64"
+ },
+ "105": {
+  "derivation": "override",
+  "endian": "le",
+  "magic": "c771",
+  "fields": [
+   {
+    "kind": "u16",
+    "name": "magic",
+    "offset": 0,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "device",
+    "offset": 2,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "inode",
+    "offset": 4,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mode",
+    "offset": 6,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "uid",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "gid",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "nlink",
+    "offset": 12,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "rdev",
+    "offset": 14,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mtime_hi",
+    "offset": 16,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mtime_lo",
+    "offset": 18,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "namesize",
+    "offset": 20,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "filesize_hi",
+    "offset": 22,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "filesize_lo",
+    "offset": 24,
+    "size": 2
+   }
+  ],
+  "notes": "Old binary cpio, NOT the newc '070701' layout in the reference block (sample is binary cpio); 9-entry chain through TRAILER!!! verified, modes 0100644, mtime 2007-10-01; mtime/filesize stored high word first"
+ },
+ "127": {
+  "derivation": "override",
+  "endian": "le",
+  "magic": "72656766",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "signature",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "primary_sequence",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "secondary_sequence",
+    "offset": 8,
+    "size": 4
+   },
+   {
+    "kind": "u64",
+    "name": "last_written",
+    "offset": 12,
+    "size": 8
+   },
+   {
+    "kind": "u32",
+    "name": "major_version",
+    "offset": 20,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "minor_version",
+    "offset": 24,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "file_type",
+    "offset": 28,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "file_format",
+    "offset": 32,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "root_cell_offset",
+    "offset": 36,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "hive_bins_size",
+    "offset": 40,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "clustering",
+    "offset": 44,
+    "size": 4
+   },
+   {
+    "kind": "bytes",
+    "name": "file_name",
+    "offset": 48,
+    "size": 64
+   }
+  ],
+  "notes": "Windows registry hive (regf) base block, NOT the %-header text .dat in the reference block; offsets confirmed against the libregf spec; seq numbers equal (75), root cell 0x20, first hbin at 4096; file_name is UTF-16LE"
+ }
+}

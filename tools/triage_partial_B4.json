@@ -1,0 +1,137 @@
+{
+ "503": {
+  "verdict": "inherent",
+  "category": "text",
+  "reason": "Sample is PEM text (-----BEGIN CERTIFICATE REQUEST-----); underlying CSR is ASN.1 DER with variable BER lengths, no fixed binary header"
+ },
+ "504": {
+  "verdict": "inherent",
+  "category": "variable-length",
+  "reason": "PKCS#12 is ASN.1 DER (sample starts 30 82 long-form length); variable BER lengths, no fixed header"
+ },
+ "510": {
+  "verdict": "inherent",
+  "category": "variable-length",
+  "reason": "PAM header is ASCII text lines (P7, WIDTH/HEIGHT/DEPTH/MAXVAL, ENDHDR) of variable length; no fixed binary offsets"
+ },
+ "513": {
+  "verdict": "convertible",
+  "category": null,
+  "reason": "Fixed 64-byte PAR2 packet header verified against sample (packets chain 140/100/168 to exactly 408 bytes)"
+ },
+ "518": {
+  "verdict": "inherent",
+  "category": "variable-length",
+  "reason": "PBM header is ASCII text (magic line, then decimal width/height with optional comments); no fixed binary offsets"
+ },
+ "521": {
+  "verdict": "inherent",
+  "category": "variable-length",
+  "reason": "PCD header is ASCII text lines (VERSION/FIELDS/DATA) of variable length; sample is headerless binary point data with no header strings at all"
+ },
+ "537": {
+  "verdict": "inherent",
+  "category": "variable-length",
+  "reason": "PFM header is three ASCII text lines (PF, dimensions, scale); no fixed binary offsets"
+ },
+ "538": {
+  "verdict": "inherent",
+  "category": "variable-length",
+  "reason": "PFX/PKCS#12 is ASN.1 DER (sample starts 30 82 long-form length); variable BER lengths, no fixed header"
+ },
+ "543": {
+  "verdict": "inherent",
+  "category": "text",
+  "reason": "PHP3 is PHP source text (sample starts <?php); no binary header"
+ },
+ "547": {
+  "verdict": "inherent",
+  "category": "chunk-scanning",
+  "reason": "PHZ is a ZIP container (libzip wrapper, no fixed layout in block); sample is JSZip JavaScript source, not a ZIP archive, so the ZIP local-header layout could not be verified"
+ },
+ "548": {
+  "verdict": "convertible",
+  "category": null,
+  "reason": "Fixed DEGAS PI2 layout verified: resolution 1, 16-entry BE palette, 32000-byte bitmap, 4 animation channels; file exactly 32066 bytes"
+ },
+ "555": {
+  "verdict": "inherent",
+  "category": "streaming",
+  "reason": "Pickle is an opcode stream (sample starts 80 04 95 ...); opcodes with variable-length arguments, no fixed header"
+ },
+ "557": {
+  "verdict": "inherent",
+  "category": "text",
+  "reason": "PLANET is a text antenna-pattern file (NAME/MAKE/FREQUENCY/HORIZONTAL lines); no binary header"
+ },
+ "579": {
+  "verdict": "convertible",
+  "category": null,
+  "reason": "MS-PST Unicode header verified: wVer 23, bid_next_p 3083, unique_id 365, all field offsets within the 271360-byte sample"
+ },
+ "599": {
+  "verdict": "inherent",
+  "category": "no-spec",
+  "reason": "Block is a stub (only 16-byte identifier + version byte sketched, rest explicitly unimplemented) and no verifiable RAD tracker header spec was found in one web search"
+ },
+ "600": {
+  "verdict": "inherent",
+  "category": "no-spec",
+  "reason": "Block states track positions etc. are 'Not decodable without spec' and gives only a 4-byte signature; sample starts 'Ver..321' with no documented layout"
+ },
+ "606": {
+  "verdict": "convertible",
+  "category": null,
+  "reason": "Fixed 32-byte RBXL header verified: magic <roblox!, signature, version 0, 91 classes, 9054 instances, first chunk SSTR"
+ },
+ "607": {
+  "verdict": "inherent",
+  "category": "text",
+  "reason": "RC is a Windows resource script (plain text, resource-type lines); no binary header"
+ },
+ "626": {
+  "verdict": "inherent",
+  "category": "no-spec",
+  "reason": "Block gives a 100+80 i32 ANSYS RST header, but the sample is a pymapdl-reader README (text), not an RST binary, so the layout could not be verified against any real sample"
+ },
+ "633": {
+  "verdict": "inherent",
+  "category": "text",
+  "reason": "SAIF is a text S-expression file (sample starts (SAIFILE (SAIFVERSION \"2.0\")); no binary header"
+ },
+ "644": {
+  "verdict": "convertible",
+  "category": null,
+  "reason": "MPQ header verified: header_size 32, archive_size 45831, hash table 1024 entries at 29383, block table 4 at 45767, tables chain exactly to archive_size"
+ },
+ "645": {
+  "verdict": "inherent",
+  "category": "no-header",
+  "reason": "ZX Spectrum .SCR has no header at all (block says 'Header Presence: None'); sample is exactly the raw 6912-byte bitmap+attributes dump"
+ },
+ "650": {
+  "verdict": "convertible",
+  "category": null,
+  "reason": "21-byte SDS header SysEx packet verified: 7-bit-packed period 22675 ns (~44.1 kHz), length 53248 words, file size 169185 = 21 + 1332 data packets x 127 exactly"
+ },
+ "663": {
+  "verdict": "inherent",
+  "category": "text",
+  "reason": "SHTML is HTML text with SSI directives; no binary header"
+ },
+ "670": {
+  "verdict": "inherent",
+  "category": "text",
+  "reason": "SM is a StepMania text file (#TITLE: ... ; lines); no binary header"
+ },
+ "675": {
+  "verdict": "inherent",
+  "category": "text",
+  "reason": "SPF is SPEF text (*SPEF/*DESIGN/*D_NET sections); no binary header"
+ },
+ "682": {
+  "verdict": "inherent",
+  "category": "variable-length",
+  "reason": "SPZ is a zlib stream whose fixed 16-byte header exists only after decompression, so no fixed on-disk offsets; sample is pako JavaScript source, not an SPZ file, so unverifiable"
+ }
+}

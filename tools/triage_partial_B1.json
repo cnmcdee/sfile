@@ -1,0 +1,137 @@
+{
+ "14": {
+  "verdict": "inherent",
+  "category": "streaming",
+  "reason": "ADTS/AAC frame stream scanned by 0xFFF syncword; no fixed file header, frame length varies per frame"
+ },
+ "15": {
+  "verdict": "convertible",
+  "category": null,
+  "reason": "ADX header verified BE against sample (rate 44100, data offset 36, version 3)"
+ },
+ "16": {
+  "verdict": "inherent",
+  "category": "no-header",
+  "reason": "Sample is 'error code: 522' junk; on-disk .adz is a raw zlib stream and the parsed ADF layout exists only after decompression"
+ },
+ "23": {
+  "verdict": "inherent",
+  "category": "text",
+  "reason": "APL transfer file is 80-char text records (indicator/content/sequence); no binary header"
+ },
+ "26": {
+  "verdict": "convertible",
+  "category": null,
+  "reason": "ACPI table header verified (length equals file size, checksum sums to 0)"
+ },
+ "36": {
+  "verdict": "convertible",
+  "category": null,
+  "reason": "AOL ART header verified (JG magic, width=height=210); bytes 4-12 kept as opaque padding"
+ },
+ "39": {
+  "verdict": "convertible",
+  "category": null,
+  "reason": "ASF header object verified (GUID, size 1132, 6 header objects, reserved 1/2)"
+ },
+ "45": {
+  "verdict": "inherent",
+  "category": "text",
+  "reason": "Coco/R ATG attributed-grammar source text; no binary header"
+ },
+ "54": {
+  "verdict": "inherent",
+  "category": "text",
+  "reason": "Base64-encoded text; no header, content is ASCII base64"
+ },
+ "63": {
+  "verdict": "convertible",
+  "category": null,
+  "reason": "Blender header verified (BLENDER, 64-bit pointers, little-endian, version 292)"
+ },
+ "64": {
+  "verdict": "inherent",
+  "category": "variable-length",
+  "reason": "Android backup: newline-delimited text header lines (version/compressed/encryption) then tar/deflate payload; no fixed offsets"
+ },
+ "66": {
+  "verdict": "inherent",
+  "category": "variable-length",
+  "reason": "BPS1 header after magic is variable-length integers (source/target/metadata sizes); already noted in formats.json"
+ },
+ "67": {
+  "verdict": "inherent",
+  "category": "no-spec",
+  "reason": "Sample is 'Your request was blocked.' junk; block uses unnamed generic field1..field6 with no verifiable layout"
+ },
+ "80": {
+  "verdict": "convertible",
+  "category": null,
+  "reason": "NASA CDF v3 descriptor record verified BE (magic cdf30001, type 1, gdr_offset 320, copyright text at 64)"
+ },
+ "84": {
+  "verdict": "inherent",
+  "category": "variable-length",
+  "reason": "DER X.509 certificate is ASN.1 BER/DER TLV with variable lengths; no fixed header"
+ },
+ "85": {
+  "verdict": "inherent",
+  "category": "chunk-scanning",
+  "reason": "Binary CGM is a stream of variable-length elements (class/id/length words); sample is clear-text CGM so the binary layout is unverifiable against it"
+ },
+ "87": {
+  "verdict": "inherent",
+  "category": "text",
+  "reason": "ChordPro song text with {directive} lines; no binary header"
+ },
+ "93": {
+  "verdict": "inherent",
+  "category": "text",
+  "reason": "Fuchsia CML component manifest is JSON5 text; no binary header"
+ },
+ "98": {
+  "verdict": "inherent",
+  "category": "text",
+  "reason": "Xilinx COE text file (memory_initialization_radix/vector lines); no binary header"
+ },
+ "101": {
+  "verdict": "inherent",
+  "category": "no-header",
+  "reason": "Raw x86 .com code with no header at all (sample starts with executable instructions)"
+ },
+ "103": {
+  "verdict": "inherent",
+  "category": "text",
+  "reason": "Linux kernel .config key=value text file; no binary header"
+ },
+ "105": {
+  "verdict": "convertible",
+  "category": null,
+  "reason": "Old binary cpio header verified (9-entry chain through TRAILER!!!, modes 0100644, exact namesizes)"
+ },
+ "108": {
+  "verdict": "inherent",
+  "category": "text",
+  "reason": "COBOL copybook source text; no reference block and no binary header"
+ },
+ "114": {
+  "verdict": "inherent",
+  "category": "chunk-scanning",
+  "reason": "Jump-opcode addressed chunks at variable offsets, no fixed header; sample is 'File not found.' junk so unverifiable"
+ },
+ "122": {
+  "verdict": "inherent",
+  "category": "text",
+  "reason": "Make dependency file, single text line 'target: deps'; no binary header"
+ },
+ "127": {
+  "verdict": "convertible",
+  "category": null,
+  "reason": "Windows registry hive (regf) base block verified and confirmed against libregf spec (seq 75=75, root cell 0x20, hbin at 4096)"
+ },
+ "133": {
+  "verdict": "inherent",
+  "category": "text",
+  "reason": "Tab-separated debug-directive text (version/info/file/line rows); block's '.dbg' lines do not occur in the sample"
+ }
+}

@@ -1,0 +1,941 @@
+{
+  "360": {
+    "derivation": "override",
+    "fields": [
+      {
+        "kind": "u32",
+        "name": "header_size",
+        "offset": 0,
+        "size": 4
+      },
+      {
+        "kind": "bytes",
+        "name": "link_guid",
+        "offset": 4,
+        "size": 16
+      },
+      {
+        "kind": "u32",
+        "name": "link_flags",
+        "offset": 20,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "file_attributes",
+        "offset": 24,
+        "size": 4
+      },
+      {
+        "kind": "u64",
+        "name": "creation_time",
+        "offset": 28,
+        "size": 8
+      },
+      {
+        "kind": "u64",
+        "name": "access_time",
+        "offset": 36,
+        "size": 8
+      },
+      {
+        "kind": "u64",
+        "name": "modification_time",
+        "offset": 44,
+        "size": 8
+      },
+      {
+        "kind": "u32",
+        "name": "file_size",
+        "offset": 52,
+        "size": 4
+      },
+      {
+        "kind": "i32",
+        "name": "icon_index",
+        "offset": 56,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "show_command",
+        "offset": 60,
+        "size": 4
+      },
+      {
+        "kind": "u16",
+        "name": "hotkey",
+        "offset": 64,
+        "size": 2
+      },
+      {
+        "kind": "bytes",
+        "name": "reserved",
+        "offset": 66,
+        "size": 10
+      }
+    ],
+    "endian": "le",
+    "notes": "MS Shell Link 76-byte header (MS-SHLLINK), LE; header_size 76, GUID 00021401-0000-0000-C000-000000000046, FILETIME u64s; file_size 4 and attributes 0x20 match the sample",
+    "magic": "4c0000000114020000000000c000000000000046"
+  },
+  "374": {
+    "derivation": "override",
+    "fields": [
+      {
+        "kind": "bytes",
+        "name": "signature",
+        "offset": 0,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "version",
+        "offset": 4,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "movie_uid",
+        "offset": 8,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "vi_count",
+        "offset": 12,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "rerecord_count",
+        "offset": 16,
+        "size": 4
+      },
+      {
+        "kind": "u8",
+        "name": "fps",
+        "offset": 20,
+        "size": 1
+      },
+      {
+        "kind": "u8",
+        "name": "controller_count",
+        "offset": 21,
+        "size": 1
+      },
+      {
+        "kind": "u8",
+        "name": "extended_version",
+        "offset": 22,
+        "size": 1
+      },
+      {
+        "kind": "u8",
+        "name": "extended_flags",
+        "offset": 23,
+        "size": 1
+      },
+      {
+        "kind": "u32",
+        "name": "input_samples",
+        "offset": 24,
+        "size": 4
+      },
+      {
+        "kind": "u16",
+        "name": "start_type",
+        "offset": 28,
+        "size": 2
+      },
+      {
+        "kind": "u16",
+        "name": "reserved",
+        "offset": 30,
+        "size": 2
+      },
+      {
+        "kind": "u32",
+        "name": "controller_flags",
+        "offset": 32,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "extended_auth",
+        "offset": 36,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "extended_bruteforce",
+        "offset": 40,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "extended_high_rerecord",
+        "offset": 44,
+        "size": 4
+      },
+      {
+        "kind": "ascii",
+        "name": "rom_name",
+        "offset": 196,
+        "size": 32
+      },
+      {
+        "kind": "u32",
+        "name": "rom_crc32",
+        "offset": 228,
+        "size": 4
+      },
+      {
+        "kind": "u16",
+        "name": "rom_country",
+        "offset": 232,
+        "size": 2
+      },
+      {
+        "kind": "ascii",
+        "name": "author",
+        "offset": 546,
+        "size": 222
+      },
+      {
+        "kind": "ascii",
+        "name": "description",
+        "offset": 768,
+        "size": 256
+      }
+    ],
+    "endian": "le",
+    "notes": "Mupen64 .M64 movie header (1024 bytes), LE; version 3, 60 fps, VI count 3600; plugin-name fields at 290/354/418/482 are all zero in this synthetic sample so omitted; ROM CRC/country are 0 in this fixture",
+    "magic": "4d36341a"
+  },
+  "376": {
+    "derivation": "override",
+    "fields": [
+      {
+        "kind": "ascii",
+        "name": "descriptive_text",
+        "offset": 0,
+        "size": 116
+      },
+      {
+        "kind": "u16",
+        "name": "version",
+        "offset": 124,
+        "size": 2
+      },
+      {
+        "kind": "ascii",
+        "name": "endian_indicator",
+        "offset": 126,
+        "size": 2
+      }
+    ],
+    "endian": "le",
+    "notes": "MATLAB v5 MAT-file 128-byte header, LE; descriptive text + version 0x0100 + endian indicator IM (little-endian); subsystem-offset bytes 116-123 hold spaces in this old file, not a zero offset, so omitted; data elements after 128 are variable tags"
+  },
+  "436": {
+    "derivation": "override",
+    "fields": [
+      {
+        "kind": "bytes",
+        "name": "partition_key",
+        "offset": 0,
+        "size": 16
+      },
+      {
+        "kind": "bytes",
+        "name": "ber_length",
+        "offset": 16,
+        "size": 4
+      },
+      {
+        "kind": "u16",
+        "name": "major_version",
+        "offset": 20,
+        "size": 2
+      },
+      {
+        "kind": "u16",
+        "name": "minor_version",
+        "offset": 22,
+        "size": 2
+      },
+      {
+        "kind": "u32",
+        "name": "kag_size",
+        "offset": 24,
+        "size": 4
+      },
+      {
+        "kind": "u64",
+        "name": "this_partition",
+        "offset": 28,
+        "size": 8
+      },
+      {
+        "kind": "u64",
+        "name": "prev_partition",
+        "offset": 36,
+        "size": 8
+      },
+      {
+        "kind": "u64",
+        "name": "footer_partition",
+        "offset": 44,
+        "size": 8
+      },
+      {
+        "kind": "u64",
+        "name": "header_byte_count",
+        "offset": 52,
+        "size": 8
+      },
+      {
+        "kind": "u64",
+        "name": "index_byte_count",
+        "offset": 60,
+        "size": 8
+      },
+      {
+        "kind": "u32",
+        "name": "index_sid",
+        "offset": 68,
+        "size": 4
+      },
+      {
+        "kind": "u64",
+        "name": "body_offset",
+        "offset": 72,
+        "size": 8
+      },
+      {
+        "kind": "u32",
+        "name": "body_sid",
+        "offset": 80,
+        "size": 4
+      },
+      {
+        "kind": "bytes",
+        "name": "operational_pattern",
+        "offset": 84,
+        "size": 16
+      },
+      {
+        "kind": "u32",
+        "name": "essence_count",
+        "offset": 100,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "essence_length",
+        "offset": 104,
+        "size": 4
+      }
+    ],
+    "endian": "be",
+    "notes": "MXF header partition pack (SMPTE 377M), BE; offsets assume the 4-byte BER long-form length (0x83 + 3 bytes) present in the sample; 20+BER length == 100+8+16*essence_count verified (152/4 ULs)",
+    "magic": "060e2b34020501010d01020101020400"
+  },
+  "437": {
+    "derivation": "override",
+    "fields": [
+      {
+        "kind": "bytes",
+        "name": "partition_key",
+        "offset": 0,
+        "size": 16
+      },
+      {
+        "kind": "bytes",
+        "name": "ber_length",
+        "offset": 16,
+        "size": 4
+      },
+      {
+        "kind": "u16",
+        "name": "major_version",
+        "offset": 20,
+        "size": 2
+      },
+      {
+        "kind": "u16",
+        "name": "minor_version",
+        "offset": 22,
+        "size": 2
+      },
+      {
+        "kind": "u32",
+        "name": "kag_size",
+        "offset": 24,
+        "size": 4
+      },
+      {
+        "kind": "u64",
+        "name": "this_partition",
+        "offset": 28,
+        "size": 8
+      },
+      {
+        "kind": "u64",
+        "name": "prev_partition",
+        "offset": 36,
+        "size": 8
+      },
+      {
+        "kind": "u64",
+        "name": "footer_partition",
+        "offset": 44,
+        "size": 8
+      },
+      {
+        "kind": "u64",
+        "name": "header_byte_count",
+        "offset": 52,
+        "size": 8
+      },
+      {
+        "kind": "u64",
+        "name": "index_byte_count",
+        "offset": 60,
+        "size": 8
+      },
+      {
+        "kind": "u32",
+        "name": "index_sid",
+        "offset": 68,
+        "size": 4
+      },
+      {
+        "kind": "u64",
+        "name": "body_offset",
+        "offset": 72,
+        "size": 8
+      },
+      {
+        "kind": "u32",
+        "name": "body_sid",
+        "offset": 80,
+        "size": 4
+      },
+      {
+        "kind": "bytes",
+        "name": "operational_pattern",
+        "offset": 84,
+        "size": 16
+      },
+      {
+        "kind": "u32",
+        "name": "essence_count",
+        "offset": 100,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "essence_length",
+        "offset": 104,
+        "size": 4
+      }
+    ],
+    "endian": "be",
+    "notes": "MXF header partition pack (SMPTE 377M), BE; offsets assume the 4-byte BER long-form length (0x83 + 3 bytes) present in the sample; 20+BER length == 100+8+16*essence_count verified (136/3 ULs)",
+    "magic": "060e2b34020501010d01020101020400"
+  },
+  "444": {
+    "derivation": "override",
+    "fields": [
+      {
+        "kind": "ascii",
+        "name": "game_title",
+        "offset": 0,
+        "size": 12
+      },
+      {
+        "kind": "ascii",
+        "name": "game_code",
+        "offset": 12,
+        "size": 4
+      },
+      {
+        "kind": "ascii",
+        "name": "maker_code",
+        "offset": 16,
+        "size": 2
+      },
+      {
+        "kind": "u8",
+        "name": "unit_code",
+        "offset": 18,
+        "size": 1
+      },
+      {
+        "kind": "u8",
+        "name": "encryption_seed",
+        "offset": 19,
+        "size": 1
+      },
+      {
+        "kind": "u8",
+        "name": "device_capacity",
+        "offset": 20,
+        "size": 1
+      },
+      {
+        "kind": "bytes",
+        "name": "reserved",
+        "offset": 21,
+        "size": 9
+      },
+      {
+        "kind": "u8",
+        "name": "rom_version",
+        "offset": 30,
+        "size": 1
+      },
+      {
+        "kind": "u8",
+        "name": "autostart",
+        "offset": 31,
+        "size": 1
+      },
+      {
+        "kind": "u32",
+        "name": "arm9_rom_offset",
+        "offset": 32,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "arm9_entry_address",
+        "offset": 36,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "arm9_ram_address",
+        "offset": 40,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "arm9_size",
+        "offset": 44,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "arm7_rom_offset",
+        "offset": 48,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "arm7_entry_address",
+        "offset": 52,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "arm7_ram_address",
+        "offset": 56,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "arm7_size",
+        "offset": 60,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "fnt_offset",
+        "offset": 64,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "fnt_size",
+        "offset": 68,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "fat_offset",
+        "offset": 72,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "fat_size",
+        "offset": 76,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "arm9_overlay_offset",
+        "offset": 80,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "arm9_overlay_size",
+        "offset": 84,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "arm7_overlay_offset",
+        "offset": 88,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "arm7_overlay_size",
+        "offset": 92,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "normal_command_settings",
+        "offset": 96,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "key1_command_settings",
+        "offset": 100,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "icon_title_offset",
+        "offset": 104,
+        "size": 4
+      },
+      {
+        "kind": "u16",
+        "name": "secure_area_checksum",
+        "offset": 108,
+        "size": 2
+      },
+      {
+        "kind": "u16",
+        "name": "secure_area_delay",
+        "offset": 110,
+        "size": 2
+      },
+      {
+        "kind": "u32",
+        "name": "arm9_autoload",
+        "offset": 112,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "arm7_autoload",
+        "offset": 116,
+        "size": 4
+      },
+      {
+        "kind": "u64",
+        "name": "secure_area_disable",
+        "offset": 120,
+        "size": 8
+      },
+      {
+        "kind": "u32",
+        "name": "rom_size",
+        "offset": 128,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "header_size",
+        "offset": 132,
+        "size": 4
+      },
+      {
+        "kind": "bytes",
+        "name": "nintendo_logo",
+        "offset": 192,
+        "size": 156
+      },
+      {
+        "kind": "u16",
+        "name": "logo_checksum",
+        "offset": 348,
+        "size": 2
+      },
+      {
+        "kind": "u16",
+        "name": "header_checksum",
+        "offset": 350,
+        "size": 2
+      },
+      {
+        "kind": "u32",
+        "name": "debug_rom_offset",
+        "offset": 352,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "debug_size",
+        "offset": 356,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "debug_ram_address",
+        "offset": 360,
+        "size": 4
+      }
+    ],
+    "endian": "le",
+    "notes": "Nintendo DS ROM header, LE; header CRC-16 (MODBUS poly, over 0x00-0x15D) recomputed equals stored header_checksum 0x8b13; rom_size equals file size; 0x88-0xBF reserved region not included (nonzero DSi-era bytes in this sample)"
+  },
+  "458": {
+    "derivation": "override",
+    "fields": [
+      {
+        "kind": "u8",
+        "name": "header_marker",
+        "offset": 0,
+        "size": 1
+      },
+      {
+        "kind": "ascii",
+        "name": "signature",
+        "offset": 1,
+        "size": 11
+      },
+      {
+        "kind": "u16",
+        "name": "marker",
+        "offset": 68,
+        "size": 2
+      }
+    ],
+    "endian": "le",
+    "notes": "Neurolucida V3 DAT header; marker byte 0x04 + \"V3 DAT file\" at 1, 0x2BAD marker at 68, footer 0xAABBCCDD at EOF (variable offset, not included); rest of file is variable blocks. Magic corrected: stored magic was the signature at offset 0, but it sits at offset 1 behind the 0x04 marker",
+    "magic": "045633204441542066696c65"
+  },
+  "461": {
+    "derivation": "override",
+    "fields": [
+      {
+        "kind": "bytes",
+        "name": "signature",
+        "offset": 0,
+        "size": 5
+      },
+      {
+        "kind": "u8",
+        "name": "version",
+        "offset": 5,
+        "size": 1
+      },
+      {
+        "kind": "u8",
+        "name": "total_songs",
+        "offset": 6,
+        "size": 1
+      },
+      {
+        "kind": "u8",
+        "name": "starting_song",
+        "offset": 7,
+        "size": 1
+      },
+      {
+        "kind": "u16",
+        "name": "load_address",
+        "offset": 8,
+        "size": 2
+      },
+      {
+        "kind": "u16",
+        "name": "init_address",
+        "offset": 10,
+        "size": 2
+      },
+      {
+        "kind": "u16",
+        "name": "play_address",
+        "offset": 12,
+        "size": 2
+      },
+      {
+        "kind": "ascii",
+        "name": "song_name",
+        "offset": 14,
+        "size": 32
+      },
+      {
+        "kind": "ascii",
+        "name": "artist",
+        "offset": 46,
+        "size": 32
+      },
+      {
+        "kind": "ascii",
+        "name": "copyright",
+        "offset": 78,
+        "size": 32
+      },
+      {
+        "kind": "u16",
+        "name": "ntsc_speed",
+        "offset": 110,
+        "size": 2
+      },
+      {
+        "kind": "bytes",
+        "name": "bankswitch",
+        "offset": 112,
+        "size": 8
+      },
+      {
+        "kind": "u16",
+        "name": "pal_speed",
+        "offset": 120,
+        "size": 2
+      },
+      {
+        "kind": "u8",
+        "name": "video_system",
+        "offset": 122,
+        "size": 1
+      },
+      {
+        "kind": "u8",
+        "name": "sound_chip",
+        "offset": 123,
+        "size": 1
+      },
+      {
+        "kind": "bytes",
+        "name": "reserved",
+        "offset": 124,
+        "size": 4
+      }
+    ],
+    "endian": "le",
+    "notes": "NES Sound Format 128-byte header, LE; NESM 0x1A signature, 18 songs, NTSC speed 16666",
+    "magic": "4e45534d1a"
+  },
+  "489": {
+    "derivation": "override",
+    "fields": [
+      {
+        "kind": "u32",
+        "name": "crc_partial",
+        "offset": 4,
+        "size": 4
+      },
+      {
+        "kind": "ascii",
+        "name": "magic_client",
+        "offset": 8,
+        "size": 2
+      },
+      {
+        "kind": "u16",
+        "name": "version",
+        "offset": 10,
+        "size": 2
+      },
+      {
+        "kind": "u16",
+        "name": "client_version",
+        "offset": 12,
+        "size": 2
+      },
+      {
+        "kind": "u8",
+        "name": "platform_create",
+        "offset": 14,
+        "size": 1
+      },
+      {
+        "kind": "u8",
+        "name": "platform_access",
+        "offset": 15,
+        "size": 1
+      },
+      {
+        "kind": "u32",
+        "name": "reserved1",
+        "offset": 16,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "reserved2",
+        "offset": 20,
+        "size": 4
+      },
+      {
+        "kind": "u64",
+        "name": "bid_unused",
+        "offset": 24,
+        "size": 8
+      },
+      {
+        "kind": "u64",
+        "name": "bid_next_page",
+        "offset": 32,
+        "size": 8
+      },
+      {
+        "kind": "u32",
+        "name": "unique",
+        "offset": 40,
+        "size": 4
+      },
+      {
+        "kind": "bytes",
+        "name": "rgnid",
+        "offset": 44,
+        "size": 128
+      },
+      {
+        "kind": "u32",
+        "name": "root_reserved",
+        "offset": 180,
+        "size": 4
+      },
+      {
+        "kind": "u64",
+        "name": "root_file_eof",
+        "offset": 184,
+        "size": 8
+      },
+      {
+        "kind": "u64",
+        "name": "root_amap_last",
+        "offset": 192,
+        "size": 8
+      },
+      {
+        "kind": "u32",
+        "name": "root_amap_free",
+        "offset": 200,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "root_pmap_free",
+        "offset": 204,
+        "size": 4
+      }
+    ],
+    "endian": "le",
+    "notes": "MS-PST Unicode HEADER (MS-PST 2.2.2.6), LE; root_file_eof equals file size; this OST sample shows wMagicClient \"SO\" and wVer 36 (newer Outlook) vs \"SM\"/23 in the spec sample; qwUnused at 172 is nonzero (0xA00000000) in this sample so omitted"
+  }
+}

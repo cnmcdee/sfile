@@ -1,0 +1,137 @@
+{
+  "352": {
+    "verdict": "inherent",
+    "category": "chunk-scanning",
+    "reason": "Block invents 64-byte computer/user records; sample is LevelDB SSTable data with no fixed header, block-structured with footer"
+  },
+  "356": {
+    "verdict": "inherent",
+    "category": "text",
+    "reason": "Lisp source code (S-expressions), no binary header"
+  },
+  "360": {
+    "verdict": "convertible",
+    "category": null,
+    "reason": "MS Shell Link 76-byte header verified against sample"
+  },
+  "363": {
+    "verdict": "inherent",
+    "category": "text",
+    "reason": "Lua source code; block only stats the file, no parse"
+  },
+  "367": {
+    "verdict": "inherent",
+    "category": "streaming",
+    "reason": "192-byte MPEG-TS packets, sync 0x47 at offset 4 of each packet; no file-level header"
+  },
+  "374": {
+    "verdict": "convertible",
+    "category": null,
+    "reason": "Mupen64 1024-byte movie header verified against sample"
+  },
+  "376": {
+    "verdict": "convertible",
+    "category": null,
+    "reason": "MATLAB v5 128-byte header (text/version/endian) verified against sample"
+  },
+  "379": {
+    "verdict": "inherent",
+    "category": "text",
+    "reason": "MCF is line-based text (equipment table with # comments)"
+  },
+  "383": {
+    "verdict": "inherent",
+    "category": "variable-length",
+    "reason": ".mcstructure is NBT: tag byte + counted names, recursive variable-length tags, no fixed header"
+  },
+  "396": {
+    "verdict": "inherent",
+    "category": "text",
+    "reason": "MHT is MIME multipart text (headers + boundary parts)"
+  },
+  "398": {
+    "verdict": "inherent",
+    "category": "ebml",
+    "reason": "Matroska EBML: variable-length ints/elements, no fixed header (no reference block)"
+  },
+  "399": {
+    "verdict": "inherent",
+    "category": "ebml",
+    "reason": "MKV EBML: readVint variable-length IDs/sizes, no fixed header"
+  },
+  "408": {
+    "verdict": "inherent",
+    "category": "text",
+    "reason": "MOE is line-based text (#moe tags and values); no reference block (derivation nocode)"
+  },
+  "411": {
+    "verdict": "inherent",
+    "category": "text",
+    "reason": "MOPAC input: line-based text (keywords/title/comment/atom lines), no binary header"
+  },
+  "416": {
+    "verdict": "inherent",
+    "category": "streaming",
+    "reason": "MPEG audio: block scans for the 0xFFE syncword; frame stream with no file header"
+  },
+  "417": {
+    "verdict": "inherent",
+    "category": "variable-length",
+    "reason": "Musepack SV8: MPCK magic then packets with 2-byte key + varint size; SH fields follow varints"
+  },
+  "419": {
+    "verdict": "inherent",
+    "category": "streaming",
+    "reason": "MPEG program stream: start-code scanning (pack/system/PES), no fixed header"
+  },
+  "420": {
+    "verdict": "inherent",
+    "category": "streaming",
+    "reason": "MPEG program stream: start-code scanning, no fixed header"
+  },
+  "434": {
+    "verdict": "inherent",
+    "category": "streaming",
+    "reason": ".MTS is raw 188-byte TS packets (sync 0x47 at packet starts, size is 188*48193); block only stats the file, no parse"
+  },
+  "436": {
+    "verdict": "convertible",
+    "category": null,
+    "reason": "MXF header partition pack verified against sample (both files share the layout)"
+  },
+  "437": {
+    "verdict": "convertible",
+    "category": null,
+    "reason": "MXF header partition pack verified against sample (both files share the layout)"
+  },
+  "438": {
+    "verdict": "inherent",
+    "category": "no-header",
+    "reason": "Block parses text KEY(...) lines but the sample is binary MySQL .MYD row data; MYD has no header (row layout comes from the .frm)"
+  },
+  "444": {
+    "verdict": "convertible",
+    "category": null,
+    "reason": "NDS ROM header verified against sample, incl. recomputed header CRC matching stored value"
+  },
+  "458": {
+    "verdict": "convertible",
+    "category": null,
+    "reason": "Neurolucida V3 DAT fixed header bytes verified against sample"
+  },
+  "461": {
+    "verdict": "convertible",
+    "category": null,
+    "reason": "NSF 128-byte header verified against sample"
+  },
+  "464": {
+    "verdict": "inherent",
+    "category": "no-spec",
+    "reason": "Block says proprietary format, no decode; Navisworks NWD has no public fixed header in the reference"
+  },
+  "489": {
+    "verdict": "convertible",
+    "category": null,
+    "reason": "MS-PST Unicode HEADER verified against sample, incl. root ibFileEof == file size"
+  }
+}

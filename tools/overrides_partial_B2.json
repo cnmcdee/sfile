@@ -1,0 +1,487 @@
+{
+  "198": {
+    "derivation": "override",
+    "endian": "le",
+    "fields": [
+      {
+        "kind": "u16",
+        "name": "machine",
+        "offset": 0,
+        "size": 2
+      },
+      {
+        "kind": "u16",
+        "name": "num_sections",
+        "offset": 2,
+        "size": 2
+      },
+      {
+        "kind": "u32",
+        "name": "timestamp",
+        "offset": 4,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "symbol_table_ptr",
+        "offset": 8,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "num_symbols",
+        "offset": 12,
+        "size": 4
+      },
+      {
+        "kind": "u16",
+        "name": "opt_header_size",
+        "offset": 16,
+        "size": 2
+      },
+      {
+        "kind": "u16",
+        "name": "characteristics",
+        "offset": 18,
+        "size": 2
+      }
+    ],
+    "notes": "Sample is a COFF object (machine 0x14c, 3 sections .edata/.debug$S/.drectve, symtab ptr 3606, 126 symbols); the block's ar-archive (!<arch>) layout is wrong for this sample and was not used. Standard 20-byte COFF file header."
+  },
+  "222": {
+    "derivation": "override",
+    "endian": "le",
+    "magic": "4957666675313030",
+    "fields": [
+      {
+        "kind": "u32",
+        "name": "version",
+        "offset": 8,
+        "size": 4
+      }
+    ],
+    "notes": "Only 1 fixed field beyond the magic: version 0x114 (276) = MW2 PC per published FastFile docs; magic IWffu100 (8 bytes) + LE version verified. Bytes 12-20 have no verifiable field assignment (zlib zone data starts at offset 21 in this sample) and the block's 44-byte header layout does not match this sample, so nothing further is claimed."
+  },
+  "229": {
+    "derivation": "override",
+    "endian": "le",
+    "magic": "464c6864",
+    "fields": [
+      {
+        "kind": "ascii",
+        "name": "magic",
+        "offset": 0,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "header_size",
+        "offset": 4,
+        "size": 4
+      },
+      {
+        "kind": "i16",
+        "name": "format",
+        "offset": 8,
+        "size": 2
+      },
+      {
+        "kind": "u16",
+        "name": "num_channels",
+        "offset": 10,
+        "size": 2
+      },
+      {
+        "kind": "u16",
+        "name": "ppq",
+        "offset": 12,
+        "size": 2
+      },
+      {
+        "kind": "ascii",
+        "name": "data_magic",
+        "offset": 14,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "data_size",
+        "offset": 18,
+        "size": 4
+      }
+    ],
+    "notes": "FL Studio project: FLhd size 6, format 0, 19 channels, ppq 96; FLdt size 190106 with 22+size == file size exactly."
+  },
+  "284": {
+    "derivation": "override",
+    "endian": "le",
+    "fields": [
+      {
+        "kind": "u32",
+        "name": "reserved",
+        "offset": 0,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "fdd_type",
+        "offset": 4,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "header_size",
+        "offset": 8,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "data_size",
+        "offset": 12,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "bytes_per_sector",
+        "offset": 16,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "sectors",
+        "offset": 20,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "heads",
+        "offset": 24,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "cylinders",
+        "offset": 28,
+        "size": 4
+      }
+    ],
+    "notes": "HDI disk image: header_size 4096 + data_size 42823680 == file size; geometry checks out exactly (512*17*8*615 == data_size). Variable-length comment area (header_size-32) not included."
+  },
+  "302": {
+    "derivation": "override",
+    "endian": "be",
+    "magic": "69636e73",
+    "fields": [
+      {
+        "kind": "ascii",
+        "name": "magic",
+        "offset": 0,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "file_length",
+        "offset": 4,
+        "size": 4
+      },
+      {
+        "kind": "ascii",
+        "name": "first_entry_type",
+        "offset": 8,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "first_entry_length",
+        "offset": 12,
+        "size": 4
+      }
+    ],
+    "notes": "Apple icns: file_length 88653 == file size; first entry type h8mk, length 2312. Further entries are length-prefixed and variable in count, so only the first entry is decoded."
+  },
+  "309": {
+    "derivation": "override",
+    "endian": "le",
+    "fields": [
+      {
+        "kind": "bytes",
+        "name": "jump_instruction",
+        "offset": 0,
+        "size": 3
+      },
+      {
+        "kind": "ascii",
+        "name": "oem_name",
+        "offset": 3,
+        "size": 8
+      },
+      {
+        "kind": "u16",
+        "name": "bytes_per_sector",
+        "offset": 11,
+        "size": 2
+      },
+      {
+        "kind": "u8",
+        "name": "sectors_per_cluster",
+        "offset": 13,
+        "size": 1
+      },
+      {
+        "kind": "u16",
+        "name": "reserved_sectors",
+        "offset": 14,
+        "size": 2
+      },
+      {
+        "kind": "u8",
+        "name": "num_fats",
+        "offset": 16,
+        "size": 1
+      },
+      {
+        "kind": "u16",
+        "name": "root_dir_entries",
+        "offset": 17,
+        "size": 2
+      },
+      {
+        "kind": "u16",
+        "name": "total_sectors",
+        "offset": 19,
+        "size": 2
+      },
+      {
+        "kind": "u8",
+        "name": "media_descriptor",
+        "offset": 21,
+        "size": 1
+      },
+      {
+        "kind": "u16",
+        "name": "sectors_per_fat",
+        "offset": 22,
+        "size": 2
+      },
+      {
+        "kind": "u16",
+        "name": "sectors_per_track",
+        "offset": 24,
+        "size": 2
+      },
+      {
+        "kind": "u16",
+        "name": "num_heads",
+        "offset": 26,
+        "size": 2
+      },
+      {
+        "kind": "u32",
+        "name": "hidden_sectors",
+        "offset": 28,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "large_total_sectors",
+        "offset": 32,
+        "size": 4
+      },
+      {
+        "kind": "u8",
+        "name": "physical_drive_number",
+        "offset": 36,
+        "size": 1
+      },
+      {
+        "kind": "u8",
+        "name": "reserved",
+        "offset": 37,
+        "size": 1
+      },
+      {
+        "kind": "u8",
+        "name": "ext_boot_signature",
+        "offset": 38,
+        "size": 1
+      },
+      {
+        "kind": "u32",
+        "name": "volume_id",
+        "offset": 39,
+        "size": 4
+      },
+      {
+        "kind": "ascii",
+        "name": "volume_label",
+        "offset": 43,
+        "size": 11
+      },
+      {
+        "kind": "ascii",
+        "name": "fs_type",
+        "offset": 54,
+        "size": 8
+      },
+      {
+        "kind": "u16",
+        "name": "boot_sector_signature",
+        "offset": 510,
+        "size": 2
+      }
+    ],
+    "notes": "FAT12 boot sector / BIOS parameter block (sample is a 1.44 MB floppy image): 512 bytes/sector, 2880 total sectors x512 == file size, FAT12 type string, boot signature 0x55AA."
+  },
+  "320": {
+    "derivation": "override",
+    "endian": "be",
+    "fields": [
+      {
+        "kind": "u16",
+        "name": "soc_marker",
+        "offset": 0,
+        "size": 2
+      },
+      {
+        "kind": "u16",
+        "name": "siz_marker",
+        "offset": 2,
+        "size": 2
+      },
+      {
+        "kind": "u16",
+        "name": "siz_length",
+        "offset": 4,
+        "size": 2
+      },
+      {
+        "kind": "u16",
+        "name": "rsiz",
+        "offset": 6,
+        "size": 2
+      },
+      {
+        "kind": "u32",
+        "name": "xsiz",
+        "offset": 8,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "ysiz",
+        "offset": 12,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "xosiz",
+        "offset": 16,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "yosiz",
+        "offset": 20,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "xtsiz",
+        "offset": 24,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "ytsiz",
+        "offset": 28,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "xtosiz",
+        "offset": 32,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "ytosiz",
+        "offset": 36,
+        "size": 4
+      },
+      {
+        "kind": "u16",
+        "name": "csiz",
+        "offset": 40,
+        "size": 2
+      },
+      {
+        "kind": "u8",
+        "name": "comp0_ssiz",
+        "offset": 42,
+        "size": 1
+      },
+      {
+        "kind": "u8",
+        "name": "comp0_xrsiz",
+        "offset": 43,
+        "size": 1
+      },
+      {
+        "kind": "u8",
+        "name": "comp0_yrsiz",
+        "offset": 44,
+        "size": 1
+      }
+    ],
+    "notes": "JPEG 2000 codestream: SOC (FF4F) then SIZ (FF51, length 41); 128x128 image, 1 component (Ssiz 7, XRsiz/YRsiz 1), COD marker FF5C follows at offset 45. Per-component fields beyond component 0 are count-dependent and not included."
+  },
+  "329": {
+    "derivation": "override",
+    "endian": "be",
+    "fields": [
+      {
+        "kind": "u32",
+        "name": "sig_box_size",
+        "offset": 0,
+        "size": 4
+      },
+      {
+        "kind": "ascii",
+        "name": "sig_box_type",
+        "offset": 4,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "ftyp_box_size",
+        "offset": 12,
+        "size": 4
+      },
+      {
+        "kind": "ascii",
+        "name": "ftyp_box_type",
+        "offset": 16,
+        "size": 4
+      },
+      {
+        "kind": "ascii",
+        "name": "brand",
+        "offset": 20,
+        "size": 4
+      },
+      {
+        "kind": "u32",
+        "name": "minor_version",
+        "offset": 24,
+        "size": 4
+      },
+      {
+        "kind": "ascii",
+        "name": "compat_brand",
+        "offset": 28,
+        "size": 4
+      }
+    ],
+    "notes": "JP2 fixed prefix only: signature box (size 12, type 'jP  ') + ftyp box (size 20, brand 'jp2 ', minor 0). The jp2h/ihdr fields are at a variable offset (box-dependent) and are not included."
+  }
+}

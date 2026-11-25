@@ -55,16 +55,48 @@ hand override exists for them (300 ICE and 398 MKA have overrides).
 `tests/run_tests.py` runs `sfile` on every sample in `samples/` (one real
 sample file per format, collected from the task pages' download links or by
 web search) and records PASS / PARTIAL / FAIL / NO SAMPLE in
-`tests/results.json`. Latest run (Nov 25, 2026, after the DuckDuckGo +
-Wayback research round that found 3 more genuine samples and decoded
-the EXS24 header):
+`tests/results.json`. Latest run (Nov 25, 2026, after the PARTIAL round
+that triaged all 136 partials and converted 39 to PASS):
 
 | result | count | meaning |
 |---|---|---|
-| PASS | 611 | identified and header decoded |
-| PARTIAL | 136 | identified, no derivable layout (mostly binary formats whose reference code is chunk-scanning or variable-length; EBML formats; a few honest no-layout cases) |
+| PASS | 650 | identified and header decoded |
+| PARTIAL | 97 | identified, no fixed header layout exists (see below) |
 | FAIL | 2 | the 2 unresolvable duplicates 312 (.INI) = 311 and 520 (.PBO) = 519 |
 | NO SAMPLE | 104 | no real sample file found yet (of 853 tasks counted by the harness, which includes 4 task numbers with no published page: 202, 214, 292, 389) |
+
+### The PARTIAL tail (97) — why no layout exists
+
+All 136 partials were triaged one by one (verdicts in
+`tools/triage_partial_B*.json`); 39 had a real fixed layout in their
+reference code or a verifiable spec and were converted to PASS. The
+remaining 97 have no fixed header layout to write honestly, grouped by
+reason:
+
+- **text (46)** — the format is text/source with no binary header at all
+  (Fortran/Fortran-77 sources, FASTA, Lua/Lisp, JavaScript, JSP, HTA/HTML,
+  kernel `.config`, Xilinx `.coe`, ChordPro, GML, Godot INI-style, UTF-16LE
+  `.klc`, …). These identify by extension and print nothing further.
+- **variable-length (15)** — the header is variable-length by design:
+  ASN.1 DER (P12/PFX, CER), varints after a magic (BPS, TAK), BER lengths
+  (MXF was the exception — its 4-byte BER long-form is fixed enough to
+  decode), NBT tags, MPCK packets, tokenized Paradox saves, ASCII text
+  headers with variable-length lines (PAM/PBM/PFM), zlib streams.
+- **streaming (9)** — frame/packet scanning, no fixed file header: ADTS
+  syncwords, MPEG start codes, 188/192-byte TS packets, MPEG-PS packs,
+  MPA syncword scan, pickle opcode stream.
+- **no-spec (9)** — the reference block is a placeholder or states the
+  format is proprietary/undecodable, and no credible public spec was
+  found (BR7, RAD, RAL, UPD, VI, VPM, NWD, FTH, …).
+- **chunk-scanning (8)** — containers whose first object is at a variable
+  offset or whose records are length-prefixed chains (binary CGM element
+  stream, ICL EBCDIC records, LevelDB SSTable, PHZ/UOS/V3 ZIP saves whose
+  samples are junk JS files, WK3 opcode records).
+- **no-header (7)** — the format has no header by definition: raw code
+  (.COM), raw disk/screen dumps (.SCR, .V64, .VB), raw MySQL row data
+  (.MYD — the layout lives in the .frm), a raw zlib stream (.ADZ).
+- **EBML (3)** — MKV/MKA/WEBM: variable-length EBML integers/elements,
+  no fixed offsets.
 
 Note: the autonomous driver's rounds 13–14 reported the round-12 numbers
 (537/109/31/172) because the harness crashed on the 1–215 collector's
@@ -77,10 +109,10 @@ J2C, MDMP, FCS, ftyp, EMF; CDR 81/82 swap; DNG to big-endian TIFF), added
 search), dropped 14 bogus/mislabeled/truncated samples, and settled the
 6 doubtful samples (550/554 kept; 005/024/373 dropped; 166 magic fixed).
 Counts above are from a clean full re-run with all samples on disk
-(748 files).
+(752 files).
 
 Fixes from the test loop live in `tools/apply_testloop_overrides*.py`
-(ten batches so far, ~270 overrides total): bogus magics removed
+(ten batches so far, 351 overrides total): bogus magics removed
 (`##`, `##TITLE=` for the wrong format, `xmlns:`, `504b0506` as a file
 magic, `fishead`, `ENDFREQUENCIES`, …), wrong extensions fixed (.JVX→.JXL,
 .files→.MKA/.ICE, .LGA→.LHA, .SC7→.SD7, .OTS→.OTT, .OSB→.OSC), container

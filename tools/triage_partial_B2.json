@@ -1,0 +1,137 @@
+{
+  "138": {
+    "verdict": "inherent",
+    "category": "text",
+    "reason": "DIF is a line-based text format (TABLE/VECTORS/TUPLES/DATA sections); no binary header."
+  },
+  "162": {
+    "verdict": "inherent",
+    "category": "text",
+    "reason": "ArcInfo E00 export is plain text (EXP/ARC sections); no binary header."
+  },
+  "169": {
+    "verdict": "inherent",
+    "category": "no-header",
+    "reason": "Ensoniq EPS-16 raw disk image (sample starts with text disk label); block's 512-byte bitmap header is not present in the sample and there is no fixed header."
+  },
+  "193": {
+    "verdict": "inherent",
+    "category": "variable-length",
+    "reason": "Paradox EU4 binary save is a tokenized key-value stream after the 6-byte EU4bin magic; no fixed header."
+  },
+  "198": {
+    "verdict": "convertible",
+    "category": null,
+    "reason": "COFF 20-byte file header verified (machine 0x14c, 3 sections, symtab ptr/symbol count consistent)."
+  },
+  "203": {
+    "verdict": "inherent",
+    "category": "text",
+    "reason": "Fortran .f03 source code; plain text, no binary header."
+  },
+  "205": {
+    "verdict": "inherent",
+    "category": "text",
+    "reason": "Fortran .f18 source code; plain text, no binary header."
+  },
+  "206": {
+    "verdict": "inherent",
+    "category": "text",
+    "reason": "Fortran .f4 source code; plain text, no binary header."
+  },
+  "208": {
+    "verdict": "inherent",
+    "category": "text",
+    "reason": "Fortran .f77 source code (LAPACK); plain text, no binary header."
+  },
+  "211": {
+    "verdict": "inherent",
+    "category": "text",
+    "reason": "FASTA nucleotide sequence file; plain text, no binary header."
+  },
+  "212": {
+    "verdict": "inherent",
+    "category": "text",
+    "reason": "FASTA protein sequence file; plain text, no binary header."
+  },
+  "222": {
+    "verdict": "convertible",
+    "category": null,
+    "reason": "CoD FastFile magic IWffu100 + LE version 0x114 (MW2 PC) verified; only 1 field beyond magic."
+  },
+  "229": {
+    "verdict": "convertible",
+    "category": null,
+    "reason": "FL Studio FLhd/FLdt header verified; 22+data_size == file size exactly."
+  },
+  "246": {
+    "verdict": "inherent",
+    "category": "no-spec",
+    "reason": "Block describes XML (FMTHEMES root) but the sample is opaque binary with no XML/FMTHEMES anywhere; no credible verified layout."
+  },
+  "263": {
+    "verdict": "inherent",
+    "category": "text",
+    "reason": "GML graph format is plain text (Creator/graph/node key-value lines); no binary header."
+  },
+  "265": {
+    "verdict": "inherent",
+    "category": "text",
+    "reason": "Godot project file is INI-style text ([sections], key=value); no binary header."
+  },
+  "284": {
+    "verdict": "convertible",
+    "category": null,
+    "reason": "HDI 8x u32 header verified; header_size+data_size == file size and 512*17*8*615 == data_size."
+  },
+  "291": {
+    "verdict": "inherent",
+    "category": "variable-length",
+    "reason": "Paradox HOI4 binary save is a tokenized key-value stream after the 7-byte HOI4bin magic; no fixed header."
+  },
+  "293": {
+    "verdict": "inherent",
+    "category": "text",
+    "reason": "HTA is an HTML document; plain text, no binary header."
+  },
+  "301": {
+    "verdict": "inherent",
+    "category": "chunk-scanning",
+    "reason": "Length-prefixed EBCDIC records (verified chain of 80-byte records, types 01/10/20/...); no fixed file header, records must be walked."
+  },
+  "302": {
+    "verdict": "convertible",
+    "category": null,
+    "reason": "Apple icns header verified; file_length == file size, first entry h8mk length 2312."
+  },
+  "309": {
+    "verdict": "convertible",
+    "category": null,
+    "reason": "FAT12 boot sector / BPB verified; total_sectors*512 == file size, boot signature 0x55AA."
+  },
+  "320": {
+    "verdict": "convertible",
+    "category": null,
+    "reason": "JPEG 2000 SOC+SIZ fixed header verified; 128x128, 1 component, COD marker follows at offset 45."
+  },
+  "329": {
+    "verdict": "convertible",
+    "category": null,
+    "reason": "JP2 signature+ftyp fixed 32-byte prefix verified; jp2h/ihdr are at variable box offsets."
+  },
+  "333": {
+    "verdict": "inherent",
+    "category": "text",
+    "reason": "JavaScript source (jQuery library); plain text, no binary header."
+  },
+  "335": {
+    "verdict": "inherent",
+    "category": "text",
+    "reason": "JSP page (Apache license header, <% tags); plain text, no binary header."
+  },
+  "340": {
+    "verdict": "inherent",
+    "category": "text",
+    "reason": "KLC keyboard layout is UTF-16LE text (BOM FF FE, KBD sections); no binary header."
+  }
+}

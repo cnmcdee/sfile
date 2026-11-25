@@ -1,0 +1,599 @@
+{
+ "513": {
+  "derivation": "override",
+  "endian": "le",
+  "magic": "5041523200504b54",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "magic",
+    "offset": 0,
+    "size": 8
+   },
+   {
+    "kind": "u64",
+    "name": "packet_length",
+    "offset": 8,
+    "size": 8
+   },
+   {
+    "kind": "bytes",
+    "name": "packet_hash",
+    "offset": 16,
+    "size": 16
+   },
+   {
+    "kind": "bytes",
+    "name": "recovery_set_id",
+    "offset": 32,
+    "size": 16
+   },
+   {
+    "kind": "ascii",
+    "name": "packet_type",
+    "offset": 48,
+    "size": 16
+   }
+  ],
+  "notes": "PAR2 packet header (64 bytes, LE); packets repeat, body follows header. Sample: first packet FileDesc, length 140; packets chain 140/100/168 to exactly 408 bytes"
+ },
+ "548": {
+  "derivation": "override",
+  "endian": "be",
+  "fields": [
+   {
+    "kind": "u16",
+    "name": "resolution",
+    "offset": 0,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "palette_0",
+    "offset": 2,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "palette_1",
+    "offset": 4,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "palette_2",
+    "offset": 6,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "palette_3",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "palette_4",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "palette_5",
+    "offset": 12,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "palette_6",
+    "offset": 14,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "palette_7",
+    "offset": 16,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "palette_8",
+    "offset": 18,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "palette_9",
+    "offset": 20,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "palette_10",
+    "offset": 22,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "palette_11",
+    "offset": 24,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "palette_12",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "palette_13",
+    "offset": 28,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "palette_14",
+    "offset": 30,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "palette_15",
+    "offset": 32,
+    "size": 2
+   },
+   {
+    "kind": "bytes",
+    "name": "bitmap_data",
+    "offset": 34,
+    "size": 32000
+   },
+   {
+    "kind": "u16",
+    "name": "left_limit_0",
+    "offset": 32034,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "left_limit_1",
+    "offset": 32036,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "left_limit_2",
+    "offset": 32038,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "left_limit_3",
+    "offset": 32040,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "right_limit_0",
+    "offset": 32042,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "right_limit_1",
+    "offset": 32044,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "right_limit_2",
+    "offset": 32046,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "right_limit_3",
+    "offset": 32048,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "direction_0",
+    "offset": 32050,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "direction_1",
+    "offset": 32052,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "direction_2",
+    "offset": 32054,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "direction_3",
+    "offset": 32056,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "delay_0",
+    "offset": 32058,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "delay_1",
+    "offset": 32060,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "delay_2",
+    "offset": 32062,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "delay_3",
+    "offset": 32064,
+    "size": 2
+   }
+  ],
+  "notes": "DEGAS PI2: BE; resolution 1 (medium 640x200, 4 colours) in sample, 16-entry palette, 32000-byte bitmap, 4 animation channels; file is exactly 32066 bytes"
+ },
+ "579": {
+  "derivation": "override",
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "crc_partial",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "magic_client",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "version",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "version_client",
+    "offset": 12,
+    "size": 2
+   },
+   {
+    "kind": "u8",
+    "name": "platform_create",
+    "offset": 14,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "platform_access",
+    "offset": 15,
+    "size": 1
+   },
+   {
+    "kind": "u32",
+    "name": "reserved1",
+    "offset": 16,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "reserved2",
+    "offset": 20,
+    "size": 4
+   },
+   {
+    "kind": "u64",
+    "name": "bid_unused",
+    "offset": 24,
+    "size": 8
+   },
+   {
+    "kind": "u64",
+    "name": "bid_next_p",
+    "offset": 32,
+    "size": 8
+   },
+   {
+    "kind": "u32",
+    "name": "unique_id",
+    "offset": 40,
+    "size": 4
+   },
+   {
+    "kind": "u64",
+    "name": "unused",
+    "offset": 172,
+    "size": 8
+   },
+   {
+    "kind": "u8",
+    "name": "sentinel",
+    "offset": 496,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "crypt_method",
+    "offset": 497,
+    "size": 1
+   },
+   {
+    "kind": "u64",
+    "name": "bid_next_b",
+    "offset": 500,
+    "size": 8
+   },
+   {
+    "kind": "u32",
+    "name": "crc_full",
+    "offset": 508,
+    "size": 4
+   }
+  ],
+  "notes": "MS-PST header, Unicode branch (wVer 23 in sample: bid_next_p 3083, unique_id 365; tail fields are 0xFF filler in this fresh file). ANSI files use 32-bit bids at 24/28/32 and sentinel/crypt at 460/461 instead"
+ },
+ "606": {
+  "derivation": "override",
+  "endian": "le",
+  "magic": "3c726f626c6f7821",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "magic",
+    "offset": 0,
+    "size": 8
+   },
+   {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 8,
+    "size": 6
+   },
+   {
+    "kind": "u16",
+    "name": "version",
+    "offset": 14,
+    "size": 2
+   },
+   {
+    "kind": "i32",
+    "name": "class_count",
+    "offset": 16,
+    "size": 4
+   },
+   {
+    "kind": "i32",
+    "name": "instance_count",
+    "offset": 20,
+    "size": 4
+   },
+   {
+    "kind": "bytes",
+    "name": "reserved",
+    "offset": 24,
+    "size": 8
+   }
+  ],
+  "notes": "Roblox binary place header (32 bytes); chunks follow (4-byte name + comp/uncomp lengths). Sample: version 0, 91 classes, 9054 instances, first chunk SSTR"
+ },
+ "644": {
+  "derivation": "override",
+  "endian": "le",
+  "magic": "4d50511a",
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "magic",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "header_size",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "archive_size",
+    "offset": 8,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "format_version",
+    "offset": 12,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "block_size",
+    "offset": 14,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "hash_table_pos",
+    "offset": 16,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "block_table_pos",
+    "offset": 20,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "hash_table_size",
+    "offset": 24,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "block_table_size",
+    "offset": 28,
+    "size": 4
+   }
+  ],
+  "notes": "SCM is a Blizzard MPQ archive header (32 bytes, LE). Sample: header_size 32, archive_size 45831, hash table 1024 entries at 29383, block table 4 entries at 45767 (29383+1024*16=45767, +64=45831); tables are encrypted, header only. Note: the reference block's magic constant 0x1A1A514D is wrong; sample bytes are MPQ 0x1a (LE u32 0x1a51504d)"
+ },
+ "650": {
+  "derivation": "override",
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "u8",
+    "name": "sysex_start",
+    "offset": 0,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "manufacturer_id",
+    "offset": 1,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "device_id",
+    "offset": 2,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "sub_id",
+    "offset": 3,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "sample_number_lo",
+    "offset": 4,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "sample_number_hi",
+    "offset": 5,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "significant_bits",
+    "offset": 6,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "sample_period_b0",
+    "offset": 7,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "sample_period_b1",
+    "offset": 8,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "sample_period_b2",
+    "offset": 9,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "sample_length_b0",
+    "offset": 10,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "sample_length_b1",
+    "offset": 11,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "sample_length_b2",
+    "offset": 12,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "loop_start_b0",
+    "offset": 13,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "loop_start_b1",
+    "offset": 14,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "loop_start_b2",
+    "offset": 15,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "loop_end_b0",
+    "offset": 16,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "loop_end_b1",
+    "offset": 17,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "loop_end_b2",
+    "offset": 18,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "loop_type",
+    "offset": 19,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "sysex_end",
+    "offset": 20,
+    "size": 1
+   }
+  ],
+  "notes": "MIDI Sample Dump Standard header SysEx packet (21 bytes, F0 7E .. F7); values are 7-bit packed (value = b0+(b1<<7)+(b2<<14)), so raw bytes are shown: sample period 22675 ns (~44.1 kHz), sample length 53248 words, 16 significant bits. File size 169185 = 21 + 1332 data packets x 127 exactly"
+ }
+}
