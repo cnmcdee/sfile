@@ -70,7 +70,7 @@ Note: the autonomous driver's rounds 13–14 reported the round-12 numbers
 list-shaped manifest shard (`load_manifests` expected dicts); the driver
 then stopped on the apparent plateau. The crash is fixed (list shards are
 now normalized) and the counts above are from a clean full re-run with all
-samples on disk (750 files).
+samples on disk (730 files).
 
 Fixes from the test loop live in `tools/apply_testloop_overrides*.py`
 (ten batches so far, ~270 overrides total): bogus magics removed
