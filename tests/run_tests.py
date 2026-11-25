@@ -65,8 +65,18 @@ def load_manifests():
     for fname in sorted(os.listdir(SAMPLES)):
         if fname.startswith("manifest-") and fname.endswith(".json"):
             d = json.load(open(os.path.join(SAMPLES, fname)))
+            # Shards are dicts keyed by task number — except the 1–215
+            # replacement collector, which wrote a LIST of entries with a
+            # "task" key. Normalize both shapes to (key, entry) pairs.
+            if isinstance(d, list):
+                pairs = [(str(int(v["task"])), v) for v in d
+                         if isinstance(v, dict) and "task" in v]
+            elif isinstance(d, dict):
+                pairs = list(d.items())
+            else:
+                continue
             # collectors may key by zero-padded or plain ints; normalize
-            for k, v in d.items():
+            for k, v in pairs:
                 key = str(int(k))
                 if not isinstance(v, dict):
                     continue
