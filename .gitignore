@@ -3,3 +3,5 @@ sfile
 samples/*
 !samples/.gitkeep
 testwork*/
+__pycache__/
+*.pyc
