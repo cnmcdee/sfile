@@ -34,18 +34,18 @@ magic table and hand overrides for well-known container formats
 
 | derivation | count | meaning |
 |---|---|---|
-| `readseq` | 30 | fields + offsets from a parsed sequential read sequence (highest confidence) |
-| `struct` | 210 | struct fields in order, sizes from C types (char[N] NUL slots are a known risk — the test loop verifies) |
-| `explicit` | 3 | C++ class reading `data[N]` / `data + N` with named properties |
-| `text` | 220 | XML/JSON/text format — decoded by the text decoder (root element, version, first line) |
-| `container` | 65 | inherits a container's fixed header (ZIP local header, RIFF, ftyp, Ogg page, gzip, RAR 4.x, IFF FORM, PDF, TIFF, OLE/CFB) |
-| `override` | 78 | hand-written, spec-derived layout — verified against real samples |
-| `magic-only` | 4 | magic known, no fixed field layout |
+| `readseq` | 29 | fields + offsets from a parsed sequential read sequence (highest confidence) |
+| `struct` | 208 | struct fields in order, sizes from C types (char[N] NUL slots are a known risk — the test loop verifies) |
+| `explicit` | 2 | C++ class reading `data[N]` / `data + N` with named properties |
+| `text` | 245 | XML/JSON/text format — decoded by the text decoder (root element, version, first line) |
+| `container` | 49 | inherits a container's fixed header (ZIP local header, RIFF, ftyp, Ogg page, gzip, RAR 4.x, IFF FORM, PDF, TIFF, OLE/CFB, ar, MZ/DOS) |
+| `override` | 104 | hand-written, spec-derived layout — verified against real samples |
+| `magic-only` | 3 | magic known, no fixed field layout |
 | `nocode` | 10 | no C/C++ code on the task page, no layout derived |
 | `nocode-text` | 5 | no C/C++ code, but the format is text |
-| `unknown` | 224 | nothing derivable from the reference code — identified by magic/extension only, hex dump shown |
+| `unknown` | 194 | nothing derivable from the reference code — identified by magic/extension only, hex dump shown |
 
-292 formats have a magic signature; 385 have a field layout. The 18 tasks
+308 formats have a magic signature; 389 have a field layout. The 18 tasks
 with no C/C++ code at all (108, 151, 172, 233, 300, 312, 345, 369, 398, 408,
 532, 623, 671, 720, 741, 757, 793, 794) are `nocode`/`nocode-text` unless a
 hand override exists for them (300 ICE and 398 MKA have overrides).
