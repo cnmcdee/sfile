@@ -55,16 +55,16 @@ hand override exists for them (300 ICE and 398 MKA have overrides).
 `tests/run_tests.py` runs `sfile` on every sample in `samples/` (one real
 sample file per format, collected from the task pages' download links or by
 web search) and records PASS / PARTIAL / FAIL / NO SAMPLE in
-`tests/results.json`. Latest run (Nov 25, 2026, after the follow-up round
-that fixed the FAILs, re-tried the page links, and settled the doubtful
-samples):
+`tests/results.json`. Latest run (Nov 25, 2026, after the DuckDuckGo +
+Wayback research round that found 3 more genuine samples and decoded
+the EXS24 header):
 
 | result | count | meaning |
 |---|---|---|
-| PASS | 607 | identified and header decoded |
-| PARTIAL | 137 | identified, no derivable layout (mostly binary formats whose reference code is chunk-scanning or variable-length; EBML formats; a few honest no-layout cases) |
+| PASS | 611 | identified and header decoded |
+| PARTIAL | 136 | identified, no derivable layout (mostly binary formats whose reference code is chunk-scanning or variable-length; EBML formats; a few honest no-layout cases) |
 | FAIL | 2 | the 2 unresolvable duplicates 312 (.INI) = 311 and 520 (.PBO) = 519 |
-| NO SAMPLE | 107 | no real sample file found yet (of 853 tasks counted by the harness, which includes 4 task numbers with no published page: 202, 214, 292, 389) |
+| NO SAMPLE | 104 | no real sample file found yet (of 853 tasks counted by the harness, which includes 4 task numbers with no published page: 202, 214, 292, 389) |
 
 Note: the autonomous driver's rounds 13–14 reported the round-12 numbers
 (537/109/31/172) because the harness crashed on the 1–215 collector's

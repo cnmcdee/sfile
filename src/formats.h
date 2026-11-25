@@ -4976,7 +4976,7 @@ static const SFormat sfile_formats[] = {
     { 541, ".PHN", "PHN file", "", 0, 0, fmt_541_fields, 3, FMT_BINARY, 0 },
     { 542, ".PHP", "PHP file", "", 0, 0, NULL, 0, FMT_TEXT, 0 },
     { 543, ".PHP3", "PHP3File", "", 0, 0, NULL, 0, FMT_UNKNOWN, 0 },
-    { 544, ".PHP4", "PHP4 file", "", 0, 0, NULL, 0, FMT_UNKNOWN, 0 },
+    { 544, ".PHP4", "PHP4 file", "", 0, 0, NULL, 0, FMT_TEXT, 0 },
     { 545, ".PHR", "PHR", "", 0, 0, NULL, 0, FMT_TEXT, 0 },
     { 546, ".PHY", "PHY", "", 0, 0, NULL, 0, FMT_TEXT, 0 },
     { 547, ".PHZ", "PHZ file", "", 0, 0, NULL, 0, FMT_UNKNOWN, 0 },

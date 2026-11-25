@@ -38,6 +38,8 @@ SAMPLES = os.path.join(ROOT, "samples")
 CDX = "https://web.archive.org/cdx/search/cdx"
 UA = df.UA
 DELAY = 1.0
+# Tasks deliberately not sampled (see ddg_fetch.SKIP_TASKS for reasons).
+SKIP_TASKS = {55}
 
 
 def cdx_captures(url, limit=3):
@@ -88,6 +90,8 @@ def main():
     for k, v in sorted(results.items(), key=lambda kv: int(kv[0])):
         if v.get("status") == "not-found" or not v.get("sample"):
             t = int(k)
+            if t in SKIP_TASKS:
+                continue
             fm = formats.get(k, {})
             ext = (fm.get("ext") or "").lower()
             fname = "task-%03d%s" % (t, ext)
@@ -137,16 +141,17 @@ def main():
                     tried.append((wu, reason))
                     os.path.exists(tmp) and os.remove(tmp)
                     continue
-                identified, decoded, _ = df.sfile_identifies(tmp, t, formats)
-                if identified == t or df.table_magic_matches(tmp, t, formats):
+                ok, why = df.content_ok(tmp, t, formats, source_url=wu)
+                if ok:
+                    identified, decoded, _ = df.sfile_identifies(tmp, t, formats)
                     final = os.path.join(SAMPLES, fname)
                     os.rename(tmp, final)
                     kept = {"status": "kept-wayback", "file": fname, "url": wu,
                             "original_url": orig, "capture": ts,
                             "identified_task": identified, "decoded": decoded,
-                            "size": os.path.getsize(final)}
+                            "size": os.path.getsize(final), "validation": why}
                     break
-                tried.append((wu, f"sfile identified task {identified}, not {t}"))
+                tried.append((wu, why))
                 os.path.exists(tmp) and os.remove(tmp)
             if kept:
                 break
@@ -170,14 +175,15 @@ def main():
                     if reason:
                         os.path.exists(tmp) and os.remove(tmp)
                         continue
-                    identified, decoded, _ = df.sfile_identifies(tmp, t, formats)
-                    if identified == t or df.table_magic_matches(tmp, t, formats):
+                    ok, why = df.content_ok(tmp, t, formats, source_url=link)
+                    if ok:
+                        identified, decoded, _ = df.sfile_identifies(tmp, t, formats)
                         final = os.path.join(SAMPLES, fname)
                         os.rename(tmp, final)
                         kept = {"status": "kept-wayback-page", "file": fname,
                                 "url": link, "task_page_capture": ts,
                                 "identified_task": identified, "decoded": decoded,
-                                "size": os.path.getsize(final)}
+                                "size": os.path.getsize(final), "validation": why}
                         break
                     os.path.exists(tmp) and os.remove(tmp)
                 if kept:

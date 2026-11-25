@@ -1496,14 +1496,14 @@
   "task": 20
  },
  "200": {
-  "decoded": false,
+  "decoded": true,
   "exit": 0,
   "ext": ".exs",
   "how": "magic",
   "identified": true,
   "identified_task": 200,
-  "nfields": 0,
-  "result": "partial",
+  "nfields": 6,
+  "result": "pass",
   "sample": "task-200.exs",
   "source": "web-search",
   "status": "ok",
@@ -4061,11 +4061,17 @@
   "task": 372
  },
  "373": {
+  "decoded": true,
+  "exit": 0,
   "ext": ".m4v",
-  "result": "no-sample",
-  "sample": null,
-  "source": "page",
-  "status": "not-found",
+  "how": "magic",
+  "identified": true,
+  "identified_task": 373,
+  "nfields": 4,
+  "result": "pass",
+  "sample": "task-373.m4v",
+  "source": "disk",
+  "status": "ok",
   "task": 373
  },
  "374": {
@@ -5947,11 +5953,17 @@
   "task": 499
  },
  "5": {
+  "decoded": true,
+  "exit": 0,
   "ext": ".3gx",
-  "result": "no-sample",
-  "sample": null,
-  "source": "page",
-  "status": "not-found",
+  "how": "magic",
+  "identified": true,
+  "identified_task": 5,
+  "nfields": 4,
+  "result": "pass",
+  "sample": "task-005.3gx",
+  "source": "disk",
+  "status": "ok",
   "task": 5
  },
  "50": {
@@ -6568,11 +6580,17 @@
   "task": 543
  },
  "544": {
-  "ext": ".PHP4",
-  "result": "no-sample",
-  "sample": null,
-  "source": null,
-  "status": "not-found",
+  "decoded": true,
+  "exit": 0,
+  "ext": ".php4",
+  "how": "extension",
+  "identified": true,
+  "identified_task": 544,
+  "nfields": 0,
+  "result": "pass",
+  "sample": "task-544.php4",
+  "source": "disk",
+  "status": "ok",
   "task": 544
  },
  "545": {

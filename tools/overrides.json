@@ -2567,6 +2567,10 @@
   "fields": [],
   "notes": "verified text format (genuine text sample + page describes text)"
  },
+ "544": {
+  "derivation": "text",
+  "notes": "PHP source code (text); no binary header layout."
+ },
  "546": {
   "derivation": "text",
   "fields": [],

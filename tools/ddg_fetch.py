@@ -37,7 +37,11 @@ REPORT = os.path.join(ROOT, "tools", "ddg_fetch_report.json")
 UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
 MAX_BYTES = 50 * 1024 * 1024
 
-# Domains that never host a downloadable sample (search engines, docs, video).
+# Tasks deliberately not sampled (documented judgment calls — do not re-fetch).
+# 55 (.BAK): 50 MB SQL Server backup; .BAK is a generic extension and the
+#   table field layout does not match the real MSSQLBAK header, so the
+#   decode would be misleading. Left honestly not-found.
+SKIP_TASKS = {55}
 SKIP_DOMAINS = {
     "duckduckgo.com", "www.duckduckgo.com", "google.com", "www.google.com",
     "bing.com", "www.bing.com", "wikipedia.org", "en.wikipedia.org",
@@ -108,7 +112,7 @@ def junk_reason(path, ext):
     with open(path, "rb") as fh:
         head = fh.read(256)
     low = head.lstrip().lower()
-    if head.startswith(b"404:") or head.startswith(b"404 Not Found"):
+    if low.startswith(b"404") or b"404 page not found" in low[:64] or b"404 not found" in low[:64]:
         return "404 error page"
     if low.startswith(b"<!doctype") or low.startswith(b"<html") or low.startswith(b"<head"):
         if ext.lower() not in (".html", ".htm", ".xhtml", ".shtml"):
@@ -126,6 +130,96 @@ def junk_reason(path, ext):
 
 
 def sfile_identifies(path, task, formats):
+    """Run ./sfile on the file. Returns (identified_task, decoded, output)."""
+    rc, out, _ = run([SFILE, path], timeout=30)
+    text = out.decode(errors="replace")
+    m = re.search(r"— task (\d+)", text)
+    identified = int(m.group(1)) if m else None
+    has_table = bool(re.search(r"offset\s+size\s+field", text))
+    nfields = len(re.findall(r"^\s+\d+\s+\d+\s+\S+", text, re.M))
+    decoded = bool(has_table and nfields >= 1) or bool(re.search(r"Document type:", text))
+    return identified, decoded, text
+
+
+def looks_like_document(path):
+    """True if the file is clearly a text document (Markdown, CSS, JS,
+    HTML, JSON, XML) rather than a binary sample. Used to reject false
+    positives for formats with no magic, where sfile can only identify
+    by extension and would accept any file with the right suffix."""
+    try:
+        with open(path, "rb") as fh:
+            head = fh.read(512)
+    except OSError:
+        return True
+    if not head:
+        return True
+    # Strip a UTF-8 BOM so an HTML page saved with one is still detected.
+    if head.startswith(b"\xef\xbb\xbf"):
+        head = head[3:]
+    low = head.lstrip().lower()
+    if low.startswith((b"<html", b"<!doctype", b"<head", b"<?xml")):
+        return True
+    if low.startswith(b"# ") or low.startswith(b"#\n"):
+        return True  # Markdown heading
+    if low.startswith(b"/*") or b"{\n" in head[:200] and b":" in head[:200] and b";" in head[:200]:
+        return True  # CSS
+    if low.startswith((b"function ", b"const ", b"var ", b"import ", b"//")):
+        return True  # JS / code
+    if low.startswith((b"{", b"[")) and b'"' in head[:200]:
+        return True  # JSON
+    # Mostly-printable ASCII that reads like prose/code, not binary data.
+    # No minimum length: even a short pure-ASCII fragment (e.g. a 31-byte
+    # "--format documentation" snippet) is a text file, not a binary sample.
+    # No digit-sequence exception: a text document that happens to contain
+    # a long number (or a hex dump) is still a text document, not a binary
+    # sample. Text formats are exempt upstream, so this only fires for
+    # binary/no-magic formats.
+    try:
+        text = head.decode("ascii")
+    except UnicodeDecodeError:
+        return False
+    printable = sum(1 for c in text if c.isprintable() or c in "\n\r\t")
+    if printable / max(len(text), 1) > 0.95 and b"\x00" not in head:
+        return True
+    return False
+
+
+def content_ok(path, task, formats, source_url=None):
+    """Strict validation for a candidate sample.
+    - Source check: if the source URL's filename extension differs from
+      the target ext AND is itself a known format extension, the file is
+      a different format, not this one (e.g. a .bak file offered as .dba).
+    - Format has a magic: the file's bytes MUST match it AND sfile must
+      identify it as this task (magic + extension disambiguation).
+    - Format has no magic: sfile must identify it as this task AND the
+      file must not be an obvious wrong-kind text document (for binary
+      formats; text formats are exempt).
+    Returns (ok, reason)."""
+    # Truncation: a file exactly at the download cap was cut off by curl
+    # and is incomplete (e.g. a 50 MiB .m4v whose mdat claims 71 MB).
+    try:
+        if os.path.getsize(path) >= MAX_BYTES:
+            return False, "truncated at download size cap"
+    except OSError:
+        return False, "missing"
+    fm = formats.get(str(task), {})
+    if source_url:
+        src_ext = os.path.splitext(urllib.parse.urlparse(source_url).path)[1].lower()
+        target_ext = (fm.get("ext") or "").lower()
+        if src_ext and target_ext and src_ext != target_ext:
+            known = { (f.get("ext") or "").lower() for f in formats.values() }
+            if src_ext in known:
+                return False, f"source file is {src_ext}, not {target_ext}"
+    identified, decoded, _ = sfile_identifies(path, task, formats)
+    if identified != task:
+        return False, f"sfile identified task {identified}, not {task}"
+    if fm.get("magic"):
+        if not table_magic_matches(path, task, formats):
+            return False, "magic bytes do not match table magic"
+        return True, "magic+extension"
+    if fm.get("derivation") != "text" and looks_like_document(path):
+        return False, "looks like a text document, not a binary sample"
+    return True, "extension-only"
     """Run ./sfile on the file. Returns (identified_task, decoded, output)."""
     rc, out, _ = run([SFILE, path], timeout=30)
     text = out.decode(errors="replace")
@@ -198,16 +292,29 @@ def main():
     tasks = sorted((int(k) for k in cand if k != "_special"))
     for t in tasks:
         key = str(t)
+        if t in SKIP_TASKS:
+            report[key] = {"status": "skipped",
+                           "reason": "deliberately not sampled (see SKIP_TASKS)"}
+            continue
         entry = cand[key]
         ext = entry.get("ext", "")
         if not ext:
             fm = formats.get(key, {})
             ext = (fm.get("ext") or "").lower()
-        # Already have a genuine sample on disk? (e.g. from a previous run)
+        # Already have a sample on disk? Re-validate it with the current
+        # strict logic (an earlier weak-validation run may have kept a
+        # false positive). Only trust it if it passes; otherwise delete it
+        # and try to find a genuine one.
         fname = "task-%03d%s" % (t, ext.lower())
-        if os.path.exists(os.path.join(SAMPLES, fname)) and os.path.getsize(os.path.join(SAMPLES, fname)) > 0:
-            report[key] = {"status": "exists", "file": fname}
-            continue
+        fpath = os.path.join(SAMPLES, fname)
+        if os.path.exists(fpath) and os.path.getsize(fpath) > 0:
+            ok, reason = content_ok(fpath, t, None)
+            if ok:
+                report[key] = {"status": "exists", "file": fname}
+                continue
+            os.remove(fpath)
+            print("  task %d: existing %s failed validation (%s) — removed"
+                  % (t, fname, reason), flush=True)
         if report.get(key, {}).get("status") == "kept":
             continue
         # Candidate URLs, deduped, in query order.
@@ -263,31 +370,24 @@ def main():
                 if not got:
                     tried_bad.append((url, "direct links failed to download"))
                     continue
-            # Validate the downloaded file.
+            # Validate the downloaded file. Cheap junk filter first, then
+            # strict content validation (magic must match when the format
+            # has one; no-magic formats must not be a document).
             reason = junk_reason(tmp, ext)
             if reason:
                 tried_bad.append((url, reason))
                 os.path.exists(tmp) and os.remove(tmp)
                 continue
-            identified, decoded, _ = sfile_identifies(tmp, t, formats)
-            if identified == t:
+            ok, why = content_ok(tmp, t, formats, source_url=url)
+            if ok:
+                identified, decoded, _ = sfile_identifies(tmp, t, formats)
                 final = os.path.join(SAMPLES, fname)
                 os.rename(tmp, final)
                 kept = {"status": "kept", "file": fname, "url": url,
                         "identified_task": identified, "decoded": decoded,
-                        "size": os.path.getsize(final)}
+                        "size": os.path.getsize(final), "validation": why}
                 break
-            if table_magic_matches(tmp, t, formats):
-                # Genuine magic, but sfile did not identify it (extension
-                # or table gap). Keep it — the test run will show PARTIAL
-                # or FAIL honestly, and the sample is real.
-                final = os.path.join(SAMPLES, fname)
-                os.rename(tmp, final)
-                kept = {"status": "kept-magic-only", "file": fname, "url": url,
-                        "identified_task": identified, "decoded": decoded,
-                        "size": os.path.getsize(final)}
-                break
-            tried_bad.append((url, f"sfile identified task {identified}, not {t}"))
+            tried_bad.append((url, why))
             os.path.exists(tmp) and os.remove(tmp)
         if kept:
             report[key] = kept

@@ -18679,14 +18679,14 @@
   "task": 543
  },
  "544": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".PHP4",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "PHP4 file",
-  "notes": "",
+  "notes": "PHP source code (text); no binary header layout.",
   "task": 544
  },
  "545": {

@@ -1,10 +1,633 @@
 {
+ "104": {
+  "ext": ".CPC",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://fileinfo.com/extension/cpc",
+   "https://www.file-extension.info/format/cpc",
+   "https://docs.fileformat.com/image/cpc/",
+   "https://www.filesuffix.com/en/extension/cpc",
+   "https://www.cpsc.gov/Business--Manufacturing/Testing-Certification/Childrens-Product-Certificate",
+   "https://www.cpsc.gov/Business--Manufacturing/Testing-Certification/Childrens-Product-Certificate/CPC-Example-Toy",
+   "http://en.cirs-ck.com/Uploads/file/20170801/1501557126_50514.pdf",
+   "https://www.cpcready.com/",
+   "https://www.cpcready.com/cpc-example.html",
+   "https://www.dochub.com/fillable-form/9032-get-a-example-of-certifiate-for-childrens-products",
+   "https://docassure.ai/children_protective_certificate_cpc/",
+   "https://cpc-template.pdffiller.com/",
+   "https://samplelib.com/",
+   "https://www.compliancegate.com/cpsia-childrens-product-certificate-cpc/",
+   "https://getsampledata.com/",
+   "https://samplefile.com/samples/",
+   "https://nostarch.com/download/ppa-capture-files.zip",
+   "http://www.cartesianinc.com/Products/CPCTool/Download/",
+   "https://file-examples.com/",
+   "https://truefilesize.com/",
+   "https://filesamples.com/",
+   "https://www.cartesianinc.com/Products/CPCTool/"
+  ]
+ },
+ "12": {
+  "ext": ".ACCFT",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://fileinfo.com/extension/accft",
+   "https://zumilabs.com/tools/zumifiles/file-formats/accft",
+   "https://filetypedb.com/database/accft/",
+   "https://docs.fileformat.com/database/accft/",
+   "https://support.microsoft.com/en-us/access/save-and-reuse-database-design-elements",
+   "https://fileextensions.wiki/extensions/accft/",
+   "https://viewer.online/accft",
+   "https://www.file-extension.info/format/accft",
+   "https://wiki.serp.co/file-types/accft/",
+   "https://access-templates.com/tag/examples.html",
+   "https://www.fileviewpro.com/en/file-extension-accft/",
+   "https://en.filedesc.com/file/accft",
+   "https://convert.guru/accft-converter",
+   "https://www.exefiles.com/en/developers/microsoft/extensions/accft/all-files/",
+   "https://mypcfile.com/viewer/accft",
+   "https://extension.nirsoft.net/accft",
+   "https://datatypes.net/ext/accft"
+  ]
+ },
+ "123": {
+  "ext": ".DAA",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://archiveexplorer.com/formats/daa",
+   "https://www.file-extension.info/format/daa",
+   "https://fileinfo.com/extension/daa",
+   "https://openfileending.com/daa.html",
+   "https://filesignature.org/daa",
+   "https://www.exceldemy.com/learn-excel/sample-data/",
+   "https://samplelib.com/sample-csv.html",
+   "https://samplelib.com/sample-parquet.html",
+   "https://samplelib.com/",
+   "https://samplefile.com/samples/",
+   "https://truefilesize.com/data/log/",
+   "https://csvtools.com/sample-data/",
+   "https://samplefile.com/samples/document/txt/",
+   "https://sarvkit.com/DevKit/sample-file-generator/",
+   "https://www.exceltool.io/sample-excel-files",
+   "https://poweriso.com/tutorials/extract-daa-file.htm",
+   "https://www.softpedia.com/get/System/File-Management/DAA2ISO.shtml",
+   "https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorks2025.bak",
+   "https://getsampledata.com/",
+   "https://public.tableau.com/app/resources/sample-data",
+   "https://www.autodesk.com/support/technical/article/caas/tsarticles/ts/6XGQklp3ZcBFqljLPjrnQ9.html",
+   "https://www.samplefiles.org/wp-content/plugins/wp-downloadmanager/css/wp-downloadmanager.css?ver=2.0.2"
+  ]
+ },
+ "130": {
+  "ext": ".DBA",
+  "reason": "Downloaded file is a SQL Server .bak (MSSQLBAK), not a .DBA file. Wrong format.",
+  "urls": [
+   "https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorks2025.bak",
+   "https://fileinfo.com/extension/dba",
+   "https://viewer.online/dba",
+   "https://red9.com/blog/sample-sql-databases/",
+   "https://sqlite.org/test-dbs/dir",
+   "https://learn.microsoft.com/en-us/sql/samples/sql-samples-where-are?view=sql-server-ver17",
+   "https://sqlshed.com/practice-datasets/sql-files/",
+   "https://sourceforge.net/projects/sample-sqlite-database-and-csv/",
+   "https://neon.com/postgresql/getting-started/sample-database",
+   "https://www.mysqltutorial.org/getting-started-with-mysql/mysql-sample-database/",
+   "https://www.dofactory.com/sql/sample-database",
+   "https://sqlshed.com/practice-datasets/free-sql-datasets/",
+   "https://www.templateroller.com/tags/94541-doing-business-as-dba/",
+   "https://static.ie.edu/siti/download/doctoral/application/Aplication-Form-DBA.pdf",
+   "https://sample-db.net/",
+   "https://www.sqlskills.com/sql-server-resources/sql-server-demos/",
+   "https://samplelib.com/",
+   "https://legaltank.org/templates/business-formation/dba-registration",
+   "https://www.templateroller.com/tags/94660-doing-business-as/"
+  ]
+ },
+ "151": {
+  "ext": ".DPFHTML",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://zumilabs.com/tools/zumifiles/file-formats/dpfhtml",
+   "https://samplepdf.org/files/sample.pdf",
+   "https://examplefile.com/",
+   "https://samplelib.com/sample-pdf.html",
+   "https://pdfplaceholder.com/pdf/Download+Test.pdf?download=1",
+   "https://docraptor.com/free-templates",
+   "https://truefilesize.com/sample-files/5mb/",
+   "https://sample-files.com/downloads/documents/pdf/basic-text.pdf",
+   "https://www.sampletestfiles.com/formats/pdf/",
+   "https://www.w3docs.com/snippets/html/how-to-embed-pdf-in-html",
+   "https://sample-files.com/downloads/documents/pdf/dev-example.pdf",
+   "https://pdfeditdesk.com/tools/sample-pdf",
+   "https://www.princexml.com/samples/",
+   "https://www.aspose.info/pdf/download-pdf/",
+   "https://connectpdf.com/sample-files/pdf",
+   "https://www.techsoft3d.com/enterprise/spinfire-convert/3d-pdf/sample-documents/"
+  ]
+ },
+ "168": {
+  "ext": ".ECC",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://fileinfo.com/extension/ecc",
+   "https://www.file-extension.info/format/ecc",
+   "https://www.filetypeadvisor.com/download/file-viewer-pro.exe",
+   "https://www.scribd.com/document/661433490/ecc-updated-sample",
+   "https://gist.github.com/cosard/56e6eaf127884804987eda9efc6ee840",
+   "https://www.scribd.com/document/677470417/Ecc-Sample",
+   "https://www.ecc.de/fileadmin/ECC/Downloads/Clearing/EMIR/EMIR_Refit_-_EMIR_derivatives_product_overview_v_18.xlsx",
+   "https://raw.githubusercontent.com/nakov/practical-cryptography-for-developers-book/master/asymmetric-key-ciphers/elliptic-curve-cryptography-ecc.md",
+   "https://fm4dd.com/openssl/certexamples.shtm",
+   "https://cryptobook.nakov.com/asymmetric-key-ciphers/elliptic-curve-cryptography-ecc",
+   "https://www.example-code.com/java/ecc.asp",
+   "http://www.ecc-brainpool.org/download/Domain-parameters.pdf",
+   "https://cryptobook.nakov.com/asymmetric-key-ciphers/ecc-encryption-decryption",
+   "https://www.scribd.com/document/378740591/Ecc-Sample",
+   "https://www.scribd.com/document/655475580/Sample-ECC-Document",
+   "https://samplefile.com/samples/",
+   "https://file-examples.com/",
+   "https://www.ecc.gov.ph/wp-content/uploads/2015/01/ec_logbook.pdf",
+   "https://gmhplanning.co.uk/nec-downloads/nec4-ecc-contract-data-2/",
+   "https://samplelib.com/",
+   "https://www.ecc.de/fileadmin/ECC/Downloads/Risk_Management/Margining/ECC_Spot_Market_Margining_V1.12.pdf",
+   "https://r7.emb.gov.ph/downloadables/"
+  ]
+ },
+ "172": {
+  "ext": ".EIS",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://www.scribd.com/document/411992437/EIS-Sample",
+   "https://cdxapps.epa.gov/cdx-enepa-II/public/action/eis/search",
+   "https://www.fs.usda.gov/nepa/nepa_templates/EIStemplate.docx",
+   "https://ieslibrary.com/",
+   "https://www.energy.gov/nepa/doe-environmental-impact-statements",
+   "https://netl.doe.gov/library/eis",
+   "https://www.researchgate.net/figure/EIS-sample-by-project-category_tbl1_263885027",
+   "https://www.fws.gov/sites/default/files/documents/example-record-of-decision-for-environmental-impact-statement.pdf",
+   "https://ntepa.nt.gov.au/__data/assets/pdf_file/0009/818217/preparing-an-environmental-impact-statements.pdf",
+   "https://eia.emb.gov.ph/?page_id=1038",
+   "https://www.cooperlighting.com/global/resources/ies-file-downloads",
+   "https://www.innerscene.com/fixtures",
+   "https://market.bimsmith.com/ies-files",
+   "https://www.acuitybrands.com/resources/technical-resources/ies-downloads",
+   "https://www.82.net/models/ies-0-1-1.html",
+   "https://ieslibrary.com/browse",
+   "https://www.tcpi.com/wp-content/plugins/download-monitor/assets/css/frontend-tailwind.min.css?ver=5.3.10",
+   "https://leomoon.com/store/shaders/ies-lights-pack/",
+   "https://www.cgchannel.com/2020/06/download-over-90000-free-ies-lighting-files-from-ies-library/"
+  ]
+ },
+ "183": {
+  "ext": ".EPA",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://www.epa.gov/caddis/download-r-scripts-and-sample-data",
+   "https://www.epa.gov/enviro/data-downloads",
+   "https://archive.epa.gov/epafiles/samples/",
+   "https://www.openswmm.org/SWMMExamples",
+   "https://aqs.epa.gov/aqsweb/airdata/download_files.html",
+   "https://19january2021snapshot.epa.gov/caddis-vol4/download-r-scripts-and-sample-data_.html",
+   "https://response.epa.gov/site/site_profile.aspx?site_id=ScribeGIS",
+   "https://gaftp.epa.gov/Air/aqmg/SCRAM/models/preferred/aermod/AERMOD_Sample_Run_Instructions.pdf",
+   "https://echo.epa.gov/system/files/AFS_Data_Download.pdf",
+   "https://aqs.epa.gov/aqsweb/airdata/FileFormats.html",
+   "https://echo.epa.gov/tools/data-downloads/sdwa-download-summary",
+   "https://www.magnific.com/free-photos-vectors/eps",
+   "https://19january2021snapshot.epa.gov/enviro/data-downloads_.html"
+  ]
+ },
+ "188": {
+  "ext": ".ESCPCB",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://zumilabs.com/tools/zumifiles/file-formats/escpcb",
+   "https://fileextensions.wiki/extensions/escpcb/",
+   "https://pcb.escad.jp/download/Escpcb_LibEdit_Manual_en.pdf",
+   "https://www.ci.lathrop.ca.us/sites/default/files/fileattachments/public_works/page/5740/lathrop_escp_example_markup_25jan22.pdf",
+   "https://www.troutdaleoregon.gov/media/16981",
+   "https://www.pueblo.us/DocumentCenter/View/38242/ESCP-Example-Drawing",
+   "https://www.scribd.com/document/1078277593/ESCP-EXAMPLE5",
+   "https://www.scribd.com/document/581745632/Appendix-B-ESCP-Template",
+   "https://sitemate.com/templates/environmental/forms/erosion-sediment-control-plan/",
+   "https://www.academia.edu/28923163/SAMPLE_EROSION_AND_SEDIMENT_CONTROL_PLAN_ESCP_DRAWINGS",
+   "https://mcstoppp.org/wp-content/uploads/2020/09/mcstoppp-erosion-and-sediment-control-plan-applicant-package.pdf",
+   "https://www.pa.gov/agencies/dep/programs-and-services/water/clean-water/stormwater-management/construction-stormwater/eands-resources",
+   "https://www.pcbastore.com/download.html",
+   "https://www.snapeda.com/expresspcbplus/",
+   "https://www.expresspcb.com/classic/",
+   "http://www.bigclive.com/freebies.htm",
+   "https://img1.wsimg.com/blobby/go/5ace4671-151b-46cc-b292-f6280fdbb899/downloads/76e5eed4-f3b5-4055-b3c0-0ae0cce79bb0/Arduino%20Nano%20IO%20Shield%20Gerber.zip?ver=1793354976404",
+   "https://samplelib.com/",
+   "https://www.expresspcb.com/pcb-cad-software/",
+   "https://www.existingconditions.com/knowledge-center-articles/downloading-project-files",
+   "https://deepbluembedded.com/stm32-esc-pcb-design-foc-esc-bldc-schematic/"
+  ]
+ },
+ "189": {
+  "ext": ".ESCSCH",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://zumilabs.com/tools/zumifiles/file-formats/escsch",
+   "https://viewanyfile.app/view/escsch",
+   "https://www.ee.cuhk.edu.hk/~ymfung/ppp/pspice/modelexample.html",
+   "https://www.ee.cuhk.edu.hk/~ymfung/ppp/pspice/modelexample2.html",
+   "https://el34world.com/Forum/index.php?topic=590.0",
+   "https://github.com/noahcoad/ExpressSCH-Components",
+   "https://samplefile.com/samples/",
+   "https://samplelib.com/",
+   "https://file.org/free-download/expresssch",
+   "https://getsampledata.com/",
+   "https://samplelib.com/sample-audio.html",
+   "https://expresssch.apponic.com/",
+   "https://www.deq.nc.gov/about/divisions/energy-mineral-and-land-resources/erosion-and-sediment-control/esc-downloads-and-forms",
+   "https://file-examples.com/",
+   "https://expresssch.apponic.com/download/"
+  ]
+ },
+ "190": {
+  "ext": ".ESD",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://fileinfo.com/extension/esd",
+   "https://laptopjudge.com/what-is-an-esd-file-in-windows-deployment/",
+   "https://www.file-extension.info/format/esd",
+   "https://www.filetypeadvisor.com/download/file-viewer-pro.exe",
+   "https://www.lifewire.com/esd-file-2621103",
+   "https://www.esda.org/assets/Sample-ESD-Control-Document-based-on-2020-2021-v3.pdf",
+   "https://www.scribd.com/document/38996052/S2020-Sample-Program",
+   "https://www.esda.org/assets/Sample-ESD-Control-Document-based-on-2020-2014-v2.pdf",
+   "https://worproject.com/esd",
+   "https://file.org/extension/esd",
+   "https://grabcad.com/library/tag/esd",
+   "https://pdf4pro.com/file/285a0/Downloads_S2020_Sample_Program.pdf.pdf",
+   "https://studylib.net/doc/18153767/example-esd-control-document-based-on-iec-61340-5-1",
+   "https://raw.githubusercontent.com/davispuh/ESD-Downloader/master/.rspec",
+   "https://raw.githubusercontent.com/mattieb/download-windows-esd/main/CHANGELOG.md",
+   "https://sourceforge.net/projects/esdinstaller/",
+   "https://www.majorgeeks.com/files/details/esd_toolkit.html",
+   "https://help.fieldsystems.trimble.com/trimble-access/latest/en/downloads.htm",
+   "https://www.poweriso.com/tutorials/open-esd-file.htm"
+  ]
+ },
+ "191": {
+  "ext": ".ESF",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://support.knx.org/hc/en-us/articles/115001823310-OPC-Export",
+   "https://fileinfo.com/extension/esf",
+   "https://www.file-extensions.org/extension/esf",
+   "https://datatypes.net/ext/esf",
+   "https://learn.microsoft.com/en-us/answers/questions/2428035/how-to-open-a-esf-file",
+   "https://file.org/extension/esf",
+   "https://www.scribd.com/document/816649208/FORMAT-FOR-EXCHANGE-OF-ELECTRICAL-SURVEY-DATA-Ver001",
+   "https://ufonts.com/fonts/sample-esf-normal-64073.html",
+   "https://www.fsaeonline.com/cdsweb/app/NewsItem.aspx?NewsItemID=7fdf36aa-697f-49ac-b809-c0845ae77671",
+   "https://www.jsae.or.jp/files_publish/page/525/ESF%20description2025_EN.pdf",
+   "https://mime-type.com/application/vnd.epson.esf",
+   "https://modrinth.com/mod/esf/version/FcXkMfRj",
+   "https://www.softpedia.com/get/Internet/Servers/Database-Utils/ESF-Database-Convert-Professional.shtml",
+   "https://sourceforge.net/projects/esfeditor/",
+   "https://static.wfonts.com/download/data/2015/08/06/sample-esf/sample-esf.zip",
+   "https://static.wfonts.com/download/data/2015/08/06/sample-esf2/sample-esf2.zip",
+   "https://www.onlinewebfonts.com/download/79f2f1042373bcca6f4d7cd9fca206f8",
+   "https://www.fontpalace.com/font-download/sample-esf-normal/",
+   "https://getsampledata.com/",
+   "https://www.webfontfree.com/en/download/SampleESFNormal",
+   "https://english.fontke.com/font/10040385/",
+   "https://www.fonts101.com/fonts/view/Standard/15815/SampleESF",
+   "https://www.maisfontes.com/sample-esf-normal.font"
+  ]
+ },
+ "233": {
+  "ext": ".FNI",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://zumilabs.com/tools/zumifiles/file-formats/fni",
+   "https://datatypes.net/ext/fni",
+   "https://openfileending.com/fni.html",
+   "https://www.file-extension.info/format/fni",
+   "https://file.org/extension/fni",
+   "https://downloads.inf-fni.org/sample-page/",
+   "https://downloads.inf-fni.org/wp-file-download/en-accounting/",
+   "https://www.file-extensions.org/extension/fni",
+   "https://www.filemagic.com/en/uncommon-files/fni-file-extension/five-steps-to-open-fni-files/",
+   "https://www.file-extension.org/extensions/fni",
+   "https://samplelib.com/",
+   "https://samplefile.com/samples/",
+   "https://samplefile.com/samples/data/ini/files/ini_sample_file_1MB.ini/",
+   "https://samplefile.com/samples/data/ini/",
+   "https://sourceforge.net/directory/?q=ini%20files",
+   "https://flipperfile.com/samples/ini/"
+  ]
+ },
+ "234": {
+  "ext": ".FNX",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://zumilabs.com/tools/zumifiles/file-formats/fnx",
+   "https://viewer.online/fnx",
+   "https://www.file-extension.info/format/fnx",
+   "https://github.com/gbaptista/fnx-hello-world",
+   "https://jfor.org/extension/fnx",
+   "https://filext.com/file-extension/FNX",
+   "https://sample-files.com/downloads/data/xml/basic-structure.xml",
+   "https://grabcad.com/library/tag/fnx",
+   "https://samplefile.com/samples/",
+   "https://community.sw.siemens.com/s/question/0D54O000080I3UfSAK/how-to-convert-fnx-font-files-to-truetype-ttf-files-where-to-find-fontfactory-software",
+   "https://www.stata.com/links/stata-basics/example-datasets/",
+   "https://cults3d.com/en/3d-model/tool/fn-fnx-40-real-size-scan",
+   "https://cults3d.com/en/3d-model/tool/fn-fnx45",
+   "https://sketchfab.com/tags/fnx-45",
+   "https://free3d.com/3d-models/fbx",
+   "https://fnxbasic.com/downloads/fnx-12-2013.zip",
+   "https://www.templatemonster.com/free-fbx-3d-models/",
+   "https://samplelib.com/",
+   "https://sketchfab.com/tags/fbx",
+   "https://sketchfab.com/search?q=tag%3Afbx&sort_by=-likeCount&type=models",
+   "https://free3d.com/3d-models/fbx-simple",
+   "https://grabcad.com/library/tag/fbx",
+   "https://www.sloyd.ai/free-3d-models"
+  ]
+ },
+ "24": {
+  "ext": ".AMF",
+  "reason": "AMF3_in_AMF0.sample is explanatory text (\"manually decode the AMF3 in AMF0 message\"), not a binary AMF file. Same file dropped in the override round.",
+  "urls": [
+   "https://raw.githubusercontent.com/ihgazni/SIMPLE-AMF-DECODER/master/AMF3_in_AMF0.sample"
+  ]
+ },
+ "244": {
+  "ext": ".FRQ7",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://www.scribd.com/document/826677231/Sample-FRQ-7",
+   "https://apcentral.collegeboard.org/media/pdf/ap24-apc-music-theory-q7.pdf",
+   "https://www.scribd.com/document/839534497/AP-Music-Theory-FRQ-7",
+   "https://apcentral.collegeboard.org/media/pdf/ap24-apc-chemistry-q7.pdf",
+   "https://www.apcsexamprep.com/pages/ap-csa-frq-archive",
+   "https://download.apsamples.com/stylesheets/stylesheet.css",
+   "https://altareen.github.io/csa/frqs/",
+   "https://getsampledata.com/",
+   "https://examplefile.com/",
+   "https://samplelib.com/",
+   "https://samplefile.com/samples/",
+   "https://zumilabs.com/tools/zumifiles/file-formats/frq7",
+   "https://filesamples.com/",
+   "https://file-examples.com/"
+  ]
+ },
  "25": {
   "ext": ".AMG",
   "reason": "page link is crowd.wav.zip (a ZIP of a WAV), not an .AMG Ambisonic file",
   "urls": [
    "https://edge.rode.com/zip/page/1890/modules/8/crowd.wav.zip",
-   "https://edge.rode.com/zip/page/1890/modules/8/skaters.wav.zip"
+   "https://edge.rode.com/zip/page/1890/modules/8/skaters.wav.zip",
+   "https://zumilabs.com/tools/zumifiles/file-formats/amg",
+   "https://www.reviversoft.com/downloads/CID/FILEXT2/34/RegistryReviverSetup.exe",
+   "https://openfileending.com/amg.html",
+   "https://amguk.co.uk/",
+   "https://audioanon.com/DemoDownloads/DemoDL.html",
+   "https://archive.org/download/randomsamplepacks/AMG%20-%20160dB%20The%20Drum%20and%20Bass%20Interface.jpg",
+   "https://archive.org/download/amg-260d-b/AMG%20260db/Track%2001.mp3",
+   "https://amguk.co.uk/professional-sample-libraries/S4.html",
+   "https://www.musical-artifacts.com/artifacts?order=most_downloaded&tags=amg+samples+archives",
+   "https://samplelib.com/",
+   "https://www.audioanon.com/others/Audio%20Sample%20CDs/",
+   "https://samplefile.com/samples/",
+   "https://samples4.com/",
+   "https://filesamples.com/formats/amr",
+   "https://www.ai2done.com/en/sample-files-audio/amr",
+   "https://archive.org/download/amgruffcutz/AMG%20-%20Ruff%20Cutz/AMG%20-%20Ruff%20Cutz/01%20Cyril%20Beats%20100.mp3",
+   "https://www.audio-digital.net/s-pages/sample-amr-audio-files.html",
+   "https://voiceage.com/Audio-Samples.html"
+  ]
+ },
+ "269": {
+  "ext": ".GREXLI",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://samplelib.com/",
+   "https://getsampledata.com/",
+   "https://zumilabs.com/tools/zumifiles/file-formats/grexli",
+   "https://sourceforge.net/projects/grex.mirror/",
+   "https://www.exceltool.io/sample-excel-files",
+   "https://samplefile.com/",
+   "https://samplefile.com/samples/",
+   "https://filesamples.com/",
+   "https://samplelib.com/sample-audio.html",
+   "https://www.samplefiles.org/wp-content/plugins/wp-downloadmanager/css/wp-downloadmanager.css?ver=2.0.2",
+   "https://toollyx.com/sample-files",
+   "https://parametrichouse.com/grasshopper-algorithms/",
+   "https://www.sampleyogi.com/all-samples",
+   "https://truefilesize.com/"
+  ]
+ },
+ "285": {
+  "ext": ".HDMP",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://memoryforensic.com/memory-dumps-collection-volume-1/",
+   "https://memoryforensic.com/volatility-foundations-memory-samples/",
+   "https://samplelib.com/",
+   "https://file.org/extension/hdmp",
+   "https://docs.fileformat.com/system/hdmp/",
+   "https://filesignature.org/hdmp",
+   "https://fileinfo.com/extension/hdmp",
+   "https://filext.com/file-extension/HDMP",
+   "https://samplefile.com/samples/",
+   "http://www.jens-goedeke.eu/tools/hdmp/",
+   "https://citizenside.com/technology/hdmp-file-what-it-is-and-how-to-open-one/",
+   "https://learn.microsoft.com/en-us/troubleshoot/windows-client/performance/read-small-memory-dump-file"
+  ]
+ },
+ "290": {
+  "ext": ".HOF",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://www.scribd.com/document/770131931/Self-Declaration-HOF",
+   "https://github.com/lmaodick1239/GX_hof_creator",
+   "https://samplefile.com/samples/",
+   "https://reboot.omsi-webdisk.de/wiki/entry/45-hof-file/",
+   "https://www.scribd.com/document/719852726/hof-form",
+   "https://github.com/UKHomeOfficeForms/hof-examples",
+   "https://fellowsfilm.com/downloads/categories/hof-files.19/?page=2",
+   "https://www.eforms99.in/example/pdf/SELF_DECLARATION_-_1666852835.pdf",
+   "https://samplelib.com/",
+   "https://reboot.omsi-webdisk.de/file/10258-hof-bulkcopy-2/",
+   "https://fileinfo.com/extension/hof",
+   "https://shop.h-of.de/en/service/downloads/",
+   "https://raw.githubusercontent.com/ruffnext/hof-unpacker/main/sample.hof",
+   "https://fellowsfilm.com/downloads/categories/hof-files.19/",
+   "https://omsiworld.com/?feature=downloadsystem&fileid=hof&req=info",
+   "https://filext.com/file-extension/HOF",
+   "https://reboot.omsi-webdisk.de/file/773-hof-suite-en-de/",
+   "https://omsiworld.com/?feature=downloadsystem&fileid=hof&req=extras&showcredits=23"
+  ]
+ },
+ "296": {
+  "ext": ".HUM",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://samplefocus.com/tag/hum",
+   "https://pixabay.com/sound-effects/search/humming/",
+   "https://samplefocus.com/tag/humming",
+   "https://samples.landr.com/sfxs/hum",
+   "https://pixabay.com/sound-effects/search/electric-hum/",
+   "https://splice.com/sounds/tags/hum/samples",
+   "https://www.looperman.com/loops/tags/free-humming-loops-samples-sounds-wavs-download",
+   "https://www.soundsnap.com/tags/hum",
+   "https://audio.com/category/sound-effect/hum",
+   "https://splice.com/sounds/tags/hum/packs",
+   "https://pixabay.com/sound-effects/search/hum%20/",
+   "https://elevenlabs.io/sound-effects/hum",
+   "https://mixkit.co/free-sound-effects/hum/"
+  ]
+ },
+ "315": {
+  "ext": ".IQBLOCKS",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://kb.vex.com/hc/en-us/articles/360035954591-Opening-a-VEXcode-IQ-Blocks-Project-on-Windows",
+   "https://samplefile.com/samples/",
+   "https://kb.vex.com/hc/en-us/articles/4403663392788-Using-VEXcode-IQ-Blocks-Example-Projects-and-Templates",
+   "https://zumilabs.com/tools/zumifiles/file-formats/iqblocks",
+   "https://iqblocks.trade/",
+   "https://www.onekitprojects.com/downloading-vexiq-programs",
+   "https://api.vex.com/iq2/home/blocks/index.html",
+   "https://codeiq.vex.com/",
+   "https://file-examples.com/",
+   "https://getsampledata.com/"
+  ]
+ },
+ "345": {
+  "ext": ".KRABER",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://sketchfab.com/tags/kraber",
+   "https://makerworld.com/en/models/2114257-kraber-the-nerf-blaster-originated-fromyu-ban-hong",
+   "https://cults3d.com/en/3d-model/art/apex-legends-kraber-cosplay-prop",
+   "https://cults3d.com/en/3d-model/game/kraber-ap-sniper",
+   "https://sketchfab.com/3d-models/printable-kraber-980e82c5e8334b4081bdab0ea2827af0",
+   "https://3dgo.app/models/makerworld/1308880",
+   "https://www.yeggi.com/q/kraber/",
+   "https://www.thingiverse.com/thing:4255473",
+   "https://www.printables.com/model/627485-titanfall-2-kraber",
+   "https://samplelib.com/",
+   "https://zumilabs.com/tools/zumifiles/file-formats/kraber",
+   "https://modsfire.com/2Q4d5i3732kX2r2",
+   "https://bazaar.abuse.ch/browse/",
+   "https://fileinfo.com/extension/krab",
+   "https://makerworld.com/en/search/models?keyword=tag%3A+kraber",
+   "https://samplefile.com/samples/"
+  ]
+ },
+ "346": {
+  "ext": ".KSH",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "http://bolthole.com/solaris/ksh-sampleprog.html",
+   "https://toolsfairy.com/code-test/sample-sh-files",
+   "https://ftpdocs.broadcom.com/cadocs/0/CA%20Workload%20Automation%20CA%207%20Edition%20-%20Public%2012%200%2000-ENU/Bookshelf_Files/HTML/IAS_User_ENU/Korn_Shell_Initialization_Files.html",
+   "https://www.sdvx.org/en/charting/kshfile",
+   "https://www.scribd.com/document/55488979/Korn-Shell-Ksh-Programming",
+   "https://www.livefirelabs.com/key-ksh-array-implementation-topics-with-shell-script-examples.htm",
+   "https://pkgs.org/download/ksh",
+   "https://www.ibm.com/docs/en/aix/7.1.0?topic=files-kshrc-file",
+   "https://github.com/brajeshkokkonda/Unix-Shell-Scripting",
+   "https://www.oreilly.com/library/view/korn-shell-unix/0201675234/0201675234_app01.html",
+   "https://linuxsimply.com/100-shell-script-examples/",
+   "https://sourceforge.net/directory/?q=ksh",
+   "https://gtfobins.org/gtfobins/ksh/",
+   "https://getsampledata.com/",
+   "https://developer.ibm.com/articles/au-kornshellscripting/",
+   "http://kornshell.com/"
+  ]
+ },
+ "371": {
+  "ext": ".M4P",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://toolsfairy.com/audio-test/sample-m4a-files",
+   "https://samplefile.com/samples/audio/m4a/",
+   "https://filesamples.com/formats/m4a",
+   "https://samplefile.com/samples/",
+   "https://getsampledata.com/",
+   "https://samplelib.com/",
+   "https://get-examplefiles.com/",
+   "https://hitokageproduction.com/article/92",
+   "https://docs.fileformat.com/audio/m4p/",
+   "https://thetestdata.com/sample-m4a-file-download.php",
+   "https://www.sampleyogi.com/samples/sample-mp4",
+   "https://filesamples.com/formats/m4v",
+   "https://toolsfairy.com/video-test/sample-m4v-files",
+   "https://sandbox-videos.web.cern.ch/record/2241796",
+   "https://truefilesize.com/video/mp4/",
+   "https://www.lifewire.com/m4p-file-2621959",
+   "https://sample-files.com/videos/mp4/",
+   "https://archive.org/details/LibrivoxM4bCollectionAudiobooks1b"
+  ]
+ },
+ "390": {
+  "ext": ".MDI",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://www.petersmidi.com/download.html",
+   "https://slooply.com/midi/free",
+   "https://soundtrackloops.com/audio/formats/midi/",
+   "https://bitmidi.com/",
+   "https://freewavesamples.com/midi-instruments",
+   "https://www.lucidsamples.com/17-midi-samples",
+   "https://midisamples.com/",
+   "https://archive.org/download/themagicofmidiv1/ad.png",
+   "https://www.freemidi.org/index.php",
+   "https://free-sample-packs.com/wp-content/uploads/2024/03/cropped-Free-Sample-Packs-To-Download-32x32.jpg",
+   "https://archive.org/download/midi-collection_202407/index.png",
+   "https://www.dancemidisamples.com/category/free-packs/free-midi-packs-download-free-samples/",
+   "https://www.dancemidisamples.com/category/free-packs/",
+   "https://midi4you.com/",
+   "https://www.midiworld.com/files",
+   "https://edmtemplates.net/blogs/lists/free-midi-files"
+  ]
+ },
+ "403": {
+  "ext": ".MNT",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://file.org/extension/mnt",
+   "https://community.openai.com/t/how-do-download-files-generated-in-ai-assistants/493516.rss",
+   "https://filext.com/file-extension/MNT",
+   "https://fileinfo.com/extension/mnt",
+   "https://sarvkit.com/DevKit/sample-file-generator/",
+   "https://www.scribd.com/document/1046401052/MNT-SAMPLE",
+   "https://www.mtexamples.com/",
+   "https://www.andeal.org/files/file/DLM6%20Initial%20and%20Followup%20Progress%20Note.doc",
+   "https://samplelib.com/",
+   "https://learn.microsoft.com/en-us/answers/questions/5442882/m365-copilot-created-file-placed-at-unreachable-ur",
+   "https://learn.microsoft.com/en-us/answers/questions/3849779/how-to-open-sandbox-links-from-co-pilot",
+   "https://learn.microsoft.com/en-gb/answers/questions/5442882/m365-copilot-created-file-placed-at-unreachable-ur",
+   "https://www.datablist.com/learn/csv/download-sample-csv-files",
+   "https://file-examples.com/"
+  ]
+ },
+ "447": {
+  "ext": ".NET",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://learn.microsoft.com/en-us/dotnet/samples-and-tutorials/",
+   "https://dotnetfoundation.org/projects/project-detail/samples",
+   "https://file-examples.com/",
+   "https://old.dotnetfoundation.org/projects/samples",
+   "https://github.com/egil/dotnet-samples",
+   "https://learn.microsoft.com/en-us/samples/browse/",
+   "https://sourceforge.net/projects/xamarin-ios-xamarin-mac.mirror/",
+   "https://samplefile.com/samples/",
+   "https://github.com/danhellem/dotnet-project-example",
+   "https://sourceforge.net/directory/?q=.net%20sample%20application",
+   "https://sourceforge.net/projects/netsampleapplic/",
+   "https://dotnet.microsoft.com/static/css/pages/download/index.min.css?v=o9vU7I1QBG6xv_ti8Bq6oKLW1q4HVUpC4AIMaOGJGo8",
+   "https://toolsfairy.com/code-test/sample-cs-files",
+   "https://www.aspsnippets.com/Handlers/DownloadFile.ashx?File="
   ]
  },
  "448": {
@@ -12,7 +635,149 @@
   "reason": "page link is a PDF document, not a .NEU mesh file",
   "urls": [
    "https://www.cfd-online.com/Forums/attachments/ansys-meshing/3455d1274429578-converting-fluent-mesh-files-gambit-neutral-files-msh2neu.tar.gz",
-   "https://web.stanford.edu/class/me469b/handouts/gambit_write.pdf"
+   "https://web.stanford.edu/class/me469b/handouts/gambit_write.pdf",
+   "https://toolsfairy.com/image-test/sample-nef-files",
+   "https://www.luminescentphoto.com/nx2/nefs.html",
+   "https://www.fileexamples.com/category/photography/photo-raw-nef-1",
+   "https://filesamples.com/formats/nef",
+   "https://github.com/tellodaniel/revelraw-sample-raw-files/releases/download/v1/SHA256SUMS.txt",
+   "https://www.raw-files.com/",
+   "https://www.raw-files.com/download.html",
+   "https://samplelib.com/",
+   "https://getsamplefiles.com/download/nef/sample-1.nef",
+   "https://getsampledata.com/",
+   "https://neu-audio.com/assets/download-DRRc2PYx.js",
+   "https://samplefile.com/samples/",
+   "https://fileinfo.com/extension/neu",
+   "https://rhythm-lab.com/neu_jungle/",
+   "https://file-examples.com/",
+   "https://file.org/extension/neu",
+   "https://docs.paloaltonetworks.com/advanced-wildfire/administration/configure-advanced-wildfire-analysis/verify-wildfire-submissions/test-a-sample-malware-file"
+  ]
+ },
+ "452": {
+  "ext": ".NIM",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://nim-by-example.github.io/",
+   "https://nim-by-example.github.io/getting_started/",
+   "https://sagecode.org/roadmap/nim/demo_examples/",
+   "https://nimbyexample.com/",
+   "https://github.com/battila7/nim-realworld-example-app",
+   "https://docs.nvidia.com/nim/large-language-models/deployment/model-download.md",
+   "https://nim-lang.org/docs/tut1.html",
+   "https://hackr.io/tutorial/nim-by-example",
+   "https://github.com/nim-lang/Nim/tree/version-2-4/lib/std/files.nim#L1",
+   "https://archive.org/download/nim-in-action/Nim%20in%20Action.pdf",
+   "https://www.testaroo.com/glossary/nim",
+   "https://scripter.co/downloading-nim/",
+   "https://github.com/dom96/choosenim/releases/download/v0.7.4/choosenim-0.7.4_windows_amd64.exe"
+  ]
+ },
+ "453": {
+  "ext": ".NMF",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://file.org/extension/nmf",
+   "https://github.com/3MFConsortium/3mf-samples",
+   "https://www.equa.se/dncenter/nmfre302.pdf",
+   "https://fileinfo.com/extension/nmf",
+   "https://gist.github.com/ingle/93de575aac6a4c7fe9ee5f3d5adab98f",
+   "https://www.equa.se/dncenter/handbook.pdf",
+   "https://samplelib.com/",
+   "https://www.file-extensions.org/extension/nmf",
+   "https://github.com/ansys/example-data",
+   "https://samplefile.com/samples/",
+   "https://www.file-extension.info/format/nmf",
+   "https://toolsfairy.com/image-test/sample-nef-files",
+   "https://www.fileextension.org/NMF",
+   "https://www.luminescentphoto.com/nx2/nefs.html",
+   "https://www.armsandbadges.com/sample.htm"
+  ]
+ },
+ "459": {
+  "ext": ".NS1",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://file.org/extension/ns1",
+   "https://filext.com/file-extension/NS1",
+   "https://www.scribd.com/document/821609726/dengue-fever-antigen-ns1-test-positive-report-format-example-sample-template-drlogy-lab-report",
+   "https://www.nexo-sa.com/wp-content/plugins/download-monitor/assets/css/frontend-tailwind.min.css?ver=5.3.9",
+   "https://fileinfo.com/extension/ns1",
+   "http://www.stumbler.net/ns1files.html",
+   "https://github.com/ezrec/ns1tools",
+   "https://github.com/ns1/ns1-python/tree/master/examples",
+   "https://drlogy.com/plus/dengue-ns1-antigen-test-report-format",
+   "https://www.scribd.com/document/1035203446/Dengue-Fever-Antigen-Ns1-Test-Positive-Report-Format-Example-Sample-Template-Drlogy-Lab-Report-2",
+   "https://getsampledata.com/",
+   "https://github.com/ac2ev/NS1-File-Recovery",
+   "https://cfreds.nist.gov/all/DFIR_AB/ForensicsImageTestimage",
+   "https://samplelib.com/",
+   "https://www.charruasoft.com/dicom-samples/",
+   "https://filesamples.com/",
+   "https://samplefile.com/samples/",
+   "https://digitalcorpora.org/corpora/disk-images/"
+  ]
+ },
+ "465": {
+  "ext": ".NWF",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://sketchfab.com/tags/navisworks",
+   "https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/How-to-find-a-NWF-NWD-template-for-Navisworks.html",
+   "https://forums.autodesk.com/t5/navisworks-forum/nwd-files-looking-for-an-example/td-p/3037610",
+   "https://help.autodesk.com/cloudhelp/2022/ENU/Navisworks/files/GUID-C3AF0000-2810-47FB-BF21-95181A36DCD8.htm",
+   "https://grabcad.com/library/tag/navisworks",
+   "https://help.autodesk.com/cloudhelp/2023/ENU/Navisworks-Freedom-Quick-Start/files/GUID-C3AF0000-2810-47FB-BF21-95181A36DCD8.htm",
+   "https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/NavisWorks-JetStream-file-formats-NWC-NWF-NWD-and-NWP.html",
+   "https://www.modelical.com/en/gdocs/navisworks__trashed/",
+   "https://www.eng-tips.com/threads/nwf-file-generator-for-facilitating-routing-in-ptc-creo-cabling.519863/",
+   "https://samplelib.com/",
+   "https://community.ptc.com/3d-part-assembly-design-327/nwf-file-34196",
+   "https://support.ptc.com/help/creo/creo_pma/r12/usascii/electrical_design/cable/The_Neutral_Format_Wire_List.html",
+   "https://docs.paloaltonetworks.com/advanced-wildfire/administration/configure-advanced-wildfire-analysis/verify-wildfire-submissions/test-a-sample-malware-file"
+  ]
+ },
+ "506": {
+  "ext": ".PACK",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://samplelib.com/",
+   "https://samplefile.com/samples/",
+   "https://getsampledata.com/",
+   "https://www.samplefiles.org/wp-content/plugins/wp-downloadmanager/css/wp-downloadmanager.css?ver=2.0.2",
+   "https://archive.org/download/Bluezone%20-%20Hardstyle%20%26%20Hardcore%20Loops%20Samples.rar",
+   "https://get-examplefiles.com/",
+   "https://samplefile.com/",
+   "https://filesamples.com/",
+   "https://freetoolsforweb.com/sample-files",
+   "https://examplefile.com/",
+   "https://soundpacks.com/",
+   "https://www.functionloops.com/free-samples.html",
+   "https://www.angelicvibes.com/free-sample-packs/",
+   "https://www.goaudio.net/wp-content/plugins/simple-download-monitor/css/sdm_wp_styles.css?ver=4.1.3",
+   "https://produtique.com/samples/",
+   "https://www.zanderjaz.com/downloads/drum-kits/"
+  ]
+ },
+ "51": {
+  "ext": ".AXF",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://filesignature.org/axf",
+   "https://www.xrite.com/axf/sample-library",
+   "https://www.xrite.com/fr-fr/axf/sample-library",
+   "https://axf.dev/downloads/SPEC.md",
+   "https://thierry-gmbh.de/en/digitalsamples/",
+   "https://www.scribd.com/document/819968051/AxF-Whitepaper-v18-EN",
+   "https://www.antennahouse.com/xsl-fo-samples",
+   "https://axf.dev/downloads/examples-README.md",
+   "https://experienceleague.adobe.com/en/docs/substance-3d-designer/using/resources/axf-appearance-exchange-format",
+   "https://github.com/metalibm/axf",
+   "https://ansyshelp.ansys.com/public/Views/Secured/corp/v251/en/Optis_UG_ASP/Optis/shared/reusable_topics/references/R_UG_SPEOS_materials_axf.html",
+   "https://www.xrite.com/appearance-exchange-format-axf",
+   "https://www.tiger-coatings.com/digital-finishes",
+   "https://www.tiger-coatings.com/us-en/powder-coatings/tiger-drylacr-digital-finishes"
   ]
  },
  "511": {
@@ -20,7 +785,113 @@
   "reason": "page link is a ZIP of a Unity asset; .PAPA magic must be 'Papa'",
   "urls": [
    "https://github.com/Lula-Mae/com.pa.lulamae.milkyway-skybox/archive/master.zip",
-   "https://github.com/MaximumEndurance/com.pa.maxend.fireball-skybox/archive/master.zip"
+   "https://github.com/MaximumEndurance/com.pa.maxend.fireball-skybox/archive/master.zip",
+   "https://samplelib.com/",
+   "https://fileinfo.com/extension/papa",
+   "https://samplefile.com/samples/",
+   "https://samplepdf.org/files/sample.pdf",
+   "https://fileinfo.com/extension/p%C3%A1pa",
+   "https://www.papaparse.com/demo",
+   "https://data.mendeley.com/datasets/6xv4gprchc",
+   "https://www.samplefiles.org/wp-content/plugins/wp-downloadmanager/css/wp-downloadmanager.css?ver=2.0.2",
+   "https://docs.paloaltonetworks.com/advanced-wildfire/administration/configure-advanced-wildfire-analysis/verify-wildfire-submissions/test-a-sample-malware-file",
+   "https://file-examples.com/",
+   "https://getsampledata.com/",
+   "https://archive.org/download/PapaLouie2.swf",
+   "https://archive.org/download/papasgamesarchive/PapaLouie2.swf",
+   "https://www.filesuffix.com/en/extension/papa",
+   "https://fileinfo.com/extension/p%C4%81pa"
+  ]
+ },
+ "517": {
+  "ext": ".PBLIB",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://sourceforge.net/projects/pblib/files/pblib/",
+   "https://pblibts.pblib.com/",
+   "https://pblib.com/",
+   "https://sourceforge.net/projects/pblib/files/",
+   "https://raw.githubusercontent.com/master-keying/pblib/master/manual/pblib.pdf",
+   "https://pblib.com/knowledge-base/about-the-sample-applications-pb-docs-125/",
+   "https://iccl.inf.tu-dresden.de/w/images/1/1f/Pblib1.2.pdf",
+   "https://siteoffline.pblib.com/pbdr/software/comp/examples.htm",
+   "https://iccl.inf.tu-dresden.de/w/images/d/de/Pblib.pdf",
+   "https://file.org/extension/pblib"
+  ]
+ },
+ "52": {
+  "ext": ".B",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://www.file-extension.info/format/b",
+   "https://fileinfo.com/extension/b",
+   "https://samplelib.com/",
+   "https://www.samplefiles.org/wp-content/plugins/wp-downloadmanager/css/wp-downloadmanager.css?ver=2.0.2",
+   "https://www.sampletestfiles.com/",
+   "https://get-examplefiles.com/",
+   "https://samplefile.com/samples/",
+   "https://byterivet.com/test-files/exe/",
+   "https://zenodo.org/records/13909979",
+   "https://getsampledata.com/",
+   "https://toolsfairy.com/font-test/sample-bin-files",
+   "https://files-sample.com/",
+   "https://sarvkit.com/DevKit/sample-file-generator/",
+   "https://freetoolsforweb.com/sample-files/data/bin",
+   "https://sqlite.org/test-dbs/dir",
+   "https://byterivet.com/test-files/",
+   "https://filesamples.com/formats/bin/"
+  ]
+ },
+ "522": {
+  "ext": ".PCS",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://file.org/extension/pcs",
+   "https://nostarch.com/download/ppa-capture-files.zip",
+   "https://fileinfo.com/extension/pcs",
+   "https://www.aapc.com/business/standard-code-sets",
+   "https://samplelib.com/",
+   "https://filext.com/file-extension/PCS",
+   "https://filesamples.com/",
+   "https://www.pcs-company.com/cad-file-library",
+   "https://www.oracle.com/downloads/samplecode/pcs-samplecode-downloads.html",
+   "https://pixabay.com/sound-effects/search/pcm/"
+  ]
+ },
+ "527": {
+  "ext": ".PDI",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://www.scribd.com/document/399519866/PDI-Report-Format",
+   "https://www.scribd.com/document/399701284/PDI-Report-Format-pdf",
+   "https://www.cipet.gov.in/technology/inspection-pdi-format.php",
+   "https://docs.pentaho.com/pdia-admin/embed-and-extend-pentaho-functionality-cp/embed-and-extend-pdi-functionality/get-started-with-the-sample-pdi-project",
+   "https://github.com/HiromuHota/pdi-examples",
+   "https://www.inpaspages.com/predispatch_inspection_report.html",
+   "https://www.dochub.com/fillable-form/81023-pre-delivery-inspection-checklist-pdi",
+   "https://github.com/wandernei/pentaho-di-PDI-Samples",
+   "https://metrocarpdi.com/sample-report.php",
+   "https://docs.pentaho.com/pdia-admin/9.3-administer/embed-and-extend-pentaho-functionality-cp/embed-and-extend-pdi-functionality/get-started-with-the-sample-pdi-project",
+   "https://www.scribd.com/document/1019413828/Sample-PDI-Report",
+   "https://samplepdf.org/files/sample.pdf"
+  ]
+ },
+ "528": {
+  "ext": ".PDM",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://www.scribd.com/document/369240651/Sample-PDM",
+   "https://www.scribd.com/document/595866325/PDM-handbook-for-ROAD",
+   "https://www.coursehero.com/file/25803359/PDM-pdf/",
+   "https://elecsprout.com/precedence-diagram-method-examples-pdf.html",
+   "https://sample-files.com/downloads/documents/pdf/basic-text.pdf",
+   "https://www.dot.ny.gov/divisions/engineering/design/dqab/pdm/shells",
+   "https://help.solidworks.com/2021/English/EnterprisePDM/Admin/c_templates.htm",
+   "https://www.projectcubicle.com/precedence-diagramming-method-example/",
+   "https://www.sampletestfiles.com/formats/pdf/",
+   "https://samplepdf.org/files/sample.pdf",
+   "https://pdfcoffee.com/sample-pdm-pdf-free.html",
+   "https://www.msha.gov/cpdm-sample-file-transmission"
   ]
  },
  "536": {
@@ -28,7 +899,122 @@
   "reason": "page link is a ZIP (PFC-Details.txt); .PFC magic must be 'AOLVM100'",
   "urls": [
    "https://web.archive.org/web/20050420101922/http://members.aol.com/fvongordon/pfc/PFC-Details.zip",
-   "https://astroblahhh.com/software/tips/pfc/pfcview.jar"
+   "https://astroblahhh.com/software/tips/pfc/pfcview.jar",
+   "https://docs.itascacg.com/pfc600/common/docproject/source/manual/examples.html",
+   "https://ww1.microchip.com/downloads/en/DeviceDoc/dsPIC33CH512MP508-Family-Silicon-Errata-and-Data-Sheet-Clarification-DS80000805K.pdf",
+   "https://samplelib.com/",
+   "https://github.com/jiangnan030-del/pfc-code",
+   "https://www.analog.com/en/resources/design-tools-and-calculators/ltspice-simulator/lt-spice-demo-circuits.html",
+   "https://pcf.gallery/",
+   "https://www.rohm.com/support/ltspice-circuit",
+   "https://www.appeon.com/developers/library/videos/open-source-powerbuilder-foundation-classes.html",
+   "https://docs.itascacg.com/pfc700/common/docproject/source/manual/examples.html",
+   "https://pfc.panhaoyu.com/pfc/docproject/source/manual/examples/examples/examples.html",
+   "https://github.com/patrickpr/YAOG/releases/download/1.1.2/YAOG.zip",
+   "https://apps.microsoft.com/detail/9pc428wzmzbt"
+  ]
+ },
+ "540": {
+  "ext": ".PHF",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://samplepdf.org/files/sample.pdf",
+   "https://samplefile.com/samples/document/pdf/files/pdf_password_protected_sample.pdf/",
+   "https://sample-files.com/downloads/documents/pdf/basic-text.pdf",
+   "https://qwikpdf.com/sample-pdf-with-text-and-images.html",
+   "https://www.adobe.com/support/products/enterprise/knowledgecenter/media/c4611_sample_explain.pdf",
+   "https://sarvkit.com/DevKit/sample-file-generator/",
+   "https://www.sampletestfiles.com/formats/pdf/",
+   "https://pdfplaceholder.com/pdf/Download+Test.pdf?download=1",
+   "https://examplefile.com/",
+   "https://examplefiles.org/example-document-files",
+   "https://byterivet.com/test-files/pdf/2mb/",
+   "https://pdfeditdesk.com/tools/sample-pdf"
+  ]
+ },
+ "544": {
+  "ext": ".PHP4",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://www.learningcontainer.com/wp-content/plugins/better-file-download/public/css/better-file-download-public.css?ver=1.0.0",
+   "https://filesamples.com/formats/php",
+   "https://getsamplefiles.com/sample-code-files/php",
+   "https://samplefile.com/samples/code/php/",
+   "https://examplefile.com/code/php",
+   "https://museum.php.net/php4/",
+   "https://www.fileexamples.com/category/code/code-php-1",
+   "https://gist.github.com/SalmanRavoof/f45777c6363c17436225f8a256cf2664",
+   "https://getsampledata.com/",
+   "https://code4berry.com/free_projects.php",
+   "https://files-sample.com/sample/code/php/",
+   "https://www.tutorialspoint.com/php/php_download_file.htm"
+  ]
+ },
+ "545": {
+  "ext": ".PHR",
+  "reason": "Downloaded file is an SVG image, not a .PHR sample.",
+  "urls": []
+ },
+ "549": {
+  "ext": ".PIE",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://samplelib.com/",
+   "https://pie-image.readthedocs.io/en/stable/sample_experiments.html",
+   "https://samplefile.com/samples/",
+   "https://mentalnote.ai/pie-notes",
+   "https://www.cms.gov/Regulations-and-Guidance/Guidance/Manuals/Downloads/pim83c03.pdf",
+   "https://getsampledata.com/",
+   "https://www.autodesk.com/support/technical/article/caas/tsarticles/ts/3gnm93P9sPAWE6vndk7fjq.html",
+   "https://file-examples.com/",
+   "https://www.mentalyc.com/note-examples/example-pie-note",
+   "https://www.highcharts.com/demo/highcharts/pie-chart",
+   "https://welltestsolutions.com/PIEreader.htm",
+   "https://www.pine-and-birch.com/sample-files"
+  ]
+ },
+ "55": {
+  "ext": ".BAK",
+  "reason": "SQL Server AdventureWorks .bak (50 MB); .BAK is a generic extension and the table field layout does not match the real MSSQLBAK header. Dropped as not a useful sample.",
+  "urls": [
+   "https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorks2022.bak",
+   "https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorks2025.bak"
+  ]
+ },
+ "551": {
+  "ext": ".PIT",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://www.droidviews.com/how-to-extract-pit-file-from-samsung-galaxy-devices/",
+   "https://samplelib.com/",
+   "https://samplefile.com/samples/",
+   "https://wiki.z3x-team.com/index.php?title=Samsung_PIT_Files",
+   "https://technastic.com/wp-content/uploads/2020/04/download-samsung-pit-freya.png",
+   "https://www.droidviews.com/extract-samsung-pit-file-from-firmware/",
+   "https://droidwin.com/extract-pit-file-from-samsung-firmware-unbrick-guide/",
+   "https://forum.gsmhosting.com/vbb/f200/download-ops-pit-files-1636490/",
+   "https://xdaforums.com/t/app-updated-31-10-12-pit-magic-v1-3-10-samsung-pit-creator-editor-analyzer.1916936/",
+   "https://xdaforums.com/t/pit-extracted-pit-collection-downloads-guide.3071209/",
+   "https://www.romkingz.net/2017/08/download-samsung-pit-files.html",
+   "https://www.getdroidtips.com/how-to-extract-pit-files-for-any-samsung-galaxy-device/"
+  ]
+ },
+ "559": {
+  "ext": ".PLR",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://lowcontentplrprintables.com/wp-content/plugins/easy-digital-downloads/includes/blocks/assets/css/edd-blocks.css?ver=3.7.2",
+   "https://freeplr4u.com/",
+   "https://www.creativefabrica.com/tag/plr-templates/",
+   "https://coolbeandesign.com/free-plr/",
+   "https://www.plrdatabase.net/",
+   "https://www.theplrstore.com/plr-templates",
+   "https://www.buyqualityplr.com/plr-store/products/free-plr/",
+   "https://urbanplr.com/free-plr-products/",
+   "https://www.theplrstore.com/free-plr-products",
+   "https://www.plr.me/content",
+   "https://www.entrepedia.co/free-plr-products",
+   "https://www.idplr.com/free-plr-products"
   ]
  },
  "572": {
@@ -36,7 +1022,78 @@
   "reason": "page link is a PDF document, not a text .PRP file",
   "urls": [
    "https://www.pure-systems.com/pv-update/additions/doc/latest/pv-conn-rhapsody-manual.pdf",
-   "https://ftpmirror.your.org/pub/misc/ftp.software.ibm.com/software/rationalsdp/documentation/product_doc/Rhapsody/version_7-5/framework.pdf"
+   "https://ftpmirror.your.org/pub/misc/ftp.software.ibm.com/software/rationalsdp/documentation/product_doc/Rhapsody/version_7-5/framework.pdf",
+   "https://samplelib.com/",
+   "https://certification-portal.sandbp.net/wp-content/uploads/2023/10/PRP-Template.pdf",
+   "https://www.scribd.com/document/477426532/PRP122-xlsx",
+   "https://www.prphealth.com/wp-content/uploads/2018/05/PRP-HealthGeneralConsent-Form-V1.pdf",
+   "https://literature.rockwellautomation.com/idc/groups/literature/documents/at/enet-at006_-en-p.pdf",
+   "https://samplefile.com/samples/",
+   "https://file-examples.com/",
+   "https://examplefile.com/",
+   "https://www.researchgate.net/figure/illustrates-an-example-of-a-PRP-monitoring-plan_tbl1_320490815",
+   "https://www.ifc.org/en/what-we-do/sector-expertise/agribusiness-forestry/enhancing-food-security-and-safety/food-safety-handbook-templates",
+   "https://www.scribd.com/document/488592035/Chapter-3-PRP-Workbook-template",
+   "https://www.registrarcorp.com/compliance-training/food-beverage/fssc-22000-manual-procedures-prp-templates/"
+  ]
+ },
+ "576": {
+  "ext": ".PSDC",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://toolsfairy.com/image-test/sample-psd-files",
+   "https://filesamples.com/formats/psd",
+   "https://fileinfo.com/extension/psdc",
+   "https://samplelib.com/",
+   "https://github.com/glaseagle/PSDC/tree/main/examples",
+   "https://grabcad.com/library/tag/psdc",
+   "https://getsamplefiles.com/download/psd/sample-1.psd",
+   "https://psfiles.com/wp-content/plugins/download-monitor/assets/css/frontend-tailwind.min.css",
+   "https://samplefile.com/samples/",
+   "https://download.sketchup.com/Creed_Monument_Greenwich_las-RWP.zip",
+   "https://www.magnific.com/psd/sample-file"
+  ]
+ },
+ "588": {
+  "ext": ".QLC",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://www.qlcplus.org/forum/viewtopic.php?t=9024",
+   "https://samplelib.com/",
+   "https://www.qlcplus.org/",
+   "https://github.com/mcallegari/qlcplus-extras",
+   "https://samplefile.com/samples/",
+   "https://tigoe.github.io/DMX-Examples/qlc+-intro.html",
+   "https://open-fixture-library.org/about/plugins/qlcplus_4.12.2",
+   "https://www.gridqlc.com/",
+   "https://www.facebook.com/groups/4796626830443724/posts/6546435938796129/",
+   "https://wiki.openlighting.org/index.php/Q_Light_Controller_Plus_(QLC%2B)",
+   "https://www.qlcplus.org/download",
+   "http://qlcplus.org/"
+  ]
+ },
+ "59": {
+  "ext": ".BDT",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://zumilabs.com/tools/zumifiles/file-formats/bdt",
+   "https://www.file-extension.info/format/bdt",
+   "https://convert.guru/bdt-converter",
+   "https://docs-cybersec.thalesgroup.com/bundle/v2.6.0-cdsp-bdt/page/admin/samples/sampleconfig/index.html",
+   "https://docs-cybersec.thalesgroup.com/bundle/v2.5.2-cdsp-bdt/page/admin/samples/index.html",
+   "https://www.gov.uk/government/publications/bulk-data-transfer-for-sponsors-xml-schema",
+   "https://www.ccontrols.com/sd/bdt.htm",
+   "https://cpl.thalesgroup.com/encryption/batch-data-transformation",
+   "https://file.org/extension/bdt",
+   "https://www.bdt.de/fileadmin/user_upload/07_Downloads/Storage/Data_Sheets_ORION_MC6_2026.pdf",
+   "https://filext.com/file-extension/BDT",
+   "https://www.ibm.com/docs/en/SSLTBW_2.5.0/pdf/bdta500_v2r5.pdf",
+   "https://cpl.thalesgroup.com/sites/default/files/content/product_briefs/ciphertrust-batch-data-transformation-pb.pdf",
+   "https://docs-cybersec.thalesgroup.com/bundle/v2.5.0-cdsp-bdt/page/admin/quickstart/index.html",
+   "https://gist.github.com/NodusCursorius/4d6156f8dcfb779205f074c8dadf2ee0",
+   "https://github.com/Nordgaren/YAZip",
+   "http://zenhax.com/viewtopic.php@t=16583.html",
+   "https://github.com/Ekey/ER.BDT.Tool"
   ]
  },
  "594": {
@@ -44,7 +1101,157 @@
   "reason": "page link is gzip; .ROO/.R00 is a RAR split archive",
   "urls": [
    "https://www.rarlab.com/rar/unrarsrc-7.2.1.tar.gz",
-   "https://github.com/selmf/unarr/raw/master/testdata/rar_split.r00"
+   "https://github.com/selmf/unarr/raw/master/testdata/rar_split.r00",
+   "https://drive.google.com/drive/folders/1Q7WY1Q-b2MSPQm3SqV9tvREDdtmN2CZW",
+   "https://samplelib.com/",
+   "https://www.kvraudio.com/news/samplesphere-sets-roo-didgeridoo-and-and-one-tambourine-free-41735",
+   "https://help.eaglesoa.com/25/en-n-auto/Reports/POS_Rept_Examples/ROO_report_sample.htm",
+   "https://gist.github.com/katoy/3747389",
+   "https://gist.github.com/agileandy/67add184e42fd5f9dac370e2d8dcbcc8",
+   "https://roocodeinc.github.io/Roo-Code/features/settings-management/",
+   "https://samplefile.com/samples/",
+   "https://github.com/jezweb/roo-commander/wiki/02_Custom_Instructions_Rules",
+   "https://roocodeinc.github.io/Roo-Code/features/custom-instructions/",
+   "https://file-examples.com/",
+   "https://samplelib.com/sample-zip.html"
+  ]
+ },
+ "596": {
+  "ext": ".R2D",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://samplefile.com/samples/",
+   "https://samplelib.com/",
+   "https://assets.contentstack.io/v3/assets/blt0e5ec1de4817c440/blt0506849fc1faa4a2/z-cinema-file-download.min.css",
+   "https://www.reddigitalcinema.com/sample-r3d-files",
+   "https://file-examples.com/",
+   "https://download.sketchup.com/Creed_Monument_Greenwich_las-RWP.zip",
+   "https://www.existingconditions.com/knowledge-center-articles/downloading-project-files",
+   "https://filext.com/file-extension/R2D",
+   "https://getsampledata.com/"
+  ]
+ },
+ "597": {
+  "ext": ".R3D",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://www.reddigitalcinema.com/sample-r3d-files",
+   "https://www.nikon-asia.com/cinema-r3d-sample-downloads",
+   "https://assets.contentstack.io/v3/assets/blt0e5ec1de4817c440/blt0506849fc1faa4a2/z-cinema-file-download.min.css",
+   "https://support.reddigitalcinema.com/hc/en-us/articles/360021857073-Sample-R3D-Files",
+   "https://www.reddigitalcinema.com/downloads",
+   "https://alexharkness.com/sample-r3d-files/",
+   "https://cvp.com/support/page/red-r3d-sample-files",
+   "https://ymcinema.com/wp-content/uploads/2025/10/Download-Nikon-ZR-R3D-files-and-compare-them-with-RED-cameras.001.webp",
+   "https://nikon.tfaforms.net/771",
+   "https://tiedtke.gumroad.com/l/nikonzrsample"
+  ]
+ },
+ "598": {
+  "ext": ".R8P",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://github.com/teknixstuff/misc-files/releases/download/CleanFlashPlayer-34.0.0.323/cleanflashplayer@teknixstuff.com-34.0.0.323.xpi",
+   "https://archive.org/download/revert8plus-3.1",
+   "https://archive.org/details/revert8plus-3.1",
+   "https://samplelib.com/",
+   "https://filext.com/file-extension/R8P",
+   "https://raw.githubusercontent.com/revert8plus/revert8plus.github.io/main/index.html",
+   "https://samplefile.com/samples/",
+   "https://download.sketchup.com/Creed_Monument_Greenwich_las-RWP.zip",
+   "https://www.rockwellautomation.com/en-us/support/product/product-downloads/application-code-library/sample-code.html",
+   "https://freewavesamples.com/source/roland-r-8",
+   "https://getsampledata.com/",
+   "https://filesamples.com/"
+  ]
+ },
+ "602": {
+  "ext": ".RAP",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://samplefocus.com/tag/rap",
+   "https://www.bandlab.com/sounds/collection/free-rap-samples",
+   "https://samplefocus.com/tag/hip-hop-rap",
+   "https://pixabay.com/music/search/rap-samples/",
+   "https://pixabay.com/sound-effects/search/rap%20samples/",
+   "https://www.looperman.com/loops/tags/free-rap-loops-samples-sounds-wavs-download",
+   "https://samples.landr.com/collections/rap-verse",
+   "https://www.looperman.com/loops/tags/free-free-rap-samples-loops-samples-sounds-wavs-download",
+   "https://wavs.com/free-samples/genres/hiphop",
+   "https://hiphopmakers.com/best-free-rap-sample-packs",
+   "https://www.looperman.com/acapellas/genres/rap-acapellas-vocals-sounds-samples-download"
+  ]
+ },
+ "622": {
+  "ext": ".RSL",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://cloud.rslawards.com/downloads",
+   "https://www.scribd.com/document/459147964/RSL-V3",
+   "https://www.scribd.com/document/741215073/RSL10-sample-code-users-guide",
+   "https://www.rockschoolbc.com/wp-content/uploads/2024/04/CLASSICALPianoSamplePackMUSICROOM.pdf",
+   "https://github.com/HaiQNguyen/RSL10Example",
+   "https://filext.com/file-extension/RSL",
+   "https://file.org/extension/rsl",
+   "https://its.ntia.gov/publications/download/79-17_ocr.pdf",
+   "https://www.rockschoolbc.com/wp-content/uploads/2024/04/RSLPianoSamplePack.pdf",
+   "https://samplelib.com/",
+   "https://raw.githubusercontent.com/SQL-Server-projects/Reporting-Services-examples/master/ServerReports/Data%20Sources.rdl",
+   "https://www.plcs.net/downloads/styles.css"
+  ]
+ },
+ "623": {
+  "ext": ".RSLF",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://www.dol.gov/sites/dolgov/files/EBSA/laws-and-regulations/laws/secure-2.0/instruction-for-lost-and-found-act2022.pdf",
+   "https://omb.report/icr/202509-1210-001/doc/162882201.pdf",
+   "https://samplelib.com/",
+   "https://www.milliman.com/en/insight/retirement-savings-lost-and-found-erisa-plans",
+   "https://archive.org/download/RSLF2/RSLF2.ogg",
+   "https://zumilabs.com/tools/zumifiles/file-formats/rslf",
+   "https://www.w3.org/2000/10/rdf-tests/",
+   "https://www.dol.gov/sites/dolgov/files/EBSA/laws-and-regulations/laws/secure-2.0/lost-and-found-supporting-statement-act2022.pdf",
+   "https://samplefile.com/samples/",
+   "https://www.rockwellautomation.com/en-us/support/product/product-downloads/application-code-library/sample-code.html",
+   "https://cncdesignerclub.com/Door/Most-Popular-Door-Design-51-100-rlf-Files-Free-Download",
+   "https://cncdesignerclub.com/Door/MRK-300-350-3d-door-collection-for-cnc-free-download"
+  ]
+ },
+ "624": {
+  "ext": ".RSLS",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://www.epa.gov/risk/regional-screening-levels-rsls-generic-tables",
+   "https://help.resilio.com/hc/en-us/articles/206115384-What-Is-an-RSLS-File",
+   "https://samplelib.com/",
+   "https://datatypes.net/ext/rsls",
+   "https://raw.githubusercontent.com/SQL-Server-projects/Reporting-Services-examples/master/ServerReports/Data%20Sources.rdl",
+   "https://samplefile.com/samples/",
+   "https://www.file-extension.info/format/rsls",
+   "https://support.tenasys.com/7-1/ovw_rsl",
+   "https://help.resilio.com/hc/en-us/categories/200394679-Security-Architecture",
+   "https://www.epa.gov/risk/regional-screening-levels-rsls",
+   "https://file.org/extension/rsl",
+   "https://www.curseforge.com/minecraft/mc-mods/rsls/files/8417403"
+  ]
+ },
+ "625": {
+  "ext": ".RSM",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://sourceforge.net/projects/rsmvisit/",
+   "https://github.com/relativitydev/relativity-rsmf-gen-sample",
+   "https://github.com/vstram/ansys-rsm-samples",
+   "https://help.relativity.com/RelativityOne/Content/System_Guides/Relativity_Short_Message_Format/Relativity_short_message_format.htm",
+   "https://www.rsm.global/service/audit-and-assurance/ifrs/ifrs-illustrative-financial-statements",
+   "https://samplefile.com/samples/",
+   "https://file.org/extension/rsm",
+   "https://develve.net/Response_surface_methodology.html",
+   "https://ansyshelp.ansys.com/public/Views/Secured/corp/v242/en/wb_rsm/rsm_ch_inst_rsm.html",
+   "https://help.relativity.com/Server2024/Content/System_Guides/Relativity_Short_Message_Format/Creating_an_RSMF_File.htm",
+   "https://www.rsmdiagnosticslab.com/document-center",
+   "https://help.relativity.com/RelativityOne/Content/System_Guides/Relativity_Short_Message_Format/Creating_an_RSMF_File.htm"
   ]
  },
  "634": {
@@ -55,12 +1262,42 @@
    "https://raw.githubusercontent.com/cloudcores/CuAssembler/main/examples/simple.cubin"
   ]
  },
+ "638": {
+  "ext": ".SB2",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://file.org/extension/sb2",
+   "https://forkphorus.github.io/sb-downloader/",
+   "https://fileinfo.com/extension/sb2",
+   "https://samplelib.com/",
+   "https://downloads.support.alphatheta.com/other/dj-controllers/DDJ-SB2-sample-track.zip",
+   "https://fileinfo.com/extension/sb",
+   "https://www.online-convert.com/file-format/sb2",
+   "https://archive.org/details/scratch-converter-2018-04-17",
+   "https://scratch.mit.edu/discuss/topic/817896/",
+   "https://scratch.mit.edu/discuss/topic/195577/",
+   "https://en.scratch-wiki.info/wiki/.sb2",
+   "https://archive.org/details/scratch-converter"
+  ]
+ },
  "640": {
   "ext": ".SBH",
   "reason": "page link is a PDF document, not a .SBH source file",
   "urls": [
    "https://public.dhe.ibm.com/software/rational/docs/v2002/robotug.pdf",
-   "https://public.dhe.ibm.com/software/rational/docs/documentation/manuals/docset149/Rational_Test_7/sqabasic.pdf"
+   "https://public.dhe.ibm.com/software/rational/docs/documentation/manuals/docset149/Rational_Test_7/sqabasic.pdf",
+   "https://samplelib.com/",
+   "https://samplefile.com/samples/",
+   "https://www.ibm.com/support/pages/sqabasic-headersbh-and-library-source-files-sbl",
+   "https://learn.castsoftware.com/hubfs/hub_generated/template_assets/1/185275096887/1773808645422/template_DownloadLP_2025.min.css",
+   "https://www.samplefiles.org/wp-content/plugins/wp-downloadmanager/css/wp-downloadmanager.css?ver=2.0.2",
+   "https://sketchfab.com/tags/sbh",
+   "https://file-examples.com/",
+   "https://toolsfairy.com/code-test/sample-sh-files",
+   "https://getsampledata.com/",
+   "https://www.file-extensions.org/extension/sbh",
+   "https://sourceforge.net/projects/sbhsoftware/",
+   "https://3dwarehouse.sketchup.com/model/ec924f36-69cd-489a-8b4a-168db35e28b9/SBH"
   ]
  },
  "642": {
@@ -68,7 +1305,125 @@
   "reason": "page link is a 7z archive; .SBX signature must be 'SBx'",
   "urls": [
    "http://mark0.net/download/sbxdemo-diskimages.7z",
-   "https://mark0.net/download/seqbox.zip"
+   "https://mark0.net/download/seqbox.zip",
+   "https://help.sabameeting.com/help-learning/topics/help-assessment-download-a-sample-assessment-package.html",
+   "https://fileinfo.com/extension/sbx",
+   "https://github.com/araffin/sbx",
+   "https://file.org/extension/sbx",
+   "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/pyshp/sbx_format.pdf",
+   "https://diagnostics.roche.com/global/en/diagnostics-insights/sbx-data-analysis-resources.html",
+   "https://github.com/jcouto/sbxreader",
+   "https://www.gisbox.com/en/baike/v1/gf3sffywbkivms77/",
+   "https://gisgeography.com/arcgis-shapefile-files-types-extensions/",
+   "https://industrialautomation.net/en-us/c135-pcs-7/post/inspecting-and-decompressing-simatic-batch-sbx-master-recipe-files-XdDTk870JW93w2A",
+   "https://samplelib.com/",
+   "https://grabcad.com/library/tag/sbx"
+  ]
+ },
+ "649": {
+  "ext": ".SDNN",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://samplefile.com/samples/data/properties/",
+   "https://samplefile.com/samples/data/properties/files/properties_sample_file_2MB.properties/",
+   "https://mkyong.com/java/java-properties-file-examples/",
+   "https://www.fileexamples.com/category/config/config-properties-1",
+   "https://www.softwaretestdata.com/sample/properties",
+   "https://www.fileexamples.com/category/i18n/i18n-properties-1",
+   "https://gist.github.com/devops-school/c685ea583be3f7ea4d7fd962b4690842",
+   "https://file-examples.com/",
+   "https://www.javaguides.net/2020/03/java-properties-file-example.html",
+   "https://sample-files.com/",
+   "https://zumilabs.com/tools/zumifiles/file-formats/sdnn",
+   "https://samplelib.com/"
+  ]
+ },
+ "655": {
+  "ext": ".SERIES",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://samplefile.com/samples/",
+   "https://get-examplefiles.com/",
+   "https://getsampledata.com/",
+   "https://samplelib.com/",
+   "https://www.samplefiles.org/wp-content/plugins/wp-downloadmanager/css/wp-downloadmanager.css?ver=2.0.2",
+   "https://saga-it.com/dicom/samples",
+   "https://sample-files.com/",
+   "https://files-sample.com/",
+   "https://www.timestored.com/data/sample/",
+   "https://examplefiles.org/",
+   "https://www.dicomlibrary.com/?manage=9ab20df7b89dd84716029b777ed7a5b2",
+   "https://webtorrent.io/free-torrents"
+  ]
+ },
+ "657": {
+  "ext": ".SFB",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://docs.genexus.com/en/wiki?45189,File%3ASFB+File+Examples",
+   "https://samplelib.com/",
+   "https://fileinfo.com/extension/sfb",
+   "https://cults3d.com/en/tags/sfb?only_free=true",
+   "https://developers.google.com/sceneform/develop/sfa",
+   "https://samplefile.com/samples/",
+   "https://file.org/extension/sfb",
+   "https://cults3d.com/en/tags/sfb",
+   "https://www.starfleetgames.com/playerresources.shtml",
+   "https://filext.com/file-extension/SFB",
+   "https://www.file-extension.info/format/sfb",
+   "https://www.filemagic.com/en/game-files/sfb-file-extension/the-four-best-ways-to-open-sfb-files/"
+  ]
+ },
+ "658": {
+  "ext": ".SFH",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://file.org/extension/sfh",
+   "https://www.sfh.com/pages/downloads",
+   "https://archive.org/details/b0-sampling-2008.02",
+   "https://www.fema.gov/sites/default/files/2020-07/fema_nfip_form_086-0-32.pdf",
+   "https://samplelib.com/",
+   "https://www.scribd.com/document/910210948/SFH-Sample-Paper",
+   "https://archive.org/details/sfh-3-rev-2",
+   "https://grabcad.com/library/tag/sfh",
+   "https://samplefile.com/samples/",
+   "https://datatypes.net/ext/sfh"
+  ]
+ },
+ "665": {
+  "ext": ".SIC",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://www.scribd.com/presentation/245697130/Example-of-SIC-Assembler-Language-Program",
+   "https://www.scribd.com/document/415564639/SIC",
+   "https://github.com/sic-xe",
+   "https://github.com/sic-xe/examples",
+   "https://www.studocu.com/en-us/document/university-at-albany/systems-programming/handout-31-examples-of-sic-and-sicxe-programs/1068800",
+   "https://www.naics.com/product/sic-standard-industry-classification-system/",
+   "https://www.bls.gov/cew/about-data/downloadable-file-layouts/annual/sic-based-annual-layout.htm",
+   "https://samplefile.com/samples/",
+   "https://www.naics.com/product/sic-naics-cross-references/",
+   "https://mcresourcerecoverycenter.com/wp-content/uploads/2016/01/SIC_Codes.pdf",
+   "https://github.com/saintsjd/sic4-list",
+   "https://www.scribd.com/document/597728716/SIC-list"
+  ]
+ },
+ "671": {
+  "ext": ".SMCLVL",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://samplelib.com/sample-csv.html",
+   "https://samplelib.com/",
+   "https://byterivet.com/test-files/exe/",
+   "https://samplefile.com/samples/",
+   "https://sample-files.com/downloads/documents/pdf/basic-text.pdf",
+   "https://www.autodesk.com/learn/ondemand/tutorial/revit-sample-project-files",
+   "https://file-examples.com/",
+   "https://getsampledata.com/",
+   "https://file-examples.com/index.php/sample-video-files/",
+   "https://download.sketchup.com/Creed_Monument_Greenwich_las-RWP.zip",
+   "https://sarvkit.com/DevKit/sample-file-generator/",
+   "https://www.datablist.com/learn/csv/download-sample-csv-files"
   ]
  },
  "673": {
@@ -76,7 +1431,449 @@
   "reason": "page link is a PDF document, not a .SNO data file",
   "urls": [
    "https://swat.tamu.edu/media/69413/ch38_input_sno.pdf",
-   "https://github.com/jmallen/swatmodel/raw/master/input/sno1.sno"
+   "https://github.com/jmallen/swatmodel/raw/master/input/sno1.sno",
+   "https://file.org/extension/sno",
+   "https://samplelib.com/",
+   "https://filext.com/file-extension/SNO",
+   "https://samplefile.com/samples/",
+   "https://fileinfo.com/extension/sno",
+   "https://docs.paloaltonetworks.com/advanced-wildfire/administration/configure-advanced-wildfire-analysis/verify-wildfire-submissions/test-a-sample-malware-file",
+   "https://file-examples.com/",
+   "https://www.file-extension.info/format/sno",
+   "https://en.filedesc.com/file/sno",
+   "https://sample-files.com/",
+   "https://samples.landr.com/sfxs/snow"
+  ]
+ },
+ "676": {
+  "ext": ".SPIFF",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://github.com/sartography/spiff-example-cli",
+   "https://github.com/kwang1971/SpiffExample",
+   "https://spiffexample.readthedocs.io/",
+   "https://spiffexample.readthedocs.io/en/latest/examples.html",
+   "https://docs.espressif.com/projects/esp-techpedia/en/latest/esp-friends/get-started/case-study/storage-examples/spiffs-examples/index.html",
+   "https://gist.github.com/iraycd/b80951a54a14c09bb1d73f8f79b496b2",
+   "https://docs.espressif.com/projects/esp-idf/en/v3.1.6/api-reference/storage/spiffs.html",
+   "https://techexplorations.com/blog/esp32/blog-esp32-how-to-retrieve-a-file-from-the-spiffs/",
+   "https://esp32.com/viewtopic.php?t=1901",
+   "https://www.loc.gov/preservation/digital/formats/fdd/fdd000019.shtml",
+   "https://github.com/thinhvu-h/ESP-File-Server",
+   "https://github.com/thebigpotatoe/Effortless-SPIFFS"
+  ]
+ },
+ "677": {
+  "ext": ".SPIN",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://samplelib.com/",
+   "https://samplefile.com/samples/",
+   "https://getsampledata.com/",
+   "https://get-examplefiles.com/",
+   "https://samplepdf.org/files/sample.pdf",
+   "http://esotericsoftware.com/spine-examples",
+   "https://freetoolsforweb.com/sample-files",
+   "https://filesamples.com/",
+   "https://truefilesize.com/",
+   "https://flipperfile.com/samples/",
+   "http://spinroot.com/spin/Man/README.html",
+   "https://spinroot.com/spin/Bin/index.html"
+  ]
+ },
+ "679": {
+  "ext": ".SPT",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://github.com/Beckhoff-USA-Community/SPT_V4_Samples",
+   "https://beckhoff-usa-community.github.io/SPT-Libraries/",
+   "https://beckhoff-usa-community.github.io/SPT-Libraries/SPT%20Training/SPT_Libraries.html",
+   "https://soup01.com/en/2023/08/14/beckhoffspt-framework_part1-2/",
+   "https://steptools.com/docs/stpfiles/ifc/",
+   "https://www.scribd.com/document/437991709/SPT-Report-converted-1-pdf",
+   "https://fileinfo.com/extension/spt",
+   "https://samplelib.com/",
+   "https://file-examples.com/",
+   "https://file.org/extension/spt",
+   "https://samplelib.com/sample-ppt.html",
+   "https://truefilesize.com/documents/powerpoint/"
+  ]
+ },
+ "698": {
+  "ext": ".STW",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://samplelib.com/",
+   "https://samplefile.com/samples/",
+   "https://www.nist.gov/ctl/smart-connected-systems-division/smart-connected-manufacturing-systems-group/mbe-pmi-0",
+   "https://getsampledata.com/",
+   "https://file.org/extension/stw",
+   "https://fileinfo.com/extension/stw",
+   "http://www.chickensys.com/support/software/translator/sampletank/",
+   "https://datatypes.net/ext/stw",
+   "https://steptools.com/docs/stpfiles/bigassy/index.html",
+   "https://www.laserdesign.com/sample-files/type/stp/",
+   "https://www.stw-mobile-machines.com/en/customer-area/downloads/",
+   "https://archive.org/download/Disc.jpg"
+  ]
+ },
+ "699": {
+  "ext": ".STX",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://makerworld.com/en/search/models?keyword=tag%3A+stx",
+   "https://sketchfab.com/tags/stx",
+   "https://stix.mitre.org/downloads/APT1-STIX.zip",
+   "https://grabcad.com/library/tag/stx",
+   "https://cults3d.com/en/tags/stx",
+   "https://archive.org/download/AmigaSoundtrackerSamplePacksst-xx_files.xml",
+   "https://free3d.com/3d-models/stl",
+   "https://samplefile.com/samples/",
+   "https://filestar.com/skills/stx/show-stx",
+   "https://github.com/soundtrails/stxViewer"
+  ]
+ },
+ "701": {
+  "ext": ".SVC",
+  "reason": "Wayback capture is truncated in the archive itself: 5,242,880 B archived vs 138,021,708 B original (x-archive-orig-x-crawler-content-length). Only the first 5 MiB of a 138 MB H.264 sequence.",
+  "urls": [
+   "http://concert.itec.aau.at/SVCDataset/svcseqs/I/BBB-I-360p.264"
+  ]
+ },
+ "707": {
+  "ext": ".SWM",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://www.openswmm.org/SWMMExamples",
+   "https://www.epa.gov/water-research/storm-water-management-model-swmm",
+   "https://swmm2000.com/forum/topics/swmm-5-example-files",
+   "https://www.hec.usace.army.mil/confluence/s/d41d8cd98f00b204e9800998ecf8427e-CDN/-q8bp2g/9425/1npjhis/63f2eed697e61b6b921576eb47895f17/_/download/contextbatch/css/_super/batch.css?isReactDevMode=false&amp;plugins.aui.deprecated.webresource.jquery.form.legacy=false&amp;react.devmode=false",
+   "https://fvmcntbuwlbinhxqmczl.supabase.co/storage/v1/object/public/resource-downloads/wp-migrated/Free-Resources-Licensing-Agreement.pdf",
+   "https://www.pcswmm.com/Downloads/USEPASWMM",
+   "https://tools.worksignals.net/swms/",
+   "https://www.worksafe.vic.gov.au/resources/safe-work-method-statements-swms",
+   "https://www.scribd.com/document/102449076/SWM-Samples",
+   "https://www.slideshare.net/slideshow/swmm-example-1-93625030/93625030",
+   "https://samplelib.com/",
+   "https://www.templateroller.com/template/267750/safe-work-method-statement-template.html"
+  ]
+ },
+ "716": {
+  "ext": ".SYMBOLICLINK",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://www.unixtutorial.org/unix-symlink-example/",
+   "https://learn.microsoft.com/en-us/windows/win32/fileio/creating-symbolic-links",
+   "https://www.howtogeek.com/287014/how-to-create-and-use-symbolic-links-aka-symlinks-on-linux/",
+   "https://www.ibm.com/support/pages/explanation-symbolic-link-and-how-create-it",
+   "https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/mklink",
+   "https://www.howtogeek.com/16226/complete-guide-to-symbolic-links-symlinks-on-windows-or-linux/",
+   "https://www.geeksforgeeks.org/linux-unix/ln-command-in-linux-with-examples/",
+   "https://sourceforge.net/projects/symlink-creator/",
+   "https://www.softpedia.com/get/System/System-Miscellaneous/Symbolic-Link-Creator.shtml",
+   "https://github.com/nickzman/symboliclinker/releases",
+   "https://sourceforge.net/projects/mklink/",
+   "https://www.softpedia.com/get/System/System-Miscellaneous/SymlinkCreator.shtml"
+  ]
+ },
+ "719": {
+  "ext": ".TAZ",
+  "reason": "Downloaded file is an Intel HEX firmware file, not a gzipped-tar .TAZ.",
+  "urls": []
+ },
+ "728": {
+  "ext": ".THM",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://www.magnific.com/free-photos-vectors/thm-file",
+   "https://www.magnific.com/vectors/thm-file-format",
+   "https://www.file-extension.info/format/thm",
+   "https://windows.lbl.gov/sites/default/files/Downloads/specs-for-therm-demo-sample-file.pdf",
+   "https://samplelib.com/",
+   "https://docs.fileformat.com/image/thm/",
+   "https://www.coolutils.com/blog/what-is-a-thm-file-how-to-open-thm-extension-coolutils/",
+   "https://file.org/extension/thm",
+   "https://samplefile.com/samples/",
+   "https://www.free-power-point-templates.com/articles/thmx-free-download/",
+   "https://slidehunter.com/download-free-thmx-powerpoint-templates/",
+   "https://file-examples.com/"
+  ]
+ },
+ "731": {
+  "ext": ".TLB",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://learn.microsoft.com/en-us/dotnet/framework/tools/tlbexp-exe-type-library-exporter",
+   "https://file.org/extension/tlb",
+   "https://learn.microsoft.com/en-us/windows/win32/com/type-library-viewers-and-conversion-tools",
+   "https://github.com/test-load-balancer/sample_projects",
+   "https://raw.githubusercontent.com/Feb30th/TypeLibParser/master/Sample.tlb",
+   "https://samplelib.com/",
+   "https://www.autodesk.com/support/technical/article/caas/tsarticles/ts/3gnm93P9sPAWE6vndk7fjq.html",
+   "https://www.file-extension.info/format/tlb",
+   "https://filext.com/file-extension/TLB",
+   "https://fileinfo.com/extension/tlb",
+   "https://github.com/dewhisna/tlbtools",
+   "https://www.exefiles.com/en/developers/microsoft/extensions/tlb/all-files/"
+  ]
+ },
+ "757": {
+  "ext": ".UT",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://www.scribd.com/document/547089026/333866666-UT-NDT-Sample-Test-Report-Format",
+   "https://trinityndt.com/wp-content/uploads/2026/01/Ultrasonic-Testing-Report-Format-Free-Download.pdf",
+   "https://atlantisndt.com/ndt-report-templates",
+   "https://www.scribd.com/document/476281552/1599568612083-UT-Report-example-pdf",
+   "https://atlantisndt.com/assets/download-D2VSnPP9.js",
+   "https://www.ndt.net/forum/files/Sample%20of%20UT%20instruction.doc",
+   "https://trinityndt.com/wp-content/uploads/2026/01/Ultrasonic-Testing-Procedure-Free-Download.pdf",
+   "https://ndeformat.com/4.0/examples/example-files/",
+   "https://samplelib.com/",
+   "https://www.academia.edu/36137024/UT_Sample_report_NDT",
+   "https://samplefile.com/samples/",
+   "https://www.file-extension.info/format/!ut"
+  ]
+ },
+ "759": {
+  "ext": ".V",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://www.fileexamples.com/category/code/code-v-1",
+   "https://samplelib.com/",
+   "https://getsampledata.com/",
+   "https://get-examplefiles.com/",
+   "https://samplefile.com/samples/",
+   "https://www.vttconverter.com/blog/sample-vtt-file",
+   "https://file-examples.com/",
+   "https://filesamples.com/",
+   "https://examplefiles.org/",
+   "https://www.samplefiles.org/wp-content/plugins/wp-downloadmanager/css/wp-downloadmanager.css?ver=2.0.2",
+   "https://toolsfairy.com/video-test/sample-m4v-files",
+   "https://filesamples.com/categories/video"
+  ]
+ },
+ "770": {
+  "ext": ".VC",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://learn.microsoft.com/en-us/cpp/overview/visual-cpp-samples?view=msvc-170",
+   "http://ucancode.net/Visual_C_Samples-examples.htm",
+   "https://learn.microsoft.com/en-us/cpp/code-quality/demo-sample?view=msvc-170",
+   "https://gitee.com/basicshen/VCSamples",
+   "https://github.com/Microsoft/VCSamples/wiki",
+   "https://gitee.com/Ethan_hws/VCSamples",
+   "https://www.nirsoft.net/vc/index.html",
+   "https://samplelib.com/sample-vcf.html",
+   "https://filesamples.com/categories/video",
+   "https://www.gigasheet.com/sample-data/sample-vcf-file-genomic-data",
+   "https://www.sampletestfiles.com/formats/vcf/",
+   "https://samplelib.com/"
+  ]
+ },
+ "771": {
+  "ext": ".VC6",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://learn.microsoft.com/en-us/cpp/overview/visual-cpp-samples?view=msvc-170",
+   "https://patorjk.com/programming/vb6downloads/addaol6roomtolist.zip",
+   "https://download.cnet.com/visual-studio-6-0-samples/3000-2206_4-10751209.html",
+   "https://github.com/v-novaltd/vc6-samples",
+   "http://ucancode.net/Visual_C_Samples-examples.htm",
+   "https://archive.org/download/visual-Studio-Collection/IMG_20210726_232314.jpg",
+   "https://wenku.csdn.net/doc/2ax9t5imrv",
+   "https://archive.org/download/microsoft-msdn-library-visual-studio-6.0-6.0-1998-08-english-cd/cover1.jpg",
+   "https://www.example-code.com/vb6/default.asp",
+   "https://gitee.com/Ethan_hws/VCSamples",
+   "https://archive.org/download/microsoft-visual-c-6.0-standard-edition/001.jpg",
+   "https://sourceforge.net/projects/pnglib/files/pnglib.c/sample.vc6/"
+  ]
+ },
+ "772": {
+  "ext": ".VCLS",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://github.com/SAP/abap-file-formats/tree/main/file-formats/vcls",
+   "https://samplelib.com/",
+   "https://file.org/extension/vcls",
+   "https://samplefile.com/samples/",
+   "https://examplefile.com/",
+   "https://versilian-studios.com/vcsl/",
+   "https://sample-files.com/",
+   "https://getsampledata.com/",
+   "https://file-examples.com/",
+   "https://help.fieldsystems.trimble.com/worksmanager/understand-the-vcl-design-exchange-format.htm",
+   "https://archive.org/download/unsorted-vcls/unsorted%20vcls.zip",
+   "https://versilian-studios.com/vcsl-keys/"
+  ]
+ },
+ "774": {
+  "ext": ".VDI",
+  "reason": "Downloaded file is a QEMU disk image, not a VirtualBox VDI.",
+  "urls": []
+ },
+ "779": {
+  "ext": ".VCMZ",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://samplelib.com/",
+   "https://samplefile.com/samples/",
+   "https://csvtools.com/sample-data/kmz/",
+   "https://samplelib.com/sample-vcf.html",
+   "https://kmzmap.com/en?mode=library",
+   "https://forum.hptuners.com/showthread.php?5058-New-Users-Help-files-and-Demos",
+   "https://www.gigasheet.com/sample-data/sample-vcf-file-genomic-data",
+   "https://filesamples.com/",
+   "https://getsampledata.com/",
+   "https://file-examples.com/",
+   "https://www.osboxes.org/vmware-images/",
+   "https://knowledge.broadcom.com/external/article/301563/download-files-from-vcenter-datastore-us.html"
+  ]
+ },
+ "789": {
+  "ext": ".VRB",
+  "reason": "Wayback capture returned an HTML web page (fileproinfo.com software page, starts with UTF-8 BOM + <!DOCTYPE html>), not a .vrb file.",
+  "urls": [
+   "https://fileproinfo.com/software/veeam-software/veeam-backup-replication"
+  ]
+ },
+ "79": {
+  "ext": ".CD",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://archive.org/details/samplecds",
+   "https://archive.org/download/retro-sample-cds/s1000.jpg",
+   "https://samplefocus.com/tag/cd",
+   "https://toolsfairy.com/audio-test/sample-cdda-files",
+   "https://www.bigfishaudio.com/samplecd",
+   "https://www.voicecrystal.com/cdmenu.htm",
+   "https://splice.com/sounds/tags/cd/samples",
+   "https://webtorrent.io/free-torrents",
+   "https://www.electronicproduction.co.uk/post/free-browser-based-sample-disc-extractor",
+   "https://kits4beats.com/90s-old-school-sample-cds-collection-free-download/",
+   "https://synthmania.com/category/sample-cd/"
+  ]
+ },
+ "793": {
+  "ext": ".VSM",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://projectmanagers.net/free-value-stream-map-templates-word-excel-and-powerpoint/",
+   "https://creately.com/diagram-community/popular/t/vsm",
+   "https://www.smartsheet.com/content/value-stream-templates-how-to",
+   "https://www.smartsheet.com/content/value-stream-mapping-templates",
+   "https://www.scribd.com/document/340572259/Value-Stream-VSM-Template-xls",
+   "https://download.wondershare.com/edraw-max_full5371.exe",
+   "https://www.wordtemplatesonline.net/value-stream-mapping-templates-excel/",
+   "https://econoshift.com/en/vsm-template-2/",
+   "https://www.typecalendar.com/wp-content/uploads/2023/08/Download-Value-Stream-Mapping-scaled.jpg?gid=949",
+   "https://sourcetable.com/excel-templates/value-stream-mapping",
+   "https://www.microsoft.com/en-us/download/details.aspx?id=26514",
+   "https://www.scribd.com/document/410024800/VSM-template"
+  ]
+ },
+ "797": {
+  "ext": ".VSTO",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://github.com/Joel-Hwang/VSTO_Sample",
+   "https://learn.microsoft.com/en-us/office/dev/add-ins/overview/office-add-in-code-samples",
+   "https://learn.microsoft.com/en-us/visualstudio/vsto/office-development-samples-and-walkthroughs?view=visualstudio",
+   "https://gotask.net/programming/vsto/c-sharp-vsto-addin-sample-for-excel-word-power-point-outlook/",
+   "https://learn.microsoft.com/en-us/visualstudio/vsto/getting-started-programming-vsto-add-ins?view=visualstudio",
+   "https://www.add-in-express.com/docs/vsto-office-plugins.php",
+   "https://learn.microsoft.com/en-us/visualstudio/vsto/deploying-a-vsto-solution-by-using-windows-installer?view=visualstudio",
+   "https://learn.microsoft.com/en-us/visualstudio/vsto/walkthrough-creating-your-first-vsto-add-in-for-excel?view=visualstudio",
+   "https://learn.microsoft.com/en-us/visualstudio/vsto/office-project-templates-overview?view=visualstudio",
+   "https://10tec.com/articles/excel-vsto-add-in-basic-example.aspx",
+   "https://www.microsoft.com/en-us/download/details.aspx?id=16052",
+   "https://file-examples.com/"
+  ]
+ },
+ "798": {
+  "ext": ".VSVNBAK",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://www.visualsvn.com/support/topic/00108/",
+   "https://www.visualsvn.com/support/topic/00106/",
+   "https://zumilabs.com/tools/zumifiles/file-formats/vsvnbak",
+   "https://samplefile.com/samples/",
+   "https://serverfault.com/questions/20514/what-ways-there-are-to-backup-repositories-for-windows-visualsvn",
+   "https://samplelib.com/",
+   "https://getsampledata.com/",
+   "https://file-examples.com/",
+   "https://tortoisesvn.net/docs/release/TortoiseSVN_en/tsvn-repository-backup.html",
+   "https://bazaar.abuse.ch/browse/"
+  ]
+ },
+ "802": {
+  "ext": ".WAB",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://samplelib.com/sample-wav.html",
+   "https://samplelib.com/sample-audio.html",
+   "https://sample-files.com/downloads/audio/wav/silence-1sec-44100hz-16bit.wav",
+   "https://convertico.com/samples/wav/",
+   "https://www.lynxstudio.com/downloads/aurora-n/sample-wav-file-zip-encoded-1khz-sine-wave-32-channels-44-1khz-bwf/",
+   "https://pixabay.com/sound-effects/search/wav/",
+   "https://samplefile.com/samples/",
+   "https://filesamples.com/formats/wav",
+   "https://www.mmsp.ece.mcgill.ca/Documents/AudioFormats/WAVE/Samples.html",
+   "https://toolsfairy.com/audio-test/sample-wav-files",
+   "https://truefilesize.com/audio/wav/",
+   "https://freetoolsforweb.com/sample-files/audio/wav"
+  ]
+ },
+ "807": {
+  "ext": ".WITNESS",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://www.wordlayouts.com/document/witness-statement-template/",
+   "https://www.sampleforms.com/witness-affidavit-form.html",
+   "https://legaltemplates.com/witness-statement",
+   "https://cms9files.revize.com/hertfordcounty/Document%20Center/Employee%20Forms%20&%20Manual/SAFETY/WitnessStatementForm.pdf",
+   "https://www.odu.edu/sites/default/files/documents/witness-statement-form.pdf",
+   "https://www.sampletemplates.com/business-templates/witness-statement-template.html",
+   "https://esign.com/incident-report/witness/",
+   "https://www.scribd.com/document/579602563/Template-Witness-Statement",
+   "https://www.wordpdftemplates.com/witness-statement-template.html",
+   "https://www.sampleforms.com/witness-statement-form.html"
+  ]
+ },
+ "815": {
+  "ext": ".WMBD",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://file.org/extension/wmdb",
+   "https://fileinfo.com/extension/wmdb",
+   "https://www.exefiles.com/en/software/microsoft/windows/extensions/wmdb/all-files/",
+   "https://filesamples.com/formats/wmv",
+   "http://www.simplecarver.com/tool.php?toolname=WMDB%20Extractor%20for%20CurrentDatabase_372",
+   "https://filext.com/file-extension/WMDB",
+   "https://forensics.wiki/windows_media_player_database_extractor/",
+   "https://en.filedesc.com/file/wmdb",
+   "https://www.simplecarver.com/tool.php?toolname=WMDB%20Extractor",
+   "https://learn.microsoft.com/en-us/answers/questions/2461859/where-can-i-get-a-wmdb-file-editor-reader",
+   "https://raw.githubusercontent.com/dibi/dibi/master/examples/data/sample.mdb",
+   "https://www.armsandbadges.com/sample.htm"
+  ]
+ },
+ "830": {
+  "ext": ".XE",
+  "reason": "DDG candidates rejected",
+  "urls": [
+   "https://www.reddigitalcinema.com/sample-r3d-files",
+   "https://byterivet.com/test-files/exe/",
+   "https://xeboki.com/xe-download",
+   "https://docs.oracle.com/cd/F49540_01/DOC/network.815/a67440/appb.htm",
+   "https://www.autodesk.com/support/technical/article/caas/tsarticles/ts/3gnm93P9sPAWE6vndk7fjq.html",
+   "https://www.sampleshots.com/cameras/fujifilm-x-e5/",
+   "https://file-examples.com/",
+   "https://samplelib.com/",
+   "https://www.dpreview.com/sample-galleries/1453427456/",
+   "https://file.org/extension/xe",
+   "https://sourceforge.net/projects/exeresource/",
+   "https://sourceforge.net/directory/?q=exe%20sample%20file"
   ]
  }
 }
