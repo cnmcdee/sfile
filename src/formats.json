@@ -1,13 +1,26 @@
 {
  "1": {
-  "derivation": "unknown",
+  "derivation": "override",
   "endian": "le",
   "ext": ".3DS",
-  "fields": [],
-  "magic": null,
+  "fields": [
+   {
+    "kind": "u16",
+    "name": "chunk_id",
+    "offset": 0,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "chunk_length",
+    "offset": 2,
+    "size": 4
+   }
+  ],
+  "magic": "4d4d",
   "magic_off": 0,
   "name": "Three DS",
-  "notes": "",
+  "notes": "3DS main chunk (0x4D4D); sub-chunks follow, no fixed file header. The 2-byte magic is shorter than TIFF-BE's 4-byte MM magic, so TIFF files still win",
   "task": 1
  },
  "100": {
@@ -41,14 +54,14 @@
   "task": 100
  },
  "101": {
-  "derivation": "unknown",
+  "derivation": "override",
   "endian": "le",
   "ext": ".COM",
   "fields": [],
-  "magic": "4d5a",
+  "magic": null,
   "magic_off": 0,
   "name": "COM file",
-  "notes": "curated-magic",
+  "notes": "the .com sample is raw x86 code, not an MZ executable; the code-derived MZ magic was wrong",
   "task": 101
  },
  "102": {
@@ -100,10 +113,10 @@
   "endian": "le",
   "ext": ".CPL",
   "fields": [],
-  "magic": "4d5a",
+  "magic": null,
   "magic_off": 0,
   "name": "CPL",
-  "notes": "verified text format (genuine text sample + page describes text)",
+  "notes": "the .cpl sample is a CSV pick-and-place list, not a Windows PE; the code-derived MZ magic was wrong; verified text format",
   "task": 106
  },
  "107": {
@@ -1152,14 +1165,63 @@
   "task": 133
  },
  "134": {
-  "derivation": "unknown",
+  "derivation": "override",
   "endian": "le",
   "ext": ".DEB",
-  "fields": [],
-  "magic": null,
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "signature",
+    "offset": 0,
+    "size": 8
+   },
+   {
+    "kind": "ascii",
+    "name": "first_member_name",
+    "offset": 8,
+    "size": 16
+   },
+   {
+    "kind": "ascii",
+    "name": "first_member_mtime",
+    "offset": 24,
+    "size": 12
+   },
+   {
+    "kind": "ascii",
+    "name": "first_member_uid",
+    "offset": 36,
+    "size": 6
+   },
+   {
+    "kind": "ascii",
+    "name": "first_member_gid",
+    "offset": 42,
+    "size": 6
+   },
+   {
+    "kind": "ascii",
+    "name": "first_member_mode",
+    "offset": 48,
+    "size": 8
+   },
+   {
+    "kind": "ascii",
+    "name": "first_member_size",
+    "offset": 56,
+    "size": 10
+   },
+   {
+    "kind": "ascii",
+    "name": "first_member_magic",
+    "offset": 66,
+    "size": 2
+   }
+  ],
+  "magic": "213c617263683e0a",
   "magic_off": 0,
   "name": "Deb",
-  "notes": "",
+  "notes": "ar archive header + first member header; sample's first member is debian-binary",
   "task": 134
  },
  "135": {
@@ -1295,14 +1357,27 @@
   "task": 136
  },
  "137": {
-  "derivation": "unknown",
+  "derivation": "override",
   "endian": "le",
   "ext": ".DICOM",
-  "fields": [],
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "preamble",
+    "offset": 0,
+    "size": 128
+   },
+   {
+    "kind": "ascii",
+    "name": "dicom_magic",
+    "offset": 128,
+    "size": 4
+   }
+  ],
   "magic": "4449434d",
-  "magic_off": 0,
+  "magic_off": 128,
   "name": "DICOM file",
-  "notes": "",
+  "notes": "DICOM preamble (128 bytes, usually zero) + DICM magic at 128; data elements after that are TLV, no fixed layout",
   "task": 137
  },
  "138": {
@@ -1879,77 +1954,10 @@
   "task": 146
  },
  "147": {
-  "derivation": "container",
+  "derivation": "text",
   "endian": "le",
   "ext": ".DOCM",
-  "fields": [
-   {
-    "kind": "bytes",
-    "name": "signature",
-    "offset": 0,
-    "size": 4
-   },
-   {
-    "kind": "u16",
-    "name": "version_needed",
-    "offset": 4,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "flags",
-    "offset": 6,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "method",
-    "offset": 8,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "mod_time",
-    "offset": 10,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "mod_date",
-    "offset": 12,
-    "size": 2
-   },
-   {
-    "kind": "u32",
-    "name": "crc32",
-    "offset": 14,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "compressed_size",
-    "offset": 18,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "uncompressed_size",
-    "offset": 22,
-    "size": 4
-   },
-   {
-    "kind": "u16",
-    "name": "filename_len",
-    "offset": 26,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "extra_len",
-    "offset": 28,
-    "size": 2
-   }
-  ],
+  "fields": [],
   "magic": "504b0304",
   "magic_off": 0,
   "name": "Docm",
@@ -1957,77 +1965,10 @@
   "task": 147
  },
  "148": {
-  "derivation": "container",
+  "derivation": "text",
   "endian": "le",
   "ext": ".DOCX",
-  "fields": [
-   {
-    "kind": "bytes",
-    "name": "signature",
-    "offset": 0,
-    "size": 4
-   },
-   {
-    "kind": "u16",
-    "name": "version_needed",
-    "offset": 4,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "flags",
-    "offset": 6,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "method",
-    "offset": 8,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "mod_time",
-    "offset": 10,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "mod_date",
-    "offset": 12,
-    "size": 2
-   },
-   {
-    "kind": "u32",
-    "name": "crc32",
-    "offset": 14,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "compressed_size",
-    "offset": 18,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "uncompressed_size",
-    "offset": 22,
-    "size": 4
-   },
-   {
-    "kind": "u16",
-    "name": "filename_len",
-    "offset": 26,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "extra_len",
-    "offset": 28,
-    "size": 2
-   }
-  ],
+  "fields": [],
   "magic": "504b0304",
   "magic_off": 0,
   "name": "Docx",
@@ -2035,107 +1976,10 @@
   "task": 148
  },
  "149": {
-  "derivation": "container",
+  "derivation": "text",
   "endian": "le",
   "ext": ".DOT",
-  "fields": [
-   {
-    "kind": "bytes",
-    "name": "signature",
-    "offset": 0,
-    "size": 8
-   },
-   {
-    "kind": "bytes",
-    "name": "clsid",
-    "offset": 8,
-    "size": 16
-   },
-   {
-    "kind": "u16",
-    "name": "minor_version",
-    "offset": 24,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "major_version",
-    "offset": 26,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "byte_order",
-    "offset": 28,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "sector_shift",
-    "offset": 30,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "mini_sector_shift",
-    "offset": 32,
-    "size": 2
-   },
-   {
-    "kind": "u32",
-    "name": "num_dir_sectors",
-    "offset": 40,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "num_fat_sectors",
-    "offset": 44,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "first_dir_sector",
-    "offset": 48,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "transaction_sig",
-    "offset": 52,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "mini_stream_cutoff",
-    "offset": 56,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "first_minifat_sector",
-    "offset": 60,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "num_minifat_sectors",
-    "offset": 64,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "first_difat_sector",
-    "offset": 68,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "num_difat_sectors",
-    "offset": 72,
-    "size": 4
-   }
-  ],
+  "fields": [],
   "magic": "d0cf11e0a1b11ae1",
   "magic_off": 0,
   "name": "Dot",
@@ -2154,77 +1998,10 @@
   "task": 15
  },
  "150": {
-  "derivation": "container",
+  "derivation": "text",
   "endian": "le",
   "ext": ".DOTX",
-  "fields": [
-   {
-    "kind": "bytes",
-    "name": "signature",
-    "offset": 0,
-    "size": 4
-   },
-   {
-    "kind": "u16",
-    "name": "version_needed",
-    "offset": 4,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "flags",
-    "offset": 6,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "method",
-    "offset": 8,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "mod_time",
-    "offset": 10,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "mod_date",
-    "offset": 12,
-    "size": 2
-   },
-   {
-    "kind": "u32",
-    "name": "crc32",
-    "offset": 14,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "compressed_size",
-    "offset": 18,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "uncompressed_size",
-    "offset": 22,
-    "size": 4
-   },
-   {
-    "kind": "u16",
-    "name": "filename_len",
-    "offset": 26,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "extra_len",
-    "offset": 28,
-    "size": 2
-   }
-  ],
+  "fields": [],
   "magic": "504b0304",
   "magic_off": 0,
   "name": "Dotx Property",
@@ -2243,14 +2020,69 @@
   "task": 151
  },
  "152": {
-  "derivation": "unknown",
+  "derivation": "override",
   "endian": "be",
   "ext": ".DPX",
-  "fields": [],
-  "magic": null,
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "magic",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "offset_to_image_data",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "version",
+    "offset": 8,
+    "size": 8
+   },
+   {
+    "kind": "u32",
+    "name": "file_size",
+    "offset": 16,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "ditto_key",
+    "offset": 20,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "generic_header_length",
+    "offset": 24,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "industry_header_length",
+    "offset": 28,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "user_header_length",
+    "offset": 32,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "file_name",
+    "offset": 36,
+    "size": 100
+   }
+  ],
+  "magic": "53445058",
   "magic_off": 0,
   "name": "DPX",
-  "notes": "",
+  "notes": "DPX file header (big-endian SDPX); sample is V1.0, image data at offset 2048",
   "task": 152
  },
  "153": {
@@ -2365,14 +2197,21 @@
   "task": 157
  },
  "158": {
-  "derivation": "unknown",
+  "derivation": "override",
   "endian": "le",
   "ext": ".DWF",
-  "fields": [],
-  "magic": null,
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "header",
+    "offset": 0,
+    "size": 12
+   }
+  ],
+  "magic": "2844574620",
   "magic_off": 0,
   "name": "Dwf",
-  "notes": "",
+  "notes": "DWF text header; sample is V00.24; the body after the header is binary",
   "task": 158
  },
  "159": {
@@ -2480,14 +2319,14 @@
   "task": 162
  },
  "163": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".E00",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "E00",
-  "notes": "",
+  "notes": "E00 ArcInfo interchange files are ASCII text",
   "task": 163
  },
  "164": {
@@ -3483,88 +3322,70 @@
   "task": 183
  },
  "184": {
-  "derivation": "magic-only",
+  "derivation": "override",
   "endian": "le",
   "ext": ".EPS",
-  "fields": [],
-  "magic": "c5d0d3c6",
-  "magic_off": 0,
-  "name": "EPS",
-  "notes": "",
-  "task": 184
- },
- "185": {
-  "derivation": "container",
-  "endian": "le",
-  "ext": ".EPUB",
   "fields": [
    {
     "kind": "bytes",
-    "name": "signature",
+    "name": "magic",
     "offset": 0,
     "size": 4
    },
    {
-    "kind": "u16",
-    "name": "version_needed",
+    "kind": "u32",
+    "name": "ps_start",
     "offset": 4,
-    "size": 2
+    "size": 4
    },
    {
-    "kind": "u16",
-    "name": "flags",
-    "offset": 6,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "method",
+    "kind": "u32",
+    "name": "ps_length",
     "offset": 8,
-    "size": 2
+    "size": 4
    },
    {
-    "kind": "u16",
-    "name": "mod_time",
-    "offset": 10,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "mod_date",
+    "kind": "u32",
+    "name": "metafile_start",
     "offset": 12,
-    "size": 2
-   },
-   {
-    "kind": "u32",
-    "name": "crc32",
-    "offset": 14,
     "size": 4
    },
    {
     "kind": "u32",
-    "name": "compressed_size",
-    "offset": 18,
+    "name": "metafile_length",
+    "offset": 16,
     "size": 4
    },
    {
     "kind": "u32",
-    "name": "uncompressed_size",
-    "offset": 22,
+    "name": "tiff_start",
+    "offset": 20,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "tiff_length",
+    "offset": 24,
     "size": 4
    },
    {
     "kind": "u16",
-    "name": "filename_len",
-    "offset": 26,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "extra_len",
+    "name": "checksum",
     "offset": 28,
     "size": 2
    }
   ],
+  "magic": "c5d0d3c6",
+  "magic_off": 0,
+  "name": "EPS",
+  "notes": "Adobe EPS binary header (EPSF); sample has a TIFF preview at offset 30",
+  "task": 184
+ },
+ "185": {
+  "derivation": "text",
+  "endian": "le",
+  "ext": ".EPUB",
+  "fields": [],
   "magic": "504b0304",
   "magic_off": 0,
   "name": "Epub",
@@ -4164,14 +3985,27 @@
   "task": 198
  },
  "199": {
-  "derivation": "unknown",
+  "derivation": "override",
   "endian": "le",
   "ext": ".EXR",
-  "fields": [],
-  "magic": "762f3102",
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "magic",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "version",
+    "offset": 4,
+    "size": 4
+   }
+  ],
+  "magic": "762f3101",
   "magic_off": 0,
   "name": "EXR",
-  "notes": "curated-magic",
+  "notes": "OpenEXR header; attributes after the version are TLV, no fixed layout",
   "task": 199
  },
  "2": {
@@ -4639,14 +4473,14 @@
   "task": 212
  },
  "213": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "be",
   "ext": ".FACTOR",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "Factor",
-  "notes": "",
+  "notes": "Factor source files are text",
   "task": 213
  },
  "215": {
@@ -4708,14 +4542,27 @@
   "task": 217
  },
  "218": {
-  "derivation": "unknown",
+  "derivation": "override",
   "endian": "le",
   "ext": ".FBX",
-  "fields": [],
-  "magic": null,
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "magic",
+    "offset": 0,
+    "size": 21
+   },
+   {
+    "kind": "u32",
+    "name": "version",
+    "offset": 23,
+    "size": 4
+   }
+  ],
+  "magic": "4b617964617261204642582042696e617279202000",
   "magic_off": 0,
   "name": "FBX file",
-  "notes": "",
+  "notes": "FBX binary header; sample version 7400 (FBX 2016)",
   "task": 218
  },
  "219": {
@@ -4994,14 +4841,81 @@
   "task": 222
  },
  "223": {
-  "derivation": "unknown",
+  "derivation": "container",
   "endian": "le",
   "ext": ".FFAPX",
-  "fields": [],
-  "magic": null,
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "version_needed",
+    "offset": 4,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "flags",
+    "offset": 6,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "method",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_time",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_date",
+    "offset": 12,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "crc32",
+    "offset": 14,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "compressed_size",
+    "offset": 18,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "uncompressed_size",
+    "offset": 22,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "filename_len",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "extra_len",
+    "offset": 28,
+    "size": 2
+   }
+  ],
+  "magic": "504b0304",
   "magic_off": 0,
   "name": "FFAPX file",
-  "notes": "",
+  "notes": "curated-magic",
   "task": 223
  },
  "224": {
@@ -5224,77 +5138,10 @@
   "task": 230
  },
  "231": {
-  "derivation": "container",
+  "derivation": "text",
   "endian": "le",
   "ext": ".FMU",
-  "fields": [
-   {
-    "kind": "bytes",
-    "name": "signature",
-    "offset": 0,
-    "size": 4
-   },
-   {
-    "kind": "u16",
-    "name": "version_needed",
-    "offset": 4,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "flags",
-    "offset": 6,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "method",
-    "offset": 8,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "mod_time",
-    "offset": 10,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "mod_date",
-    "offset": 12,
-    "size": 2
-   },
-   {
-    "kind": "u32",
-    "name": "crc32",
-    "offset": 14,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "compressed_size",
-    "offset": 18,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "uncompressed_size",
-    "offset": 22,
-    "size": 4
-   },
-   {
-    "kind": "u16",
-    "name": "filename_len",
-    "offset": 26,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "extra_len",
-    "offset": 28,
-    "size": 2
-   }
-  ],
+  "fields": [],
   "magic": "504b0304",
   "magic_off": 0,
   "name": "FMU",
@@ -6338,7 +6185,7 @@
   "task": 256
  },
  "257": {
-  "derivation": "readseq",
+  "derivation": "override",
   "endian": "le",
   "ext": ".GEOTIFF",
   "fields": [
@@ -6355,10 +6202,10 @@
     "size": 4
    }
   ],
-  "magic": null,
+  "magic": "4d4d002a",
   "magic_off": 0,
   "name": "GEOTIFF file",
-  "notes": "",
+  "notes": "big-endian TIFF; inherits the TIFF-BE layout",
   "task": 257
  },
  "258": {
@@ -7833,21 +7680,111 @@
   "task": 282
  },
  "283": {
-  "derivation": "explicit",
+  "derivation": "override",
   "endian": "le",
   "ext": ".HDF5",
   "fields": [
    {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 0,
+    "size": 8
+   },
+   {
     "kind": "u8",
-    "name": "version",
+    "name": "superblock_version",
     "offset": 8,
     "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "freespace_storage_version",
+    "offset": 9,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "root_group_symbol_table_entry_version",
+    "offset": 10,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "reserved",
+    "offset": 11,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "shared_header_message_version",
+    "offset": 12,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "size_of_offsets",
+    "offset": 13,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "size_of_lengths",
+    "offset": 14,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "reserved2",
+    "offset": 15,
+    "size": 1
+   },
+   {
+    "kind": "u16",
+    "name": "group_leaf_node_k",
+    "offset": 16,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "group_internal_node_k",
+    "offset": 18,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "file_consistency_flags",
+    "offset": 20,
+    "size": 4
+   },
+   {
+    "kind": "u64",
+    "name": "base_address",
+    "offset": 24,
+    "size": 8
+   },
+   {
+    "kind": "u64",
+    "name": "address_of_file_free_space_info",
+    "offset": 32,
+    "size": 8
+   },
+   {
+    "kind": "u64",
+    "name": "end_of_file_address",
+    "offset": 40,
+    "size": 8
+   },
+   {
+    "kind": "u64",
+    "name": "driver_information_block_address",
+    "offset": 48,
+    "size": 8
    }
   ],
-  "magic": null,
+  "magic": "894844460d0a1a0a",
   "magic_off": 0,
   "name": "HDF5",
-  "notes": "",
+  "notes": "HDF5 superblock v0 (address fields assume size_of_offsets=8, as in this sample); v2/v3 superblocks differ",
   "task": 283
  },
  "284": {
@@ -9086,14 +9023,81 @@
   "task": 317
  },
  "318": {
-  "derivation": "unknown",
+  "derivation": "override",
   "endian": "le",
   "ext": ".IT",
-  "fields": [],
-  "magic": null,
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "magic",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "songname",
+    "offset": 4,
+    "size": 26
+   },
+   {
+    "kind": "u16",
+    "name": "reserved",
+    "offset": 30,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "ordnum",
+    "offset": 32,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "insnum",
+    "offset": 34,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "smpnum",
+    "offset": 36,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "patnum",
+    "offset": 38,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "cwtv",
+    "offset": 40,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "cmwt",
+    "offset": 42,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "flags",
+    "offset": 44,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "special",
+    "offset": 46,
+    "size": 2
+   }
+  ],
+  "magic": "494d504d",
   "magic_off": 0,
   "name": "IT",
-  "notes": "",
+  "notes": "Impulse Tracker module header; sample: 61 orders, 10 instruments, 18 samples, 53 patterns",
   "task": 318
  },
  "319": {
@@ -12289,14 +12293,99 @@
   "task": 404
  },
  "405": {
-  "derivation": "unknown",
-  "endian": "le",
+  "derivation": "override",
+  "endian": "be",
   "ext": ".MOBI",
-  "fields": [],
-  "magic": null,
-  "magic_off": 0,
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "name",
+    "offset": 0,
+    "size": 32
+   },
+   {
+    "kind": "u16",
+    "name": "attributes",
+    "offset": 32,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "version",
+    "offset": 34,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "creation_time",
+    "offset": 36,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "modification_time",
+    "offset": 40,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "backup_time",
+    "offset": 44,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "modification_number",
+    "offset": 48,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "app_info_id",
+    "offset": 52,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "sort_info_id",
+    "offset": 56,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "type",
+    "offset": 60,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "creator",
+    "offset": 64,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "unique_id_seed",
+    "offset": 68,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "next_record_list_id",
+    "offset": 72,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "num_records",
+    "offset": 76,
+    "size": 2
+   }
+  ],
+  "magic": "4d4f4249",
+  "magic_off": 64,
   "name": "Mobi",
-  "notes": "",
+  "notes": "MOBI (Palm database header, big-endian); sample has 397 records",
   "task": 405
  },
  "406": {
@@ -13089,10 +13178,113 @@
   "task": 431
  },
  "432": {
-  "derivation": "unknown",
+  "derivation": "container",
   "endian": "le",
   "ext": ".MSSTYLES",
-  "fields": [],
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "signature",
+    "offset": 0,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "bytes_last_page",
+    "offset": 2,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "pages",
+    "offset": 4,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "relocations",
+    "offset": 6,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "header_size",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "min_alloc",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "max_alloc",
+    "offset": 12,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "ss",
+    "offset": 14,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "sp",
+    "offset": 16,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "checksum",
+    "offset": 18,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "ip",
+    "offset": 20,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "cs",
+    "offset": 22,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "reloc_table_offset",
+    "offset": 24,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "overlay",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "oem_id",
+    "offset": 36,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "oem_info",
+    "offset": 38,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "pe_header_offset",
+    "offset": 60,
+    "size": 4
+   }
+  ],
   "magic": "4d5a",
   "magic_off": 0,
   "name": "MS Styles",
@@ -13406,56 +13598,63 @@
   "task": 440
  },
  "441": {
-  "derivation": "unknown",
+  "derivation": "override",
   "endian": "be",
   "ext": ".NC",
-  "fields": [],
-  "magic": null,
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "magic",
+    "offset": 0,
+    "size": 3
+   },
+   {
+    "kind": "u8",
+    "name": "version",
+    "offset": 3,
+    "size": 1
+   },
+   {
+    "kind": "u32",
+    "name": "numrecs",
+    "offset": 4,
+    "size": 4
+   }
+  ],
+  "magic": "434446",
   "magic_off": 0,
   "name": "Net CDF",
-  "notes": "",
+  "notes": "NetCDF classic header (version 1 = CDF\\x01); dimensions/attributes/variables after numrecs are variable",
   "task": 441
  },
  "442": {
-  "derivation": "struct",
+  "derivation": "override",
   "endian": "be",
   "ext": ".NCD",
   "fields": [
    {
-    "kind": "u32",
-    "name": "length",
+    "kind": "ascii",
+    "name": "magic",
     "offset": 0,
-    "size": 4
+    "size": 3
+   },
+   {
+    "kind": "u8",
+    "name": "version",
+    "offset": 3,
+    "size": 1
    },
    {
     "kind": "u32",
-    "name": "type",
+    "name": "numrecs",
     "offset": 4,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "rank",
-    "offset": 8,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "vsize",
-    "offset": 12,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "begin",
-    "offset": 16,
     "size": 4
    }
   ],
-  "magic": null,
+  "magic": "434446",
   "magic_off": 0,
   "name": "NCD",
-  "notes": "",
+  "notes": "NetCDF classic (same layout as .NC, task 441)",
   "task": 442
  },
  "443": {
@@ -14566,14 +14765,51 @@
   "task": 459
  },
  "46": {
-  "derivation": "unknown",
+  "derivation": "override",
   "endian": "be",
   "ext": ".AU",
-  "fields": [],
-  "magic": null,
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "magic",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "offset",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "data_size",
+    "offset": 8,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "encoding",
+    "offset": 12,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "sample_rate",
+    "offset": 16,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "channels",
+    "offset": 20,
+    "size": 4
+   }
+  ],
+  "magic": "2e736e64",
   "magic_off": 0,
   "name": "AU File",
-  "notes": "",
+  "notes": "Sun Audio header; sample: 44100 Hz, 2 channels, encoding 3 (16-bit linear PCM)",
   "task": 46
  },
  "460": {
@@ -14874,14 +15110,99 @@
   "task": 466
  },
  "467": {
-  "derivation": "unknown",
+  "derivation": "override",
   "endian": "le",
   "ext": ".O",
-  "fields": [],
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "e_ident",
+    "offset": 0,
+    "size": 16
+   },
+   {
+    "kind": "u16",
+    "name": "e_type",
+    "offset": 16,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "e_machine",
+    "offset": 18,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "e_version",
+    "offset": 20,
+    "size": 4
+   },
+   {
+    "kind": "u64",
+    "name": "e_entry",
+    "offset": 24,
+    "size": 8
+   },
+   {
+    "kind": "u64",
+    "name": "e_phoff",
+    "offset": 32,
+    "size": 8
+   },
+   {
+    "kind": "u64",
+    "name": "e_shoff",
+    "offset": 40,
+    "size": 8
+   },
+   {
+    "kind": "u32",
+    "name": "e_flags",
+    "offset": 48,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "e_ehsize",
+    "offset": 52,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "e_phentsize",
+    "offset": 54,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "e_phnum",
+    "offset": 56,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "e_shentsize",
+    "offset": 58,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "e_shnum",
+    "offset": 60,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "e_shstrndx",
+    "offset": 62,
+    "size": 2
+   }
+  ],
   "magic": "7f454c46",
   "magic_off": 0,
   "name": "O file",
-  "notes": "curated-magic",
+  "notes": "ELF 64-bit header; 32-bit files have a different layout after e_version",
   "task": 467
  },
  "468": {
@@ -15027,10 +15348,113 @@
   "task": 47
  },
  "470": {
-  "derivation": "unknown",
+  "derivation": "container",
   "endian": "le",
   "ext": ".OCX",
-  "fields": [],
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "signature",
+    "offset": 0,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "bytes_last_page",
+    "offset": 2,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "pages",
+    "offset": 4,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "relocations",
+    "offset": 6,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "header_size",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "min_alloc",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "max_alloc",
+    "offset": 12,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "ss",
+    "offset": 14,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "sp",
+    "offset": 16,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "checksum",
+    "offset": 18,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "ip",
+    "offset": 20,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "cs",
+    "offset": 22,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "reloc_table_offset",
+    "offset": 24,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "overlay",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "oem_id",
+    "offset": 36,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "oem_info",
+    "offset": 38,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "pe_header_offset",
+    "offset": 60,
+    "size": 4
+   }
+  ],
   "magic": "4d5a",
   "magic_off": 0,
   "name": "OCX",
@@ -15116,77 +15540,10 @@
   "task": 471
  },
  "472": {
-  "derivation": "container",
+  "derivation": "text",
   "endian": "le",
   "ext": ".ODF",
-  "fields": [
-   {
-    "kind": "bytes",
-    "name": "signature",
-    "offset": 0,
-    "size": 4
-   },
-   {
-    "kind": "u16",
-    "name": "version_needed",
-    "offset": 4,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "flags",
-    "offset": 6,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "method",
-    "offset": 8,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "mod_time",
-    "offset": 10,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "mod_date",
-    "offset": 12,
-    "size": 2
-   },
-   {
-    "kind": "u32",
-    "name": "crc32",
-    "offset": 14,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "compressed_size",
-    "offset": 18,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "uncompressed_size",
-    "offset": 22,
-    "size": 4
-   },
-   {
-    "kind": "u16",
-    "name": "filename_len",
-    "offset": 26,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "extra_len",
-    "offset": 28,
-    "size": 2
-   }
-  ],
+  "fields": [],
   "magic": "504b0304",
   "magic_off": 0,
   "name": "ODF Metadata",
@@ -15272,77 +15629,10 @@
   "task": 473
  },
  "474": {
-  "derivation": "container",
+  "derivation": "text",
   "endian": "le",
   "ext": ".ODP",
-  "fields": [
-   {
-    "kind": "bytes",
-    "name": "signature",
-    "offset": 0,
-    "size": 4
-   },
-   {
-    "kind": "u16",
-    "name": "version_needed",
-    "offset": 4,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "flags",
-    "offset": 6,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "method",
-    "offset": 8,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "mod_time",
-    "offset": 10,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "mod_date",
-    "offset": 12,
-    "size": 2
-   },
-   {
-    "kind": "u32",
-    "name": "crc32",
-    "offset": 14,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "compressed_size",
-    "offset": 18,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "uncompressed_size",
-    "offset": 22,
-    "size": 4
-   },
-   {
-    "kind": "u16",
-    "name": "filename_len",
-    "offset": 26,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "extra_len",
-    "offset": 28,
-    "size": 2
-   }
-  ],
+  "fields": [],
   "magic": "504b0304",
   "magic_off": 0,
   "name": "ODP",
@@ -15428,77 +15718,10 @@
   "task": 475
  },
  "476": {
-  "derivation": "container",
+  "derivation": "text",
   "endian": "le",
   "ext": ".ODT",
-  "fields": [
-   {
-    "kind": "bytes",
-    "name": "signature",
-    "offset": 0,
-    "size": 4
-   },
-   {
-    "kind": "u16",
-    "name": "version_needed",
-    "offset": 4,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "flags",
-    "offset": 6,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "method",
-    "offset": 8,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "mod_time",
-    "offset": 10,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "mod_date",
-    "offset": 12,
-    "size": 2
-   },
-   {
-    "kind": "u32",
-    "name": "crc32",
-    "offset": 14,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "compressed_size",
-    "offset": 18,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "uncompressed_size",
-    "offset": 22,
-    "size": 4
-   },
-   {
-    "kind": "u16",
-    "name": "filename_len",
-    "offset": 26,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "extra_len",
-    "offset": 28,
-    "size": 2
-   }
-  ],
+  "fields": [],
   "magic": "504b0304",
   "magic_off": 0,
   "name": "ODT",
@@ -16377,77 +16600,10 @@
   "task": 495
  },
  "496": {
-  "derivation": "container",
+  "derivation": "text",
   "endian": "le",
   "ext": ".OTP",
-  "fields": [
-   {
-    "kind": "bytes",
-    "name": "signature",
-    "offset": 0,
-    "size": 4
-   },
-   {
-    "kind": "u16",
-    "name": "version_needed",
-    "offset": 4,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "flags",
-    "offset": 6,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "method",
-    "offset": 8,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "mod_time",
-    "offset": 10,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "mod_date",
-    "offset": 12,
-    "size": 2
-   },
-   {
-    "kind": "u32",
-    "name": "crc32",
-    "offset": 14,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "compressed_size",
-    "offset": 18,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "uncompressed_size",
-    "offset": 22,
-    "size": 4
-   },
-   {
-    "kind": "u16",
-    "name": "filename_len",
-    "offset": 26,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "extra_len",
-    "offset": 28,
-    "size": 2
-   }
-  ],
+  "fields": [],
   "magic": "504b0304",
   "magic_off": 0,
   "name": "OTP",
@@ -16725,10 +16881,113 @@
   "task": 5
  },
  "50": {
-  "derivation": "unknown",
+  "derivation": "container",
   "endian": "le",
   "ext": ".AX",
-  "fields": [],
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "signature",
+    "offset": 0,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "bytes_last_page",
+    "offset": 2,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "pages",
+    "offset": 4,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "relocations",
+    "offset": 6,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "header_size",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "min_alloc",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "max_alloc",
+    "offset": 12,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "ss",
+    "offset": 14,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "sp",
+    "offset": 16,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "checksum",
+    "offset": 18,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "ip",
+    "offset": 20,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "cs",
+    "offset": 22,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "reloc_table_offset",
+    "offset": 24,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "overlay",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "oem_id",
+    "offset": 36,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "oem_info",
+    "offset": 38,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "pe_header_offset",
+    "offset": 60,
+    "size": 4
+   }
+  ],
   "magic": "4d5a",
   "magic_off": 0,
   "name": "AX file",
@@ -16747,77 +17006,10 @@
   "task": 500
  },
  "501": {
-  "derivation": "container",
+  "derivation": "text",
   "endian": "le",
   "ext": ".OXT",
-  "fields": [
-   {
-    "kind": "bytes",
-    "name": "signature",
-    "offset": 0,
-    "size": 4
-   },
-   {
-    "kind": "u16",
-    "name": "version_needed",
-    "offset": 4,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "flags",
-    "offset": 6,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "method",
-    "offset": 8,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "mod_time",
-    "offset": 10,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "mod_date",
-    "offset": 12,
-    "size": 2
-   },
-   {
-    "kind": "u32",
-    "name": "crc32",
-    "offset": 14,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "compressed_size",
-    "offset": 18,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "uncompressed_size",
-    "offset": 22,
-    "size": 4
-   },
-   {
-    "kind": "u16",
-    "name": "filename_len",
-    "offset": 26,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "extra_len",
-    "offset": 28,
-    "size": 2
-   }
-  ],
+  "fields": [],
   "magic": "504b0304",
   "magic_off": 0,
   "name": "OXT",
@@ -18885,77 +19077,10 @@
   "task": 566
  },
  "567": {
-  "derivation": "container",
+  "derivation": "text",
   "endian": "le",
   "ext": ".PPSX",
-  "fields": [
-   {
-    "kind": "bytes",
-    "name": "signature",
-    "offset": 0,
-    "size": 4
-   },
-   {
-    "kind": "u16",
-    "name": "version_needed",
-    "offset": 4,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "flags",
-    "offset": 6,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "method",
-    "offset": 8,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "mod_time",
-    "offset": 10,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "mod_date",
-    "offset": 12,
-    "size": 2
-   },
-   {
-    "kind": "u32",
-    "name": "crc32",
-    "offset": 14,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "compressed_size",
-    "offset": 18,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "uncompressed_size",
-    "offset": 22,
-    "size": 4
-   },
-   {
-    "kind": "u16",
-    "name": "filename_len",
-    "offset": 26,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "extra_len",
-    "offset": 28,
-    "size": 2
-   }
-  ],
+  "fields": [],
   "magic": "504b0304",
   "magic_off": 0,
   "name": "PPSX",
@@ -18963,77 +19088,10 @@
   "task": 567
  },
  "568": {
-  "derivation": "container",
+  "derivation": "text",
   "endian": "le",
   "ext": ".PPTX",
-  "fields": [
-   {
-    "kind": "bytes",
-    "name": "signature",
-    "offset": 0,
-    "size": 4
-   },
-   {
-    "kind": "u16",
-    "name": "version_needed",
-    "offset": 4,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "flags",
-    "offset": 6,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "method",
-    "offset": 8,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "mod_time",
-    "offset": 10,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "mod_date",
-    "offset": 12,
-    "size": 2
-   },
-   {
-    "kind": "u32",
-    "name": "crc32",
-    "offset": 14,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "compressed_size",
-    "offset": 18,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "uncompressed_size",
-    "offset": 22,
-    "size": 4
-   },
-   {
-    "kind": "u16",
-    "name": "filename_len",
-    "offset": 26,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "extra_len",
-    "offset": 28,
-    "size": 2
-   }
-  ],
+  "fields": [],
   "magic": "504b0304",
   "magic_off": 0,
   "name": "PPTX",
@@ -19974,77 +20032,10 @@
   "task": 599
  },
  "6": {
-  "derivation": "container",
+  "derivation": "text",
   "endian": "le",
   "ext": ".3mf",
-  "fields": [
-   {
-    "kind": "bytes",
-    "name": "signature",
-    "offset": 0,
-    "size": 4
-   },
-   {
-    "kind": "u16",
-    "name": "version_needed",
-    "offset": 4,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "flags",
-    "offset": 6,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "method",
-    "offset": 8,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "mod_time",
-    "offset": 10,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "mod_date",
-    "offset": 12,
-    "size": 2
-   },
-   {
-    "kind": "u32",
-    "name": "crc32",
-    "offset": 14,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "compressed_size",
-    "offset": 18,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "uncompressed_size",
-    "offset": 22,
-    "size": 4
-   },
-   {
-    "kind": "u16",
-    "name": "filename_len",
-    "offset": 26,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "extra_len",
-    "offset": 28,
-    "size": 2
-   }
-  ],
+  "fields": [],
   "magic": "504b0304",
   "magic_off": 0,
   "name": "Three MF",
@@ -20554,14 +20545,45 @@
   "task": 613
  },
  "614": {
-  "derivation": "unknown",
+  "derivation": "override",
   "endian": "be",
   "ext": ".RM",
-  "fields": [],
-  "magic": null,
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "signature",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "size",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "object_version",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "file_version",
+    "offset": 10,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "num_headers",
+    "offset": 14,
+    "size": 4
+   }
+  ],
+  "magic": "2e524d46",
   "magic_off": 0,
   "name": "RM",
-  "notes": "",
+  "notes": "RealMedia file header (.RMF); sample has 6 headers",
   "task": 614
  },
  "615": {
@@ -20576,14 +20598,45 @@
   "task": 615
  },
  "616": {
-  "derivation": "unknown",
+  "derivation": "override",
   "endian": "be",
   "ext": ".RMVB",
-  "fields": [],
-  "magic": null,
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "signature",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "size",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "object_version",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "file_version",
+    "offset": 10,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "num_headers",
+    "offset": 14,
+    "size": 4
+   }
+  ],
+  "magic": "2e524d46",
   "magic_off": 0,
   "name": "RMVB",
-  "notes": "",
+  "notes": "RealMedia file header (.RMF); sample has 6 headers",
   "task": 616
  },
  "617": {
@@ -21165,14 +21218,105 @@
   "task": 630
  },
  "631": {
-  "derivation": "unknown",
+  "derivation": "override",
   "endian": "le",
   "ext": ".S3M",
-  "fields": [],
-  "magic": null,
-  "magic_off": 0,
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "songname",
+    "offset": 0,
+    "size": 28
+   },
+   {
+    "kind": "u8",
+    "name": "eof_marker",
+    "offset": 28,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "type",
+    "offset": 29,
+    "size": 1
+   },
+   {
+    "kind": "u16",
+    "name": "reserved",
+    "offset": 30,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "ordnum",
+    "offset": 32,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "insnum",
+    "offset": 34,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "patnum",
+    "offset": 36,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "flags",
+    "offset": 38,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "cwtv",
+    "offset": 40,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "ffv",
+    "offset": 42,
+    "size": 2
+   },
+   {
+    "kind": "ascii",
+    "name": "magic",
+    "offset": 44,
+    "size": 4
+   },
+   {
+    "kind": "u8",
+    "name": "global_volume",
+    "offset": 48,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "initial_speed",
+    "offset": 49,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "initial_tempo",
+    "offset": 50,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "master_volume",
+    "offset": 51,
+    "size": 1
+   }
+  ],
+  "magic": "5343524d",
+  "magic_off": 44,
   "name": "S3M",
-  "notes": "",
+  "notes": "ScreamTracker 3 module header; sample: 30 orders, 22 instruments, 24 patterns",
   "task": 631
  },
  "632": {
@@ -21600,14 +21744,14 @@
   "task": 644
  },
  "645": {
-  "derivation": "unknown",
+  "derivation": "override",
   "endian": "le",
   "ext": ".SCR",
   "fields": [],
-  "magic": "4d5a",
+  "magic": null,
   "magic_off": 0,
   "name": "SCR file",
-  "notes": "curated-magic",
+  "notes": "the .scr sample starts with zeros, not MZ; the code-derived MZ magic was wrong",
   "task": 645
  },
  "646": {
@@ -22086,10 +22230,113 @@
   "task": 658
  },
  "659": {
-  "derivation": "unknown",
+  "derivation": "container",
   "endian": "le",
   "ext": ".SFX",
-  "fields": [],
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "signature",
+    "offset": 0,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "bytes_last_page",
+    "offset": 2,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "pages",
+    "offset": 4,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "relocations",
+    "offset": 6,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "header_size",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "min_alloc",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "max_alloc",
+    "offset": 12,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "ss",
+    "offset": 14,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "sp",
+    "offset": 16,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "checksum",
+    "offset": 18,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "ip",
+    "offset": 20,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "cs",
+    "offset": 22,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "reloc_table_offset",
+    "offset": 24,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "overlay",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "oem_id",
+    "offset": 36,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "oem_info",
+    "offset": 38,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "pe_header_offset",
+    "offset": 60,
+    "size": 4
+   }
+  ],
   "magic": "4d5a",
   "magic_off": 0,
   "name": "SFX file",
@@ -24079,77 +24326,10 @@
   "task": 707
  },
  "708": {
-  "derivation": "container",
+  "derivation": "text",
   "endian": "le",
   "ext": ".SXC",
-  "fields": [
-   {
-    "kind": "bytes",
-    "name": "signature",
-    "offset": 0,
-    "size": 4
-   },
-   {
-    "kind": "u16",
-    "name": "version_needed",
-    "offset": 4,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "flags",
-    "offset": 6,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "method",
-    "offset": 8,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "mod_time",
-    "offset": 10,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "mod_date",
-    "offset": 12,
-    "size": 2
-   },
-   {
-    "kind": "u32",
-    "name": "crc32",
-    "offset": 14,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "compressed_size",
-    "offset": 18,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "uncompressed_size",
-    "offset": 22,
-    "size": 4
-   },
-   {
-    "kind": "u16",
-    "name": "filename_len",
-    "offset": 26,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "extra_len",
-    "offset": 28,
-    "size": 2
-   }
-  ],
+  "fields": [],
   "magic": "504b0304",
   "magic_off": 0,
   "name": "SXC",
@@ -24324,77 +24504,10 @@
   "task": 710
  },
  "711": {
-  "derivation": "container",
+  "derivation": "text",
   "endian": "le",
   "ext": ".SXI",
-  "fields": [
-   {
-    "kind": "bytes",
-    "name": "signature",
-    "offset": 0,
-    "size": 4
-   },
-   {
-    "kind": "u16",
-    "name": "version_needed",
-    "offset": 4,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "flags",
-    "offset": 6,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "method",
-    "offset": 8,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "mod_time",
-    "offset": 10,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "mod_date",
-    "offset": 12,
-    "size": 2
-   },
-   {
-    "kind": "u32",
-    "name": "crc32",
-    "offset": 14,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "compressed_size",
-    "offset": 18,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "uncompressed_size",
-    "offset": 22,
-    "size": 4
-   },
-   {
-    "kind": "u16",
-    "name": "filename_len",
-    "offset": 26,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "extra_len",
-    "offset": 28,
-    "size": 2
-   }
-  ],
+  "fields": [],
   "magic": "504b0304",
   "magic_off": 0,
   "name": "SXI",
@@ -24491,77 +24604,10 @@
   "task": 713
  },
  "714": {
-  "derivation": "container",
+  "derivation": "text",
   "endian": "le",
   "ext": ".SXW",
-  "fields": [
-   {
-    "kind": "bytes",
-    "name": "signature",
-    "offset": 0,
-    "size": 4
-   },
-   {
-    "kind": "u16",
-    "name": "version_needed",
-    "offset": 4,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "flags",
-    "offset": 6,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "method",
-    "offset": 8,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "mod_time",
-    "offset": 10,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "mod_date",
-    "offset": 12,
-    "size": 2
-   },
-   {
-    "kind": "u32",
-    "name": "crc32",
-    "offset": 14,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "compressed_size",
-    "offset": 18,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "uncompressed_size",
-    "offset": 22,
-    "size": 4
-   },
-   {
-    "kind": "u16",
-    "name": "filename_len",
-    "offset": 26,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "extra_len",
-    "offset": 28,
-    "size": 2
-   }
-  ],
+  "fields": [],
   "magic": "504b0304",
   "magic_off": 0,
   "name": "SXW",
@@ -24977,14 +25023,87 @@
   "task": 724
  },
  "725": {
-  "derivation": "unknown",
+  "derivation": "override",
   "endian": "le",
   "ext": ".TGA",
-  "fields": [],
+  "fields": [
+   {
+    "kind": "u8",
+    "name": "id_length",
+    "offset": 0,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "color_map_type",
+    "offset": 1,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "image_type",
+    "offset": 2,
+    "size": 1
+   },
+   {
+    "kind": "u16",
+    "name": "color_map_origin",
+    "offset": 3,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "color_map_length",
+    "offset": 5,
+    "size": 2
+   },
+   {
+    "kind": "u8",
+    "name": "color_map_depth",
+    "offset": 7,
+    "size": 1
+   },
+   {
+    "kind": "u16",
+    "name": "x_origin",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "y_origin",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "width",
+    "offset": 12,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "height",
+    "offset": 14,
+    "size": 2
+   },
+   {
+    "kind": "u8",
+    "name": "pixel_depth",
+    "offset": 16,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "image_descriptor",
+    "offset": 17,
+    "size": 1
+   }
+  ],
   "magic": "00000200",
   "magic_off": 0,
   "name": "TGA",
-  "notes": "curated-magic",
+  "notes": "TGA header; sample is 640x426, 24-bit, type 2 (uncompressed true-color)",
   "task": 725
  },
  "726": {
@@ -25153,10 +25272,113 @@
   "task": 730
  },
  "731": {
-  "derivation": "unknown",
+  "derivation": "container",
   "endian": "le",
   "ext": ".TLB",
-  "fields": [],
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "signature",
+    "offset": 0,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "bytes_last_page",
+    "offset": 2,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "pages",
+    "offset": 4,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "relocations",
+    "offset": 6,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "header_size",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "min_alloc",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "max_alloc",
+    "offset": 12,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "ss",
+    "offset": 14,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "sp",
+    "offset": 16,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "checksum",
+    "offset": 18,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "ip",
+    "offset": 20,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "cs",
+    "offset": 22,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "reloc_table_offset",
+    "offset": 24,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "overlay",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "oem_id",
+    "offset": 36,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "oem_info",
+    "offset": 38,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "pe_header_offset",
+    "offset": 60,
+    "size": 4
+   }
+  ],
   "magic": "4d5a",
   "magic_off": 0,
   "name": "TLB",
@@ -25199,14 +25421,14 @@
   "task": 733
  },
  "734": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".TORRENT",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "Torrent",
-  "notes": "",
+  "notes": "torrent files are bencode (ASCII text)",
   "task": 734
  },
  "735": {
@@ -25647,77 +25869,10 @@
   "task": 75
  },
  "750": {
-  "derivation": "container",
+  "derivation": "text",
   "endian": "le",
   "ext": ".UOT",
-  "fields": [
-   {
-    "kind": "bytes",
-    "name": "signature",
-    "offset": 0,
-    "size": 4
-   },
-   {
-    "kind": "u16",
-    "name": "version_needed",
-    "offset": 4,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "flags",
-    "offset": 6,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "method",
-    "offset": 8,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "mod_time",
-    "offset": 10,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "mod_date",
-    "offset": 12,
-    "size": 2
-   },
-   {
-    "kind": "u32",
-    "name": "crc32",
-    "offset": 14,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "compressed_size",
-    "offset": 18,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "uncompressed_size",
-    "offset": 22,
-    "size": 4
-   },
-   {
-    "kind": "u16",
-    "name": "filename_len",
-    "offset": 26,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "extra_len",
-    "offset": 28,
-    "size": 2
-   }
-  ],
+  "fields": [],
   "magic": "504b0304",
   "magic_off": 0,
   "name": "UOT",
@@ -26764,77 +26919,10 @@
   "task": 786
  },
  "787": {
-  "derivation": "container",
+  "derivation": "text",
   "endian": "le",
   "ext": ".VPR",
-  "fields": [
-   {
-    "kind": "bytes",
-    "name": "signature",
-    "offset": 0,
-    "size": 4
-   },
-   {
-    "kind": "u16",
-    "name": "version_needed",
-    "offset": 4,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "flags",
-    "offset": 6,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "method",
-    "offset": 8,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "mod_time",
-    "offset": 10,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "mod_date",
-    "offset": 12,
-    "size": 2
-   },
-   {
-    "kind": "u32",
-    "name": "crc32",
-    "offset": 14,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "compressed_size",
-    "offset": 18,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "uncompressed_size",
-    "offset": 22,
-    "size": 4
-   },
-   {
-    "kind": "u16",
-    "name": "filename_len",
-    "offset": 26,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "extra_len",
-    "offset": 28,
-    "size": 2
-   }
-  ],
+  "fields": [],
   "magic": "504b0304",
   "magic_off": 0,
   "name": "Vpr",
@@ -27006,77 +27094,10 @@
   "task": 791
  },
  "792": {
-  "derivation": "container",
+  "derivation": "text",
   "endian": "le",
   "ext": ".VSDX",
-  "fields": [
-   {
-    "kind": "bytes",
-    "name": "signature",
-    "offset": 0,
-    "size": 4
-   },
-   {
-    "kind": "u16",
-    "name": "version_needed",
-    "offset": 4,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "flags",
-    "offset": 6,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "method",
-    "offset": 8,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "mod_time",
-    "offset": 10,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "mod_date",
-    "offset": 12,
-    "size": 2
-   },
-   {
-    "kind": "u32",
-    "name": "crc32",
-    "offset": 14,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "compressed_size",
-    "offset": 18,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "uncompressed_size",
-    "offset": 22,
-    "size": 4
-   },
-   {
-    "kind": "u16",
-    "name": "filename_len",
-    "offset": 26,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "extra_len",
-    "offset": 28,
-    "size": 2
-   }
-  ],
+  "fields": [],
   "magic": "504b0304",
   "magic_off": 0,
   "name": "Vsdx",
@@ -27743,14 +27764,27 @@
   "task": 810
  },
  "811": {
-  "derivation": "unknown",
+  "derivation": "override",
   "endian": "le",
   "ext": ".WL",
-  "fields": [],
-  "magic": null,
-  "magic_off": 0,
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "preamble",
+    "offset": 0,
+    "size": 128
+   },
+   {
+    "kind": "ascii",
+    "name": "dicom_magic",
+    "offset": 128,
+    "size": 4
+   }
+  ],
+  "magic": "4449434d",
+  "magic_off": 128,
   "name": "WL",
-  "notes": "",
+  "notes": "DICOM worklist (a DICOM file; DICM at 128)",
   "task": 811
  },
  "812": {
@@ -28712,77 +28746,10 @@
   "task": 834
  },
  "835": {
-  "derivation": "container",
+  "derivation": "text",
   "endian": "le",
   "ext": ".XLSM",
-  "fields": [
-   {
-    "kind": "bytes",
-    "name": "signature",
-    "offset": 0,
-    "size": 4
-   },
-   {
-    "kind": "u16",
-    "name": "version_needed",
-    "offset": 4,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "flags",
-    "offset": 6,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "method",
-    "offset": 8,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "mod_time",
-    "offset": 10,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "mod_date",
-    "offset": 12,
-    "size": 2
-   },
-   {
-    "kind": "u32",
-    "name": "crc32",
-    "offset": 14,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "compressed_size",
-    "offset": 18,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "uncompressed_size",
-    "offset": 22,
-    "size": 4
-   },
-   {
-    "kind": "u16",
-    "name": "filename_len",
-    "offset": 26,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "extra_len",
-    "offset": 28,
-    "size": 2
-   }
-  ],
+  "fields": [],
   "magic": "504b0304",
   "magic_off": 0,
   "name": "XLSM",
@@ -29291,77 +29258,10 @@
   "task": 841
  },
  "842": {
-  "derivation": "container",
+  "derivation": "text",
   "endian": "le",
   "ext": ".XPS",
-  "fields": [
-   {
-    "kind": "bytes",
-    "name": "signature",
-    "offset": 0,
-    "size": 4
-   },
-   {
-    "kind": "u16",
-    "name": "version_needed",
-    "offset": 4,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "flags",
-    "offset": 6,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "method",
-    "offset": 8,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "mod_time",
-    "offset": 10,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "mod_date",
-    "offset": 12,
-    "size": 2
-   },
-   {
-    "kind": "u32",
-    "name": "crc32",
-    "offset": 14,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "compressed_size",
-    "offset": 18,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "uncompressed_size",
-    "offset": 22,
-    "size": 4
-   },
-   {
-    "kind": "u16",
-    "name": "filename_len",
-    "offset": 26,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "extra_len",
-    "offset": 28,
-    "size": 2
-   }
-  ],
+  "fields": [],
   "magic": "504b0304",
   "magic_off": 0,
   "name": "XPS",
@@ -29950,14 +29850,57 @@
   "task": 859
  },
  "86": {
-  "derivation": "unknown",
+  "derivation": "override",
   "endian": "be",
   "ext": ".CHM",
-  "fields": [],
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "signature",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "version",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "header_size",
+    "offset": 8,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "unknown",
+    "offset": 12,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "timestamp",
+    "offset": 16,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "language",
+    "offset": 20,
+    "size": 4
+   },
+   {
+    "kind": "bytes",
+    "name": "guid",
+    "offset": 24,
+    "size": 16
+   }
+  ],
   "magic": "49545346",
   "magic_off": 0,
   "name": "CHM",
-  "notes": "curated-magic",
+  "notes": "CHM ITSF header; sample version 3, header size 0x60",
   "task": 86
  },
  "860": {
@@ -30152,7 +30095,7 @@
   "task": 89
  },
  "9": {
-  "derivation": "struct",
+  "derivation": "override",
   "endian": "le",
   "ext": ".A",
   "fields": [
@@ -30175,10 +30118,10 @@
     "size": 4
    }
   ],
-  "magic": null,
+  "magic": "213c617263683e0a",
   "magic_off": 0,
   "name": "A file",
-  "notes": "",
+  "notes": "static libraries are ar archives, like .deb",
   "task": 9
  },
  "90": {

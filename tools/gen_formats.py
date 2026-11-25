@@ -586,7 +586,7 @@ MAGIC_BY_EXT = {
     ".PMP": "504b0304", ".VPR": "504b0304", ".EU4": "504b0304",
     ".FMU": "504b0304", ".GGB": "504b0304", ".MCADDON": "504b0304",
     ".MCPACK": "504b0304", ".MCTEMPLATE": "504b0304",
-    ".MSCZ": "504b0304", ".OTS": "504b0304", ".PPSX": "504b0304", ".KRA": "504b0304", ".PK3": "504b0304",
+    ".MSCZ": "504b0304", ".OTS": "504b0304", ".PPSX": "504b0304", ".KRA": "504b0304", ".PK3": "504b0304", ".FFAPX": "504b0304",
     # XML-based formats verified against real samples (all start <?xml);
     # the engine disambiguates by extension.
     ".GXL": "3c3f786d6c", ".JNLP": "3c3f786d6c", ".JVX": "3c3f786d6c",
@@ -764,6 +764,35 @@ CONTAINER_LAYOUTS = {
         {"name": "first_difat_sector", "offset": 68, "size": 4, "kind": "u32"},
         {"name": "num_difat_sectors", "offset": 72, "size": 4, "kind": "u32"},
     ],
+    ("4d5a", 0): [  # DOS MZ executable header (also .EXE/.AX/.OCX/.SFX/...)
+        {"name": "signature", "offset": 0, "size": 2, "kind": "ascii"},
+        {"name": "bytes_last_page", "offset": 2, "size": 2, "kind": "u16"},
+        {"name": "pages", "offset": 4, "size": 2, "kind": "u16"},
+        {"name": "relocations", "offset": 6, "size": 2, "kind": "u16"},
+        {"name": "header_size", "offset": 8, "size": 2, "kind": "u16"},
+        {"name": "min_alloc", "offset": 10, "size": 2, "kind": "u16"},
+        {"name": "max_alloc", "offset": 12, "size": 2, "kind": "u16"},
+        {"name": "ss", "offset": 14, "size": 2, "kind": "u16"},
+        {"name": "sp", "offset": 16, "size": 2, "kind": "u16"},
+        {"name": "checksum", "offset": 18, "size": 2, "kind": "u16"},
+        {"name": "ip", "offset": 20, "size": 2, "kind": "u16"},
+        {"name": "cs", "offset": 22, "size": 2, "kind": "u16"},
+        {"name": "reloc_table_offset", "offset": 24, "size": 2, "kind": "u16"},
+        {"name": "overlay", "offset": 26, "size": 2, "kind": "u16"},
+        {"name": "oem_id", "offset": 36, "size": 2, "kind": "u16"},
+        {"name": "oem_info", "offset": 38, "size": 2, "kind": "u16"},
+        {"name": "pe_header_offset", "offset": 60, "size": 4, "kind": "u32"},
+    ],
+    ("213c617263683e0a", 0): [  # ar archive header + first member header
+        {"name": "signature", "offset": 0, "size": 8, "kind": "ascii"},
+        {"name": "first_member_name", "offset": 8, "size": 16, "kind": "ascii"},
+        {"name": "first_member_mtime", "offset": 24, "size": 12, "kind": "ascii"},
+        {"name": "first_member_uid", "offset": 36, "size": 6, "kind": "ascii"},
+        {"name": "first_member_gid", "offset": 42, "size": 6, "kind": "ascii"},
+        {"name": "first_member_mode", "offset": 48, "size": 8, "kind": "ascii"},
+        {"name": "first_member_size", "offset": 56, "size": 10, "kind": "ascii"},
+        {"name": "first_member_magic", "offset": 66, "size": 2, "kind": "ascii"},
+    ],
     ("464f524d", 0): [  # IFF FORM header (same shape as RIFF)
         {"name": "signature", "offset": 0, "size": 4, "kind": "ascii"},
         {"name": "file_size", "offset": 4, "size": 4, "kind": "u32"},
@@ -906,6 +935,11 @@ def main():
     # belongs to its container family (ftyp).
     for t, entry in formats.items():
         if entry["fields"] or not entry["magic"]:
+            continue
+        # Text formats never inherit a binary container layout: a text
+        # format can share a magic with a binary container (e.g. a .cpl
+        # that is a CSV pick-and-place list, not a PE).
+        if entry["derivation"] in ("text", "nocode-text"):
             continue
         inh = None
         for (cmagic, coff), layout in CONTAINER_LAYOUTS.items():

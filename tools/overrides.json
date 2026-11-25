@@ -1,8 +1,32 @@
 {
+ "1": {
+  "derivation": "override",
+  "fields": [
+   {
+    "kind": "u16",
+    "name": "chunk_id",
+    "offset": 0,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "chunk_length",
+    "offset": 2,
+    "size": 4
+   }
+  ],
+  "magic": "4d4d",
+  "notes": "3DS main chunk (0x4D4D); sub-chunks follow, no fixed file header. The 2-byte magic is shorter than TIFF-BE's 4-byte MM magic, so TIFF files still win"
+ },
+ "101": {
+  "magic": null,
+  "notes": "the .com sample is raw x86 code, not an MZ executable; the code-derived MZ magic was wrong"
+ },
  "106": {
   "derivation": "text",
   "fields": [],
-  "notes": "verified text format (genuine text sample + page describes text)"
+  "magic": null,
+  "notes": "the .cpl sample is a CSV pick-and-place list, not a Windows PE; the code-derived MZ magic was wrong; verified text format"
  },
  "107": {
   "derivation": "text",
@@ -147,6 +171,81 @@
   "fields": [],
   "notes": "verified text format (genuine text sample + page describes text)"
  },
+ "134": {
+  "derivation": "override",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "signature",
+    "offset": 0,
+    "size": 8
+   },
+   {
+    "kind": "ascii",
+    "name": "first_member_name",
+    "offset": 8,
+    "size": 16
+   },
+   {
+    "kind": "ascii",
+    "name": "first_member_mtime",
+    "offset": 24,
+    "size": 12
+   },
+   {
+    "kind": "ascii",
+    "name": "first_member_uid",
+    "offset": 36,
+    "size": 6
+   },
+   {
+    "kind": "ascii",
+    "name": "first_member_gid",
+    "offset": 42,
+    "size": 6
+   },
+   {
+    "kind": "ascii",
+    "name": "first_member_mode",
+    "offset": 48,
+    "size": 8
+   },
+   {
+    "kind": "ascii",
+    "name": "first_member_size",
+    "offset": 56,
+    "size": 10
+   },
+   {
+    "kind": "ascii",
+    "name": "first_member_magic",
+    "offset": 66,
+    "size": 2
+   }
+  ],
+  "magic": "213c617263683e0a",
+  "notes": "ar archive header + first member header; sample's first member is debian-binary"
+ },
+ "137": {
+  "derivation": "override",
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "preamble",
+    "offset": 0,
+    "size": 128
+   },
+   {
+    "kind": "ascii",
+    "name": "dicom_magic",
+    "offset": 128,
+    "size": 4
+   }
+  ],
+  "magic": "4449434d",
+  "magic_off": 128,
+  "notes": "DICOM preamble (128 bytes, usually zero) + DICM magic at 128; data elements after that are TLV, no fixed layout"
+ },
  "142": {
   "magic": "4d444d50",
   "notes": "Windows minidump; header fields from the reference struct"
@@ -160,6 +259,68 @@
   "derivation": "text",
   "fields": [],
   "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "152": {
+  "derivation": "override",
+  "endian": "be",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "magic",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "offset_to_image_data",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "version",
+    "offset": 8,
+    "size": 8
+   },
+   {
+    "kind": "u32",
+    "name": "file_size",
+    "offset": 16,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "ditto_key",
+    "offset": 20,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "generic_header_length",
+    "offset": 24,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "industry_header_length",
+    "offset": 28,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "user_header_length",
+    "offset": 32,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "file_name",
+    "offset": 36,
+    "size": 100
+   }
+  ],
+  "magic": "53445058",
+  "notes": "DPX file header (big-endian SDPX); sample is V1.0, image data at offset 2048"
  },
  "154": {
   "derivation": "text",
@@ -176,6 +337,19 @@
   "fields": [],
   "notes": "verified text format (genuine text sample + page describes text)"
  },
+ "158": {
+  "derivation": "override",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "header",
+    "offset": 0,
+    "size": 12
+   }
+  ],
+  "magic": "2844574620",
+  "notes": "DWF text header; sample is V00.24; the body after the header is binary"
+ },
  "160": {
   "derivation": "text",
   "magic": "23235449544c453d",
@@ -185,6 +359,11 @@
   "derivation": "text",
   "fields": [],
   "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "163": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "E00 ArcInfo interchange files are ASCII text"
  },
  "17": {
   "derivation": "text",
@@ -267,6 +446,60 @@
   "fields": [],
   "notes": "verified text format (genuine text sample + page describes text)"
  },
+ "184": {
+  "derivation": "override",
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "magic",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "ps_start",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "ps_length",
+    "offset": 8,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "metafile_start",
+    "offset": 12,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "metafile_length",
+    "offset": 16,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "tiff_start",
+    "offset": 20,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "tiff_length",
+    "offset": 24,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "checksum",
+    "offset": 28,
+    "size": 2
+   }
+  ],
+  "notes": "Adobe EPS binary header (EPSF); sample has a TIFF preview at offset 30"
+ },
  "186": {
   "derivation": "text",
   "fields": [],
@@ -285,6 +518,25 @@
  "193": {
   "magic": "45553462696e4d28",
   "notes": "EU4 binary save magic 'EU4binM('; no fixed header layout beyond the magic"
+ },
+ "199": {
+  "derivation": "override",
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "magic",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "version",
+    "offset": 4,
+    "size": 4
+   }
+  ],
+  "magic": "762f3101",
+  "notes": "OpenEXR header; attributes after the version are TLV, no fixed layout"
  },
  "20": {
   "magic": "25504446",
@@ -310,10 +562,34 @@
   "fields": [],
   "notes": "verified text format (genuine text sample + page describes text)"
  },
+ "213": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "Factor source files are text"
+ },
  "216": {
   "derivation": "text",
   "fields": [],
   "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "218": {
+  "derivation": "override",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "magic",
+    "offset": 0,
+    "size": 21
+   },
+   {
+    "kind": "u32",
+    "name": "version",
+    "offset": 23,
+    "size": 4
+   }
+  ],
+  "magic": "4b617964617261204642582042696e617279202000",
+  "notes": "FBX binary header; sample version 7400 (FBX 2016)"
  },
  "22": {
   "magic": "41494646",
@@ -473,6 +749,10 @@
   "fields": [],
   "notes": "verified text format (genuine text sample + page describes text)"
  },
+ "257": {
+  "magic": "4d4d002a",
+  "notes": "big-endian TIFF; inherits the TIFF-BE layout"
+ },
  "258": {
   "fields": [],
   "magic": "504b0304",
@@ -626,6 +906,109 @@
   ],
   "magic": "0e031301",
   "notes": "page is titled .HAR but the content and sample are HDF4 (Hierarchical Data Format v4); first data descriptor follows the 4-byte signature"
+ },
+ "283": {
+  "derivation": "override",
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 0,
+    "size": 8
+   },
+   {
+    "kind": "u8",
+    "name": "superblock_version",
+    "offset": 8,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "freespace_storage_version",
+    "offset": 9,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "root_group_symbol_table_entry_version",
+    "offset": 10,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "reserved",
+    "offset": 11,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "shared_header_message_version",
+    "offset": 12,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "size_of_offsets",
+    "offset": 13,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "size_of_lengths",
+    "offset": 14,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "reserved2",
+    "offset": 15,
+    "size": 1
+   },
+   {
+    "kind": "u16",
+    "name": "group_leaf_node_k",
+    "offset": 16,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "group_internal_node_k",
+    "offset": 18,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "file_consistency_flags",
+    "offset": 20,
+    "size": 4
+   },
+   {
+    "kind": "u64",
+    "name": "base_address",
+    "offset": 24,
+    "size": 8
+   },
+   {
+    "kind": "u64",
+    "name": "address_of_file_free_space_info",
+    "offset": 32,
+    "size": 8
+   },
+   {
+    "kind": "u64",
+    "name": "end_of_file_address",
+    "offset": 40,
+    "size": 8
+   },
+   {
+    "kind": "u64",
+    "name": "driver_information_block_address",
+    "offset": 48,
+    "size": 8
+   }
+  ],
+  "magic": "894844460d0a1a0a",
+  "notes": "HDF5 superblock v0 (address fields assume size_of_offsets=8, as in this sample); v2/v3 superblocks differ"
  },
  "286": {
   "magic": "6674797068656963",
@@ -874,6 +1257,79 @@
   "magic": "4344303031",
   "magic_off": 32769,
   "name": "ISO 9660 image"
+ },
+ "318": {
+  "derivation": "override",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "magic",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "songname",
+    "offset": 4,
+    "size": 26
+   },
+   {
+    "kind": "u16",
+    "name": "reserved",
+    "offset": 30,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "ordnum",
+    "offset": 32,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "insnum",
+    "offset": 34,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "smpnum",
+    "offset": 36,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "patnum",
+    "offset": 38,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "cwtv",
+    "offset": 40,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "cmwt",
+    "offset": 42,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "flags",
+    "offset": 44,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "special",
+    "offset": 46,
+    "size": 2
+   }
+  ],
+  "magic": "494d504d",
+  "notes": "Impulse Tracker module header; sample: 61 orders, 10 instruments, 18 samples, 53 patterns"
  },
  "32": {
   "derivation": "text",
@@ -1273,6 +1729,99 @@
   "fields": [],
   "notes": "verified text format (genuine text sample + page describes text)"
  },
+ "405": {
+  "derivation": "override",
+  "endian": "be",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "name",
+    "offset": 0,
+    "size": 32
+   },
+   {
+    "kind": "u16",
+    "name": "attributes",
+    "offset": 32,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "version",
+    "offset": 34,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "creation_time",
+    "offset": 36,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "modification_time",
+    "offset": 40,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "backup_time",
+    "offset": 44,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "modification_number",
+    "offset": 48,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "app_info_id",
+    "offset": 52,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "sort_info_id",
+    "offset": 56,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "type",
+    "offset": 60,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "creator",
+    "offset": 64,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "unique_id_seed",
+    "offset": 68,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "next_record_list_id",
+    "offset": 72,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "num_records",
+    "offset": 76,
+    "size": 2
+   }
+  ],
+  "magic": "4d4f4249",
+  "magic_off": 64,
+  "notes": "MOBI (Palm database header, big-endian); sample has 397 records"
+ },
  "409": {
   "derivation": "text",
   "fields": [],
@@ -1409,6 +1958,58 @@
   "fields": [],
   "notes": "verified text format (genuine text sample + page describes text)"
  },
+ "441": {
+  "derivation": "override",
+  "endian": "be",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "magic",
+    "offset": 0,
+    "size": 3
+   },
+   {
+    "kind": "u8",
+    "name": "version",
+    "offset": 3,
+    "size": 1
+   },
+   {
+    "kind": "u32",
+    "name": "numrecs",
+    "offset": 4,
+    "size": 4
+   }
+  ],
+  "magic": "434446",
+  "notes": "NetCDF classic header (version 1 = CDF\\x01); dimensions/attributes/variables after numrecs are variable"
+ },
+ "442": {
+  "derivation": "override",
+  "endian": "be",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "magic",
+    "offset": 0,
+    "size": 3
+   },
+   {
+    "kind": "u8",
+    "name": "version",
+    "offset": 3,
+    "size": 1
+   },
+   {
+    "kind": "u32",
+    "name": "numrecs",
+    "offset": 4,
+    "size": 4
+   }
+  ],
+  "magic": "434446",
+  "notes": "NetCDF classic (same layout as .NC, task 441)"
+ },
  "443": {
   "derivation": "text",
   "fields": [],
@@ -1423,6 +2024,140 @@
   "derivation": "text",
   "fields": [],
   "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "46": {
+  "derivation": "override",
+  "endian": "be",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "magic",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "offset",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "data_size",
+    "offset": 8,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "encoding",
+    "offset": 12,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "sample_rate",
+    "offset": 16,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "channels",
+    "offset": 20,
+    "size": 4
+   }
+  ],
+  "magic": "2e736e64",
+  "notes": "Sun Audio header; sample: 44100 Hz, 2 channels, encoding 3 (16-bit linear PCM)"
+ },
+ "467": {
+  "derivation": "override",
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "e_ident",
+    "offset": 0,
+    "size": 16
+   },
+   {
+    "kind": "u16",
+    "name": "e_type",
+    "offset": 16,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "e_machine",
+    "offset": 18,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "e_version",
+    "offset": 20,
+    "size": 4
+   },
+   {
+    "kind": "u64",
+    "name": "e_entry",
+    "offset": 24,
+    "size": 8
+   },
+   {
+    "kind": "u64",
+    "name": "e_phoff",
+    "offset": 32,
+    "size": 8
+   },
+   {
+    "kind": "u64",
+    "name": "e_shoff",
+    "offset": 40,
+    "size": 8
+   },
+   {
+    "kind": "u32",
+    "name": "e_flags",
+    "offset": 48,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "e_ehsize",
+    "offset": 52,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "e_phentsize",
+    "offset": 54,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "e_phnum",
+    "offset": 56,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "e_shentsize",
+    "offset": 58,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "e_shnum",
+    "offset": 60,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "e_shstrndx",
+    "offset": 62,
+    "size": 2
+   }
+  ],
+  "notes": "ELF 64-bit header; 32-bit files have a different layout after e_version"
  },
  "468": {
   "derivation": "text",
@@ -1992,10 +2727,86 @@
   "fields": [],
   "notes": "verified text format (genuine text sample + page describes text)"
  },
+ "614": {
+  "derivation": "override",
+  "endian": "be",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "signature",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "size",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "object_version",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "file_version",
+    "offset": 10,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "num_headers",
+    "offset": 14,
+    "size": 4
+   }
+  ],
+  "magic": "2e524d46",
+  "notes": "RealMedia file header (.RMF); sample has 6 headers"
+ },
  "615": {
   "derivation": "text",
   "fields": [],
   "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "616": {
+  "derivation": "override",
+  "endian": "be",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "signature",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "size",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "object_version",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "file_version",
+    "offset": 10,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "num_headers",
+    "offset": 14,
+    "size": 4
+   }
+  ],
+  "magic": "2e524d46",
+  "notes": "RealMedia file header (.RMF); sample has 6 headers"
  },
  "617": {
   "derivation": "text",
@@ -2021,6 +2832,104 @@
   "fields": [],
   "notes": "verified text format (genuine text sample + page describes text)"
  },
+ "631": {
+  "derivation": "override",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "songname",
+    "offset": 0,
+    "size": 28
+   },
+   {
+    "kind": "u8",
+    "name": "eof_marker",
+    "offset": 28,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "type",
+    "offset": 29,
+    "size": 1
+   },
+   {
+    "kind": "u16",
+    "name": "reserved",
+    "offset": 30,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "ordnum",
+    "offset": 32,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "insnum",
+    "offset": 34,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "patnum",
+    "offset": 36,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "flags",
+    "offset": 38,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "cwtv",
+    "offset": 40,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "ffv",
+    "offset": 42,
+    "size": 2
+   },
+   {
+    "kind": "ascii",
+    "name": "magic",
+    "offset": 44,
+    "size": 4
+   },
+   {
+    "kind": "u8",
+    "name": "global_volume",
+    "offset": 48,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "initial_speed",
+    "offset": 49,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "initial_tempo",
+    "offset": 50,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "master_volume",
+    "offset": 51,
+    "size": 1
+   }
+  ],
+  "magic": "5343524d",
+  "magic_off": 44,
+  "notes": "ScreamTracker 3 module header; sample: 30 orders, 22 instruments, 24 patterns"
+ },
  "632": {
   "derivation": "text",
   "fields": [],
@@ -2030,6 +2939,10 @@
   "derivation": "text",
   "fields": [],
   "notes": "ACIS SAT files are text"
+ },
+ "645": {
+  "magic": null,
+  "notes": "the .scr sample starts with zeros, not MZ; the code-derived MZ magic was wrong"
  },
  "65": {
   "endian": "le",
@@ -2431,6 +3344,84 @@
   "magic_off": 0,
   "name": "bzip2 archive"
  },
+ "725": {
+  "derivation": "override",
+  "fields": [
+   {
+    "kind": "u8",
+    "name": "id_length",
+    "offset": 0,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "color_map_type",
+    "offset": 1,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "image_type",
+    "offset": 2,
+    "size": 1
+   },
+   {
+    "kind": "u16",
+    "name": "color_map_origin",
+    "offset": 3,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "color_map_length",
+    "offset": 5,
+    "size": 2
+   },
+   {
+    "kind": "u8",
+    "name": "color_map_depth",
+    "offset": 7,
+    "size": 1
+   },
+   {
+    "kind": "u16",
+    "name": "x_origin",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "y_origin",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "width",
+    "offset": 12,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "height",
+    "offset": 14,
+    "size": 2
+   },
+   {
+    "kind": "u8",
+    "name": "pixel_depth",
+    "offset": 16,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "image_descriptor",
+    "offset": 17,
+    "size": 1
+   }
+  ],
+  "notes": "TGA header; sample is 640x426, 24-bit, type 2 (uncompressed true-color)"
+ },
  "726": {
   "derivation": "text",
   "fields": [],
@@ -2466,6 +3457,11 @@
   "magic": "49492a00",
   "magic_off": 0,
   "name": "TIFF image"
+ },
+ "734": {
+  "derivation": "text",
+  "fields": [],
+  "notes": "torrent files are bencode (ASCII text)"
  },
  "735": {
   "derivation": "text",
@@ -2744,6 +3740,26 @@
   "magic": "52494646",
   "notes": "CorelDRAW pre-X4 RIFF variant; X4+ ZIP variant is task 82"
  },
+ "811": {
+  "derivation": "override",
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "preamble",
+    "offset": 0,
+    "size": 128
+   },
+   {
+    "kind": "ascii",
+    "name": "dicom_magic",
+    "offset": 128,
+    "size": 4
+   }
+  ],
+  "magic": "4449434d",
+  "magic_off": 128,
+  "notes": "DICOM worklist (a DICOM file; DICM at 128)"
+ },
  "813": {
   "derivation": "text",
   "magic": "23212f7573722f62696e2f656e7620776f6c6672616d736372697074",
@@ -2898,6 +3914,54 @@
   "magic": null,
   "notes": "ZRX/ZRXP is line-oriented text; the ## magic matched any ## text file"
  },
+ "86": {
+  "derivation": "override",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "signature",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "version",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "header_size",
+    "offset": 8,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "unknown",
+    "offset": 12,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "timestamp",
+    "offset": 16,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "language",
+    "offset": 20,
+    "size": 4
+   },
+   {
+    "kind": "bytes",
+    "name": "guid",
+    "offset": 24,
+    "size": 16
+   }
+  ],
+  "notes": "CHM ITSF header; sample version 3, header size 0x60"
+ },
  "860": {
   "endian": "le",
   "fields": [
@@ -2917,6 +3981,10 @@
   "magic": "28b52ffd",
   "magic_off": 0,
   "name": "Zstandard archive"
+ },
+ "9": {
+  "magic": "213c617263683e0a",
+  "notes": "static libraries are ar archives, like .deb"
  },
  "90": {
   "endian": "be",

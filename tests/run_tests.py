@@ -8,7 +8,9 @@ whether a header decode was produced.
 Pass criteria (automated):
   - IDENTIFIED: sfile's reported task number matches the sample's task,
     or (when the task has a duplicate) the reported extension matches.
-  - DECODED: sfile printed a header field table (>=2 fields) or a text
+  - DECODED: sfile printed a header field table (>=1 field) or a text
+    decode. (>=1, not >=2: a genuine one-field header such as DWF's
+    version string is a real decode.)
     decode (XML/JSON/text). A bare hex dump does not count as a decode.
 A format is PASS only if both hold. IDENTIFIED-but-not-DECODED is PARTIAL
 (the format is recognised but has no header layout yet — it needs a hand
@@ -130,7 +132,7 @@ def main():
         has_table = bool(re.search(r"offset\s+size\s+field", out))
         has_text = bool(re.search(r"Document type:", out))
         nfields = len(re.findall(r"^\s+\d+\s+\d+\s+\S+", out, re.M))
-        rec["decoded"] = bool(has_table and nfields >= 2) or has_text
+        rec["decoded"] = bool(has_table and nfields >= 1) or has_text
         rec["nfields"] = nfields if has_table else 0
         rec["how"] = re.search(r"Identified by: (\w+)", out).group(1) if re.search(r"Identified by: (\w+)", out) else None
         if rec["identified"] and rec["decoded"]:
