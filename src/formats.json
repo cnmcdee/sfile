@@ -117,6 +117,17 @@
   "notes": "",
   "task": 107
  },
+ "108": {
+  "derivation": "nocode",
+  "endian": "le",
+  "ext": ".CPY",
+  "fields": [],
+  "magic": null,
+  "magic_off": 0,
+  "name": "CPY file",
+  "notes": "no C/C++ reference code on the task page",
+  "task": 108
+ },
  "109": {
   "derivation": "unknown",
   "endian": "le",
@@ -1824,6 +1835,17 @@
   "notes": "xml",
   "task": 150
  },
+ "151": {
+  "derivation": "nocode-text",
+  "endian": "le",
+  "ext": ".DPFHTML",
+  "fields": [],
+  "magic": null,
+  "magic_off": 0,
+  "name": "DPFHTML file",
+  "notes": "no C/C++ reference code on the task page",
+  "task": 151
+ },
  "152": {
   "derivation": "unknown",
   "endian": "be",
@@ -2422,6 +2444,17 @@
   "name": "EFI file",
   "notes": "curated-magic",
   "task": 171
+ },
+ "172": {
+  "derivation": "nocode",
+  "endian": "le",
+  "ext": ".EIS",
+  "fields": [],
+  "magic": null,
+  "magic_off": 0,
+  "name": "EIS file",
+  "notes": "no C/C++ reference code on the task page",
+  "task": 172
  },
  "173": {
   "derivation": "struct",
@@ -4715,6 +4748,17 @@
   "name": "FNA",
   "notes": "",
   "task": 232
+ },
+ "233": {
+  "derivation": "nocode",
+  "endian": "le",
+  "ext": ".FNI",
+  "fields": [],
+  "magic": null,
+  "magic_off": 0,
+  "name": "FNI file",
+  "notes": "no C/C++ reference code on the task page",
+  "task": 233
  },
  "234": {
   "derivation": "struct",
@@ -7822,6 +7866,17 @@
   "notes": "",
   "task": 30
  },
+ "300": {
+  "derivation": "nocode",
+  "endian": "le",
+  "ext": ".files",
+  "fields": [],
+  "magic": null,
+  "magic_off": 0,
+  "name": "FILES file",
+  "notes": "no C/C++ reference code on the task page",
+  "task": 300
+ },
  "301": {
   "derivation": "unknown",
   "endian": "be",
@@ -8190,6 +8245,17 @@
   "name": "Ini",
   "notes": "",
   "task": 311
+ },
+ "312": {
+  "derivation": "nocode-text",
+  "endian": "le",
+  "ext": ".INI",
+  "fields": [],
+  "magic": null,
+  "magic_off": 0,
+  "name": "INI file",
+  "notes": "no C/C++ reference code on the task page",
+  "task": 312
  },
  "313": {
   "derivation": "unknown",
@@ -9220,6 +9286,17 @@
   "notes": "",
   "task": 344
  },
+ "345": {
+  "derivation": "nocode",
+  "endian": "le",
+  "ext": ".KRABER",
+  "fields": [],
+  "magic": null,
+  "magic_off": 0,
+  "name": "KRABER file",
+  "notes": "no C/C++ reference code on the task page",
+  "task": 345
+ },
  "346": {
   "derivation": "unknown",
   "endian": "le",
@@ -9937,6 +10014,17 @@
   "name": "MCU file",
   "notes": "",
   "task": 368
+ },
+ "369": {
+  "derivation": "nocode-text",
+  "endian": "le",
+  "ext": ".M3U8",
+  "fields": [],
+  "magic": "234558544d3355",
+  "magic_off": 0,
+  "name": "M3U8 file",
+  "notes": "no C/C++ reference code on the task page",
+  "task": 369
  },
  "37": {
   "derivation": "unknown",
@@ -10959,6 +11047,17 @@
   "notes": "curated-magic",
   "task": 397
  },
+ "398": {
+  "derivation": "nocode",
+  "endian": "le",
+  "ext": ".files",
+  "fields": [],
+  "magic": null,
+  "magic_off": 0,
+  "name": "FILES file",
+  "notes": "no C/C++ reference code on the task page",
+  "task": 398
+ },
  "399": {
   "derivation": "unknown",
   "endian": "le",
@@ -11263,6 +11362,17 @@
   "name": "MODULES file",
   "notes": "",
   "task": 407
+ },
+ "408": {
+  "derivation": "nocode",
+  "endian": "le",
+  "ext": ".MOE",
+  "fields": [],
+  "magic": null,
+  "magic_off": 0,
+  "name": "MOE file",
+  "notes": "no C/C++ reference code on the task page",
+  "task": 408
  },
  "409": {
   "derivation": "unknown",
@@ -16283,6 +16393,17 @@
   "notes": "",
   "task": 531
  },
+ "532": {
+  "derivation": "nocode",
+  "endian": "le",
+  "ext": ".PET",
+  "fields": [],
+  "magic": null,
+  "magic_off": 0,
+  "name": "PET file",
+  "notes": "no C/C++ reference code on the task page",
+  "task": 532
+ },
  "533": {
   "derivation": "unknown",
   "endian": "le",
@@ -18844,6 +18965,17 @@
   "notes": "xml",
   "task": 622
  },
+ "623": {
+  "derivation": "nocode",
+  "endian": "le",
+  "ext": ".RSLF",
+  "fields": [],
+  "magic": null,
+  "magic_off": 0,
+  "name": "RSLF file",
+  "notes": "no C/C++ reference code on the task page",
+  "task": 623
+ },
  "624": {
   "derivation": "struct",
   "endian": "le",
@@ -20301,6 +20433,17 @@
   "name": "SM",
   "notes": "",
   "task": 670
+ },
+ "671": {
+  "derivation": "nocode",
+  "endian": "le",
+  "ext": ".SMCLVL",
+  "fields": [],
+  "magic": null,
+  "magic_off": 0,
+  "name": "SMCLVL file",
+  "notes": "no C/C++ reference code on the task page",
+  "task": 671
  },
  "672": {
   "derivation": "struct",
@@ -22546,6 +22689,17 @@
   "notes": "curated-magic",
   "task": 72
  },
+ "720": {
+  "derivation": "nocode",
+  "endian": "le",
+  "ext": ".TB2",
+  "fields": [],
+  "magic": null,
+  "magic_off": 0,
+  "name": "TB2 file",
+  "notes": "no C/C++ reference code on the task page",
+  "task": 720
+ },
  "721": {
   "derivation": "struct",
   "endian": "le",
@@ -23126,6 +23280,17 @@
   "notes": "curated-magic",
   "task": 740
  },
+ "741": {
+  "derivation": "nocode-text",
+  "endian": "le",
+  "ext": ".TWB",
+  "fields": [],
+  "magic": "3c3f786d6c",
+  "magic_off": 0,
+  "name": "TWB file",
+  "notes": "no C/C++ reference code on the task page",
+  "task": 741
+ },
  "742": {
   "derivation": "unknown",
   "endian": "le",
@@ -23582,6 +23747,17 @@
   "name": "USTX",
   "notes": "",
   "task": 756
+ },
+ "757": {
+  "derivation": "nocode",
+  "endian": "le",
+  "ext": ".UT",
+  "fields": [],
+  "magic": null,
+  "magic_off": 0,
+  "name": "UT file",
+  "notes": "no C/C++ reference code on the task page",
+  "task": 757
  },
  "758": {
   "derivation": "text",
@@ -24735,6 +24911,28 @@
   "name": "Vsdx",
   "notes": "xml",
   "task": 792
+ },
+ "793": {
+  "derivation": "nocode",
+  "endian": "le",
+  "ext": ".VSM",
+  "fields": [],
+  "magic": null,
+  "magic_off": 0,
+  "name": "VSM file",
+  "notes": "no C/C++ reference code on the task page",
+  "task": 793
+ },
+ "794": {
+  "derivation": "nocode-text",
+  "endian": "le",
+  "ext": ".VSQ",
+  "fields": [],
+  "magic": "3c3f786d6c",
+  "magic_off": 0,
+  "name": "VSQ file",
+  "notes": "no C/C++ reference code on the task page",
+  "task": 794
  },
  "795": {
   "derivation": "text",

@@ -775,6 +775,33 @@ def main():
             else:
                 formats[t] = v
 
+
+    # Tasks with a page but no C/C++ code block (18). They have no derived
+    # layout; add them so they are identifiable by extension at least.
+    # The ones that are known text/XML formats get a text kind.
+    NOCODE_TEXT = {
+        ".INI": ("text", None), ".M3U8": ("text", "234558544d3355"),  # #EXTM3U
+        ".TWB": ("text", "3c3f786d6c"), ".VSQ": ("text", "3c3f786d6c"),
+        ".DPFHTML": ("text", None),
+    }
+    url_manifest = os.path.join(SCRIPT_DIR, "sample_urls.json")
+    if os.path.exists(url_manifest):
+        um = json.load(open(url_manifest))
+        for k, v in um.items():
+            t = int(k)
+            if t in formats:
+                continue
+            ext = v.get("ext") or ".?"
+            kind, magic = NOCODE_TEXT.get(ext.upper(), ("unknown", None))
+            formats[t] = {"task": t, "ext": ext,
+                          "name": format_name("", ext),
+                          "magic": magic, "magic_off": 0,
+                          "fields": [], "derivation": "nocode",
+                          "notes": "no C/C++ reference code on the task page",
+                          "endian": "le"}
+            if kind == "text":
+                formats[t]["derivation"] = "nocode-text"
+
     # Container-layout inheritance (second pass, AFTER overrides, so
     # override-set magics also inherit): a format with no fields that
     # shares a well-known container magic gets that container's fixed
@@ -842,8 +869,8 @@ def write_header(formats, path):
     for t in sorted(formats, key=lambda x: int(x)):
         e = formats[t]
         magic = bytes.fromhex(e["magic"]) if e["magic"] else b""
-        fk = "FMT_TEXT" if e["derivation"] == "text" else "FMT_BINARY"
-        if e["derivation"] == "unknown":
+        fk = "FMT_TEXT" if e["derivation"] in ("text", "nocode-text") else "FMT_BINARY"
+        if e["derivation"] in ("unknown", "nocode"):
             fk = "FMT_UNKNOWN"
         fields = f"fmt_{t}_fields" if e["fields"] else "NULL"
         n = len(e["fields"])
