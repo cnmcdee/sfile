@@ -1,0 +1,1441 @@
+{
+ "11": {
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "version_marker",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "signature",
+    "offset": 4,
+    "size": 16
+   }
+  ],
+  "magic": "000100005374616e6461726420414345204442",
+  "magic_off": 0,
+  "name": "Access database (ACE)"
+ },
+ "175": {
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "magic",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u8",
+    "name": "class",
+    "offset": 4,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "data_encoding",
+    "offset": 5,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "version",
+    "offset": 6,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "os_abi",
+    "offset": 7,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "abi_version",
+    "offset": 8,
+    "size": 1
+   },
+   {
+    "kind": "u16",
+    "name": "type",
+    "offset": 16,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "machine",
+    "offset": 18,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "version32",
+    "offset": 20,
+    "size": 4
+   }
+  ],
+  "magic": "7f454c46",
+  "magic_off": 0,
+  "name": "ELF executable"
+ },
+ "220": {
+  "magic": "464353",
+  "magic_off": 0,
+  "name": "FCS flow cytometry"
+ },
+ "227": {
+  "endian": "be",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "magic",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "bytes",
+    "name": "block_header",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "min_blocksize",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "max_blocksize",
+    "offset": 10,
+    "size": 2
+   }
+  ],
+  "magic": "664c6143",
+  "magic_off": 0,
+  "name": "FLAC audio"
+ },
+ "230": {
+  "endian": "be",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "signature",
+    "offset": 0,
+    "size": 3
+   },
+   {
+    "kind": "u8",
+    "name": "version",
+    "offset": 3,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "flags",
+    "offset": 4,
+    "size": 1
+   },
+   {
+    "kind": "u32",
+    "name": "header_size",
+    "offset": 5,
+    "size": 4
+   }
+  ],
+  "magic": "464c56",
+  "magic_off": 0,
+  "name": "FLV Flash video"
+ },
+ "259": {
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "signature",
+    "offset": 0,
+    "size": 6
+   },
+   {
+    "kind": "u16",
+    "name": "width",
+    "offset": 6,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "height",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u8",
+    "name": "packed",
+    "offset": 10,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "background_color",
+    "offset": 11,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "aspect_ratio",
+    "offset": 12,
+    "size": 1
+   }
+  ],
+  "magic": "47494638",
+  "magic_off": 0,
+  "name": "GIF image"
+ },
+ "277": {
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "magic",
+    "offset": 0,
+    "size": 2
+   },
+   {
+    "kind": "u8",
+    "name": "method",
+    "offset": 2,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "flags",
+    "offset": 3,
+    "size": 1
+   },
+   {
+    "kind": "u32",
+    "name": "mtime",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "u8",
+    "name": "extra_flags",
+    "offset": 8,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "os",
+    "offset": 9,
+    "size": 1
+   }
+  ],
+  "magic": "1f8b",
+  "magic_off": 0,
+  "name": "gzip archive"
+ },
+ "3": {
+  "magic": "66747970336732",
+  "magic_off": 4,
+  "name": "3GPP2 video"
+ },
+ "303": {
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "u16",
+    "name": "reserved",
+    "offset": 0,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "type",
+    "offset": 2,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "count",
+    "offset": 4,
+    "size": 2
+   }
+  ],
+  "magic": "00000100",
+  "magic_off": 0,
+  "name": "ICO icon"
+ },
+ "317": {
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "u8",
+    "name": "type",
+    "offset": 32768,
+    "size": 1
+   },
+   {
+    "kind": "ascii",
+    "name": "magic",
+    "offset": 32769,
+    "size": 5
+   },
+   {
+    "kind": "u8",
+    "name": "version",
+    "offset": 32774,
+    "size": 1
+   },
+   {
+    "kind": "ascii",
+    "name": "system_id",
+    "offset": 32775,
+    "size": 32
+   },
+   {
+    "kind": "ascii",
+    "name": "volume_id",
+    "offset": 32807,
+    "size": 32
+   }
+  ],
+  "magic": "4344303031",
+  "magic_off": 32769,
+  "name": "ISO 9660 image"
+ },
+ "331": {
+  "endian": "be",
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "soi",
+    "offset": 0,
+    "size": 2
+   },
+   {
+    "kind": "bytes",
+    "name": "marker",
+    "offset": 2,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "segment_length",
+    "offset": 4,
+    "size": 2
+   },
+   {
+    "kind": "ascii",
+    "name": "identifier",
+    "offset": 6,
+    "size": 5
+   }
+  ],
+  "magic": "ffd8ff",
+  "magic_off": 0,
+  "name": "JPEG image"
+ },
+ "332": {
+  "endian": "be",
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "soi",
+    "offset": 0,
+    "size": 2
+   },
+   {
+    "kind": "bytes",
+    "name": "marker",
+    "offset": 2,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "segment_length",
+    "offset": 4,
+    "size": 2
+   },
+   {
+    "kind": "ascii",
+    "name": "identifier",
+    "offset": 6,
+    "size": 5
+   }
+  ],
+  "magic": "ffd8ff",
+  "magic_off": 0,
+  "name": "JPEG image"
+ },
+ "359": {
+  "magic": "",
+  "magic_off": 0
+ },
+ "397": {
+  "endian": "be",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "magic",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "header_length",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "format",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "num_tracks",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "division",
+    "offset": 12,
+    "size": 2
+   }
+  ],
+  "magic": "4d546864",
+  "magic_off": 0,
+  "name": "MIDI file"
+ },
+ "4": {
+  "magic": "66747970336770",
+  "magic_off": 4,
+  "name": "3GPP video"
+ },
+ "412": {
+  "endian": "be",
+  "fields": [
+   {
+    "kind": "u32",
+    "name": "box_size",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "box_type",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "major_brand",
+    "offset": 8,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "minor_version",
+    "offset": 12,
+    "size": 4
+   }
+  ],
+  "magic": "6674797071742020",
+  "magic_off": 4,
+  "name": "QuickTime MOV video"
+ },
+ "414": {
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "magic",
+    "offset": 0,
+    "size": 3
+   },
+   {
+    "kind": "u8",
+    "name": "version_major",
+    "offset": 3,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "version_minor",
+    "offset": 4,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "flags",
+    "offset": 5,
+    "size": 1
+   },
+   {
+    "kind": "bytes",
+    "name": "tag_size",
+    "offset": 6,
+    "size": 4
+   }
+  ],
+  "magic": "494433",
+  "magic_off": 0,
+  "name": "MP3 audio (ID3v2)"
+ },
+ "415": {
+  "endian": "be",
+  "fields": [
+   {
+    "kind": "u32",
+    "name": "box_size",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "box_type",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "major_brand",
+    "offset": 8,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "minor_version",
+    "offset": 12,
+    "size": 4
+   }
+  ],
+  "magic": "66747970",
+  "magic_off": 4,
+  "name": "MP4 video"
+ },
+ "47": {
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "signature",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "file_size",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "form_type",
+    "offset": 8,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "list_id",
+    "offset": 12,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "hdrl_size",
+    "offset": 16,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "hdrl_type",
+    "offset": 20,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "avih_id",
+    "offset": 24,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "avih_size",
+    "offset": 28,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "microsec_per_frame",
+    "offset": 32,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "max_bytes_per_sec",
+    "offset": 36,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "padding_granularity",
+    "offset": 40,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "flags",
+    "offset": 44,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "total_frames",
+    "offset": 48,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "initial_frames",
+    "offset": 52,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "streams",
+    "offset": 56,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "suggested_buffer_size",
+    "offset": 60,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "width",
+    "offset": 64,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "height",
+    "offset": 68,
+    "size": 4
+   }
+  ],
+  "magic": "52494646",
+  "magic_off": 0,
+  "name": "AVI video"
+ },
+ "482": {
+  "magic": "4f676753",
+  "magic_off": 0,
+  "name": "Opus audio (Ogg)"
+ },
+ "493": {
+  "endian": "be",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "version",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "num_tables",
+    "offset": 4,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "search_range",
+    "offset": 6,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "entry_selector",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "range_shift",
+    "offset": 10,
+    "size": 2
+   }
+  ],
+  "magic": "4f54544f",
+  "magic_off": 0,
+  "name": "OpenType font"
+ },
+ "5": {
+  "magic": "66747970336770",
+  "magic_off": 4,
+  "name": "3GPP2 video (3GX)"
+ },
+ "526": {
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "magic",
+    "offset": 0,
+    "size": 5
+   },
+   {
+    "kind": "ascii",
+    "name": "version",
+    "offset": 5,
+    "size": 3
+   }
+  ],
+  "magic": "25504446",
+  "magic_off": 0,
+  "name": "PDF document"
+ },
+ "564": {
+  "endian": "be",
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 0,
+    "size": 8
+   },
+   {
+    "kind": "u32",
+    "name": "ihdr_length",
+    "offset": 8,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "ihdr_type",
+    "offset": 12,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "width",
+    "offset": 16,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "height",
+    "offset": 20,
+    "size": 4
+   },
+   {
+    "kind": "u8",
+    "name": "bit_depth",
+    "offset": 24,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "color_type",
+    "offset": 25,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "compression",
+    "offset": 26,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "filter",
+    "offset": 27,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "interlace",
+    "offset": 28,
+    "size": 1
+   }
+  ],
+  "magic": "89504e470d0a1a0a",
+  "magic_off": 0,
+  "name": "PNG image"
+ },
+ "575": {
+  "endian": "be",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "signature",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "version",
+    "offset": 4,
+    "size": 2
+   },
+   {
+    "kind": "bytes",
+    "name": "reserved",
+    "offset": 6,
+    "size": 6
+   },
+   {
+    "kind": "u16",
+    "name": "channels",
+    "offset": 12,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "height",
+    "offset": 14,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "width",
+    "offset": 18,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "depth",
+    "offset": 22,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "color_mode",
+    "offset": 24,
+    "size": 2
+   }
+  ],
+  "magic": "38425053",
+  "magic_off": 0,
+  "name": "Photoshop PSD image"
+ },
+ "603": {
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "magic",
+    "offset": 0,
+    "size": 7
+   },
+   {
+    "kind": "u16",
+    "name": "crc16",
+    "offset": 7,
+    "size": 2
+   },
+   {
+    "kind": "u8",
+    "name": "type",
+    "offset": 9,
+    "size": 1
+   },
+   {
+    "kind": "u16",
+    "name": "flags",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "size",
+    "offset": 12,
+    "size": 2
+   }
+  ],
+  "magic": "526172211a0700",
+  "magic_off": 0,
+  "name": "RAR archive"
+ },
+ "612": {
+  "magic": "",
+  "magic_off": 0
+ },
+ "65": {
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "signature",
+    "offset": 0,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "file_size",
+    "offset": 2,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "reserved",
+    "offset": 6,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "data_offset",
+    "offset": 10,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "header_size",
+    "offset": 14,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "width",
+    "offset": 18,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "height",
+    "offset": 22,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "planes",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "bits_per_pixel",
+    "offset": 28,
+    "size": 2
+   }
+  ],
+  "magic": "424d",
+  "magic_off": 0,
+  "name": "BMP image"
+ },
+ "704": {
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "signature",
+    "offset": 0,
+    "size": 3
+   },
+   {
+    "kind": "u8",
+    "name": "version",
+    "offset": 3,
+    "size": 1
+   },
+   {
+    "kind": "u32",
+    "name": "file_length",
+    "offset": 4,
+    "size": 4
+   }
+  ],
+  "magic": "465753",
+  "magic_off": 0,
+  "name": "SWF Flash"
+ },
+ "718": {
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "name",
+    "offset": 0,
+    "size": 100
+   },
+   {
+    "kind": "ascii",
+    "name": "mode",
+    "offset": 100,
+    "size": 8
+   },
+   {
+    "kind": "ascii",
+    "name": "uid",
+    "offset": 108,
+    "size": 8
+   },
+   {
+    "kind": "ascii",
+    "name": "gid",
+    "offset": 116,
+    "size": 8
+   },
+   {
+    "kind": "ascii",
+    "name": "size",
+    "offset": 124,
+    "size": 12
+   },
+   {
+    "kind": "ascii",
+    "name": "mtime",
+    "offset": 136,
+    "size": 12
+   },
+   {
+    "kind": "ascii",
+    "name": "chksum",
+    "offset": 148,
+    "size": 8
+   },
+   {
+    "kind": "ascii",
+    "name": "typeflag",
+    "offset": 156,
+    "size": 1
+   },
+   {
+    "kind": "ascii",
+    "name": "linkname",
+    "offset": 157,
+    "size": 100
+   },
+   {
+    "kind": "ascii",
+    "name": "magic",
+    "offset": 257,
+    "size": 6
+   },
+   {
+    "kind": "ascii",
+    "name": "version",
+    "offset": 263,
+    "size": 2
+   },
+   {
+    "kind": "ascii",
+    "name": "uname",
+    "offset": 265,
+    "size": 32
+   },
+   {
+    "kind": "ascii",
+    "name": "gname",
+    "offset": 297,
+    "size": 32
+   }
+  ],
+  "magic": "7573746172",
+  "magic_off": 257,
+  "name": "tar archive"
+ },
+ "72": {
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "magic",
+    "offset": 0,
+    "size": 3
+   },
+   {
+    "kind": "ascii",
+    "name": "block_size",
+    "offset": 3,
+    "size": 1
+   }
+  ],
+  "magic": "425a68",
+  "magic_off": 0,
+  "name": "bzip2 archive"
+ },
+ "730": {
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "byte_order",
+    "offset": 0,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "magic",
+    "offset": 2,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "ifd_offset",
+    "offset": 4,
+    "size": 4
+   }
+  ],
+  "magic": "49492a00",
+  "magic_off": 0,
+  "name": "TIFF image"
+ },
+ "740": {
+  "endian": "be",
+  "fields": [
+   {
+    "kind": "u32",
+    "name": "version",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "num_tables",
+    "offset": 4,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "search_range",
+    "offset": 6,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "entry_selector",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "range_shift",
+    "offset": 10,
+    "size": 2
+   }
+  ],
+  "magic": "00010000",
+  "magic_off": 0,
+  "name": "TrueType font"
+ },
+ "75": {
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "signature",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "reserved1",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "cabinet_size",
+    "offset": 8,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "reserved2",
+    "offset": 12,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "first_file_offset",
+    "offset": 16,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "reserved3",
+    "offset": 20,
+    "size": 4
+   },
+   {
+    "kind": "u8",
+    "name": "version_minor",
+    "offset": 24,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "version_major",
+    "offset": 25,
+    "size": 1
+   },
+   {
+    "kind": "u16",
+    "name": "folder_count",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "file_count",
+    "offset": 28,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "flags",
+    "offset": 30,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "set_id",
+    "offset": 32,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "cabinet_index",
+    "offset": 34,
+    "size": 2
+   }
+  ],
+  "magic": "4d534346",
+  "magic_off": 0,
+  "name": "CAB cabinet archive"
+ },
+ "804": {
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "signature",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "file_size",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "form_type",
+    "offset": 8,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "fmt_chunk_id",
+    "offset": 12,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "fmt_chunk_size",
+    "offset": 16,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "audio_format",
+    "offset": 20,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "channels",
+    "offset": 22,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "sample_rate",
+    "offset": 24,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "byte_rate",
+    "offset": 28,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "block_align",
+    "offset": 32,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "bits_per_sample",
+    "offset": 34,
+    "size": 2
+   }
+  ],
+  "magic": "52494646",
+  "magic_off": 0,
+  "name": "WAV audio"
+ },
+ "853": {
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "magic",
+    "offset": 0,
+    "size": 6
+   },
+   {
+    "kind": "bytes",
+    "name": "stream_flags",
+    "offset": 6,
+    "size": 2
+   },
+   {
+    "kind": "bytes",
+    "name": "stream_flags_crc32",
+    "offset": 8,
+    "size": 4
+   }
+  ],
+  "magic": "fd377a585a00",
+  "magic_off": 0,
+  "name": "XZ archive"
+ },
+ "857": {
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "version_needed",
+    "offset": 4,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "flags",
+    "offset": 6,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "method",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_time",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_date",
+    "offset": 12,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "crc32",
+    "offset": 14,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "compressed_size",
+    "offset": 18,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "uncompressed_size",
+    "offset": 22,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "filename_len",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "extra_len",
+    "offset": 28,
+    "size": 2
+   }
+  ],
+  "magic": "504b0304",
+  "magic_off": 0,
+  "name": "ZIP archive"
+ },
+ "860": {
+  "endian": "le",
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "magic",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u8",
+    "name": "frame_header",
+    "offset": 4,
+    "size": 1
+   }
+  ],
+  "magic": "28b52ffd",
+  "magic_off": 0,
+  "name": "Zstandard archive"
+ },
+ "90": {
+  "endian": "be",
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "magic",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "minor_version",
+    "offset": 4,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "major_version",
+    "offset": 6,
+    "size": 2
+   }
+  ],
+  "magic": "cafebabe",
+  "magic_off": 0,
+  "name": "Java class file"
+ },
+ "91": {
+  "magic": "",
+  "magic_off": 0
+ },
+ "_comment": "Hand overrides for sfile's format table. These replace the generator's derived entry for the named task. Every layout here is a published, well-known file-format header (not a guess); each was verified against a real sample file in the test loop. Keys are task numbers as strings. Field kinds: u8/u16/u32/u64 (unsigned LE unless endian=be), i8/i16/i32/i64, f32/f64, ascii, bytes."
+}

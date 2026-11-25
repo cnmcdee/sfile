@@ -1,0 +1,5 @@
+sfile
+*.o
+samples/*
+!samples/.gitkeep
+testwork*/
