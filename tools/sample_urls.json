@@ -1286,10 +1286,7 @@
  "25": {
   "ext": ".AMG",
   "page": "task-025.html",
-  "urls": [
-   "https://edge.rode.com/zip/page/1890/modules/8/crowd.wav.zip",
-   "https://edge.rode.com/zip/page/1890/modules/8/skaters.wav.zip"
-  ]
+  "urls": []
  },
  "250": {
   "ext": ".GBK",
@@ -3024,10 +3021,7 @@
  "448": {
   "ext": ".NEU",
   "page": "task-448-neu-file-format.html",
-  "urls": [
-   "https://www.cfd-online.com/Forums/attachments/ansys-meshing/3455d1274429578-converting-fluent-mesh-files-gambit-neutral-files-msh2neu.tar.gz",
-   "https://web.stanford.edu/class/me469b/handouts/gambit_write.pdf"
-  ]
+  "urls": []
  },
  "449": {
   "ext": ".NEX",
@@ -3596,10 +3590,7 @@
  "511": {
   "ext": ".PAPA",
   "page": "task-511-f.html",
-  "urls": [
-   "https://github.com/Lula-Mae/com.pa.lulamae.milkyway-skybox/archive/master.zip",
-   "https://github.com/MaximumEndurance/com.pa.maxend.fireball-skybox/archive/master.zip"
-  ]
+  "urls": []
  },
  "512": {
   "ext": ".PAR",
@@ -3795,10 +3786,7 @@
  "536": {
   "ext": ".PFC",
   "page": "task-536.html",
-  "urls": [
-   "https://web.archive.org/web/20050420101922/http://members.aol.com/fvongordon/pfc/PFC-Details.zip",
-   "https://astroblahhh.com/software/tips/pfc/pfcview.jar"
-  ]
+  "urls": []
  },
  "537": {
   "ext": ".PFM",
@@ -4117,10 +4105,7 @@
  "572": {
   "ext": ".PRP",
   "page": "task-572.html",
-  "urls": [
-   "https://www.pure-systems.com/pv-update/additions/doc/latest/pv-conn-rhapsody-manual.pdf",
-   "https://ftpmirror.your.org/pub/misc/ftp.software.ibm.com/software/rationalsdp/documentation/product_doc/Rhapsody/version_7-5/framework.pdf"
-  ]
+  "urls": []
  },
  "573": {
   "ext": ".PS",
@@ -4297,10 +4282,7 @@
  "594": {
   "ext": ".ROO",
   "page": "task-594-roo-file-format.html",
-  "urls": [
-   "https://www.rarlab.com/rar/unrarsrc-7.2.1.tar.gz",
-   "https://github.com/selmf/unarr/raw/master/testdata/rar_split.r00"
-  ]
+  "urls": []
  },
  "595": {
   "ext": ".R01",
@@ -4651,10 +4633,7 @@
  "634": {
   "ext": ".SASS",
   "page": "task-634.html",
-  "urls": [
-   "https://raw.githubusercontent.com/cloudcores/CuAssembler/main/examples/add.cubin",
-   "https://raw.githubusercontent.com/cloudcores/CuAssembler/main/examples/simple.cubin"
-  ]
+  "urls": []
  },
  "635": {
   "ext": ".SAT",
@@ -4705,10 +4684,7 @@
  "640": {
   "ext": ".SBH",
   "page": "task-640-sbh-file-format.html",
-  "urls": [
-   "https://public.dhe.ibm.com/software/rational/docs/v2002/robotug.pdf",
-   "https://public.dhe.ibm.com/software/rational/docs/documentation/manuals/docset149/Rational_Test_7/sqabasic.pdf"
-  ]
+  "urls": []
  },
  "641": {
   "ext": ".SBV",
@@ -4721,10 +4697,7 @@
  "642": {
   "ext": ".SBX",
   "page": "task-642-sbx-file-format.html",
-  "urls": [
-   "http://mark0.net/download/sbxdemo-diskimages.7z",
-   "https://mark0.net/download/seqbox.zip"
-  ]
+  "urls": []
  },
  "643": {
   "ext": ".SCALA",
@@ -4988,10 +4961,7 @@
  "673": {
   "ext": ".SNO",
   "page": "task-673-sno-file-format.html",
-  "urls": [
-   "https://swat.tamu.edu/media/69413/ch38_input_sno.pdf",
-   "https://github.com/jmallen/swatmodel/raw/master/input/sno1.sno"
-  ]
+  "urls": []
  },
  "674": {
   "ext": ".SO",

@@ -3779,6 +3779,10 @@ static const SField fmt_719_fields[] = {
     { "devmajor", 17, 4, FK_I32 },
     { "devminor", 21, 4, FK_I32 },
 };
+static const SField fmt_720_fields[] = {
+    { "signature", 0, 3, FK_ASCII },
+    { "block_size", 3, 1, FK_ASCII },
+};
 static const SField fmt_721_fields[] = {
     { "name", 0, 100, FK_ASCII },
     { "mode", 100, 8, FK_ASCII },
@@ -4591,7 +4595,7 @@ static const SFormat sfile_formats[] = {
     { 163, ".E00", "E00", "", 0, 0, NULL, 0, FMT_TEXT, 0 },
     { 164, ".E2D", "E2D", "\x3c\x3f\x78\x6d\x6c", 5, 0, NULL, 0, FMT_TEXT, 0 },
     { 165, ".E57", "E57", "", 0, 0, fmt_165_fields, 7, FMT_BINARY, 0 },
-    { 166, ".EBD", "EBD file", "\x50\x69\x6e", 3, 0, fmt_166_fields, 4, FMT_BINARY, 0 },
+    { 166, ".EBD", "EBD file", "\x5b\x49\x42\x49\x53\x20\x56\x65\x72\x5d", 10, 0, fmt_166_fields, 4, FMT_BINARY, 0 },
     { 167, ".EC", "EC file", "", 0, 0, fmt_167_fields, 6, FMT_BINARY, 0 },
     { 168, ".ECC", "ECC", "", 0, 0, fmt_168_fields, 17, FMT_BINARY, 0 },
     { 169, ".EDE", "EDE file", "", 0, 0, NULL, 0, FMT_UNKNOWN, 0 },
@@ -5053,7 +5057,7 @@ static const SFormat sfile_formats[] = {
     { 631, ".S3M", "S3M", "\x53\x43\x52\x4d", 4, 44, fmt_631_fields, 15, FMT_BINARY, 0 },
     { 632, ".S7I", "S7I", "", 0, 0, NULL, 0, FMT_TEXT, 0 },
     { 633, ".SAIF", "SAIF", "", 0, 0, NULL, 0, FMT_UNKNOWN, 0 },
-    { 634, ".SASS", "SASS file", "", 0, 0, NULL, 0, FMT_UNKNOWN, 0 },
+    { 634, ".SASS", "SASS file", "", 0, 0, NULL, 0, FMT_TEXT, 0 },
     { 635, ".SAT", "Sat File", "", 0, 0, NULL, 0, FMT_TEXT, 0 },
     { 636, ".SAV", "SAV file", "", 0, 0, fmt_636_fields, 6, FMT_BINARY, 0 },
     { 637, ".SB", "SB file", "", 0, 0, fmt_637_fields, 19, FMT_BINARY, 0 },
@@ -5137,7 +5141,7 @@ static const SFormat sfile_formats[] = {
     { 717, ".TAK", "Tak", "\x74\x42\x61\x4b", 4, 0, NULL, 0, FMT_BINARY, 0 },
     { 718, ".TAR", "tar archive", "\x75\x73\x74\x61\x72", 5, 257, fmt_718_fields, 13, FMT_BINARY, 0 },
     { 719, ".TAZ", "TAZ", "", 0, 0, fmt_719_fields, 7, FMT_BINARY, 0 },
-    { 720, ".TB2", "TB2 file", "", 0, 0, NULL, 0, FMT_UNKNOWN, 0 },
+    { 720, ".TB2", "TB2 file", "\x42\x5a\x68", 3, 0, fmt_720_fields, 2, FMT_BINARY, 0 },
     { 721, ".TBZ", "TBZ", "", 0, 0, fmt_721_fields, 15, FMT_BINARY, 0 },
     { 722, ".TBZ2", "TBZ2 file", "\x42\x5a\x68", 3, 0, fmt_722_fields, 2, FMT_BINARY, 0 },
     { 723, ".TC", "TC", "\x4d\x5a", 2, 0, fmt_723_fields, 17, FMT_BINARY, 0 },

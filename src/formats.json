@@ -2420,7 +2420,7 @@
   "task": 165
  },
  "166": {
-  "derivation": "struct",
+  "derivation": "override",
   "endian": "le",
   "ext": ".EBD",
   "fields": [
@@ -2449,10 +2449,10 @@
     "size": 4
    }
   ],
-  "magic": "50696e",
+  "magic": "5b49424953205665725d",
   "magic_off": 0,
   "name": "EBD file",
-  "notes": "",
+  "notes": "EBD is an IBIS file; magic is '[IBIS Ver]' (sample + spec). Was 'Pin' (from MAX_PINS in the reference code).",
   "task": 166
  },
  "167": {
@@ -21635,14 +21635,14 @@
   "task": 633
  },
  "634": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".SASS",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "SASS file",
-  "notes": "",
+  "notes": "SASS stylesheet is plain text (indented syntax); text decode. Sample: SassMeister-input.sass gist.",
   "task": 634
  },
  "635": {
@@ -25396,14 +25396,27 @@
   "task": 72
  },
  "720": {
-  "derivation": "nocode",
+  "derivation": "override",
   "endian": "le",
   "ext": ".TB2",
-  "fields": [],
-  "magic": null,
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "signature",
+    "offset": 0,
+    "size": 3
+   },
+   {
+    "kind": "ascii",
+    "name": "block_size",
+    "offset": 3,
+    "size": 1
+   }
+  ],
+  "magic": "425a68",
   "magic_off": 0,
   "name": "TB2 file",
-  "notes": "no C/C++ reference code on the task page",
+  "notes": "TB2 is a bzip2-compressed tar; BZh magic, extension disambiguates from BZ2 (as task 722). Real extension is .TB2 (table had '.?'). Sample: lutik-sample.tar.bz2.",
   "task": 720
  },
  "721": {

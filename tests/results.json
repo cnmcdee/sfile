@@ -218,8 +218,17 @@
   "task": 113
  },
  "114": {
-  "note": "no sample file on disk",
-  "result": "no-sample",
+  "decoded": false,
+  "exit": 0,
+  "ext": ".cs",
+  "how": "extension",
+  "identified": true,
+  "identified_task": 114,
+  "nfields": 0,
+  "result": "partial",
+  "sample": "task-114.cs",
+  "source": "disk",
+  "status": "ok",
   "task": 114
  },
  "115": {
@@ -885,11 +894,17 @@
   "task": 159
  },
  "16": {
+  "decoded": false,
+  "exit": 0,
   "ext": ".adz",
-  "result": "no-sample",
-  "sample": null,
-  "source": null,
-  "status": "not-found",
+  "how": "extension",
+  "identified": true,
+  "identified_task": 16,
+  "nfields": 0,
+  "result": "partial",
+  "sample": "task-016.adz",
+  "source": "disk",
+  "status": "ok",
   "task": 16
  },
  "160": {
@@ -980,7 +995,7 @@
   "decoded": true,
   "exit": 0,
   "ext": ".ebd",
-  "how": "extension",
+  "how": "magic",
   "identified": true,
   "identified_task": 166,
   "nfields": 4,
@@ -2045,17 +2060,11 @@
   "task": 239
  },
  "24": {
-  "decoded": false,
-  "exit": 0,
   "ext": ".amf",
-  "how": "extension",
-  "identified": true,
-  "identified_task": 24,
-  "nfields": 0,
-  "result": "partial",
-  "sample": "task-024.amf",
+  "result": "no-sample",
+  "sample": null,
   "source": "page",
-  "status": "ok",
+  "status": "not-found",
   "task": 24
  },
  "240": {
@@ -2835,11 +2844,16 @@
   "task": 292
  },
  "293": {
-  "ext": ".hta",
-  "note": "bad sample: HTML error page, not a sample",
-  "result": "no-sample",
+  "decoded": false,
+  "exit": 0,
+  "ext": ".HTA",
+  "how": "extension",
+  "identified": true,
+  "identified_task": 293,
+  "nfields": 0,
+  "result": "partial",
   "sample": "task-293.hta",
-  "source": "web-search",
+  "source": "web",
   "status": "ok",
   "task": 293
  },
@@ -4047,17 +4061,11 @@
   "task": 372
  },
  "373": {
-  "decoded": true,
-  "exit": 0,
   "ext": ".m4v",
-  "how": "magic",
-  "identified": true,
-  "identified_task": 373,
-  "nfields": 4,
-  "result": "pass",
-  "sample": "task-373.m4v",
+  "result": "no-sample",
+  "sample": null,
   "source": "page",
-  "status": "ok",
+  "status": "not-found",
   "task": 373
  },
  "374": {
@@ -5265,11 +5273,17 @@
   "task": 454
  },
  "455": {
-  "ext": ".NPR",
-  "result": "no-sample",
-  "sample": null,
-  "source": null,
-  "status": "not-found",
+  "decoded": true,
+  "exit": 0,
+  "ext": ".npr",
+  "how": "magic",
+  "identified": true,
+  "identified_task": 455,
+  "nfields": 3,
+  "result": "pass",
+  "sample": "task-455.npr",
+  "source": "disk",
+  "status": "ok",
   "task": 455
  },
  "456": {
@@ -5337,11 +5351,17 @@
   "task": 46
  },
  "460": {
-  "ext": ".NSA",
-  "result": "no-sample",
-  "sample": null,
-  "source": null,
-  "status": "not-found",
+  "decoded": true,
+  "exit": 0,
+  "ext": ".nsa",
+  "how": "extension",
+  "identified": true,
+  "identified_task": 460,
+  "nfields": 9,
+  "result": "pass",
+  "sample": "task-460.nsa",
+  "source": "disk",
+  "status": "ok",
   "task": 460
  },
  "461": {
@@ -5927,17 +5947,11 @@
   "task": 499
  },
  "5": {
-  "decoded": true,
-  "exit": 0,
   "ext": ".3gx",
-  "how": "magic",
-  "identified": true,
-  "identified_task": 5,
-  "nfields": 4,
-  "result": "pass",
-  "sample": "task-005.3gx",
+  "result": "no-sample",
+  "sample": null,
   "source": "page",
-  "status": "ok",
+  "status": "not-found",
   "task": 5
  },
  "50": {
@@ -6584,11 +6598,17 @@
   "task": 546
  },
  "547": {
-  "ext": ".PHZ",
-  "result": "no-sample",
-  "sample": null,
-  "source": null,
-  "status": "not-found",
+  "decoded": false,
+  "exit": 0,
+  "ext": ".phz",
+  "how": "extension",
+  "identified": true,
+  "identified_task": 547,
+  "nfields": 0,
+  "result": "partial",
+  "sample": "task-547.phz",
+  "source": "disk",
+  "status": "ok",
   "task": 547
  },
  "548": {
@@ -7046,11 +7066,17 @@
   "task": 58
  },
  "580": {
-  "ext": ".PTF",
-  "result": "no-sample",
-  "sample": null,
-  "source": null,
-  "status": "not-found",
+  "decoded": true,
+  "exit": 0,
+  "ext": ".ptf",
+  "how": "magic",
+  "identified": true,
+  "identified_task": 580,
+  "nfields": 0,
+  "result": "pass",
+  "sample": "task-580.ptf",
+  "source": "disk",
+  "status": "ok",
   "task": 580
  },
  "581": {
@@ -7814,11 +7840,17 @@
   "task": 633
  },
  "634": {
+  "decoded": true,
+  "exit": 0,
   "ext": ".SASS",
-  "result": "no-sample",
-  "sample": null,
-  "source": null,
-  "status": "not-found",
+  "how": "extension",
+  "identified": true,
+  "identified_task": 634,
+  "nfields": 0,
+  "result": "pass",
+  "sample": "task-634.sass",
+  "source": "web",
+  "status": "ok",
   "task": 634
  },
  "635": {
@@ -8050,11 +8082,17 @@
   "task": 650
  },
  "651": {
-  "ext": ".SDTS",
-  "result": "no-sample",
-  "sample": null,
-  "source": "page",
-  "status": "not-found",
+  "decoded": true,
+  "exit": 0,
+  "ext": ".sdts",
+  "how": "extension",
+  "identified": true,
+  "identified_task": 651,
+  "nfields": 0,
+  "result": "pass",
+  "sample": "task-651.sdts",
+  "source": "disk",
+  "status": "ok",
   "task": 651
  },
  "652": {
@@ -8300,11 +8338,17 @@
   "task": 669
  },
  "67": {
+  "decoded": false,
+  "exit": 0,
   "ext": ".br7",
-  "result": "no-sample",
-  "sample": null,
-  "source": null,
-  "status": "not-found",
+  "how": "extension",
+  "identified": true,
+  "identified_task": 67,
+  "nfields": 0,
+  "result": "partial",
+  "sample": "task-067.br7",
+  "source": "disk",
+  "status": "ok",
   "task": 67
  },
  "670": {
@@ -8418,11 +8462,17 @@
   "task": 679
  },
  "68": {
+  "decoded": true,
+  "exit": 0,
   "ext": ".bsk",
-  "result": "no-sample",
-  "sample": null,
-  "source": null,
-  "status": "not-found",
+  "how": "extension",
+  "identified": true,
+  "identified_task": 68,
+  "nfields": 3,
+  "result": "pass",
+  "sample": "task-068.bsk",
+  "source": "disk",
+  "status": "ok",
   "task": 68
  },
  "680": {
@@ -8454,11 +8504,17 @@
   "task": 681
  },
  "682": {
-  "ext": ".SPZ",
-  "result": "no-sample",
-  "sample": null,
-  "source": "page",
-  "status": "not-found",
+  "decoded": false,
+  "exit": 0,
+  "ext": ".spz",
+  "how": "extension",
+  "identified": true,
+  "identified_task": 682,
+  "nfields": 0,
+  "result": "partial",
+  "sample": "task-682.spz",
+  "source": "disk",
+  "status": "ok",
   "task": 682
  },
  "683": {
@@ -8986,11 +9042,17 @@
   "task": 72
  },
  "720": {
+  "decoded": true,
+  "exit": 0,
   "ext": ".TB2",
-  "result": "no-sample",
-  "sample": null,
-  "source": "page",
-  "status": "not-found",
+  "how": "magic",
+  "identified": true,
+  "identified_task": 720,
+  "nfields": 2,
+  "result": "pass",
+  "sample": "task-720.tb2",
+  "source": "web",
+  "status": "ok",
   "task": 720
  },
  "721": {
@@ -9337,11 +9399,17 @@
   "task": 744
  },
  "745": {
-  "ext": ".TZST",
-  "result": "no-sample",
-  "sample": null,
-  "source": "page",
-  "status": "not-found",
+  "decoded": true,
+  "exit": 0,
+  "ext": ".tzst",
+  "how": "extension",
+  "identified": true,
+  "identified_task": 745,
+  "nfields": 0,
+  "result": "pass",
+  "sample": "task-745.tzst",
+  "source": "disk",
+  "status": "ok",
   "task": 745
  },
  "746": {
@@ -9387,11 +9455,17 @@
   "task": 748
  },
  "749": {
-  "ext": ".UOS",
-  "result": "no-sample",
-  "sample": null,
-  "source": "page",
-  "status": "not-found",
+  "decoded": false,
+  "exit": 0,
+  "ext": ".uos",
+  "how": "extension",
+  "identified": true,
+  "identified_task": 749,
+  "nfields": 0,
+  "result": "partial",
+  "sample": "task-749.uos",
+  "source": "disk",
+  "status": "ok",
   "task": 749
  },
  "75": {
@@ -9409,11 +9483,17 @@
   "task": 75
  },
  "750": {
-  "ext": ".UOT",
-  "result": "no-sample",
-  "sample": null,
-  "source": "page",
-  "status": "not-found",
+  "decoded": true,
+  "exit": 0,
+  "ext": ".uot",
+  "how": "extension",
+  "identified": true,
+  "identified_task": 750,
+  "nfields": 0,
+  "result": "pass",
+  "sample": "task-750.uot",
+  "source": "disk",
+  "status": "ok",
   "task": 750
  },
  "751": {
@@ -9545,11 +9625,17 @@
   "task": 76
  },
  "760": {
-  "ext": ".V3",
-  "result": "no-sample",
-  "sample": null,
-  "source": "page",
-  "status": "not-found",
+  "decoded": false,
+  "exit": 0,
+  "ext": ".v3",
+  "how": "extension",
+  "identified": true,
+  "identified_task": 760,
+  "nfields": 0,
+  "result": "partial",
+  "sample": "task-760.v3",
+  "source": "disk",
+  "status": "ok",
   "task": 760
  },
  "761": {
@@ -10351,11 +10437,17 @@
   "task": 817
  },
  "818": {
-  "ext": ".WOS",
-  "result": "no-sample",
-  "sample": null,
-  "source": "page",
-  "status": "not-found",
+  "decoded": true,
+  "exit": 0,
+  "ext": ".wos",
+  "how": "extension",
+  "identified": true,
+  "identified_task": 818,
+  "nfields": 0,
+  "result": "pass",
+  "sample": "task-818.wos",
+  "source": "disk",
+  "status": "ok",
   "task": 818
  },
  "819": {
@@ -10513,11 +10605,17 @@
   "task": 828
  },
  "829": {
-  "ext": ".XDM",
-  "result": "no-sample",
-  "sample": null,
-  "source": "page",
-  "status": "not-found",
+  "decoded": true,
+  "exit": 0,
+  "ext": ".xdm",
+  "how": "magic",
+  "identified": true,
+  "identified_task": 829,
+  "nfields": 0,
+  "result": "pass",
+  "sample": "task-829.xdm",
+  "source": "disk",
+  "status": "ok",
   "task": 829
  },
  "83": {
@@ -10781,11 +10879,17 @@
   "task": 846
  },
  "847": {
-  "ext": ".XSN",
-  "result": "no-sample",
-  "sample": null,
-  "source": "page",
-  "status": "not-found",
+  "decoded": true,
+  "exit": 0,
+  "ext": ".xsn",
+  "how": "extension",
+  "identified": true,
+  "identified_task": 847,
+  "nfields": 0,
+  "result": "pass",
+  "sample": "task-847.xsn",
+  "source": "disk",
+  "status": "ok",
   "task": 847
  },
  "848": {
@@ -11055,11 +11159,17 @@
   "task": 9
  },
  "90": {
+  "decoded": true,
+  "exit": 0,
   "ext": ".class",
-  "result": "no-sample",
-  "sample": null,
-  "source": null,
-  "status": "not-found",
+  "how": "extension",
+  "identified": true,
+  "identified_task": 90,
+  "nfields": 3,
+  "result": "pass",
+  "sample": "task-090.class",
+  "source": "disk",
+  "status": "ok",
   "task": 90
  },
  "91": {

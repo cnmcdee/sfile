@@ -1,0 +1,82 @@
+{
+ "25": {
+  "ext": ".AMG",
+  "reason": "page link is crowd.wav.zip (a ZIP of a WAV), not an .AMG Ambisonic file",
+  "urls": [
+   "https://edge.rode.com/zip/page/1890/modules/8/crowd.wav.zip",
+   "https://edge.rode.com/zip/page/1890/modules/8/skaters.wav.zip"
+  ]
+ },
+ "448": {
+  "ext": ".NEU",
+  "reason": "page link is a PDF document, not a .NEU mesh file",
+  "urls": [
+   "https://www.cfd-online.com/Forums/attachments/ansys-meshing/3455d1274429578-converting-fluent-mesh-files-gambit-neutral-files-msh2neu.tar.gz",
+   "https://web.stanford.edu/class/me469b/handouts/gambit_write.pdf"
+  ]
+ },
+ "511": {
+  "ext": ".PAPA",
+  "reason": "page link is a ZIP of a Unity asset; .PAPA magic must be 'Papa'",
+  "urls": [
+   "https://github.com/Lula-Mae/com.pa.lulamae.milkyway-skybox/archive/master.zip",
+   "https://github.com/MaximumEndurance/com.pa.maxend.fireball-skybox/archive/master.zip"
+  ]
+ },
+ "536": {
+  "ext": ".PFC",
+  "reason": "page link is a ZIP (PFC-Details.txt); .PFC magic must be 'AOLVM100'",
+  "urls": [
+   "https://web.archive.org/web/20050420101922/http://members.aol.com/fvongordon/pfc/PFC-Details.zip",
+   "https://astroblahhh.com/software/tips/pfc/pfcview.jar"
+  ]
+ },
+ "572": {
+  "ext": ".PRP",
+  "reason": "page link is a PDF document, not a text .PRP file",
+  "urls": [
+   "https://www.pure-systems.com/pv-update/additions/doc/latest/pv-conn-rhapsody-manual.pdf",
+   "https://ftpmirror.your.org/pub/misc/ftp.software.ibm.com/software/rationalsdp/documentation/product_doc/Rhapsody/version_7-5/framework.pdf"
+  ]
+ },
+ "594": {
+  "ext": ".ROO",
+  "reason": "page link is gzip; .ROO/.R00 is a RAR split archive",
+  "urls": [
+   "https://www.rarlab.com/rar/unrarsrc-7.2.1.tar.gz",
+   "https://github.com/selmf/unarr/raw/master/testdata/rar_split.r00"
+  ]
+ },
+ "634": {
+  "ext": ".SASS",
+  "reason": "downloaded file is 14 bytes: '404: Not Found'",
+  "urls": [
+   "https://raw.githubusercontent.com/cloudcores/CuAssembler/main/examples/add.cubin",
+   "https://raw.githubusercontent.com/cloudcores/CuAssembler/main/examples/simple.cubin"
+  ]
+ },
+ "640": {
+  "ext": ".SBH",
+  "reason": "page link is a PDF document, not a .SBH source file",
+  "urls": [
+   "https://public.dhe.ibm.com/software/rational/docs/v2002/robotug.pdf",
+   "https://public.dhe.ibm.com/software/rational/docs/documentation/manuals/docset149/Rational_Test_7/sqabasic.pdf"
+  ]
+ },
+ "642": {
+  "ext": ".SBX",
+  "reason": "page link is a 7z archive; .SBX signature must be 'SBx'",
+  "urls": [
+   "http://mark0.net/download/sbxdemo-diskimages.7z",
+   "https://mark0.net/download/seqbox.zip"
+  ]
+ },
+ "673": {
+  "ext": ".SNO",
+  "reason": "page link is a PDF document, not a .SNO data file",
+  "urls": [
+   "https://swat.tamu.edu/media/69413/ch38_input_sno.pdf",
+   "https://github.com/jmallen/swatmodel/raw/master/input/sno1.sno"
+  ]
+ }
+}

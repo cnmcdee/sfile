@@ -55,22 +55,29 @@ hand override exists for them (300 ICE and 398 MKA have overrides).
 `tests/run_tests.py` runs `sfile` on every sample in `samples/` (one real
 sample file per format, collected from the task pages' download links or by
 web search) and records PASS / PARTIAL / FAIL / NO SAMPLE in
-`tests/results.json`. Latest run (Nov 25, 2026, corrected re-run after all
-four sample collectors finished):
+`tests/results.json`. Latest run (Nov 25, 2026, after the follow-up round
+that fixed the FAILs, re-tried the page links, and settled the doubtful
+samples):
 
 | result | count | meaning |
 |---|---|---|
-| PASS | 561 | identified and header decoded |
-| PARTIAL | 130 | identified, no derivable layout (mostly binary formats whose reference code is chunk-scanning or variable-length; EBML formats; a few honest no-layout cases) |
-| FAIL | 38 | misidentified — mostly new collector samples needing per-format magics (ZIP/XML/compression-container); includes the 2 unresolvable duplicates 312 (.INI) = 311 and 520 (.PBO) = 519 |
-| NO SAMPLE | 124 | no real sample file found yet (of 853 tasks counted by the harness, which includes 4 task numbers with no published page: 202, 214, 292, 389) |
+| PASS | 607 | identified and header decoded |
+| PARTIAL | 137 | identified, no derivable layout (mostly binary formats whose reference code is chunk-scanning or variable-length; EBML formats; a few honest no-layout cases) |
+| FAIL | 2 | the 2 unresolvable duplicates 312 (.INI) = 311 and 520 (.PBO) = 519 |
+| NO SAMPLE | 107 | no real sample file found yet (of 853 tasks counted by the harness, which includes 4 task numbers with no published page: 202, 214, 292, 389) |
 
 Note: the autonomous driver's rounds 13–14 reported the round-12 numbers
 (537/109/31/172) because the harness crashed on the 1–215 collector's
 list-shaped manifest shard (`load_manifests` expected dicts); the driver
 then stopped on the apparent plateau. The crash is fixed (list shards are
-now normalized) and the counts above are from a clean full re-run with all
-samples on disk (730 files).
+now normalized). The follow-up round then fixed 34 of the 38 FAILs with
+per-format magics (ZIP/PK, RIFF, XML, ELF, OLE, Ogg, MZ, bzip2, xz, TAR,
+J2C, MDMP, FCS, ftyp, EMF; CDR 81/82 swap; DNG to big-endian TIFF), added
+24 genuine new samples (21 from re-trying the page links, 3 from web
+search), dropped 14 bogus/mislabeled/truncated samples, and settled the
+6 doubtful samples (550/554 kept; 005/024/373 dropped; 166 magic fixed).
+Counts above are from a clean full re-run with all samples on disk
+(748 files).
 
 Fixes from the test loop live in `tools/apply_testloop_overrides*.py`
 (ten batches so far, ~270 overrides total): bogus magics removed

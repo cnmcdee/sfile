@@ -388,6 +388,11 @@
   "fields": [],
   "notes": "E00 ArcInfo interchange files are ASCII text"
  },
+ "166": {
+  "magic": "5b49424953205665725d",
+  "magic_off": 0,
+  "notes": "EBD is an IBIS file; magic is '[IBIS Ver]' (sample + spec). Was 'Pin' (from MAX_PINS in the reference code)."
+ },
  "17": {
   "derivation": "text",
   "notes": "Agda source, plain text"
@@ -3020,6 +3025,10 @@
   "fields": [],
   "notes": "verified text format (genuine text sample + page describes text)"
  },
+ "634": {
+  "derivation": "text",
+  "notes": "SASS stylesheet is plain text (indented syntax); text decode. Sample: SassMeister-input.sass gist."
+ },
  "635": {
   "derivation": "text",
   "fields": [],
@@ -3499,6 +3508,26 @@
   "magic": "425a68",
   "magic_off": 0,
   "name": "bzip2 archive"
+ },
+ "720": {
+  "ext": ".TB2",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "signature",
+    "offset": 0,
+    "size": 3
+   },
+   {
+    "kind": "ascii",
+    "name": "block_size",
+    "offset": 3,
+    "size": 1
+   }
+  ],
+  "magic": "425a68",
+  "magic_off": 0,
+  "notes": "TB2 is a bzip2-compressed tar; BZh magic, extension disambiguates from BZ2 (as task 722). Real extension is .TB2 (table had '.?'). Sample: lutik-sample.tar.bz2."
  },
  "722": {
   "fields": [
