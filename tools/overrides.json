@@ -22,6 +22,12 @@
   "magic": null,
   "notes": "the .com sample is raw x86 code, not an MZ executable; the code-derived MZ magic was wrong"
  },
+ "102": {
+  "derivation": "text",
+  "magic": "3c3f786d6c",
+  "magic_off": 0,
+  "notes": "COMPILE file is XML; <?xml magic, extension disambiguates; text decode"
+ },
  "106": {
   "derivation": "text",
   "fields": [],
@@ -50,6 +56,11 @@
   "magic": "000100005374616e6461726420414345204442",
   "magic_off": 0,
   "name": "Access database (ACE)"
+ },
+ "110": {
+  "magic": "66747970",
+  "magic_off": 4,
+  "notes": "CR3 is ISO BMFF (ftyp); ftyp magic, extension disambiguates; inherits ftyp layout (major brand crx shown in decode)"
  },
  "111": {
   "derivation": "text",
@@ -161,6 +172,12 @@
   "fields": [],
   "notes": "verified text format (genuine text sample + page describes text)"
  },
+ "120": {
+  "derivation": "text",
+  "magic": "476175737369616e2043756265",
+  "magic_off": 5,
+  "notes": "Gaussian cube text file; 'Gaussian Cube' in comment at offset 5; text decode"
+ },
  "126": {
   "derivation": "text",
   "fields": [],
@@ -249,6 +266,12 @@
  "142": {
   "magic": "4d444d50",
   "notes": "Windows minidump; header fields from the reference struct"
+ },
+ "144": {
+  "fields": [],
+  "magic": "4d4d002a",
+  "magic_off": 0,
+  "notes": "DNG sample is big-endian TIFF (MM); was little-endian II. DNG can be either endianness; this sample is MM."
  },
  "145": {
   "derivation": "text",
@@ -436,6 +459,15 @@
   "fields": [],
   "notes": "verified text format (genuine text sample + page describes text)"
  },
+ "177": {
+  "derivation": "text",
+  "notes": "E language maker source is plain text; text decode"
+ },
+ "178": {
+  "magic": "20454d46",
+  "magic_off": 40,
+  "notes": "EMAKER binary sample is an EMF (Enhanced Metafile); record signature ' EMF' at offset 40"
+ },
  "179": {
   "derivation": "text",
   "fields": [],
@@ -542,6 +574,11 @@
   "magic": "25504446",
   "notes": "modern .ai files are PDF documents"
  },
+ "200": {
+  "magic": "00010000",
+  "magic_off": 0,
+  "notes": "EXS sample starts 00 01 00 00; same 4-byte magic as PI2, extension disambiguates. No layout: reference block is a placeholder."
+ },
  "201": {
   "derivation": "text",
   "fields": [],
@@ -556,6 +593,11 @@
   "derivation": "text",
   "fields": [],
   "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "21": {
+  "magic": "41494643",
+  "magic_off": 8,
+  "notes": "AIFC is IFF FORM with form type AIFC at offset 8 (same pattern as AIFF task 22)"
  },
  "210": {
   "derivation": "text",
@@ -727,8 +769,9 @@
  },
  "242": {
   "derivation": "text",
+  "ext": ".frq",
   "magic": null,
-  "notes": "SAM frequency files are text (fgets line parser); ENDFREQUENCIES is a section marker, not a signature"
+  "notes": "real extension is .frq (sample files are .frq); was .FREQ"
  },
  "245": {
   "derivation": "text",
@@ -1220,6 +1263,11 @@
   "fields": [],
   "notes": "verified text format (genuine text sample + page describes text)"
  },
+ "316": {
+  "magic": "7f454c46",
+  "magic_off": 0,
+  "notes": "IRX (PS2) is ELF-based; ELF magic, extension disambiguates"
+ },
  "317": {
   "endian": "le",
   "fields": [
@@ -1330,6 +1378,11 @@
   ],
   "magic": "494d504d",
   "notes": "Impulse Tracker module header; sample: 61 orders, 10 instruments, 18 samples, 53 patterns"
+ },
+ "319": {
+  "magic": "ff4fff51",
+  "magic_off": 0,
+  "notes": "J2C is JPEG 2000 codestream; ff4fff51 magic, extension disambiguates from J2K"
  },
  "32": {
   "derivation": "text",
@@ -1573,8 +1626,14 @@
   "notes": "ARPA language model, plain text; sample is a partial gunzip (truncated tail)"
  },
  "359": {
-  "magic": "",
-  "magic_off": 0
+  "magic": "464353",
+  "magic_off": 0,
+  "notes": "LMD is FCS (Flow Cytometry Standard); FCS magic, extension disambiguates from FCS"
+ },
+ "361": {
+  "magic": "504b0304",
+  "magic_off": 0,
+  "notes": "Logic Pro X project (.logicx) is a ZIP archive"
  },
  "364": {
   "magic": "464f524d",
@@ -1614,6 +1673,16 @@
   "derivation": "text",
   "fields": [],
   "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "382": {
+  "magic": "504b0304",
+  "magic_off": 0,
+  "notes": "MC Project is a ZIP archive"
+ },
+ "385": {
+  "magic": "504b0304",
+  "magic_off": 0,
+  "notes": "MC World is a ZIP archive"
  },
  "386": {
   "derivation": "text",
@@ -1660,6 +1729,11 @@
   ],
   "magic": "000100005374616e64617264204a6574",
   "notes": "Jet database; header offsets from the reference code (its numPages@8 reads inside the magic and is omitted)"
+ },
+ "392": {
+  "magic": "4d444d50",
+  "magic_off": 0,
+  "notes": "MDMP minidump magic; extension disambiguates from DMP"
  },
  "394": {
   "derivation": "text",
@@ -1723,6 +1797,11 @@
   "derivation": "text",
   "fields": [],
   "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "400": {
+  "magic": "504b0304",
+  "magic_off": 0,
+  "notes": "MATLAB live script (.mlx) is a ZIP archive"
  },
  "401": {
   "derivation": "text",
@@ -2823,6 +2902,12 @@
   "fields": [],
   "notes": "verified text format (genuine text sample + page describes text)"
  },
+ "628": {
+  "derivation": "text",
+  "magic": "3c3f786d6c",
+  "magic_off": 0,
+  "notes": "RUA file is XML; <?xml magic, extension disambiguates; text decode"
+ },
  "629": {
   "derivation": "text",
   "notes": ".run installers are shell scripts (makeself); text"
@@ -2939,6 +3024,11 @@
   "derivation": "text",
   "fields": [],
   "notes": "ACIS SAT files are text"
+ },
+ "639": {
+  "magic": "504b0304",
+  "magic_off": 0,
+  "notes": "Scratch 3 project (.sb3) is a ZIP archive"
  },
  "645": {
   "magic": null,
@@ -3061,6 +3151,12 @@
   "magic": "3c3f786d6c",
   "notes": "SEC is XML (<?xml ...><SEC ...); the sample is the extracted inner file"
  },
+ "656": {
+  "ext": ".sf2",
+  "magic": "52494646",
+  "magic_off": 0,
+  "notes": "SoundFont (.sf2) is RIFF with form type sfbk; real extension is .sf2 (was .SF); RIFF magic, extension disambiguates; inherits RIFF layout"
+ },
  "66": {
   "magic": "42505331",
   "notes": "BPS1; after the magic the header is variable-length ints, so no fixed layout"
@@ -3074,6 +3170,21 @@
   "derivation": "text",
   "fields": [],
   "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "668": {
+  "magic": "d0cf11e0a1b11ae1",
+  "magic_off": 0,
+  "notes": "SLDASM is OLE/CFB; OLE magic, extension disambiguates; inherits OLE layout"
+ },
+ "680": {
+  "magic": "504b0304",
+  "magic_off": 0,
+  "notes": "SPSS output (.spv) is a ZIP archive"
+ },
+ "681": {
+  "magic": "4f676753",
+  "magic_off": 0,
+  "notes": "SPX (Speex) is Ogg; OggS magic, extension disambiguates"
  },
  "683": {
   "derivation": "text",
@@ -3389,6 +3500,30 @@
   "magic_off": 0,
   "name": "bzip2 archive"
  },
+ "722": {
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "signature",
+    "offset": 0,
+    "size": 3
+   },
+   {
+    "kind": "ascii",
+    "name": "block_size",
+    "offset": 3,
+    "size": 1
+   }
+  ],
+  "magic": "425a68",
+  "magic_off": 0,
+  "notes": "TBZ2 is bzip2-compressed tar; BZh magic (was wrong ustar at off 0); extension disambiguates from BZ2"
+ },
+ "723": {
+  "magic": "4d5a",
+  "magic_off": 0,
+  "notes": "TC sample is an MZ executable; MZ magic, extension disambiguates; inherits MZ/DOS layout. TrueCrypt volumes have no magic; this sample is MZ."
+ },
  "725": {
   "derivation": "override",
   "fields": [
@@ -3523,6 +3658,97 @@
   "fields": [],
   "notes": "verified text format (genuine text sample + page describes text)"
  },
+ "74": {
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "e_ident",
+    "offset": 0,
+    "size": 16
+   },
+   {
+    "kind": "u16",
+    "name": "e_type",
+    "offset": 16,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "e_machine",
+    "offset": 18,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "e_version",
+    "offset": 20,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "e_entry",
+    "offset": 24,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "e_phoff",
+    "offset": 28,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "e_shoff",
+    "offset": 32,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "e_flags",
+    "offset": 36,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "e_ehsize",
+    "offset": 40,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "e_phentsize",
+    "offset": 42,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "e_phnum",
+    "offset": 44,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "e_shentsize",
+    "offset": 46,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "e_shnum",
+    "offset": 48,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "e_shstrndx",
+    "offset": 50,
+    "size": 2
+   }
+  ],
+  "magic": "7f454c46",
+  "magic_off": 0,
+  "notes": "C32 is ELF-based; ELF magic, extension disambiguates; ELF32 header layout (as task 173)"
+ },
  "740": {
   "endian": "be",
   "fields": [
@@ -3565,6 +3791,31 @@
   "derivation": "text",
   "fields": [],
   "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "743": {
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "magic",
+    "offset": 0,
+    "size": 6
+   },
+   {
+    "kind": "u16",
+    "name": "stream_flags",
+    "offset": 6,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "crc32",
+    "offset": 8,
+    "size": 4
+   }
+  ],
+  "magic": "fd377a585a00",
+  "magic_off": 0,
+  "notes": "TXZ is xz-compressed tar; XZ magic, extension disambiguates from XZ"
  },
  "745": {
   "derivation": "text",
@@ -3667,6 +3918,11 @@
   "fields": [],
   "notes": "verified text format (genuine text sample + page describes text)"
  },
+ "754": {
+  "magic": "504b0304",
+  "magic_off": 0,
+  "notes": "USDZ is a ZIP archive"
+ },
  "765": {
   "fields": [],
   "notes": "VirtualBox extension pack is a gzipped tar; gzip wrapper identified, tar header fields do not apply to the compressed bytes"
@@ -3680,6 +3936,16 @@
   "derivation": "text",
   "fields": [],
   "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "769": {
+  "magic": "4d5a",
+  "magic_off": 0,
+  "notes": "VBX is an MZ executable (DLL); MZ magic, extension disambiguates"
+ },
+ "77": {
+  "magic": "7573746172",
+  "magic_off": 257,
+  "notes": "CBT is a TAR archive; ustar magic at 257, extension disambiguates from TAR"
  },
  "782": {
   "derivation": "text",
@@ -3695,6 +3961,45 @@
   "derivation": "text",
   "fields": [],
   "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "794": {
+  "endian": "be",
+  "ext": ".VSQ",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "magic",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "header_length",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "format",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "num_tracks",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "division",
+    "offset": 12,
+    "size": 2
+   }
+  ],
+  "magic": "4d546864",
+  "magic_off": 0,
+  "notes": "VSQ is a MIDI file (MThd), not XML; was <?xml. Real extension is .VSQ (table had '.?'); MThd magic, extension disambiguates from MIDI; MIDI header layout (as task 397)"
  },
  "800": {
   "derivation": "text",
@@ -3782,8 +4087,9 @@
  },
  "81": {
   "fields": [],
-  "magic": "52494646",
-  "notes": "CorelDRAW pre-X4 RIFF variant; X4+ ZIP variant is task 82"
+  "magic": "504b0304",
+  "magic_off": 0,
+  "notes": "CDR X4+ is ZIP-based; was RIFF (swapped with 82, the pre-X4 RIFF variant)"
  },
  "811": {
   "derivation": "override",
@@ -3817,8 +4123,9 @@
  },
  "82": {
   "fields": [],
-  "magic": "504b0304",
-  "notes": "CorelDRAW X4+ ZIP variant; pre-X4 RIFF variant is task 81"
+  "magic": "52494646",
+  "magic_off": 0,
+  "notes": "CDR pre-X4 is RIFF-based (form type CDR9); was PK (swapped with 81, the X4+ ZIP variant)"
  },
  "820": {
   "derivation": "text",
@@ -3828,6 +4135,16 @@
   "derivation": "text",
   "fields": [],
   "notes": "verified text format (genuine text sample + page describes text)"
+ },
+ "83": {
+  "magic": "3c3f786d6c",
+  "magic_off": 0,
+  "notes": "CDXML is XML; <?xml magic, extension disambiguates"
+ },
+ "832": {
+  "magic": "d0cf11e0a1b11ae1",
+  "magic_off": 0,
+  "notes": "XLR is OLE/CFB; OLE magic, extension disambiguates; inherits OLE layout"
  },
  "844": {
   "derivation": "text",

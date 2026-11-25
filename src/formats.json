@@ -69,10 +69,10 @@
   "endian": "le",
   "ext": ".COMPILE",
   "fields": [],
-  "magic": null,
+  "magic": "3c3f786d6c",
   "magic_off": 0,
   "name": "Compile File",
-  "notes": "xml",
+  "notes": "COMPILE file is XML; <?xml magic, extension disambiguates; text decode",
   "task": 102
  },
  "103": {
@@ -196,14 +196,39 @@
   "task": 11
  },
  "110": {
-  "derivation": "unknown",
-  "endian": "le",
+  "derivation": "override",
+  "endian": "be",
   "ext": ".CR3",
-  "fields": [],
-  "magic": null,
-  "magic_off": 0,
+  "fields": [
+   {
+    "kind": "u32",
+    "name": "box_size",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "box_type",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "major_brand",
+    "offset": 8,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "minor_version",
+    "offset": 12,
+    "size": 4
+   }
+  ],
+  "magic": "66747970",
+  "magic_off": 4,
   "name": "CR3",
-  "notes": "",
+  "notes": "CR3 is ISO BMFF (ftyp); ftyp magic, extension disambiguates; inherits ftyp layout (major brand crx shown in decode)",
   "task": 110
  },
  "111": {
@@ -598,7 +623,7 @@
   "task": 12
  },
  "120": {
-  "derivation": "struct",
+  "derivation": "text",
   "endian": "le",
   "ext": ".CUBE",
   "fields": [
@@ -675,10 +700,10 @@
     "size": 24
    }
   ],
-  "magic": null,
-  "magic_off": 0,
+  "magic": "476175737369616e2043756265",
+  "magic_off": 5,
   "name": "CUBE file",
-  "notes": "",
+  "notes": "Gaussian cube text file; 'Gaussian Cube' in comment at offset 5; text decode",
   "task": 120
  },
  "121": {
@@ -1805,8 +1830,8 @@
   "task": 143
  },
  "144": {
-  "derivation": "container",
-  "endian": "le",
+  "derivation": "override",
+  "endian": "be",
   "ext": ".DNG",
   "fields": [
    {
@@ -1828,10 +1853,10 @@
     "size": 4
    }
   ],
-  "magic": "49492a00",
+  "magic": "4d4d002a",
   "magic_off": 0,
   "name": "DNG",
-  "notes": "curated-magic",
+  "notes": "DNG sample is big-endian TIFF (MM); was little-endian II. DNG can be either endianness; this sample is MM.",
   "task": 144
  },
  "145": {
@@ -2895,18 +2920,18 @@
   "task": 176
  },
  "177": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".EMAKER",
   "fields": [],
   "magic": null,
   "magic_off": 0,
   "name": "EMAKER file",
-  "notes": "",
+  "notes": "E language maker source is plain text; text decode",
   "task": 177
  },
  "178": {
-  "derivation": "readseq",
+  "derivation": "override",
   "endian": "le",
   "ext": ".EMAKER",
   "fields": [
@@ -2995,10 +3020,10 @@
     "size": 4
    }
   ],
-  "magic": null,
-  "magic_off": 0,
+  "magic": "20454d46",
+  "magic_off": 40,
   "name": "Emf",
-  "notes": "",
+  "notes": "EMAKER binary sample is an EMF (Enhanced Metafile); record signature ' EMF' at offset 40",
   "task": 178
  },
  "179": {
@@ -4153,14 +4178,14 @@
   "task": 20
  },
  "200": {
-  "derivation": "unknown",
+  "derivation": "override",
   "endian": "le",
   "ext": ".EXS",
   "fields": [],
-  "magic": null,
+  "magic": "00010000",
   "magic_off": 0,
   "name": "Exs File",
-  "notes": "",
+  "notes": "EXS sample starts 00 01 00 00; same 4-byte magic as PI2, extension disambiguates. No layout: reference block is a placeholder.",
   "task": 200
  },
  "201": {
@@ -4266,7 +4291,7 @@
   "task": 209
  },
  "21": {
-  "derivation": "readseq",
+  "derivation": "override",
   "endian": "le",
   "ext": ".AIFC",
   "fields": [
@@ -4433,10 +4458,10 @@
     "size": 2
    }
   ],
-  "magic": null,
-  "magic_off": 0,
+  "magic": "41494643",
+  "magic_off": 8,
   "name": "AIFC",
-  "notes": "",
+  "notes": "AIFC is IFF FORM with form type AIFC at offset 8 (same pattern as AIFF task 22)",
   "task": 21
  },
  "210": {
@@ -5328,7 +5353,7 @@
  "242": {
   "derivation": "text",
   "endian": "le",
-  "ext": ".FREQ",
+  "ext": ".frq",
   "fields": [
    {
     "kind": "i32",
@@ -5346,7 +5371,7 @@
   "magic": null,
   "magic_off": 0,
   "name": "FREQ file",
-  "notes": "SAM frequency files are text (fgets line parser); ENDFREQUENCIES is a section marker, not a signature",
+  "notes": "real extension is .frq (sample files are .frq); was .FREQ",
   "task": 242
  },
  "243": {
@@ -8921,7 +8946,7 @@
   "task": 315
  },
  "316": {
-  "derivation": "struct",
+  "derivation": "override",
   "endian": "le",
   "ext": ".IRX",
   "fields": [
@@ -8974,10 +8999,10 @@
     "size": 8
    }
   ],
-  "magic": null,
+  "magic": "7f454c46",
   "magic_off": 0,
   "name": "IRX",
-  "notes": "",
+  "notes": "IRX (PS2) is ELF-based; ELF magic, extension disambiguates",
   "task": 316
  },
  "317": {
@@ -9101,7 +9126,7 @@
   "task": 318
  },
  "319": {
-  "derivation": "struct",
+  "derivation": "override",
   "endian": "le",
   "ext": ".J2C",
   "fields": [
@@ -9118,10 +9143,10 @@
     "size": 4
    }
   ],
-  "magic": null,
+  "magic": "ff4fff51",
   "magic_off": 0,
   "name": "J2C file",
-  "notes": "",
+  "notes": "J2C is JPEG 2000 codestream; ff4fff51 magic, extension disambiguates from J2K",
   "task": 319
  },
  "32": {
@@ -10563,10 +10588,10 @@
     "size": 4
    }
   ],
-  "magic": "",
+  "magic": "464353",
   "magic_off": 0,
   "name": "LMD file",
-  "notes": "",
+  "notes": "LMD is FCS (Flow Cytometry Standard); FCS magic, extension disambiguates from FCS",
   "task": 359
  },
  "36": {
@@ -10592,14 +10617,81 @@
   "task": 360
  },
  "361": {
-  "derivation": "unknown",
+  "derivation": "override",
   "endian": "le",
   "ext": ".LOGICX",
-  "fields": [],
-  "magic": null,
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "version_needed",
+    "offset": 4,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "flags",
+    "offset": 6,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "method",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_time",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_date",
+    "offset": 12,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "crc32",
+    "offset": 14,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "compressed_size",
+    "offset": 18,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "uncompressed_size",
+    "offset": 22,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "filename_len",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "extra_len",
+    "offset": 28,
+    "size": 2
+   }
+  ],
+  "magic": "504b0304",
   "magic_off": 0,
   "name": "Logic X",
-  "notes": "",
+  "notes": "Logic Pro X project (.logicx) is a ZIP archive",
   "task": 361
  },
  "362": {
@@ -11240,14 +11332,81 @@
   "task": 381
  },
  "382": {
-  "derivation": "unknown",
+  "derivation": "override",
   "endian": "le",
   "ext": ".MCPROJECT",
-  "fields": [],
-  "magic": null,
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "version_needed",
+    "offset": 4,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "flags",
+    "offset": 6,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "method",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_time",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_date",
+    "offset": 12,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "crc32",
+    "offset": 14,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "compressed_size",
+    "offset": 18,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "uncompressed_size",
+    "offset": 22,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "filename_len",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "extra_len",
+    "offset": 28,
+    "size": 2
+   }
+  ],
+  "magic": "504b0304",
   "magic_off": 0,
   "name": "MC Project",
-  "notes": "",
+  "notes": "MC Project is a ZIP archive",
   "task": 382
  },
  "383": {
@@ -11340,14 +11499,81 @@
   "task": 384
  },
  "385": {
-  "derivation": "unknown",
+  "derivation": "override",
   "endian": "le",
   "ext": ".MCWORLD",
-  "fields": [],
-  "magic": null,
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "version_needed",
+    "offset": 4,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "flags",
+    "offset": 6,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "method",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_time",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_date",
+    "offset": 12,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "crc32",
+    "offset": 14,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "compressed_size",
+    "offset": 18,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "uncompressed_size",
+    "offset": 22,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "filename_len",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "extra_len",
+    "offset": 28,
+    "size": 2
+   }
+  ],
+  "magic": "504b0304",
   "magic_off": 0,
   "name": "MC World",
-  "notes": "",
+  "notes": "MC World is a ZIP archive",
   "task": 385
  },
  "386": {
@@ -11702,7 +11928,7 @@
   "task": 391
  },
  "392": {
-  "derivation": "struct",
+  "derivation": "override",
   "endian": "le",
   "ext": ".MDMP",
   "fields": [
@@ -11761,10 +11987,10 @@
     "size": 8
    }
   ],
-  "magic": null,
+  "magic": "4d444d50",
   "magic_off": 0,
   "name": "Mdmp",
-  "notes": "",
+  "notes": "MDMP minidump magic; extension disambiguates from DMP",
   "task": 392
  },
  "393": {
@@ -12158,14 +12384,81 @@
   "task": 40
  },
  "400": {
-  "derivation": "unknown",
+  "derivation": "override",
   "endian": "le",
   "ext": ".MLX",
-  "fields": [],
-  "magic": null,
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "version_needed",
+    "offset": 4,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "flags",
+    "offset": 6,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "method",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_time",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_date",
+    "offset": 12,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "crc32",
+    "offset": 14,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "compressed_size",
+    "offset": 18,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "uncompressed_size",
+    "offset": 22,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "filename_len",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "extra_len",
+    "offset": 28,
+    "size": 2
+   }
+  ],
+  "magic": "504b0304",
   "magic_off": 0,
   "name": "MLX",
-  "notes": "",
+  "notes": "MATLAB live script (.mlx) is a ZIP archive",
   "task": 400
  },
  "401": {
@@ -21174,14 +21467,14 @@
   "task": 627
  },
  "628": {
-  "derivation": "unknown",
+  "derivation": "text",
   "endian": "le",
   "ext": ".RUA",
   "fields": [],
-  "magic": null,
+  "magic": "3c3f786d6c",
   "magic_off": 0,
   "name": "RUA file",
-  "notes": "",
+  "notes": "RUA file is XML; <?xml magic, extension disambiguates; text decode",
   "task": 628
  },
  "629": {
@@ -21549,14 +21842,81 @@
   "task": 638
  },
  "639": {
-  "derivation": "unknown",
+  "derivation": "override",
   "endian": "le",
   "ext": ".SB3",
-  "fields": [],
-  "magic": null,
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "version_needed",
+    "offset": 4,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "flags",
+    "offset": 6,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "method",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_time",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_date",
+    "offset": 12,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "crc32",
+    "offset": 14,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "compressed_size",
+    "offset": 18,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "uncompressed_size",
+    "offset": 22,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "filename_len",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "extra_len",
+    "offset": 28,
+    "size": 2
+   }
+  ],
+  "magic": "504b0304",
   "magic_off": 0,
   "name": "SB3",
-  "notes": "",
+  "notes": "Scratch 3 project (.sb3) is a ZIP archive",
   "task": 639
  },
  "64": {
@@ -22160,14 +22520,33 @@
   "task": 655
  },
  "656": {
-  "derivation": "unknown",
+  "derivation": "override",
   "endian": "be",
-  "ext": ".SF",
-  "fields": [],
-  "magic": null,
+  "ext": ".sf2",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "signature",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "file_size",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "ascii",
+    "name": "form_type",
+    "offset": 8,
+    "size": 4
+   }
+  ],
+  "magic": "52494646",
   "magic_off": 0,
   "name": "SF file",
-  "notes": "",
+  "notes": "SoundFont (.sf2) is RIFF with form type sfbk; real extension is .sf2 (was .SF); RIFF magic, extension disambiguates; inherits RIFF layout",
   "task": 656
  },
  "657": {
@@ -22610,14 +22989,111 @@
   "task": 667
  },
  "668": {
-  "derivation": "unknown",
+  "derivation": "override",
   "endian": "le",
   "ext": ".SLDASM",
-  "fields": [],
-  "magic": null,
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 0,
+    "size": 8
+   },
+   {
+    "kind": "bytes",
+    "name": "clsid",
+    "offset": 8,
+    "size": 16
+   },
+   {
+    "kind": "u16",
+    "name": "minor_version",
+    "offset": 24,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "major_version",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "byte_order",
+    "offset": 28,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "sector_shift",
+    "offset": 30,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mini_sector_shift",
+    "offset": 32,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "num_dir_sectors",
+    "offset": 40,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "num_fat_sectors",
+    "offset": 44,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "first_dir_sector",
+    "offset": 48,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "transaction_sig",
+    "offset": 52,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "mini_stream_cutoff",
+    "offset": 56,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "first_minifat_sector",
+    "offset": 60,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "num_minifat_sectors",
+    "offset": 64,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "first_difat_sector",
+    "offset": 68,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "num_difat_sectors",
+    "offset": 72,
+    "size": 4
+   }
+  ],
+  "magic": "d0cf11e0a1b11ae1",
   "magic_off": 0,
   "name": "Sldasm",
-  "notes": "",
+  "notes": "SLDASM is OLE/CFB; OLE magic, extension disambiguates; inherits OLE layout",
   "task": 668
  },
  "669": {
@@ -23099,18 +23575,85 @@
   "task": 68
  },
  "680": {
-  "derivation": "unknown",
+  "derivation": "override",
   "endian": "le",
   "ext": ".SPV",
-  "fields": [],
-  "magic": null,
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "version_needed",
+    "offset": 4,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "flags",
+    "offset": 6,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "method",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_time",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_date",
+    "offset": 12,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "crc32",
+    "offset": 14,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "compressed_size",
+    "offset": 18,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "uncompressed_size",
+    "offset": 22,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "filename_len",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "extra_len",
+    "offset": 28,
+    "size": 2
+   }
+  ],
+  "magic": "504b0304",
   "magic_off": 0,
   "name": "SPV file",
-  "notes": "",
+  "notes": "SPSS output (.spv) is a ZIP archive",
   "task": 680
  },
  "681": {
-  "derivation": "struct",
+  "derivation": "override",
   "endian": "le",
   "ext": ".SPX",
   "fields": [
@@ -23133,10 +23676,10 @@
     "size": 256
    }
   ],
-  "magic": null,
+  "magic": "4f676753",
   "magic_off": 0,
   "name": "SPX file",
-  "notes": "",
+  "notes": "SPX (Speex) is Ogg; OggS magic, extension disambiguates",
   "task": 681
  },
  "682": {
@@ -24966,25 +25509,141 @@
   "task": 721
  },
  "722": {
-  "derivation": "unknown",
+  "derivation": "override",
   "endian": "le",
   "ext": ".TBZ2",
-  "fields": [],
-  "magic": "7573746172",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "signature",
+    "offset": 0,
+    "size": 3
+   },
+   {
+    "kind": "ascii",
+    "name": "block_size",
+    "offset": 3,
+    "size": 1
+   }
+  ],
+  "magic": "425a68",
   "magic_off": 0,
   "name": "TBZ2 file",
-  "notes": "",
+  "notes": "TBZ2 is bzip2-compressed tar; BZh magic (was wrong ustar at off 0); extension disambiguates from BZ2",
   "task": 722
  },
  "723": {
-  "derivation": "unknown",
+  "derivation": "override",
   "endian": "le",
   "ext": ".TC",
-  "fields": [],
-  "magic": null,
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "signature",
+    "offset": 0,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "bytes_last_page",
+    "offset": 2,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "pages",
+    "offset": 4,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "relocations",
+    "offset": 6,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "header_size",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "min_alloc",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "max_alloc",
+    "offset": 12,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "ss",
+    "offset": 14,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "sp",
+    "offset": 16,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "checksum",
+    "offset": 18,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "ip",
+    "offset": 20,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "cs",
+    "offset": 22,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "reloc_table_offset",
+    "offset": 24,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "overlay",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "oem_id",
+    "offset": 36,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "oem_info",
+    "offset": 38,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "pe_header_offset",
+    "offset": 60,
+    "size": 4
+   }
+  ],
+  "magic": "4d5a",
   "magic_off": 0,
   "name": "TC",
-  "notes": "",
+  "notes": "TC sample is an MZ executable; MZ magic, extension disambiguates; inherits MZ/DOS layout. TrueCrypt volumes have no magic; this sample is MZ.",
   "task": 723
  },
  "724": {
@@ -25567,14 +26226,99 @@
   "task": 739
  },
  "74": {
-  "derivation": "unknown",
+  "derivation": "override",
   "endian": "le",
   "ext": ".C32",
-  "fields": [],
-  "magic": null,
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "e_ident",
+    "offset": 0,
+    "size": 16
+   },
+   {
+    "kind": "u16",
+    "name": "e_type",
+    "offset": 16,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "e_machine",
+    "offset": 18,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "e_version",
+    "offset": 20,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "e_entry",
+    "offset": 24,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "e_phoff",
+    "offset": 28,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "e_shoff",
+    "offset": 32,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "e_flags",
+    "offset": 36,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "e_ehsize",
+    "offset": 40,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "e_phentsize",
+    "offset": 42,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "e_phnum",
+    "offset": 44,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "e_shentsize",
+    "offset": 46,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "e_shnum",
+    "offset": 48,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "e_shstrndx",
+    "offset": 50,
+    "size": 2
+   }
+  ],
+  "magic": "7f454c46",
   "magic_off": 0,
   "name": "Property",
-  "notes": "",
+  "notes": "C32 is ELF-based; ELF magic, extension disambiguates; ELF32 header layout (as task 173)",
   "task": 74
  },
  "740": {
@@ -25642,14 +26386,33 @@
   "task": 742
  },
  "743": {
-  "derivation": "unknown",
+  "derivation": "override",
   "endian": "le",
   "ext": ".TXZ",
-  "fields": [],
-  "magic": null,
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "magic",
+    "offset": 0,
+    "size": 6
+   },
+   {
+    "kind": "u16",
+    "name": "stream_flags",
+    "offset": 6,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "crc32",
+    "offset": 8,
+    "size": 4
+   }
+  ],
+  "magic": "fd377a585a00",
   "magic_off": 0,
   "name": "TXZ",
-  "notes": "",
+  "notes": "TXZ is xz-compressed tar; XZ magic, extension disambiguates from XZ",
   "task": 743
  },
  "744": {
@@ -25975,14 +26738,81 @@
   "task": 753
  },
  "754": {
-  "derivation": "unknown",
+  "derivation": "override",
   "endian": "le",
   "ext": ".USDZ",
-  "fields": [],
-  "magic": null,
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "version_needed",
+    "offset": 4,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "flags",
+    "offset": 6,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "method",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_time",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_date",
+    "offset": 12,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "crc32",
+    "offset": 14,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "compressed_size",
+    "offset": 18,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "uncompressed_size",
+    "offset": 22,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "filename_len",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "extra_len",
+    "offset": 28,
+    "size": 2
+   }
+  ],
+  "magic": "504b0304",
   "magic_off": 0,
   "name": "USDZ",
-  "notes": "",
+  "notes": "USDZ is a ZIP archive",
   "task": 754
  },
  "755": {
@@ -26226,7 +27056,7 @@
   "task": 768
  },
  "769": {
-  "derivation": "struct",
+  "derivation": "override",
   "endian": "le",
   "ext": ".VBX",
   "fields": [
@@ -26417,14 +27247,14 @@
     "size": 6
    }
   ],
-  "magic": null,
+  "magic": "4d5a",
   "magic_off": 0,
   "name": "VBX file",
-  "notes": "",
+  "notes": "VBX is an MZ executable (DLL); MZ magic, extension disambiguates",
   "task": 769
  },
  "77": {
-  "derivation": "struct",
+  "derivation": "override",
   "endian": "le",
   "ext": ".CBT",
   "fields": [
@@ -26525,10 +27355,10 @@
     "size": 4
    }
   ],
-  "magic": null,
-  "magic_off": 0,
+  "magic": "7573746172",
+  "magic_off": 257,
   "name": "Tar Entry",
-  "notes": "",
+  "notes": "CBT is a TAR archive; ustar magic at 257, extension disambiguates from TAR",
   "task": 77
  },
  "770": {
@@ -27153,14 +27983,45 @@
   "task": 793
  },
  "794": {
-  "derivation": "nocode-text",
-  "endian": "le",
+  "derivation": "override",
+  "endian": "be",
   "ext": ".VSQ",
-  "fields": [],
-  "magic": "3c3f786d6c",
+  "fields": [
+   {
+    "kind": "ascii",
+    "name": "magic",
+    "offset": 0,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "header_length",
+    "offset": 4,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "format",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "num_tracks",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "division",
+    "offset": 12,
+    "size": 2
+   }
+  ],
+  "magic": "4d546864",
   "magic_off": 0,
   "name": "VSQ file",
-  "notes": "no C/C++ reference code on the task page",
+  "notes": "VSQ is a MIDI file (MThd), not XML; was <?xml. Real extension is .VSQ (table had '.?'); MThd magic, extension disambiguates from MIDI; MIDI header layout (as task 397)",
   "task": 794
  },
  "795": {
@@ -27752,28 +28613,76 @@
   "ext": ".CDR",
   "fields": [
    {
-    "kind": "ascii",
+    "kind": "bytes",
     "name": "signature",
     "offset": 0,
     "size": 4
    },
    {
-    "kind": "u32",
-    "name": "file_size",
+    "kind": "u16",
+    "name": "version_needed",
     "offset": 4,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "flags",
+    "offset": 6,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "method",
+    "offset": 8,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_time",
+    "offset": 10,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mod_date",
+    "offset": 12,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "crc32",
+    "offset": 14,
     "size": 4
    },
    {
-    "kind": "ascii",
-    "name": "form_type",
-    "offset": 8,
+    "kind": "u32",
+    "name": "compressed_size",
+    "offset": 18,
     "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "uncompressed_size",
+    "offset": 22,
+    "size": 4
+   },
+   {
+    "kind": "u16",
+    "name": "filename_len",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "extra_len",
+    "offset": 28,
+    "size": 2
    }
   ],
-  "magic": "52494646",
+  "magic": "504b0304",
   "magic_off": 0,
   "name": "CDR",
-  "notes": "CorelDRAW pre-X4 RIFF variant; X4+ ZIP variant is task 82",
+  "notes": "CDR X4+ is ZIP-based; was RIFF (swapped with 82, the pre-X4 RIFF variant)",
   "task": 81
  },
  "810": {
@@ -28244,76 +29153,28 @@
   "ext": ".CDR",
   "fields": [
    {
-    "kind": "bytes",
+    "kind": "ascii",
     "name": "signature",
     "offset": 0,
     "size": 4
    },
    {
-    "kind": "u16",
-    "name": "version_needed",
+    "kind": "u32",
+    "name": "file_size",
     "offset": 4,
-    "size": 2
+    "size": 4
    },
    {
-    "kind": "u16",
-    "name": "flags",
-    "offset": 6,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "method",
+    "kind": "ascii",
+    "name": "form_type",
     "offset": 8,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "mod_time",
-    "offset": 10,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "mod_date",
-    "offset": 12,
-    "size": 2
-   },
-   {
-    "kind": "u32",
-    "name": "crc32",
-    "offset": 14,
     "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "compressed_size",
-    "offset": 18,
-    "size": 4
-   },
-   {
-    "kind": "u32",
-    "name": "uncompressed_size",
-    "offset": 22,
-    "size": 4
-   },
-   {
-    "kind": "u16",
-    "name": "filename_len",
-    "offset": 26,
-    "size": 2
-   },
-   {
-    "kind": "u16",
-    "name": "extra_len",
-    "offset": 28,
-    "size": 2
    }
   ],
-  "magic": "504b0304",
+  "magic": "52494646",
   "magic_off": 0,
   "name": "CDR",
-  "notes": "CorelDRAW X4+ ZIP variant; pre-X4 RIFF variant is task 81",
+  "notes": "CDR pre-X4 is RIFF-based (form type CDR9); was PK (swapped with 81, the X4+ ZIP variant)",
   "task": 82
  },
  "820": {
@@ -28514,7 +29375,7 @@
   "task": 829
  },
  "83": {
-  "derivation": "struct",
+  "derivation": "override",
   "endian": "le",
   "ext": ".CDXML",
   "fields": [
@@ -28531,10 +29392,10 @@
     "size": 1024
    }
   ],
-  "magic": "3c2f",
+  "magic": "3c3f786d6c",
   "magic_off": 0,
   "name": "CDXML",
-  "notes": "",
+  "notes": "CDXML is XML; <?xml magic, extension disambiguates",
   "task": 83
  },
  "830": {
@@ -28586,14 +29447,111 @@
   "task": 831
  },
  "832": {
-  "derivation": "unknown",
+  "derivation": "override",
   "endian": "le",
   "ext": ".XLR",
-  "fields": [],
-  "magic": null,
+  "fields": [
+   {
+    "kind": "bytes",
+    "name": "signature",
+    "offset": 0,
+    "size": 8
+   },
+   {
+    "kind": "bytes",
+    "name": "clsid",
+    "offset": 8,
+    "size": 16
+   },
+   {
+    "kind": "u16",
+    "name": "minor_version",
+    "offset": 24,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "major_version",
+    "offset": 26,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "byte_order",
+    "offset": 28,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "sector_shift",
+    "offset": 30,
+    "size": 2
+   },
+   {
+    "kind": "u16",
+    "name": "mini_sector_shift",
+    "offset": 32,
+    "size": 2
+   },
+   {
+    "kind": "u32",
+    "name": "num_dir_sectors",
+    "offset": 40,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "num_fat_sectors",
+    "offset": 44,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "first_dir_sector",
+    "offset": 48,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "transaction_sig",
+    "offset": 52,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "mini_stream_cutoff",
+    "offset": 56,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "first_minifat_sector",
+    "offset": 60,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "num_minifat_sectors",
+    "offset": 64,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "first_difat_sector",
+    "offset": 68,
+    "size": 4
+   },
+   {
+    "kind": "u32",
+    "name": "num_difat_sectors",
+    "offset": 72,
+    "size": 4
+   }
+  ],
+  "magic": "d0cf11e0a1b11ae1",
   "magic_off": 0,
   "name": "XLR",
-  "notes": "",
+  "notes": "XLR is OLE/CFB; OLE magic, extension disambiguates; inherits OLE layout",
   "task": 832
  },
  "833": {
