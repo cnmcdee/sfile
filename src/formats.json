@@ -21803,14 +21803,51 @@
   "task": 646
  },
  "647": {
-  "derivation": "unknown",
+  "derivation": "override",
   "endian": "le",
-  "ext": ".SC7",
-  "fields": [],
-  "magic": null,
+  "ext": ".SD7",
+  "fields": [
+   {
+    "kind": "u8",
+    "name": "major",
+    "offset": 6,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "minor",
+    "offset": 7,
+    "size": 1
+   },
+   {
+    "kind": "u32",
+    "name": "start_crc",
+    "offset": 8,
+    "size": 4
+   },
+   {
+    "kind": "u64",
+    "name": "next_offset",
+    "offset": 12,
+    "size": 8
+   },
+   {
+    "kind": "u64",
+    "name": "next_size",
+    "offset": 20,
+    "size": 8
+   },
+   {
+    "kind": "u32",
+    "name": "next_crc",
+    "offset": 28,
+    "size": 4
+   }
+  ],
+  "magic": "377abcaf271c",
   "magic_off": 0,
-  "name": "SC7 file",
-  "notes": "",
+  "name": "SD7 file",
+  "notes": "SD7 is a renamed .7z archive (Spring RTS); .SC7 was a bad extraction; same header as 7z (task 8)",
   "task": 647
  },
  "648": {

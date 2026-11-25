@@ -3251,6 +3251,14 @@ static const SField fmt_646_fields[] = {
     { "include_count", 16, 4, FK_I32 },
     { "at_rule_count", 20, 4, FK_I32 },
 };
+static const SField fmt_647_fields[] = {
+    { "major", 6, 1, FK_U8 },
+    { "minor", 7, 1, FK_U8 },
+    { "start_crc", 8, 4, FK_U32 },
+    { "next_offset", 12, 8, FK_U64 },
+    { "next_size", 20, 8, FK_U64 },
+    { "next_crc", 28, 4, FK_U32 },
+};
 static const SField fmt_648_fields[] = {
     { "title", 0, 81, FK_ASCII },
     { "timestamp", 81, 81, FK_ASCII },
@@ -4869,7 +4877,7 @@ static const SFormat sfile_formats[] = {
     { 644, ".SCM", "SCM file", "", 0, 0, NULL, 0, FMT_UNKNOWN, 0 },
     { 645, ".SCR", "SCR file", "", 0, 0, NULL, 0, FMT_BINARY, 0 },
     { 646, ".SCSS", "Scss", "", 0, 0, fmt_646_fields, 6, FMT_BINARY, 0 },
-    { 647, ".SC7", "SC7 file", "", 0, 0, NULL, 0, FMT_UNKNOWN, 0 },
+    { 647, ".SD7", "SD7 file", "\x37\x7a\xbc\xaf\x27\x1c", 6, 0, fmt_647_fields, 6, FMT_BINARY, 0 },
     { 648, ".SDF", "SDF file", "", 0, 0, fmt_648_fields, 10, FMT_BINARY, 0 },
     { 649, ".SDNN", "properties", "", 0, 0, fmt_649_fields, 2, FMT_BINARY, 0 },
     { 650, ".SDS", "SDS", "", 0, 0, NULL, 0, FMT_UNKNOWN, 0 },

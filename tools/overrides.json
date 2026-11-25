@@ -2944,6 +2944,51 @@
   "magic": null,
   "notes": "the .scr sample starts with zeros, not MZ; the code-derived MZ magic was wrong"
  },
+ "647": {
+  "derivation": "override",
+  "ext": ".SD7",
+  "fields": [
+   {
+    "kind": "u8",
+    "name": "major",
+    "offset": 6,
+    "size": 1
+   },
+   {
+    "kind": "u8",
+    "name": "minor",
+    "offset": 7,
+    "size": 1
+   },
+   {
+    "kind": "u32",
+    "name": "start_crc",
+    "offset": 8,
+    "size": 4
+   },
+   {
+    "kind": "u64",
+    "name": "next_offset",
+    "offset": 12,
+    "size": 8
+   },
+   {
+    "kind": "u64",
+    "name": "next_size",
+    "offset": 20,
+    "size": 8
+   },
+   {
+    "kind": "u32",
+    "name": "next_crc",
+    "offset": 28,
+    "size": 4
+   }
+  ],
+  "magic": "377abcaf271c",
+  "name": "SD7 file",
+  "notes": "SD7 is a renamed .7z archive (Spring RTS); .SC7 was a bad extraction; same header as 7z (task 8)"
+ },
  "65": {
   "endian": "le",
   "fields": [
